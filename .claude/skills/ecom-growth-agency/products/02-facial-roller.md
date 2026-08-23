@@ -10,9 +10,11 @@
 - **Precio wholesale típico**: ~$7–$35 según [Faire buying guide](https://www.faire.com/en-gb/hub/beauty-wellness/skincare/tools-devices/buying-guide-trends).
 - **Saturación**: **alta** — es de los productos de skincare tools más replicados en
   dropshipping; competir solo por el producto desnudo es difícil.
-- **Clasificación**: **C — no viable con tráfico pagado al precio actual.** Con el precio
-  actualizado a $30→$20 (ver 7–9), el margen de contribución real es prácticamente nulo.
-  Solo tiene sentido como pieza de bundle o vía tráfico orgánico sin costo de adquisición.
+- **Clasificación**: **B — viable con tráfico pagado.** Con el costo corregido a $0.90 (ver
+  7–9), el margen de contribución real es sólido — revierte la clasificación C anterior, que
+  se basaba en un costo incorrecto de $13. Sigue saturado como SKU suelto (ver Saturación
+  abajo), así que la diferenciación de ángulo/branding sigue siendo el factor limitante, no
+  el margen.
 
 ## 2. Customer Avatar
 
@@ -45,20 +47,21 @@ a presentación/branding, no al costo del material.
 
 ## 7–9. Recommended Price / Unit Economics / Margin
 
-**Precio actualizado por Alberto (2026-08-23): costo del producto $13 · precio de venta $20**
-(bajó de $30 a $20 — vendido individual, no en pack con el gua sha).
+**Costo corregido por Alberto (2026-08-23), confirmado con proveedor: costo del producto
+$0.90 · precio de venta $20.** (El costo anterior de $13 era incorrecto — corrección grande,
+14x menos, verificada explícitamente con Alberto antes de aplicarla.)
 
 | Línea | Valor | Estado |
 |---|---|---|
 | Precio de venta | $20.00 | confirmado |
-| Costo del producto | $13.00 | confirmado |
-| **Margen bruto (solo producto)** | **$7.00 (35%)** | calculado |
+| Costo del producto | $0.90 | confirmado con proveedor |
+| **Margen bruto (solo producto)** | **$19.10 (95.5%)** | calculado |
 | Fee de pasarela de pago (2.9% + $0.30) | $0.88 | estándar de industria |
 | Envío por unidad | pendiente | falta confirmar con proveedor |
 | Packaging | pendiente | falta confirmar con proveedor |
 | % de devoluciones esperado | pendiente | falta confirmar |
 
-**Modelo ilustrativo** (estimación marcada, no dato confirmado):
+**Modelo ilustrativo** (estimación marcada, no dato confirmado — producto manual sin batería):
 
 ```
 Envío estimado:        $3.00
@@ -66,29 +69,29 @@ Packaging estimado:    $0.75
 Devoluciones (5% × $20): $1.00
 Fee de pago (real):    $0.88
 ──────────────────────────────
-Costo real estimado:   $18.63
-Margen de contribución antes de CAC: $1.37 (6.9%)
+Costo real estimado:   $6.53
+Margen de contribución antes de CAC: $13.47 (67.4%)
 ```
 
-- **CAC máximo (breakeven)** ≈ $1.37 → **ROAS mínimo de breakeven** ≈ **14.6x**
+- **CAC máximo (breakeven)** ≈ $13.47 → **ROAS mínimo de breakeven** ≈ **1.48x**
 
-**Alerta del Financial Analyst:** a $20 de precio con $13 de costo, el margen de contribución
-real ronda apenas $1.37 por unidad — un CAC de más de $1.50 ya te hace perder dinero. Ningún
-canal de pago (TikTok/Meta/Google) sostiene un ROAS de 14.6x de forma consistente. **Este
-producto, al precio actual, NO es viable con tráfico pagado bajo ninguna circunstancia** — solo
-funciona si llega por tráfico orgánico (costo de adquisición ≈$0) o como upsell/cross-sell
-dentro de un carrito que ya trae otro producto rentable (ej. la máscara LED) pagando el CAC.
+Con el costo corregido, este producto pasa a tener un breakeven prácticamente igual al de la
+máscara LED (1.49x) — muy lejos del 14.6x que salía con el costo incorrecto de $13.
 
 ## 10. Score actualizado (2026-08-23)
 
 Demanda 6 (estable, no en pico) · Viralidad 7 (formato satisfying fuerte) · Competencia 3 (muy
-saturado) · **Margen 2** (35% bruto se ve bien, pero el margen de contribución real es casi
-cero al precio de $20 — bajó de 6 tras el ajuste de precio) · AOV bajo como producto suelto,
-alto como parte de bundle · UGC 8 · Marca 5 (difícil diferenciarse solo) · Bundle 9 (su mejor
-uso) · Saturación 3 · Escalabilidad alta (producto simple de fabricar/enviar).
+saturado) · **Margen 9** (95.5% bruto, breakeven ~1.48x — corregido de 2, que se basaba en el
+costo erróneo de $13) · AOV bajo como producto suelto, alto como parte de bundle · UGC 8 ·
+Marca 5 (difícil diferenciarse solo) · Bundle 9 (su mejor uso) · Saturación 3 · Escalabilidad
+alta (producto simple de fabricar/enviar).
 
-**Recomendación de la agencia, revisada tras el cambio de precio: cero presupuesto de ads
-directo a este producto suelto a $20 — se pierde dinero casi con cualquier CAC real.** Dos
-caminos: (1) subir el precio de venta si el margen de contribución no alcanza ni para test, o
-(2) usarlo exclusivamente como pieza orgánica/tripwire/upsell dentro de
-`05-skincare-kit-bundles.md`, nunca como producto con presupuesto de ads propio.
+**Total: 64/100 → banda OBSERVAR, cerca de TEST.** El margen ya no es el factor limitante — lo
+es la saturación del mercado (muy replicado en dropshipping) y la dificultad de diferenciarse
+como SKU suelto.
+
+**Recomendación de la agencia, revertida tras la corrección de costo: SÍ es viable con
+presupuesto de ads**, siempre que el ángulo/creative logre diferenciarlo de la competencia
+genérica — el margen ya no es la limitación. Buen candidato a tercer test después de máscara y
+masajeador, o directamente como parte de `05-skincare-kit-bundles.md` para evitar competir
+1-a-1 por precio como commodity.

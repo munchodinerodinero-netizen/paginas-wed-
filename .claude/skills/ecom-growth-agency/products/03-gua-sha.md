@@ -13,9 +13,9 @@
 - **Saturación**: alta como producto suelto (ampliamente disponible), pero con volumen de
   búsqueda algo menor que jade roller según la misma fuente — puede ser el complemento del
   roller en vez de competir 1-a-1 con él.
-- **Clasificación**: **C — no viable con tráfico pagado al precio actual**, mismo caso que el
-  roller: con el precio actualizado a $20 (ver 7–9), el margen de contribución real es
-  prácticamente nulo.
+- **Clasificación**: **B — viable con tráfico pagado.** Con el costo corregido a $1.50 (ver
+  7–9), el margen de contribución real es sólido — revierte la clasificación C anterior, que
+  se basaba en un costo incorrecto de $13.
 
 ## 2. Customer Avatar
 
@@ -46,20 +46,21 @@ no el costo del material en sí.
 
 ## 7–9. Recommended Price / Unit Economics / Margin
 
-**Precio actualizado por Alberto (2026-08-23): costo del producto $13 · precio de venta $20**
-(mismos números que el roller — bajó de $30 a $20, vendido individual, no en pack).
+**Costo corregido por Alberto (2026-08-23), confirmado con proveedor: costo del producto
+$1.50 · precio de venta $20.** (Costo distinto al del roller — no comparten el mismo número
+esta vez. El costo anterior de $13 era incorrecto.)
 
 | Línea | Valor | Estado |
 |---|---|---|
 | Precio de venta | $20.00 | confirmado |
-| Costo del producto | $13.00 | confirmado |
-| **Margen bruto (solo producto)** | **$7.00 (35%)** | calculado |
+| Costo del producto | $1.50 | confirmado con proveedor |
+| **Margen bruto (solo producto)** | **$18.50 (92.5%)** | calculado |
 | Fee de pasarela de pago (2.9% + $0.30) | $0.88 | estándar de industria |
 | Envío por unidad | pendiente | falta confirmar con proveedor |
 | Packaging | pendiente | falta confirmar con proveedor |
 | % de devoluciones esperado | pendiente | falta confirmar |
 
-**Modelo ilustrativo** (mismo supuesto que el roller):
+**Modelo ilustrativo** (mismo supuesto que el roller — producto manual sin batería):
 
 ```
 Envío estimado:        $3.00
@@ -67,25 +68,26 @@ Packaging estimado:    $0.75
 Devoluciones (5% × $20): $1.00
 Fee de pago (real):    $0.88
 ──────────────────────────────
-Costo real estimado:   $18.63
-Margen de contribución antes de CAC: $1.37 (6.9%)
+Costo real estimado:   $7.13
+Margen de contribución antes de CAC: $12.87 (64.4%)
 ```
 
-- **CAC máximo (breakeven)** ≈ $1.37 → **ROAS mínimo de breakeven** ≈ **14.6x**
+- **CAC máximo (breakeven)** ≈ $12.87 → **ROAS mínimo de breakeven** ≈ **1.55x**
 
-**Misma alerta que el roller: no viable con tráfico pagado a este precio.** El margen de
-contribución real (~$1.37) no sostiene ningún CAC de TikTok/Meta/Google de forma consistente.
+Con el costo corregido, el breakeven queda muy cerca del roller (1.48x) y de la máscara LED
+(1.49x) — lejos del 14.6x que salía con el costo incorrecto de $13.
 
 ## 10. Score actualizado (2026-08-23)
 
 Demanda 7 (tracción de contenido fuerte, incluso educativo) · Viralidad 7 · Competencia 3 ·
-**Margen 2** (35% bruto se ve bien, pero el margen de contribución real es casi cero al precio
-de $20 — bajó de 6 tras el ajuste de precio) · AOV bajo suelto / alto en bundle · UGC 8 (fuerte
-también en formato educativo "cómo se usa realmente") · Marca 5 · Bundle 9 · Saturación 4 ·
-Escalabilidad alta.
+**Margen 9** (92.5% bruto, breakeven ~1.55x — corregido de 2, que se basaba en el costo
+erróneo de $13) · AOV bajo suelto / alto en bundle · UGC 8 (fuerte también en formato
+educativo "cómo se usa realmente") · Marca 5 · Bundle 9 · Saturación 4 · Escalabilidad alta.
 
-**Misma recomendación que el roller, revisada: cero presupuesto de ads directo a este producto
-suelto a $20. Solo orgánico, tripwire o componente de `05-skincare-kit-bundles.md`. Su ventaja
-diferencial real frente al roller sigue siendo el ángulo educativo ("cómo usarlo bien"), que
-vale la pena explotar en SEO y contenido MOFU orgánico — donde el costo de adquisición es
-efectivamente $0 y este margen sí funciona.**
+**Total: 66/100 → banda OBSERVAR, cerca de TEST.** Mismo diagnóstico que el roller: el margen
+ya no limita, la saturación del mercado sí.
+
+**Recomendación de la agencia, revertida tras la corrección de costo: SÍ es viable con
+presupuesto de ads.** Su ventaja diferencial real frente al roller sigue siendo el ángulo
+educativo ("cómo usarlo bien"), que ahora puede combinarse con presupuesto pagado además de
+SEO/orgánico — el margen sostiene ambos caminos.

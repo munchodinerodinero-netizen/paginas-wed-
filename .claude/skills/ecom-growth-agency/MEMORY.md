@@ -126,3 +126,40 @@ sección "Registro en memoria".
   marcadas explícitamente (no dato confirmado) en los 4 productos con costo — pendiente
   cerrarlos con datos reales del proveedor antes de fijar presupuesto de escalamiento más allá
   del primer test.
+
+## 2026-08-23 — CORRECCIÓN GRANDE: costo real de rodillo y gua sha, veredicto revertido
+
+- El costo de $13 registrado para rodillo y gua sha era **incorrecto**. Alberto corrigió,
+  confirmado con proveedor tras pregunta directa de verificación (cambio de 14x amerita
+  doble-check, mismo criterio que se aplicó al masajeador):
+  - Rodillo facial: costo real **$0.90** (no $13).
+  - Gua Sha: costo real **$1.50** (no $13) — número distinto al del rodillo, no comparten
+    costo aunque comparten precio de venta ($20).
+- **Esto revierte por completo el veredicto de "no viable con tráfico pagado" de la sesión
+  anterior.** Con los costos correctos:
+  - Rodillo: margen de contribución ~$13.47 (67.4%), ROAS breakeven ~1.48x (antes 14.6x con
+    el dato erróneo).
+  - Gua Sha: margen de contribución ~$12.87 (64.4%), ROAS breakeven ~1.55x (antes 14.6x).
+- **Tabla del portafolio, ahora corregida** (los 4 productos individuales con costo real
+  confirmado):
+
+| Producto | Costo | Precio | Margen contribución est. | ROAS breakeven est. | Viable con ads |
+|---|---|---|---|---|---|
+| Máscara LED | $15 | $99 | ~$66 (67%) | ~1.49x | Sí |
+| Rodillo facial | $0.90 | $20 | ~$13.47 (67%) | ~1.48x | **Sí (corregido)** |
+| Gua Sha | $1.50 | $20 | ~$12.87 (64%) | ~1.55x | **Sí (corregido)** |
+| Masajeador corazón | $0.60 | $20 | ~$9.62 (48%) | ~2.08x | Sí |
+
+- **Lección operativa para la agencia**: esta sesión mostró que el primer costo dado ($13 para
+  ambos) probablemente venía de una lectura equivocada del proveedor/plataforma, no de mala fe
+  — pero el impacto en la decisión (matar vs. escalar un producto) fue total. Regla reforzada:
+  ante cualquier costo que cambie 10x+ entre versiones, siempre re-confirmar antes de
+  sobrescribir el archivo, tal como se hizo aquí y con el masajeador.
+- **Decisión del CEO actualizada**: los 4 productos individuales son viables con ads. Orden de
+  prioridad de testing pago sigue siendo por score y no solo por margen (saturación de mercado
+  penaliza a rodillo/gua sha frente a máscara/masajeador): (1) Máscara LED, (2) Masajeador
+  corazón, (3) Rodillo y Gua Sha — estos últimos dos con más presión de diferenciación de
+  ángulo/creative por estar en categoría muy saturada, aunque el margen ya no sea el freno.
+- **Pendiente sigue igual**: definir composición y precio del kit combinado con estos 4 costos
+  ya confirmados; envío/packaging/% de devoluciones de los 4 productos siguen siendo
+  estimaciones marcadas, no dato confirmado.
