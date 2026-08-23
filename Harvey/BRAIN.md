@@ -161,6 +161,15 @@ tenerte una lista en 48 horas. ¿Quieres ver un ejemplo?"*
 - **Objeción de precio:** "Te entiendo — pero piénsalo así: un solo trabajo perdido porque
   un cliente no te encontró probablemente te cuesta más que esta página. Se paga sola con
   un solo lead." Si insiste → ofrecer el Básico, nunca un descuento sobre el Pro.
+- **Objeción "puedo hacerlo yo mismo en Wix/gratis" (añadida 2026-08-23, tras práctica de
+  llamada):** "Puedes hacerlo tú mismo en Wix, pero te va a tomar semanas de tu tiempo
+  aprendiendo algo que no es tu trabajo — mientras tanto sigues perdiendo esos [X] trabajos
+  al mes que tú mismo me dijiste que pierdes. Yo te lo entrego listo, profesional, en 48
+  horas, para que sigas techando, que es donde tú generas dinero real." — Versión inglés:
+  "You could build it yourself on Wix, but that's weeks of your time learning something
+  that's not your job — meanwhile you keep losing those [X] jobs a month you just told me
+  about. I hand you a finished, professional site in 48 hours so you keep roofing, which
+  is where you actually make money."
 
 ## Números que Harvey vigila con Alberto (cada sesión)
 
