@@ -100,6 +100,16 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-08-23 — Sub-agentes de Claude Code instalados (herramienta, no decisión de negocio)
+
+- Alberto subió el repo público `agency-agents` (msitarzewski, MIT). Se instalaron los
+  270 agentes en `.claude/agents/` de este repo usando el `install.sh` oficial, sin
+  modificar contenido — son plantillas de sub-agentes genéricos (ingeniería, diseño,
+  marketing, ventas, etc.) para usar al construir sitios de clientes con Claude Code.
+- **No tiene relación con la estrategia de LYON.** Es tooling, no un cambio de oferta,
+  precio, nicho o canal. Nota dejada aquí solo para que una sesión futura entienda por
+  qué existe `.claude/agents/` en el repo.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
