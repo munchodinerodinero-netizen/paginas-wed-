@@ -86,6 +86,82 @@ semanas (agencias tradicionales, proceso pesado). LYON entrega en 48h por $350�
 gracias a IA. Usar directo en el pitch: *"Mientras las agencias grandes te cotizan $3,000
 y 4 semanas, yo te entrego un sitio profesional en 48 horas por $650."*
 
+## Scripts de venta — FINAL (2026-08-23)
+
+Mercado dual: contratistas de habla inglesa y de habla hispana en USA. Usar el idioma que
+corresponda al prospecto.
+
+### Mensaje en frío — Inglés
+
+> Hey [Name] — saw [Business Name] doesn't have a website (or found you on Google Maps
+> with no site linked). Just curious: how many jobs do you think you're losing to
+> competitors who show up first when someone searches "roofer near me"?
+>
+> I build professional contractor websites in 48 hours — not weeks. Worth a quick 5-min
+> call this week to show you what it'd look like for your business?
+
+Variante redes: *"Love what you're doing with [specific project/post you saw]. Quick
+question — do you have a website where people can see your work and request quotes? If
+not, that's likely costing you jobs every week. I can have one live for you in 48 hours.
+Want to see an example?"*
+
+### Mensaje en frío — Español
+
+> Hola [Nombre] — vi que [Nombre del negocio] no tiene página web (o te encontré en
+> Google Maps sin sitio enlazado). Pregunta rápida: ¿cuántos trabajos crees que estás
+> perdiendo frente a competidores que aparecen primero cuando alguien busca "techero cerca
+> de mí"?
+>
+> Yo construyo páginas web profesionales para contratistas en 48 horas — no semanas.
+> ¿Vale la pena una llamada rápida de 5 minutos esta semana para mostrarte cómo se vería
+> para tu negocio?
+
+Variante redes: *"Me encantó lo que hiciste en [proyecto/publicación específica que
+viste]. Pregunta rápida — ¿tienes una página web donde la gente pueda ver tu trabajo y
+pedir cotizaciones? Si no, seguramente te está costando trabajos cada semana. Puedo
+tenerte una lista en 48 horas. ¿Quieres ver un ejemplo?"*
+
+### Llamada en frío — Inglés
+
+- **Apertura:** "Hey [Name], this is Alberto with LYON — I help roofing and contracting
+  businesses stop losing jobs to competitors who show up online and they don't. Got 60
+  seconds?"
+- **Descubrimiento (SPIN):** "Do you currently have a website?" / "When someone searches
+  'roofer near [city]' — are you showing up, or are your competitors?" / "How many jobs a
+  month do you think you're losing because people can't find you or don't trust what they
+  see online?"
+- **Pitch:** "That's exactly what I fix. I build a professional website — mobile-friendly,
+  with your project gallery, direct quote requests, and Google Business optimized — live
+  in 48 hours. Most agencies charge $3,000+ and take a month. I do it for a fraction of
+  that, because I build with AI, not a slow dev team."
+- **Cierre directo (asume la venta, nunca pregunta "¿te interesa?"):** "I've got two spots
+  open this week. Should I set you up with the Pro package — that's the one most
+  contractors go with — or do you want to start smaller with the Basic?"
+- **Objeción de precio (nunca bajar precio):** "I get it — but think about it this way:
+  one missed job from a customer who couldn't find you probably costs you more than this
+  site does. This pays for itself with a single lead." Si insiste → ofrecer el Básico, no
+  un descuento sobre el Pro.
+
+### Llamada en frío — Español
+
+- **Apertura:** "Hola [Nombre], habla Alberto de LYON — ayudo a negocios de techos y
+  construcción a dejar de perder trabajos frente a competidores que sí aparecen en línea.
+  ¿Tienes 60 segundos?"
+- **Descubrimiento:** "¿Actualmente tienes página web?" / "Cuando alguien busca 'techero
+  cerca de [ciudad]' — ¿apareces tú o tu competencia?" / "¿Cuántos trabajos al mes crees
+  que estás perdiendo porque la gente no te encuentra o no confía en lo que ve en línea?"
+- **Pitch:** "Eso es exactamente lo que resuelvo. Construyo una página web profesional —
+  optimizada para móvil, con galería de tus proyectos, formulario de cotización directa, y
+  Google Business optimizado — lista en 48 horas. La mayoría de agencias cobran $3,000+ y
+  tardan un mes. Yo lo hago por una fracción de eso, porque construyo con IA, no con un
+  equipo de desarrolladores lento."
+- **Cierre directo:** "Tengo dos espacios disponibles esta semana. ¿Te armo con el paquete
+  Pro — es el que eligen la mayoría de contratistas — o prefieres empezar más sencillo con
+  el Básico?"
+- **Objeción de precio:** "Te entiendo — pero piénsalo así: un solo trabajo perdido porque
+  un cliente no te encontró probablemente te cuesta más que esta página. Se paga sola con
+  un solo lead." Si insiste → ofrecer el Básico, nunca un descuento sobre el Pro.
+
 ## Números que Harvey vigila con Alberto (cada sesión)
 
 1. Leads contactados/semana

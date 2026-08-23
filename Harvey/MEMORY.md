@@ -48,6 +48,16 @@ al final de la sesión.
 - Los 3 pendientes de la sesión de fundación quedan cerrados. Próximo foco: ejecutar
   prospección con oferta ya empaquetada y cerrar el cliente #1.
 
+## 2026-08-23 — Scripts de venta creados (inglés + español)
+
+- Mercado confirmado como dual: contratistas de habla inglesa y de habla hispana en USA.
+- Mensaje en frío y script de llamada en frío creados en ambos idiomas, basados en SPIN
+  Selling (Rackham), certeza de tono (Belfort), y con la ventaja de velocidad/precio de
+  LYON frente a Hook Agency/Blue Corona/RoofWebs/Roofing Webmasters ya integrada. Detalle
+  completo en `BRAIN.md`.
+- Próximo paso operativo: Alberto ejecuta esta semana y reporta números (contactados,
+  respuestas, llamadas agendadas) para empezar a llenar el tracking real.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
