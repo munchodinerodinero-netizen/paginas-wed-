@@ -88,8 +88,17 @@ al final de la sesión.
   fase 2 en EEUU, no se usa activamente hoy.
 - **Competidores directos de México mapeados:** Arteweb2, 68-Design, PC Emprende, Fénix
   Byte, La Fábrica del SEO — todas agencias que le venden a constructoras/contratistas.
-- **Pendiente crítico y bloqueante:** falta la ciudad/estado específico de México donde
-  Alberto va a prospectar. No se puede generar una lista de prospectos real sin esto.
+- **Patrón de comportamiento identificado (tercera repetición):** Alberto intentó abarcar
+  las 7 ciudades sugeridas en vez de elegir una — mismo patrón que los 35 nichos y los 2
+  países. Confrontado directamente y nombrado como evasión de compromiso, no indecisión
+  casual. Se usó una pregunta forzada de opción única para romper el patrón.
+- **Ciudad foco confirmada: Querétaro.** Fuentes de prospectos reales (Habitissimo,
+  StarOfService, InfoIsInfo) documentadas en `BRAIN.md`, más el método de Google Maps ya
+  enseñado. Reserva de expansión futura: Mérida, León, Puebla — solo después de agotar
+  Querétaro.
+- **Vigilar en sesiones futuras:** si este patrón de "quiero todas las opciones" vuelve a
+  aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
+  de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 

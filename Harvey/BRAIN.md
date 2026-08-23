@@ -9,9 +9,10 @@ por Harvey, decisión final de Alberto respetada). **Todo lo construido en USD/i
 queda como referencia histórica para una futura fase 2 en EEUU — el foco activo hoy es
 100% México, en pesos, en español.**
 
-**Pendiente crítico:** falta la ciudad/estado específico de México. "Todo México" es
-demasiado amplio para prospectar con foco — mismo error de los 35 nichos. Se necesita UNA
-ciudad para arrancar.
+**Ciudad foco confirmada: Querétaro** (2026-08-23). Elegida sobre CDMX/Guadalajara/
+Monterrey/Mérida por mayor crecimiento económico real (nearshoring, corredor industrial)
+y menos saturación de agencias grandes. Reserva para expansión futura: Mérida, León,
+Puebla — no antes de agotar Querétaro.
 
 ## Oferta — FINAL en pesos mexicanos (recalculada 2026-08-23)
 
@@ -204,6 +205,23 @@ tenerte una lista en 48 horas. ¿Quieres ver un ejemplo?"*
   that's not your job — meanwhile you keep losing those [X] jobs a month you just told me
   about. I hand you a finished, professional site in 48 hours so you keep roofing, which
   is where you actually make money."
+
+## Fuentes de prospectos reales — Querétaro (2026-08-23)
+
+En vez de una lista fija (se vuelve vieja en días), estas son las fuentes vivas donde
+Alberto saca prospectos reales todos los días, además del método de Google Maps ya
+definido:
+
+- [Habitissimo — Techos en Querétaro](https://empresas.habitissimo.com.mx/techos/queretaro)
+- [Habitissimo — Construcción en Querétaro](https://empresas.habitissimo.com.mx/construccion/queretaro/queretaro)
+- [StarOfService — Contratistas generales en Querétaro](https://www.starofservice.mx/dir/queretaro-arteaga/queretaro/queretaro/contratista)
+- [InfoIsInfo — Remodelación en Querétaro](https://queretaro-estado.infoisinfo.com.mx/busqueda/remodelacion)
+
+**Cómo calificar desde estos directorios:** un negocio que solo aparece listado ahí (sin
+link a su propio sitio web) es un prospecto caliente — vive de que el directorio lo
+muestre, no tiene presencia propia. Sacar nombre + teléfono/WhatsApp de cada perfil,
+cruzar con Google Maps para confirmar que no tiene web propia, y meterlo a la lista de
+prospección diaria (meta: 25-30/día).
 
 ## Números que Harvey vigila con Alberto (cada sesión)
 
