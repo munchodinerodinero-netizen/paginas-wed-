@@ -50,9 +50,28 @@ del modelo elegido.
 
 ## 7–9. Recommended Price / Unit Economics / Margin
 
-**Pendiente de datos reales del proveedor** — especialmente crítico aquí porque el rango de
-precio wholesale es el más amplio de los 5 productos; el margen cambia drásticamente según el
-nivel de especificación real.
+**Precio de venta confirmado por Alberto (2026-08-23): $20.** Costo del producto **todavía
+pendiente** — sigue siendo el único dato que falta para cerrar el portafolio completo de 5
+productos.
+
+Referencia no confirmada (de la captura de AliExpress que compartiste del dispositivo facial
+recargable en forma de corazón): precio regular ~$6.04 antes del descuento de bienvenida de
+$0.99 (ese $0.99 no es un costo sostenible — ver nota de compliance de costos). **No uso ese
+$6.04 como costo real hasta que lo confirmes** — podría ser el costo real si compras pedido por
+pedido a ese proveedor, o podría no ser el modelo de compra que vas a usar.
+
+Con precio de venta $20 confirmado, en cuanto tengas el costo real el cálculo es inmediato
+(mismo modelo que los otros 3 productos, `references/offer-pricing-aov.md`). Ejemplo de qué tan
+sensible es este producto al costo real:
+
+| Si el costo fuera... | Margen bruto | ¿Viable con ads? |
+|---|---|---|
+| $6 (referencia AliExpress, sin confirmar) | $14 (70%) | Sí — colchón similar al de la máscara |
+| $10 | $10 (50%) | Probablemente, con CAC controlado |
+| $13 (mismo costo que roller/gua sha) | $7 (35%) | No — mismo problema que roller/gua sha a $20 |
+
+**Esta tabla es solo para mostrar por qué el costo real importa tanto — no es una
+recomendación de precio ni un costo asumido.**
 
 ## 10. Score preliminar
 

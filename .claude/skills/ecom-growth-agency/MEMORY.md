@@ -66,3 +66,37 @@ sección "Registro en memoria".
   facial/corporal (producto 4)** — es el único de los 5 productos sin datos confirmados. El
   kit combinado (producto 5) sigue sin precio propio, pendiente de definir cuando estén todos
   los componentes.
+
+## 2026-08-23 — Alberto compartió capturas de AliExpress; se detectó riesgo de precio señuelo
+
+- Alberto mandó 3 capturas de AliExpress con precios "Welcome deal" (descuento de bienvenida de
+  cuenta nueva, no repetible en pedidos siguientes): roller+guasha pack $0.33, masajeador
+  corazón $0.99, máscara LED 7 colores+cuello $8.68 (regular $32.68).
+  **Se marcó explícitamente que esos precios NO son costo real sostenible** — riesgo de romper
+  la regla de "nunca inventar/usar un costo no sostenible como si fuera real".
+- Se detectó además una discrepancia: esa máscara LED de la captura ($32.68 regular) no
+  coincide con el costo ya registrado ($15) — quedó sin resolver cuál es el costo real de la
+  máscara que Alberto va a usar; no se sobrescribió el $15 confirmado.
+
+## 2026-08-23 — Precios de venta actualizados (no eran costos)
+
+- Alberto aclaró vía pregunta directa: los números "$99 máscara / $20 masajeador / $20 roller"
+  eran **precios de venta al cliente**, no costos de proveedor. Y confirmó que roller y gua sha
+  van **por separado**, no en un pack combinado.
+- **Cambios aplicados**:
+  - Máscara LED: precio $100 → **$99** (costo sigue en $15, sin cambios). Impacto mínimo en la
+    economía — sigue siendo el mejor producto del portafolio (ROAS breakeven ≈1.49x).
+  - Rodillo facial: precio $30 → **$20** (costo sigue en $13). **Impacto crítico**: margen de
+    contribución real cae a ~$1.37 (6.9%), ROAS de breakeven sube a ~14.6x — **no viable con
+    tráfico pagado a este precio**. Score de margen bajó de 6 a 2.
+  - Gua Sha: mismo cambio y mismo diagnóstico que el rodillo — precio $30 → $20, no viable con
+    ads al precio actual.
+- **Decisión del CEO registrada**: rodillo y gua sha quedan fuera de cualquier presupuesto de
+  ads propio mientras el precio siga en $20 con costo $13. Solo se usan vía tráfico orgánico
+  (CAC≈$0), como upsell/cross-sell dentro de un carrito ya rentable, o como componente del kit
+  combinado — nunca como campaña paga independiente.
+- **Pendiente crítico único restante para cerrar el portafolio de 5 productos**: el **costo**
+  del masajeador facial/corporal (producto 4) — su precio de venta ya quedó confirmado en $20.
+  Se documentó en su archivo una tabla de sensibilidad (costo $6/$10/$13) para mostrar qué tan
+  determinante es ese dato antes de decidir si es viable con ads, sin asumir ninguno de los 3
+  como real.

@@ -13,9 +13,9 @@
 - **Saturación**: alta como producto suelto (ampliamente disponible), pero con volumen de
   búsqueda algo menor que jade roller según la misma fuente — puede ser el complemento del
   roller en vez de competir 1-a-1 con él.
-- **Clasificación**: **B/C — mismo patrón que el roller**: fuerte como parte de bundle/ritual,
-  difícil de defender como SKU único. Con costo y precio reales confirmados (ver 7–9), el
-  margen % es idéntico al del roller — mismo caso económico.
+- **Clasificación**: **C — no viable con tráfico pagado al precio actual**, mismo caso que el
+  roller: con el precio actualizado a $20 (ver 7–9), el margen de contribución real es
+  prácticamente nulo.
 
 ## 2. Customer Avatar
 
@@ -46,40 +46,46 @@ no el costo del material en sí.
 
 ## 7–9. Recommended Price / Unit Economics / Margin
 
-**Datos confirmados por Alberto (2026-08-23): costo del producto $13 · precio de venta $30**
-(mismos números que el roller).
+**Precio actualizado por Alberto (2026-08-23): costo del producto $13 · precio de venta $20**
+(mismos números que el roller — bajó de $30 a $20, vendido individual, no en pack).
 
 | Línea | Valor | Estado |
 |---|---|---|
-| Precio de venta | $30.00 | confirmado |
+| Precio de venta | $20.00 | confirmado |
 | Costo del producto | $13.00 | confirmado |
-| **Margen bruto (solo producto)** | **$17.00 (56.7%)** | calculado |
-| Fee de pasarela de pago (2.9% + $0.30) | $1.17 | estándar de industria |
+| **Margen bruto (solo producto)** | **$7.00 (35%)** | calculado |
+| Fee de pasarela de pago (2.9% + $0.30) | $0.88 | estándar de industria |
 | Envío por unidad | pendiente | falta confirmar con proveedor |
 | Packaging | pendiente | falta confirmar con proveedor |
 | % de devoluciones esperado | pendiente | falta confirmar |
 
-**Modelo ilustrativo** (mismo supuesto que el roller — producto manual sin batería):
+**Modelo ilustrativo** (mismo supuesto que el roller):
 
 ```
 Envío estimado:        $3.00
 Packaging estimado:    $0.75
-Devoluciones (5% × $30): $1.50
-Fee de pago (real):    $1.17
+Devoluciones (5% × $20): $1.00
+Fee de pago (real):    $0.88
 ──────────────────────────────
-Costo real estimado:   $19.42
-Margen de contribución antes de CAC: $10.58 (35.3%)
+Costo real estimado:   $18.63
+Margen de contribución antes de CAC: $1.37 (6.9%)
 ```
 
-- **CAC máximo (breakeven)** ≈ $10.58 → **ROAS mínimo de breakeven** ≈ **2.84x**
+- **CAC máximo (breakeven)** ≈ $1.37 → **ROAS mínimo de breakeven** ≈ **14.6x**
+
+**Misma alerta que el roller: no viable con tráfico pagado a este precio.** El margen de
+contribución real (~$1.37) no sostiene ningún CAC de TikTok/Meta/Google de forma consistente.
 
 ## 10. Score actualizado (2026-08-23)
 
 Demanda 7 (tracción de contenido fuerte, incluso educativo) · Viralidad 7 · Competencia 3 ·
-**Margen 6** (56.7% bruto, breakeven de ROAS exigente — antes "pendiente") · AOV bajo suelto /
-alto en bundle · UGC 8 (fuerte también en formato educativo "cómo se usa realmente") · Marca 5 ·
-Bundle 9 · Saturación 4 · Escalabilidad alta.
+**Margen 2** (35% bruto se ve bien, pero el margen de contribución real es casi cero al precio
+de $20 — bajó de 6 tras el ajuste de precio) · AOV bajo suelto / alto en bundle · UGC 8 (fuerte
+también en formato educativo "cómo se usa realmente") · Marca 5 · Bundle 9 · Saturación 4 ·
+Escalabilidad alta.
 
-**Misma recomendación que el roller, ahora con números reales: producto de bundle/entrada, no
-hero product suelto (ROAS de breakeven ≥2.84x). Su ventaja diferencial real frente al roller es
-el ángulo educativo ("cómo usarlo bien"), que vale la pena explotar en SEO y contenido MOFU.**
+**Misma recomendación que el roller, revisada: cero presupuesto de ads directo a este producto
+suelto a $20. Solo orgánico, tripwire o componente de `05-skincare-kit-bundles.md`. Su ventaja
+diferencial real frente al roller sigue siendo el ángulo educativo ("cómo usarlo bien"), que
+vale la pena explotar en SEO y contenido MOFU orgánico — donde el costo de adquisición es
+efectivamente $0 y este margen sí funciona.**

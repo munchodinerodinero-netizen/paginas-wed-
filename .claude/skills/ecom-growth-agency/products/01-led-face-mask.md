@@ -57,14 +57,15 @@ varios cientos de dólares. No hay un único "precio de mercado", depende del ni
 
 ## 7–9. Recommended Price / Unit Economics / Margin
 
-**Datos confirmados por Alberto (2026-08-23): costo del producto $15 · precio de venta $100.**
+**Datos confirmados por Alberto: costo del producto $15 · precio de venta $99** (actualizado
+2026-08-23 — precio ajustado de $100 a $99, costo sin cambios).
 
 | Línea | Valor | Estado |
 |---|---|---|
-| Precio de venta | $100.00 | confirmado |
+| Precio de venta | $99.00 | confirmado |
 | Costo del producto | $15.00 | confirmado |
-| **Margen bruto (solo producto)** | **$85.00 (85%)** | calculado |
-| Fee de pasarela de pago (2.9% + $0.30) | $3.20 | estándar de industria (Stripe/Shopify), no específico del proveedor |
+| **Margen bruto (solo producto)** | **$84.00 (84.8%)** | calculado |
+| Fee de pasarela de pago (2.9% + $0.30) | $3.17 | estándar de industria (Stripe/Shopify), no específico del proveedor |
 | Envío por unidad | pendiente | falta confirmar con proveedor |
 | Packaging | pendiente | falta confirmar con proveedor |
 | % de devoluciones esperado | pendiente | falta confirmar (categoría o histórico propio) |
@@ -75,28 +76,28 @@ en cuanto se tengan los 3 pendientes de arriba):
 ```
 Envío estimado:        $6.00
 Packaging estimado:    $1.50
-Devoluciones (7% × $100, típico de categoría skincare gadget): $7.00
-Fee de pago (real):    $3.20
+Devoluciones (7% × $99, típico de categoría skincare gadget): $6.93
+Fee de pago (real):    $3.17
 ──────────────────────────────
-Costo real estimado:   $32.70
-Margen de contribución antes de CAC: $67.30 (67.3%)
+Costo real estimado:   $32.60
+Margen de contribución antes de CAC: $66.40 (67.1%)
 ```
 
-- **CAC máximo (breakeven)** ≈ $67.30 → **ROAS mínimo de breakeven** ≈ 1.49x
-- **CAC objetivo** (para 35% de beneficio neto real) ≈ $32.30 → **ROAS objetivo** ≈ 3.1x
+- **CAC máximo (breakeven)** ≈ $66.40 → **ROAS mínimo de breakeven** ≈ 1.49x
+- **CAC objetivo** (para 35% de beneficio neto real) ≈ $31.75 → **ROAS objetivo** ≈ 3.12x
 
-Con 85% de margen bruto en el producto, este es el producto del portafolio con más colchón
-para absorber un CAC alto en TikTok/Meta durante la fase de test.
+El cambio de $100 a $99 no mueve la economía de forma material — sigue siendo, por lejos, el
+producto con más colchón de margen del portafolio.
 
 ### Escalera de cantidad (AOV)
 
 | Tier | Precio | Costo (×$15) | Margen bruto |
 |---|---|---|---|
-| 1 unidad | $100 | $15 | $85 (85%) |
-| 2 unidades | $170 (15% off vs. $200) | $30 | $140 (82%) |
-| 3 unidades | $225 (25% off vs. $300) | $45 | $180 (80%) |
+| 1 unidad | $99 | $15 | $84 (84.8%) |
+| 2 unidades | $168 (15% off vs. $198) | $30 | $138 (82.1%) |
+| 3 unidades | $223 (25% off vs. $297) | $45 | $178 (79.8%) |
 
-Descuento real contra el precio ancla de $100 — no inflado.
+Descuento real contra el precio ancla de $99 — no inflado.
 
 ## 10. Score actualizado (2026-08-23)
 
