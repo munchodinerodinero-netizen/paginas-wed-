@@ -34,12 +34,29 @@ al final de la sesión.
 - **Regla permanente registrada:** nunca sugerir bajar el precio, bajo ninguna
   circunstancia.
 
+## 2026-08-23 — Cierre de los 3 pendientes abiertos
+
+- **Paquetes de precio finalizados:** Básico $350 / Pro $650 (ancla) / Premium $950, todos
+  + $100/mes mantenimiento. Se acabó el "depende del cliente" — confirmado por Alberto.
+- **Margen real calculado y confirmado:** Lovable Pro $25/mes, ~4h por proyecto, costo de
+  tiempo estimado a $25/h → margen real ~$540 (83%+) en el paquete Pro. Se corrigió la
+  creencia de "cuesta $0".
+- **Competidores directos mapeados:** Hook Agency, Blue Corona, RoofWebs, Roofing
+  Webmasters — todas agencias de web/marketing especializadas en contratistas de roofing.
+  Ventaja de LYON: velocidad (48h) y precio, frente a agencias tradicionales lentas y
+  caras. Detalle completo en `BRAIN.md`.
+- Los 3 pendientes de la sesión de fundación quedan cerrados. Próximo foco: ejecutar
+  prospección con oferta ya empaquetada y cerrar el cliente #1.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
    un proceso con volumen medible por semana.
-2. Cerrar la primera venta — validar que la oferta y el pitch funcionan en la vida real.
-3. Definir los 3 paquetes de precio y dejar de negociar "depende del cliente".
-4. Medir margen real por proyecto (tiempo + costo de Lovable).
+2. Cerrar la primera venta con la oferta ya empaquetada (Básico/Pro/Premium) — validar que
+   el pitch funciona en la vida real.
+3. ~~Definir los 3 paquetes de precio~~ — CERRADO (2026-08-23).
+4. ~~Medir margen real por proyecto~~ — CERRADO (2026-08-23).
 5. Empezar a trackear los 4 números clave desde el cliente #1: leads contactados,
    propuestas enviadas, tasa de cierre, MRR.
+6. Construir el script/pitch de venta usando la comparación de velocidad+precio contra
+   Hook Agency / Blue Corona / RoofWebs / Roofing Webmasters.

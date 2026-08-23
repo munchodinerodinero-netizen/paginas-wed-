@@ -1,30 +1,29 @@
 # BRAIN.md — Conocimiento clave del negocio
 
-## Oferta actual (estado real, no aspiracional)
+## Oferta — FINAL, confirmada por Alberto (2026-08-23)
 
-- **Producto core:** Página web construida con Lovable (IA)
-- **Extras planeados (sin definir en paquetes todavía):** SEO local, Google Business
-  Profile, formularios de captura de leads, WhatsApp/integración de contacto directo,
-  galería/portafolio de proyectos — todos altamente relevantes para contratistas/roofers,
-  que viven de leads entrantes.
-- **Precio:** $300–$1000 por proyecto (sin tiers). **Debilidad activa**: sin paquetes
-  claros, cada conversación de venta empieza de cero. Sin ancla de precio, es más difícil
-  cerrar rápido y es más fácil que el cliente intente negociar a la baja (lo cual Harvey
-  nunca sugiere aceptar).
-- **Recurrente:** $100/mes mantenimiento — este es el número que construye MRR real y
-  estabilidad, no solo picos de proyectos únicos.
-
-### Recomendación pendiente de validar con Alberto: estructura de paquetes
-
-Propuesta de trabajo (a confirmar/ajustar en sesión, no soy dueño de la decisión final):
+Se acabó el "depende del cliente". Estos son los 3 paquetes oficiales de LYON:
 
 | Paquete | Precio | Incluye |
 |---|---|---|
-| Básico | $300–400 | Landing 1 página, formulario de contacto, mobile-friendly |
-| Pro | $600–700 | 3–5 páginas, galería de proyectos, Google Business optimizado, formulario de leads |
-| Premium | $900–1000 | Todo lo anterior + SEO local básico + integración WhatsApp |
+| **Básico** | $350 | Landing 1 página, formulario de contacto, 100% mobile, listo en 48h |
+| **Pro** ⭐ (el que se empuja siempre — es el ancla) | $650 | 3–5 páginas, galería de proyectos/antes-después, Google Business optimizado, botón directo a WhatsApp |
+| **Premium** | $950 | Todo lo de Pro + SEO local básico + formulario de cotización avanzado |
 
-Todos con **$100/mes de mantenimiento** — no es opcional, es el motor de MRR.
+**Todos con $100/mes de mantenimiento — no negociable, es el motor de MRR.**
+
+Regla de venta: nunca preguntar "¿cuánto quieres gastar?" — liderar con el Pro como
+recomendación por defecto (efecto señuelo/ancla, Cialdini). Si hay objeción de precio: se
+quita alcance (baja al Básico) o se sube prueba de valor — **nunca se baja el precio.**
+
+## Margen real — confirmado
+
+- Herramienta: Lovable Pro, $25/mes (100 créditos)
+- Tiempo estimado por proyecto: ~4 horas
+- Costo de tiempo (valorado conservador a $25/h): $100/proyecto
+- **Margen real en el paquete Pro ($650): ~$540 (83%+)** — excelente margen, pero no es
+  "gratis". Cuando el volumen suba, delegar la construcción deja de ser gasto y pasa a
+  ser la única forma de escalar sin que Alberto siga siendo el cuello de botella.
 
 ## Matemática de la meta ($5K/semana en 4 meses)
 
@@ -72,10 +71,20 @@ Contratistas, roofers, empresas de remodelación:
 
 ## Competencia
 
-Ver `USER.md` — sin competencia directa de nicho mapeada todavía. Plataformas DIY (Wix,
-Squarespace, etc.) son competencia indirecta: el pitch de venta debe posicionar "hecho
-por un experto, listo en días, sin que tú tengas que aprender a usar una herramienta"
-contra el "hazlo tú mismo".
+**Indirecta (herramientas DIY):** Wix, Squarespace, GoDaddy, Shopify, Webflow,
+WordPress.com, Duda, Hostinger, IONOS, Elementor. Pitch: "hecho por un experto, listo en
+días" contra "hazlo tú mismo y pierde semanas aprendiendo".
+
+**Directa (agencias reales del nicho, mapeadas 2026-08-23):**
+- Hook Agency — marketing + web para contratistas, fuerte en roofing
+- Blue Corona — posicionamiento premium/corporativo, project manager dedicado
+- RoofWebs — 16+ años enfocados solo en sitios para roofers
+- Roofing Webmasters — SEO + web combinados
+
+**Ventaja competitiva de LYON frente a ellas:** cotizan miles de dólares y tardan
+semanas (agencias tradicionales, proceso pesado). LYON entrega en 48h por $350–950
+gracias a IA. Usar directo en el pitch: *"Mientras las agencias grandes te cotizan $3,000
+y 4 semanas, yo te entrego un sitio profesional en 48 horas por $650."*
 
 ## Números que Harvey vigila con Alberto (cada sesión)
 
