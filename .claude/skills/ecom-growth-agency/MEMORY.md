@@ -34,3 +34,18 @@ sección "Registro en memoria".
   `references/offer-pricing-aov.md` completo por producto y decidir con cuál se abre el primer
   test (`references/testing-winner-detection.md`), empezando en el primer escalón de
   `references/decision-rules-scaling.md` ($50/día).
+
+## 2026-08-23 — Primer costo real confirmado: Máscara facial LED
+
+- Alberto confirmó costo real del producto ($15) y precio de venta ($100) para la máscara LED.
+  Margen bruto de producto: $85 (85%) — el mejor margen de los 5 productos del portafolio.
+- Con margen bruto conocido, el score subió de "no calculable" a **71/100 (banda TEST)** —
+  ver `products/01-led-face-mask.md`.
+- Siguen pendientes de confirmar: costo real de envío, packaging, y % de devoluciones esperado.
+  Se documentó un modelo ilustrativo con esos 3 valores marcados explícitamente como estimación
+  (no como dato confirmado) para no romper la regla de "nunca inventar costos".
+- **Decisión del CEO**: la máscara LED es el producto que abre el primer test de la agencia,
+  no el kit combinado — presupuesto inicial $50/día, ángulo "ritual nocturno"/self-care como
+  prioridad por menor riesgo de compliance.
+- **Pendiente para cerrar unit economics al 100%**: costo de envío real, packaging real, %
+  de devoluciones real o estimado por el propio historial/proveedor.

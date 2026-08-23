@@ -19,9 +19,10 @@
 - **Saturación**: media — es una categoría con jugadores establecidos de precio alto (clínico/
   premium) y jugadores de dropshipping de precio bajo; el hueco está en el punto medio con
   buena presentación de marca.
-- **Clasificación preliminar**: **B — potencial medio-alto**, sujeto a confirmar costo real y
-  certificación/especificación exacta del proveedor (longitud de onda real, tiempo de uso
-  recomendado) antes de subir a A.
+- **Clasificación**: **B, tendiendo a A** — con costo y precio real confirmados (ver sección
+  7–9), el margen es el mejor de los 5 productos del portafolio. Falta certificación/
+  especificación exacta del proveedor (longitud de onda real, tiempo de uso recomendado) y
+  costo real de envío/devoluciones para confirmar A.
 
 ## 2. Customer Avatar
 
@@ -56,15 +57,60 @@ varios cientos de dólares. No hay un único "precio de mercado", depende del ni
 
 ## 7–9. Recommended Price / Unit Economics / Margin
 
-**Pendiente de datos reales.** Se necesita: costo de proveedor específico, costo de envío,
-especificación real (número de LEDs, longitudes de onda, si trae certificación) antes de
-recomendar precio y calcular margen — ver `references/offer-pricing-aov.md`.
+**Datos confirmados por Alberto (2026-08-23): costo del producto $15 · precio de venta $100.**
 
-## 10. Score preliminar (a completar con datos reales)
+| Línea | Valor | Estado |
+|---|---|---|
+| Precio de venta | $100.00 | confirmado |
+| Costo del producto | $15.00 | confirmado |
+| **Margen bruto (solo producto)** | **$85.00 (85%)** | calculado |
+| Fee de pasarela de pago (2.9% + $0.30) | $3.20 | estándar de industria (Stripe/Shopify), no específico del proveedor |
+| Envío por unidad | pendiente | falta confirmar con proveedor |
+| Packaging | pendiente | falta confirmar con proveedor |
+| % de devoluciones esperado | pendiente | falta confirmar (categoría o histórico propio) |
 
-Demanda 7 · Viralidad 7 (buen momento "reveal"/antes-después) · Competencia 5 · Margen
-pendiente · AOV 6 (buen candidato a bundle con suero) · UGC 8 (se demuestra bien en cámara) ·
-Marca 7 · Bundle 7 · Saturación 6 · Escalabilidad pendiente (depende de proveedor).
+**Modelo ilustrativo** (marcado explícitamente como estimación, no dato confirmado — sustituir
+en cuanto se tengan los 3 pendientes de arriba):
 
-**Total parcial, no calculable a /100 sin margen confirmado — clasificar como TEST tras
-confirmar costo real, no ESCALAR todavía.**
+```
+Envío estimado:        $6.00
+Packaging estimado:    $1.50
+Devoluciones (7% × $100, típico de categoría skincare gadget): $7.00
+Fee de pago (real):    $3.20
+──────────────────────────────
+Costo real estimado:   $32.70
+Margen de contribución antes de CAC: $67.30 (67.3%)
+```
+
+- **CAC máximo (breakeven)** ≈ $67.30 → **ROAS mínimo de breakeven** ≈ 1.49x
+- **CAC objetivo** (para 35% de beneficio neto real) ≈ $32.30 → **ROAS objetivo** ≈ 3.1x
+
+Con 85% de margen bruto en el producto, este es el producto del portafolio con más colchón
+para absorber un CAC alto en TikTok/Meta durante la fase de test.
+
+### Escalera de cantidad (AOV)
+
+| Tier | Precio | Costo (×$15) | Margen bruto |
+|---|---|---|---|
+| 1 unidad | $100 | $15 | $85 (85%) |
+| 2 unidades | $170 (15% off vs. $200) | $30 | $140 (82%) |
+| 3 unidades | $225 (25% off vs. $300) | $45 | $180 (80%) |
+
+Descuento real contra el precio ancla de $100 — no inflado.
+
+## 10. Score actualizado (2026-08-23)
+
+Demanda 7 · Viralidad 7 (buen momento "reveal"/antes-después) · Competencia 5 · **Margen 9**
+(antes pendiente — 85% de margen bruto confirmado) · **AOV 8** (escalera de cantidad muy
+rentable dado el margen) · UGC 8 (se demuestra bien en cámara) · Marca 7 · Bundle 7 ·
+Saturación 6 · Escalabilidad 7 (provisional, pendiente de confirmar tiempos de envío del
+proveedor).
+
+**Total: 71/100 → banda TEST**, con probabilidad alta de subir a TEST INTENSIVO (80+) en
+cuanto se confirmen envío/devoluciones reales, dado el colchón de margen. **No se declara
+ESCALAR sin datos de test real — ver `references/decision-rules-scaling.md`.**
+
+**Recomendación del CEO (2026-08-23):** este producto abre el primer test de la agencia, con
+presupuesto inicial de $50/día (primer escalón de `references/decision-rules-scaling.md`),
+priorizando el ángulo "ritual nocturno" / self-care sobre ángulos que dependan de claims de
+piel, para minimizar riesgo de compliance mientras se valida el ángulo ganador.
