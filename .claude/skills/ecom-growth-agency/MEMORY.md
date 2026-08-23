@@ -163,3 +163,33 @@ sección "Registro en memoria".
 - **Pendiente sigue igual**: definir composición y precio del kit combinado con estos 4 costos
   ya confirmados; envío/packaging/% de devoluciones de los 4 productos siguen siendo
   estimaciones marcadas, no dato confirmado.
+
+## 2026-08-23 — PORTAFOLIO COMPLETO: kit combinado cerrado, los 5 productos con datos reales
+
+- Alberto decidió la composición del kit: **los 4 productos juntos** (máscara + masajeador +
+  rodillo + gua sha). Costo total del kit: $18.00 (suma de los 4 costos confirmados). Suma de
+  precios individuales: $159.
+- **Precio de kit recomendado por el CEO: $129** (Opción A) — margen de contribución estimado
+  ~$87.43 (67.8%), ROAS breakeven ~1.48x, ahorro real mostrado al cliente de $30 (19% off)
+  frente a comprar los 4 por separado. Se documentó también una Opción B a $99 ("kit al precio
+  de la máscara") como promo puntual, no como precio base — deja $30 de margen en la mesa.
+- **Score del kit: 80/100 → TEST INTENSIVO — el más alto de los 5 productos.** Confirma la
+  tesis de branding: el kit es la oferta ancla, no los productos sueltos.
+- **Estructura de funnel decidida**: máscara LED sola en TOFU/MOFU (ángulo "ritual nocturno",
+  $99) → kit combinado como upsell en checkout o en la secuencia post-compra ($129, "+$30 por
+  completar tu ritual") — el kit no se presenta como primera oferta fría.
+
+### Tabla final del portafolio (2026-08-23) — LOS 5 PRODUCTOS CERRADOS
+
+| Producto | Costo | Precio | Margen contribución est. | ROAS breakeven est. | Score |
+|---|---|---|---|---|---|
+| **Kit combinado (los 4)** | $18.00 | $129 | ~$87.43 (68%) | ~1.48x | **80 — TEST INTENSIVO** |
+| Máscara LED | $15.00 | $99 | ~$66 (67%) | ~1.49x | 71 — TEST |
+| Masajeador corazón | $0.60 | $20 | ~$9.62 (48%) | ~2.08x | 67 — OBSERVAR/TEST |
+| Rodillo facial | $0.90 | $20 | ~$13.47 (67%) | ~1.48x | 64 — OBSERVAR |
+| Gua Sha | $1.50 | $20 | ~$12.87 (64%) | ~1.55x | 66 — OBSERVAR |
+
+**Pendiente abierto para toda la agencia**: envío real, packaging real y % de devoluciones real
+de los 5 productos siguen siendo estimaciones marcadas (no dato confirmado) — son el siguiente
+dato crítico a cerrar con proveedor antes de mover presupuesto más allá del primer test de
+$50/día en la máscara LED.
