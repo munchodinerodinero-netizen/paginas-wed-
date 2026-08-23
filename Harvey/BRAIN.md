@@ -115,11 +115,18 @@ por $12,000."*
 *(Referencia histórica — competencia EEUU, pausada: Hook Agency, Blue Corona, RoofWebs,
 Roofing Webmasters.)*
 
-## Portafolio / demo — activo de venta #1
+## Portafolio / demo — activos de venta
 
-**URL pública:** https://radiant-confidence-hub.lovable.app/ (creado 2026-08-23,
+**Activo #1:** https://radiant-confidence-hub.lovable.app/ (creado 2026-08-23,
 construido con Lovable, prueba tangible para usar en cada llamada y mensaje de
 seguimiento a partir de ahora — "mira, aquí tienes un ejemplo real de lo que hago").
+
+**Activo #2:** https://lyon-techos-queretaro-demo-myrz6ga1x.vercel.app/ (creado
+2026-08-23, código propio en el repo `paginas-wed-`, desplegado en Vercel bajo la
+cuenta de Alberto — "Techos Querétaro", landing completa de roofing/remodelación.
+A diferencia del #1, este vive bajo control de Alberto (no atado a Lovable) y es
+la plantilla que se clona para cada cliente nuevo editando `js/config.js`. Usar
+este como el demo principal a partir de ahora; el de Lovable queda de respaldo.
 
 ## Scripts de venta — FINAL (2026-08-23)
 
