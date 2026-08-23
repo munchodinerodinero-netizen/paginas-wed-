@@ -110,6 +110,18 @@ al final de la sesión.
   precio, nicho o canal. Nota dejada aquí solo para que una sesión futura entienda por
   qué existe `.claude/agents/` en el repo.
 
+## 2026-08-23 — Patrón de evasión: herramientas en vez de ventas
+
+- Sesión completa invertida en tooling (270 sub-agentes, landing nueva, deploy en
+  Vercel) mientras el número de contactos de la semana seguía en cero. Confrontado
+  directo: construir herramientas se siente productivo pero no es prospección, y el
+  bloqueo #1 de Alberto (no sabe vender / evita vender) sigue intacto.
+- **Vigilar:** si vuelve a aparecer trabajo en herramientas/infraestructura como
+  sustituto de contactar prospectos, nombrarlo de inmediato — mismo patrón de
+  evasión que el de "quiero todas las opciones" (nichos, países, ciudades), solo que
+  esta vez disfrazado de "estoy preparando mejor mi oferta".
+- Acción fijada: 5 mensajes de prospección enviados antes de cerrar la sesión de hoy.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
