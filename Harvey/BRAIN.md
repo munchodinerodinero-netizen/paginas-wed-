@@ -1,16 +1,34 @@
 # BRAIN.md — Conocimiento clave del negocio
 
-## Oferta — FINAL, confirmada por Alberto (2026-08-23)
+## MERCADO — PIVOTE A MÉXICO (2026-08-23)
 
-Se acabó el "depende del cliente". Estos son los 3 paquetes oficiales de LYON:
+Alberto decidió enfocar LYON en el **mercado mexicano** (contratistas/roofers/
+remodeladores en México), después de considerar y descartar EEUU y "ambos países a la
+vez" (mismo error de dispersión que la elección de nicho inicial — descartado dos veces
+por Harvey, decisión final de Alberto respetada). **Todo lo construido en USD/inglés
+queda como referencia histórica para una futura fase 2 en EEUU — el foco activo hoy es
+100% México, en pesos, en español.**
+
+**Pendiente crítico:** falta la ciudad/estado específico de México. "Todo México" es
+demasiado amplio para prospectar con foco — mismo error de los 35 nichos. Se necesita UNA
+ciudad para arrancar.
+
+## Oferta — FINAL en pesos mexicanos (recalculada 2026-08-23)
+
+Investigación de mercado real: un sitio profesional de agencia/freelancer en México
+cuesta entre $8,000 y $30,000 MXN en 2026 (landing $8K-18K, sitio corporativo $18K-35K).
+LYON se posiciona **por debajo del mercado, más rápido**, sin verse barato/poco serio:
 
 | Paquete | Precio | Incluye |
 |---|---|---|
-| **Básico** | $350 | Landing 1 página, formulario de contacto, 100% mobile, listo en 48h |
-| **Pro** ⭐ (el que se empuja siempre — es el ancla) | $650 | 3–5 páginas, galería de proyectos/antes-después, Google Business optimizado, botón directo a WhatsApp |
-| **Premium** | $950 | Todo lo de Pro + SEO local básico + formulario de cotización avanzado |
+| **Básico** | $6,000 MXN | Landing 1 página, formulario de contacto, 100% mobile, listo en 48h |
+| **Pro** ⭐ (el que se empuja siempre — es el ancla) | $12,000 MXN | 3–5 páginas, galería de proyectos/antes-después, Google Business optimizado, botón directo a WhatsApp |
+| **Premium** | $18,000 MXN | Todo lo de Pro + SEO local básico + formulario de cotización avanzado |
 
-**Todos con $100/mes de mantenimiento — no negociable, es el motor de MRR.**
+**Todos con $900 MXN/mes de mantenimiento — no negociable, es el motor de MRR.**
+
+*(Referencia histórica, mercado EEUU en USD — pausado, no borrado: Básico $350 / Pro $650
+/ Premium $950 + $100/mes.)*
 
 Regla de venta: nunca preguntar "¿cuánto quieres gastar?" — liderar con el Pro como
 recomendación por defecto (efecto señuelo/ancla, Cialdini). Si hay objeción de precio: se
@@ -75,16 +93,26 @@ Contratistas, roofers, empresas de remodelación:
 WordPress.com, Duda, Hostinger, IONOS, Elementor. Pitch: "hecho por un experto, listo en
 días" contra "hazlo tú mismo y pierde semanas aprendiendo".
 
-**Directa (agencias reales del nicho, mapeadas 2026-08-23):**
-- Hook Agency — marketing + web para contratistas, fuerte en roofing
-- Blue Corona — posicionamiento premium/corporativo, project manager dedicado
-- RoofWebs — 16+ años enfocados solo en sitios para roofers
-- Roofing Webmasters — SEO + web combinados
+**Directa — agencias reales del nicho en MÉXICO (mapeadas 2026-08-23):**
+- [Arteweb2](https://www.arteweb2.com.mx/paginas-web-constructores/) — 1,500+ proyectos,
+  15+ años, diseño para contratistas/constructoras/arquitectos
+- [68-Design](https://68-design.com/diseno-web-constructoras.html) — especialistas en
+  constructoras y obra civil, alcance nacional
+- [PC Emprende](https://pcemprende.com/diseno-paginas-web-empresas-construccion/) —
+  WordPress + SEO + ads para construcción/reformas/contratistas
+- [Fénix Byte](https://fenixbyte.com/diseno-web-para-constructoras/) — posicionamiento
+  "solidez y confianza profesional" para constructoras
+- [La Fábrica del SEO](https://www.lafabricadelseo.com/diseno-web-para-constructoras/) —
+  web + estrategia de marketing para constructoras/arquitectos
 
-**Ventaja competitiva de LYON frente a ellas:** cotizan miles de dólares y tardan
-semanas (agencias tradicionales, proceso pesado). LYON entrega en 48h por $350–950
-gracias a IA. Usar directo en el pitch: *"Mientras las agencias grandes te cotizan $3,000
-y 4 semanas, yo te entrego un sitio profesional en 48 horas por $650."*
+**Ventaja competitiva de LYON frente a ellas:** son agencias tradicionales — procesos
+lentos, cotizaciones de $18,000-35,000 MXN para sitios corporativos. LYON entrega en 48h
+desde $6,000 MXN gracias a IA. Usar directo en el pitch: *"Mientras otras agencias te
+cotizan $20,000 pesos y semanas de espera, yo te entrego un sitio profesional en 48 horas
+por $12,000."*
+
+*(Referencia histórica — competencia EEUU, pausada: Hook Agency, Blue Corona, RoofWebs,
+Roofing Webmasters.)*
 
 ## Portafolio / demo — activo de venta #1
 
@@ -158,9 +186,9 @@ tenerte una lista en 48 horas. ¿Quieres ver un ejemplo?"*
   que estás perdiendo porque la gente no te encuentra o no confía en lo que ve en línea?"
 - **Pitch:** "Eso es exactamente lo que resuelvo. Construyo una página web profesional —
   optimizada para móvil, con galería de tus proyectos, formulario de cotización directa, y
-  Google Business optimizado — lista en 48 horas. La mayoría de agencias cobran $3,000+ y
-  tardan un mes. Yo lo hago por una fracción de eso, porque construyo con IA, no con un
-  equipo de desarrolladores lento."
+  Google Business optimizado — lista en 48 horas. La mayoría de agencias cobran $20,000
+  pesos o más y tardan semanas. Yo lo hago por una fracción de eso, porque construyo con
+  IA, no con un equipo de desarrolladores lento."
 - **Cierre directo:** "Tengo dos espacios disponibles esta semana. ¿Te armo con el paquete
   Pro — es el que eligen la mayoría de contratistas — o prefieres empezar más sencillo con
   el Básico?"

@@ -75,6 +75,22 @@ al final de la sesión.
   pero se le cae cuando improvisa fuera de guion ante objeciones inesperadas. Se agregó
   la objeción de Wix/DIY al script para cerrar ese hueco.
 
+## 2026-08-23 — PIVOTE DE MERCADO: México (no EEUU, no ambos)
+
+- Alberto quiso expandir a "todo México" y luego "México y Estados Unidos" a la vez —
+  Harvey confrontó dos veces (mismo error de dispersión que los 35 nichos iniciales,
+  recomendación de enfocarse solo en EEUU por sistema ya probado y mayor poder
+  adquisitivo). Alberto decidió, con la información sobre la mesa: **México, un solo
+  país, un mercado a la vez.** Decisión respetada y ejecutada.
+- **Precio recalculado a pesos mexicanos** con investigación de mercado real (agencias
+  cobran $8,000-35,000 MXN): Básico $6,000 / Pro $12,000 (ancla) / Premium $18,000 MXN,
+  + $900 MXN/mes mantenimiento. El precio en USD queda como referencia histórica para una
+  fase 2 en EEUU, no se usa activamente hoy.
+- **Competidores directos de México mapeados:** Arteweb2, 68-Design, PC Emprende, Fénix
+  Byte, La Fábrica del SEO — todas agencias que le venden a constructoras/contratistas.
+- **Pendiente crítico y bloqueante:** falta la ciudad/estado específico de México donde
+  Alberto va a prospectar. No se puede generar una lista de prospectos real sin esto.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
