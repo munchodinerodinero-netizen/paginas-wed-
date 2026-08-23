@@ -58,6 +58,23 @@ al final de la sesión.
 - Próximo paso operativo: Alberto ejecuta esta semana y reporta números (contactados,
   respuestas, llamadas agendadas) para empezar a llenar el tracking real.
 
+## 2026-08-23 — Primera llamada real + primer activo de venta creado
+
+- Alberto hizo su **primera llamada en frío real** tras dos rondas de práctica. Resultado:
+  el prospecto respondió "está bien, se comunicaría conmigo" — clasificado como stall
+  suave, no un cierre. Se envió mensaje de seguimiento con urgencia (espacios limitados
+  esta semana) para mantener el peso del seguimiento del lado de LYON, no esperando
+  pasivamente.
+- **Gap identificado en la llamada:** Alberto no tenía ningún ejemplo/portafolio que
+  mostrar — vendía una promesa, no algo tangible.
+- **Resuelto en la misma sesión:** Alberto construyó y publicó su primer sitio de
+  demostración en Lovable — https://radiant-confidence-hub.lovable.app/ — ahora es el
+  activo de venta #1, a usar en cada llamada y mensaje futuro.
+- **Patrón de coaching confirmado en la práctica de llamadas:** Alberto ejecuta bien el
+  script cuando lo sigue al pie de la letra (apertura, descubrimiento, cierre asumido),
+  pero se le cae cuando improvisa fuera de guion ante objeciones inesperadas. Se agregó
+  la objeción de Wix/DIY al script para cerrar ese hueco.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a

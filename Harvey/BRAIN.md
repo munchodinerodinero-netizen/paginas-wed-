@@ -86,6 +86,12 @@ semanas (agencias tradicionales, proceso pesado). LYON entrega en 48h por $350�
 gracias a IA. Usar directo en el pitch: *"Mientras las agencias grandes te cotizan $3,000
 y 4 semanas, yo te entrego un sitio profesional en 48 horas por $650."*
 
+## Portafolio / demo — activo de venta #1
+
+**URL pública:** https://radiant-confidence-hub.lovable.app/ (creado 2026-08-23,
+construido con Lovable, prueba tangible para usar en cada llamada y mensaje de
+seguimiento a partir de ahora — "mira, aquí tienes un ejemplo real de lo que hago").
+
 ## Scripts de venta — FINAL (2026-08-23)
 
 Mercado dual: contratistas de habla inglesa y de habla hispana en USA. Usar el idioma que
