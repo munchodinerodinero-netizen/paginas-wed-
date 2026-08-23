@@ -49,3 +49,20 @@ sección "Registro en memoria".
   prioridad por menor riesgo de compliance.
 - **Pendiente para cerrar unit economics al 100%**: costo de envío real, packaging real, %
   de devoluciones real o estimado por el propio historial/proveedor.
+
+## 2026-08-23 — Costos reales confirmados: Rodillo y Gua Sha
+
+- Alberto confirmó costo $13 / precio $30 para **ambos**, rodillo facial y gua sha (mismos
+  números para los dos). Margen bruto de producto: $17 (56.7%) cada uno.
+- ROAS mínimo de breakeven calculado ≈ 2.84x para ambos — casi el doble de exigente que la
+  máscara LED (1.49x). **Esto confirma con datos reales la recomendación previa**: ni el
+  rodillo ni el gua sha se testean como hero product suelto; van como tripwire/entrada y como
+  componentes del kit combinado.
+- Score actualizado en ambos archivos: Margen pasa de "pendiente" a 6/10 (margen % sólido, pero
+  ROAS de breakeven exigente).
+- Aclarado con Alberto: el precio de $100 mencionado en el mensaje anterior correspondía a la
+  máscara LED (ya registrado), no a un producto nuevo.
+- **Pendiente crítico restante**: costo y precio de venta reales del **masajeador
+  facial/corporal (producto 4)** — es el único de los 5 productos sin datos confirmados. El
+  kit combinado (producto 5) sigue sin precio propio, pendiente de definir cuando estén todos
+  los componentes.

@@ -13,8 +13,9 @@
 - **Saturación**: alta como producto suelto (ampliamente disponible), pero con volumen de
   búsqueda algo menor que jade roller según la misma fuente — puede ser el complemento del
   roller en vez de competir 1-a-1 con él.
-- **Clasificación preliminar**: **B/C — mismo patrón que el roller**: fuerte como parte de
-  bundle/ritual, difícil de defender como SKU único.
+- **Clasificación**: **B/C — mismo patrón que el roller**: fuerte como parte de bundle/ritual,
+  difícil de defender como SKU único. Con costo y precio reales confirmados (ver 7–9), el
+  margen % es idéntico al del roller — mismo caso económico.
 
 ## 2. Customer Avatar
 
@@ -45,15 +46,40 @@ no el costo del material en sí.
 
 ## 7–9. Recommended Price / Unit Economics / Margin
 
-**Pendiente de datos reales del proveedor.**
+**Datos confirmados por Alberto (2026-08-23): costo del producto $13 · precio de venta $30**
+(mismos números que el roller).
 
-## 10. Score preliminar
+| Línea | Valor | Estado |
+|---|---|---|
+| Precio de venta | $30.00 | confirmado |
+| Costo del producto | $13.00 | confirmado |
+| **Margen bruto (solo producto)** | **$17.00 (56.7%)** | calculado |
+| Fee de pasarela de pago (2.9% + $0.30) | $1.17 | estándar de industria |
+| Envío por unidad | pendiente | falta confirmar con proveedor |
+| Packaging | pendiente | falta confirmar con proveedor |
+| % de devoluciones esperado | pendiente | falta confirmar |
+
+**Modelo ilustrativo** (mismo supuesto que el roller — producto manual sin batería):
+
+```
+Envío estimado:        $3.00
+Packaging estimado:    $0.75
+Devoluciones (5% × $30): $1.50
+Fee de pago (real):    $1.17
+──────────────────────────────
+Costo real estimado:   $19.42
+Margen de contribución antes de CAC: $10.58 (35.3%)
+```
+
+- **CAC máximo (breakeven)** ≈ $10.58 → **ROAS mínimo de breakeven** ≈ **2.84x**
+
+## 10. Score actualizado (2026-08-23)
 
 Demanda 7 (tracción de contenido fuerte, incluso educativo) · Viralidad 7 · Competencia 3 ·
-Margen potencialmente alto, pendiente confirmar · AOV bajo suelto / alto en bundle · UGC 8
-(fuerte también en formato educativo "cómo se usa realmente") · Marca 5 · Bundle 9 · Saturación
-4 · Escalabilidad alta.
+**Margen 6** (56.7% bruto, breakeven de ROAS exigente — antes "pendiente") · AOV bajo suelto /
+alto en bundle · UGC 8 (fuerte también en formato educativo "cómo se usa realmente") · Marca 5 ·
+Bundle 9 · Saturación 4 · Escalabilidad alta.
 
-**Misma recomendación que el roller: producto de bundle/entrada, no hero product suelto. Su
-ventaja diferencial real frente al roller es el ángulo educativo ("cómo usarlo bien"), que vale
-la pena explotar en SEO y contenido MOFU.**
+**Misma recomendación que el roller, ahora con números reales: producto de bundle/entrada, no
+hero product suelto (ROAS de breakeven ≥2.84x). Su ventaja diferencial real frente al roller es
+el ángulo educativo ("cómo usarlo bien"), que vale la pena explotar en SEO y contenido MOFU.**
