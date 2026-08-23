@@ -50,28 +50,57 @@ del modelo elegido.
 
 ## 7–9. Recommended Price / Unit Economics / Margin
 
-**Precio de venta confirmado por Alberto (2026-08-23): $20.** Costo del producto **todavía
-pendiente** — sigue siendo el único dato que falta para cerrar el portafolio completo de 5
-productos.
+**Datos confirmados por Alberto (2026-08-23): costo del producto $0.60 (confirmado con
+proveedor) · precio de venta $20.**
 
-Referencia no confirmada (de la captura de AliExpress que compartiste del dispositivo facial
-recargable en forma de corazón): precio regular ~$6.04 antes del descuento de bienvenida de
-$0.99 (ese $0.99 no es un costo sostenible — ver nota de compliance de costos). **No uso ese
-$6.04 como costo real hasta que lo confirmes** — podría ser el costo real si compras pedido por
-pedido a ese proveedor, o podría no ser el modelo de compra que vas a usar.
-
-Con precio de venta $20 confirmado, en cuanto tengas el costo real el cálculo es inmediato
-(mismo modelo que los otros 3 productos, `references/offer-pricing-aov.md`). Ejemplo de qué tan
-sensible es este producto al costo real:
-
-| Si el costo fuera... | Margen bruto | ¿Viable con ads? |
+| Línea | Valor | Estado |
 |---|---|---|
-| $6 (referencia AliExpress, sin confirmar) | $14 (70%) | Sí — colchón similar al de la máscara |
-| $10 | $10 (50%) | Probablemente, con CAC controlado |
-| $13 (mismo costo que roller/gua sha) | $7 (35%) | No — mismo problema que roller/gua sha a $20 |
+| Precio de venta | $20.00 | confirmado |
+| Costo del producto | $0.60 | confirmado con proveedor |
+| **Margen bruto (solo producto)** | **$19.40 (97%)** | calculado |
+| Fee de pasarela de pago (2.9% + $0.30) | $0.88 | estándar de industria |
+| Envío por unidad | pendiente | falta confirmar con proveedor |
+| Packaging | pendiente | falta confirmar con proveedor |
+| % de devoluciones esperado | pendiente | falta confirmar |
 
-**Esta tabla es solo para mostrar por qué el costo real importa tanto — no es una
-recomendación de precio ni un costo asumido.**
+**Nota del Financial Analyst**: $0.60 es un costo muy bajo para un dispositivo "recargable" —
+confirmado explícitamente con el proveedor, así que se usa como dato real, pero vale la pena
+verificar en cuanto llegue la primera muestra física que efectivamente trae batería/circuito
+funcional y no es una versión simplificada sin las features anunciadas. Si la especificación no
+sostiene el ángulo "recargable", ajustar el copy antes de escalar.
+
+**Modelo ilustrativo** (estimación marcada, no dato confirmado — mismo supuesto que la máscara
+LED por ser también electrónico):
+
+```
+Envío estimado:        $6.00
+Packaging estimado:    $1.50
+Devoluciones (7% × $20, dispositivo electrónico): $1.40
+Fee de pago (real):    $0.88
+──────────────────────────────
+Costo real estimado:   $10.38
+Margen de contribución antes de CAC: $9.62 (48.1%)
+```
+
+- **CAC máximo (breakeven)** ≈ $9.62 → **ROAS mínimo de breakeven** ≈ **2.08x**
+
+Muy por debajo del breakeven del roller/gua sha (14.6x) y ligeramente más exigente que la
+máscara (1.49x) — segundo mejor caso económico del portafolio.
+
+## 10. Score actualizado (2026-08-23)
+
+Demanda 8 (categoría más grande y en crecimiento del grupo) · Viralidad 6 · Competencia 5 ·
+**Margen 9** (97% bruto, colchón muy fuerte incluso con envío/devoluciones — antes "pendiente")
+· AOV 7 · UGC 7 · Marca 7 (buen candidato a "hero product" de marca por versatilidad) · Bundle 6
+· Saturación 5 · Escalabilidad 7 (provisional, pendiente confirmar especificación real y tiempos
+de envío).
+
+**Total: 67/100 → banda OBSERVAR/TEST** (justo en el límite de 70). El margen es
+excepcionalmente fuerte, pero el score se queda corto por lo que aún no está confirmado
+(especificación real, saturación de la categoría "gadget eléctrico" en general). **Recomendación
+del CEO: segundo candidato de test después de la máscara LED** — el margen sostiene un ROAS de
+breakeven bajo (2.08x), y en cuanto se confirme especificación real sube fácilmente a banda
+TEST/TEST INTENSIVO.
 
 ## 10. Score preliminar
 

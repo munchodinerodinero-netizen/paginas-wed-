@@ -100,3 +100,29 @@ sección "Registro en memoria".
   Se documentó en su archivo una tabla de sensibilidad (costo $6/$10/$13) para mostrar qué tan
   determinante es ese dato antes de decidir si es viable con ads, sin asumir ninguno de los 3
   como real.
+
+## 2026-08-23 — Portafolio de 5 productos CERRADO con costo/precio reales
+
+- Alberto confirmó costo del masajeador ($0.60) **con el proveedor** — se preguntó
+  explícitamente si no sería confusión con el $6.04 de la captura de AliExpress (dado lo bajo
+  del número para un dispositivo "recargable"); Alberto confirmó $0.60 como correcto, así que
+  se usa como dato real. Queda una nota de precaución en el archivo del producto: verificar en
+  la primera muestra física que el dispositivo trae batería/circuito funcional real.
+- **Tabla final del portafolio** (todos con datos de costo y precio confirmados por Alberto):
+
+| Producto | Costo | Precio | Margen contribución est. | ROAS breakeven est. | Viable con ads |
+|---|---|---|---|---|---|
+| Máscara LED | $15 | $99 | ~$66 (67%) | ~1.49x | Sí — mejor del portafolio |
+| Masajeador corazón | $0.60 | $20 | ~$9.62 (48%) | ~2.08x | Sí — segundo mejor |
+| Rodillo facial | $13 | $20 | ~$1.37 (7%) | ~14.6x | **No** — solo orgánico/bundle |
+| Gua Sha | $13 | $20 | ~$1.37 (7%) | ~14.6x | **No** — solo orgánico/bundle |
+
+- **Decisión del CEO**: orden de prioridad de testing pago = (1) Máscara LED, $50/día inicial,
+  (2) Masajeador corazón como segundo test en cuanto la máscara valide el sistema. Rodillo y
+  gua sha quedan fuera de presupuesto de ads propio de forma indefinida al precio actual —
+  solo tráfico orgánico, upsell/cross-sell, o componentes del kit combinado.
+- **Pendiente abierto**: definir composición y precio del kit combinado (producto 5) usando
+  estos costos ya confirmados; envío/packaging/% de devoluciones siguen siendo estimaciones
+  marcadas explícitamente (no dato confirmado) en los 4 productos con costo — pendiente
+  cerrarlos con datos reales del proveedor antes de fijar presupuesto de escalamiento más allá
+  del primer test.
