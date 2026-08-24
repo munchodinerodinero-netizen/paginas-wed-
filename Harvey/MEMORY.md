@@ -100,6 +100,20 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-08-24 — Cuarta repetición del patrón de dispersión (nicho, otra vez)
+
+- Alberto pidió "top 10 nichos más famosos y fáciles de vender" — mismo patrón ya
+  confrontado 3 veces (35 nichos iniciales → 2 países a la vez → 7 ciudades a la vez).
+  Ahora vuelve a la variable ya cerrada desde el día 1: el nicho.
+- Harvey confrontó directo en vez de solo entregar la lista sin comentario. Investigación
+  de mercado (2026) confirma que contratistas/roofing/remodelación (home services) SÍ es
+  uno de los nichos más vendibles que existen — no hay una mejor opción esperando allá
+  afuera, la mejor opción ya se está ejecutando.
+- **Vigilar:** si esto se repite una quinta vez (en precio, en paquete, en canal, o
+  reabriendo nicho otra vez después de esta sesión), es una señal de que evitar decidir
+  se volvió el mecanismo real por el que Alberto evita vender — nombrarlo como tal, no
+  como "investigación de mercado".
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
