@@ -156,6 +156,19 @@ al final de la sesión.
 - **Prospectos nuevos entregados hoy (pendientes de que Alberto los mande):**
   Qross, SG Recubrimientos Industriales, Grupo Iamsa, EDIFIKRTE — mensajes ya
   redactados, esperando confirmación de envío.
+- **Escaló, misma sesión:** tras el primer "no" a automatizar, Alberto
+  insistió explícitamente diciendo "no importa el spam" y pidió una lista
+  diaria de "200 prospectos interesados." Rechazado con más fuerza — no es
+  límite técnico esta vez, es un no de fondo: (1) spam en un nicho chico
+  donde los contratistas se conocen entre sí quema el gremio completo antes
+  del cliente #1 (riesgo real, no hipotético), (2) exposición legal real vía
+  LFPDPPP por mensajes comerciales masivos no solicitados, (3) "200
+  interesados" es un dato inventable — nadie sabe quién está interesado sin
+  contacto real, va contra la regla de nunca inventar métricas.
+  **Alternativa ofrecida:** contratar un VA humano para outreach personal a
+  volumen (~$150-300 USD/mes) en vez de automatizar spam. Pendiente de que
+  Alberto elija: (a) más lotes de nombres reales sin calificar, (b) conversar
+  de contratar VA, o (c) sostener 25-30/día él mismo.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
