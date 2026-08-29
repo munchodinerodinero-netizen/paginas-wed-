@@ -315,6 +315,10 @@ al final de la sesión.
   equipo de 4 existe, y confirmar sin ambigüedad si mandó o no el Mensaje 1 a los 4
   leads restantes. Hasta que eso se confirme limpio, BRAIN.md sigue documentando a
   Alberto como fundador único y el tablero sigue con esos 4 leads en NUEVO.
+- Confrontado directo por la respuesta fuera de tema, Alberto contestó **"2"** — sin
+  contexto, a dos preguntas de texto libre (cuáles leads, quiénes son las 3
+  personas). Sigue sin llegar una respuesta verificable. Nada se actualizó todavía;
+  se le devolvió la pregunta una vez más en lenguaje llano, sin más estructura.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
