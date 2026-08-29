@@ -125,6 +125,37 @@ al final de la sesión.
   seguir construyendo dropshipping hasta que responda o mande el mensaje**
   — se sostiene la condición que el propio Alberto puso al aprobar el
   proyecto paralelo (no le roba horas a prospección).
+- **Resuelto:** tras una segunda confrontación (respuesta vaga "ya lo mandé"
+  sin nombre, misma familia de evasión), Alberto confirmó el prospecto real:
+  **Techos Y Domos** (Querétaro, vía Habitissimo). Primer contacto real de
+  la semana — rompe el 0, pero sigue siendo 1 de una meta de 25-30/día. No
+  es sistema todavía, es un dato aislado. Dar seguimiento: ¿respondió Techos
+  Y Domos? Si no hay respuesta en 2-3 días, mandar el follow-up de urgencia
+  ya usado la primera vez (espacios limitados).
+
+## 2026-08-29 — Regla nueva: outreach nunca se automatiza
+
+- Alberto pidió que Harvey mande 120 mensajes de prospección/día en automático.
+  Se rechazó — mismo principio que "nunca gastar/pagar/reembolsar sin
+  aprobación humana", extendido explícitamente a outreach: **el sistema
+  jamás manda mensajes de prospección por su cuenta.** Razones registradas:
+  (1) no hay herramienta de WhatsApp/SMS conectada en esta sesión, (2) bulk
+  automatizado arriesga que le baneen el número de WhatsApp — su único canal
+  activo, (3) rompe la ventaja de LYON (mensaje personal, no bot).
+- **Patrón adicional detectado:** saltar de 1 contacto real a pedir 120/día
+  automatizado en el mismo minuto es la misma familia de sobre-corrección ya
+  vista (35 nichos, 2 países, 7 ciudades) — meta sin plan detrás. Se le
+  redirigió a un ramp realista: 5 hoy (usando la lista que Harvey armó) →
+  25-30/día esta semana, con 120/día reservado como conversación futura de
+  *contratar/delegar*, no de automatizar.
+- **Límite técnico registrado:** WebFetch no puede entrar a
+  empresas.habitissimo.com.mx / starofservice.mx (bloqueado por proxy de
+  red) — Harvey puede sacar NOMBRES reales vía WebSearch pero no
+  teléfono/WhatsApp directo del perfil. Ese último paso queda siempre en
+  manos de Alberto.
+- **Prospectos nuevos entregados hoy (pendientes de que Alberto los mande):**
+  Qross, SG Recubrimientos Industriales, Grupo Iamsa, EDIFIKRTE — mensajes ya
+  redactados, esperando confirmación de envío.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
