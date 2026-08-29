@@ -171,6 +171,52 @@ al final de la sesión.
   pendientes (uno por FB, uno entrando al sitio de Construcciones Gino), corre
   enriquecer + calificar sobre los 3, y manda el Mensaje 1 a los que califiquen.
 
+## 2026-08-29 — Patrón de dispersión, cuarta repetición: "todo México" otra vez
+
+- Alberto pidió subir a 100-200 leads/día y, en el mismo mensaje, agregar leads "de
+  diversos lugares de todo México" en vez de quedarse en Querétaro. Es la MISMA
+  dispersión ya confrontada tres veces (35 nichos → 1, 2 países → México, 7 ciudades →
+  Querétaro) — la señal de esta vez es idéntica: más opciones/volumen en vez de
+  ejecutar lo que ya tiene enfrente (los 3 leads reales cargados esta misma sesión,
+  ninguno contactado todavía).
+- **Confrontado en el momento**, no validado. Se le devolvió la pregunta forzada de
+  opción única (mismo mecanismo que rompió el patrón con la ciudad) en vez de ampliar
+  el alcance automáticamente.
+- **Hallazgo técnico real, no reproche:** la única vía para volumen alto (100-200/día)
+  es la herramienta de scraping `leads_infinitas`, y su cuenta está en **0 créditos**
+  (ya gastó 150 antes de esta sesión). Una prueba de 10 leads fallo por falta de
+  créditos (HTTP 402, requiere 10). Comprar créditos es una decisión de dinero real de
+  Alberto, no algo que Harvey decide solo — no hay herramienta de compra disponible
+  en esta sesión, tendría que hacerlo el desde su cuenta.
+- **Vigilar:** si este patrón aparece una quinta vez, ya no es "patrón a vigilar" — es
+  el bloqueo real de Alberto (evitar vender escondido en "necesito más/otras
+  opciones"), y hay que decírselo así de directo, sin rodeos.
+- **Decisión de Alberto, con la información sobre la mesa:** confrontado con la
+  pregunta forzada, eligió **"Todo México ahora"** — rompe el foco en Querétaro antes
+  de agotarlo. Es la primera vez que, tras la confrontación, decide EXPANDIR en vez de
+  enfocar (las 3 veces previas resolvió hacia menos opciones). Decisión respetada y
+  ejecutada — Harvey no vuelve a relitigarla — pero queda registrada como override
+  explícito, no como validación silenciosa. Pendiente real: la meta de 25-30
+  leads/día calificados ya era ambiciosa para un solo operador enfocado en una
+  ciudad; repartida entre "todo México" sin sistema, el riesgo de que ningún mercado
+  se trabaje a fondo es más alto, no más bajo.
+- **Ejecutado tras la decisión:** se agregaron 3 leads reales más al tablero, uno por
+  ciudad (Guadalajara, Mérida, Monterrey), mismo estándar de siempre — solo
+  información pública, campos sin confirmar marcados como tales, nunca inventados.
+  Total en el tablero: 6 leads reales en 4 ciudades distintas.
+- **Dato duro que hay que decirle sin suavizar:** de los 6 leads, solo 2 tienen
+  WhatsApp confirmado (los de Querétaro). Los otros 4 requieren que alguien abra su
+  página de Facebook o su sitio Wix para sacar el número — trabajo que Harvey no pudo
+  terminar porque el entorno de esta sesión bloquea el acceso directo a Facebook y a
+  varios sitios (egress bloqueado). Alberto, desde su propio teléfono, hace esto en
+  minutos. Esto es evidencia adicional de que el volumen real hoy no lo limita la
+  falta de leads por encontrar — lo limita la falta de manos trabajando lo que ya se
+  encontró.
+- **leads_infinitas (herramienta de scraping masivo) sigue en 0 créditos** — para
+  cualquier volumen tipo 100-200/día de verdad, ese es el camino técnico correcto,
+  pero requiere que Alberto compre créditos (dinero real, decisión suya, sin
+  herramienta de compra disponible en esta sesión).
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
