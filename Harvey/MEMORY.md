@@ -342,6 +342,10 @@ al final de la sesión.
   inventar datos toda la sesión. Se sostiene la postura: el proyecto sigue siendo el
   CRM completo (buscar → enriquecer → calificar → seguir → cerrar), no solo la primera
   mitad.
+- Nuevo intento vago: "ya las trabajé" (sin especificar qué ni a quién). Sigue sin
+  cumplir la condición puesta (respuesta de un prospecto). Harvey deja de repetir la
+  explicación completa cada vez — respuesta corta, misma postura, sin nueva ronda de
+  preguntas.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
