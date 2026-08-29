@@ -128,6 +128,25 @@ al final de la sesión.
   única fricción que quedaba entre "leer el sistema" y "usarlo hoy" — ya no tiene que
   armar la hoja a mano.
 
+## 2026-08-29 — Tablero LYON: el CRM ya no es una hoja, es una herramienta
+
+- Alberto pidió que lo construyera directamente en vez de darle una plantilla para
+  armar él. Se publicó **Tablero LYON**, un CRM funcional en
+  `https://claude.ai/code/artifact/ebd5ae9d-2162-4240-954c-11bcf1ac1340` — agregar,
+  editar, calificar y cambiar de etapa un lead ahí ya persiste solo (capability
+  `artifact` — cada acción publica una nueva versión de la página), sin Google Sheets
+  de por medio. Incluye las 6 métricas semanales calculadas en vivo, exportación a CSV
+  (capability `downloads`), y filtro/búsqueda/orden por Próxima Fecha.
+- Código fuente guardado en `Harvey/CRM_app.html` como referencia versionada en el
+  repo. `CRM_template.csv` y el flujo de Google Sheets en `CRM.md` quedan como
+  alternativa, no como el camino principal — el tablero es ahora la vía por defecto.
+- Probado antes de publicar: carga de datos, agregar/editar/eliminar lead,
+  validación de campos obligatorios, filtro por etapa y búsqueda, cambio de etapa con
+  color, exportación CSV, y ambos temas (claro/oscuro) — todo con Playwright headless,
+  sin errores de consola.
+- **Próximo paso operativo:** Alberto abre el link, borra los dos leads de ejemplo, y
+  mete sus leads reales ahí — ya no en una hoja aparte.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a

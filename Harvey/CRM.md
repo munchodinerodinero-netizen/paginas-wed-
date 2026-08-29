@@ -1,5 +1,17 @@
 # CRM.md — El sistema de seguimiento de LYON
 
+## El tablero ya está construido — úsalo directo
+
+**https://claude.ai/code/artifact/ebd5ae9d-2162-4240-954c-11bcf1ac1340**
+
+No es una hoja que tengas que armar — es la herramienta corriendo, ya con las 15
+columnas de abajo convertidas en un tablero real: agregas un lead, lo calificas, le
+cambias la etapa con un clic (se colorea solo), ves los 6 números de la semana arriba,
+y exporta a CSV cuando quieras un respaldo. Cada cambio se guarda solo — ábrelo mañana
+y todo sigue ahí. El código fuente vive en `Harvey/CRM_app.html` como referencia; la
+hoja `CRM_template.csv` sigue disponible si en algún momento prefieres Google Sheets a
+la vieja usanza, pero para el uso diario, entra al link de arriba.
+
 ## Mi veredicto
 
 Deja de perder leads por no darles seguimiento. Ese es el problema, no tu oferta —
