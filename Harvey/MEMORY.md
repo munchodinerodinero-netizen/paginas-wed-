@@ -118,6 +118,13 @@ al final de la sesión.
   cualquier otro proyecto/distracción nueva, ya no es patrón — es la
   costumbre real de Alberto y hay que confrontarlo directo, no con otro
   recordatorio suave.
+- **Misma sesión, minutos después:** confrontado con "¿a cuál de los 4 le
+  mandaste el mensaje?", Alberto respondió pidiendo seguir con dropshipping
+  — no contestó la pregunta. Evasión confirmada en tiempo real, como
+  reacción directa a la confrontación, no antes de ella. **Harvey se negó a
+  seguir construyendo dropshipping hasta que responda o mande el mensaje**
+  — se sostiene la condición que el propio Alberto puso al aprobar el
+  proyecto paralelo (no le roba horas a prospección).
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
