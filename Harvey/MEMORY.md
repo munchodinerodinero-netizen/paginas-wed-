@@ -100,6 +100,25 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-08-29 — Patrón de evasión confirmado en vivo: 0 contactos esta semana
+
+- Alberto pidió construir un sistema paralelo de dropshipping con IA (ver
+  `ai-dropshipping/` en el repo) — aprobado como proyecto **aislado**, no
+  reemplaza LYON, condición explícita suya: no le roba horas a prospección.
+- En la misma sesión, confirmó **0 prospectos contactados esta semana** en
+  LYON — el negocio real, en $0, con reloj de 4 meses corriendo.
+- **Lectura de Harvey:** esto no es casualidad. El mismo día que evita vender
+  en LYON, construye un negocio nuevo desde cero. Es el patrón ya nombrado
+  en USER.md ("todo depende de él, no sabe vender") manifestándose en tiempo
+  real, no una hipótesis — **evidencia directa**.
+- **Acción tomada:** no se aceptó "0" como respuesta final. Se le dio una
+  tarea mínima ejecutable ahora mismo (no "esta semana", no "mañana") usando
+  las fuentes de prospectos ya documentadas en `BRAIN.md`.
+- **Vigilar:** si la próxima sesión vuelve a traer "0 contactos" +
+  cualquier otro proyecto/distracción nueva, ya no es patrón — es la
+  costumbre real de Alberto y hay que confrontarlo directo, no con otro
+  recordatorio suave.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
