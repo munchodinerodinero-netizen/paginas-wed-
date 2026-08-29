@@ -147,6 +147,30 @@ al final de la sesión.
 - **Próximo paso operativo:** Alberto abre el link, borra los dos leads de ejemplo, y
   mete sus leads reales ahí — ya no en una hoja aparte.
 
+## 2026-08-29 — Primeros 3 leads reales cargados en el tablero
+
+- Alberto pidió que se borraran los leads de ejemplo y se metieran reales. Se
+  investigó con fuentes públicas (Google, directorios de negocio, Facebook — el
+  acceso directo a Habitissimo/StarOfService/Facebook estuvo bloqueado por la red del
+  entorno, así que la investigación se hizo vía búsqueda web) y se cargaron 3
+  prospectos reales de Querétaro al Tablero LYON, reemplazando los de ejemplo:
+  1. **ImperQro** — impermeabilización de techos, solo Facebook, sin sitio propio.
+     Teléfono sacado de un directorio público (442 234 4292) — **sin confirmar que
+     tenga WhatsApp activo**, marcado en notas.
+  2. **Impermeabilizaciones Querétaro (Imperme.Qro)** — mismo perfil, servicio 24/7,
+     WhatsApp confirmado (442 719 5894), solo Facebook + gmail, sin sitio propio.
+  3. **Construcciones Gino** — constructora general con un sitio gratuito de plantilla
+     (ueniweb, sin dominio propio) — encaja como "Vieja o rota". **WhatsApp
+     DESCONOCIDO**, no se pudo sacar por el bloqueo de red — queda como próxima
+     acción que Alberto lo saque directo del sitio.
+- **Regla que se respetó:** ningún dato inventado. Donde no hubo certeza (WhatsApp de
+  ImperQro y de Construcciones Gino) se dejó marcado explícitamente en vez de
+  adivinar — el mismo principio de "nunca inventes, marca DESCONOCIDO" que ya vive en
+  `CRM.md`.
+- **Próximo paso operativo:** Alberto confirma los 2 WhatsApp marcados como
+  pendientes (uno por FB, uno entrando al sitio de Construcciones Gino), corre
+  enriquecer + calificar sobre los 3, y manda el Mensaje 1 a los que califiquen.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
