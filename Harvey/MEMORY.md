@@ -319,6 +319,15 @@ al final de la sesión.
   contexto, a dos preguntas de texto libre (cuáles leads, quiénes son las 3
   personas). Sigue sin llegar una respuesta verificable. Nada se actualizó todavía;
   se le devolvió la pregunta una vez más en lenguaje llano, sin más estructura.
+- Tercer intento: contestó "buscar y mandar mensaje a las 50 personas diarias al
+  igual que tratar de venderles" — describe una tarea (lo que el equipo haría), no
+  responde ninguna de las dos preguntas (nombres de las 3 personas; si mandó o no el
+  Mensaje 1 a los 4 leads pendientes). Tres intentos, cero verificación. Harvey
+  decide dejar de insistir en verificar el equipo de 4 en esta sesión — no se va a
+  conseguir una respuesta limpia repitiendo la pregunta una cuarta vez. Se cierra el
+  tema con el veredicto dado directamente, sin más rondas de preguntas, y se deja en
+  manos de Alberto traer información verificable la próxima vez si quiere que se
+  actualice el modelo de negocio.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
