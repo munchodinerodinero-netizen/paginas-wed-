@@ -4,7 +4,7 @@
 
 **https://claude.ai/code/artifact/ebd5ae9d-2162-4240-954c-11bcf1ac1340**
 
-No es una hoja que tengas que armar — es la herramienta corriendo, ya con las 15
+No es una hoja que tengas que armar — es la herramienta corriendo, ya con las 16
 columnas de abajo convertidas en un tablero real: agregas un lead, lo calificas, le
 cambias la etapa con un clic (se colorea solo), ves los 6 números de la semana arriba,
 y exporta a CSV cuando quieras un respaldo. Cada cambio se guarda solo — ábrelo mañana
@@ -32,8 +32,8 @@ solo ruido.
 
 ## 1 / La hoja — tu única fuente de verdad
 
-Un Google Sheet. Nómbralo `CRM LYON`. Estas 15 columnas, en este orden. No lo armes a
-mano: ya está listo en `Harvey/CRM_template.csv` con las 15 columnas y dos filas de
+Un Google Sheet. Nómbralo `CRM LYON`. Estas 16 columnas, en este orden. No lo armes a
+mano: ya está listo en `Harvey/CRM_template.csv` con las 16 columnas y dos filas de
 ejemplo (una en NUEVO, una en SEGUIMIENTO) para que veas cómo se ve una fila real
 llena. Abre Google Sheets → **Archivo → Importar → Subir** → sube el CSV → "Reemplazar
 hoja actual" o "Insertar como nueva hoja". Borra las dos filas de ejemplo cuando metas
@@ -49,13 +49,19 @@ tus leads reales — son referencia, no datos.
 | 6 | Tipo | Contratista / Roofer / Remodelador / Otro |
 | 7 | Tiene Web | No / Vieja-rota / Sí-pero-débil |
 | 8 | Instagram/FB | Link si tiene — de aquí sacas el hook de apertura |
-| 9 | Notas | Qué hace, tamaño aparente, y el hook específico para abrir la conversación |
-| 10 | Score | /50 (ver sección 3) |
-| 11 | Etapa | NUEVO → ENRIQUECIDO → CALIFICADO → SEGUIMIENTO → AGENDADO → CERRADO |
-| 12 | Último Contacto | Fecha del último mensaje/llamada |
-| 13 | Próxima Acción | Qué toca hacer después, en una línea |
-| 14 | Próxima Fecha | Cuándo toca hacerlo |
-| 15 | Paquete Propuesto | Básico / Pro / Premium — cuál le ofreciste |
+| 9 | Reseñas | Rating y cantidad si existen (ej. "4.8★, 32 reseñas, Google"), o "Sin reseñas encontradas" — nunca inventado |
+| 10 | Notas | Qué hace, tamaño aparente, y el hook específico para abrir la conversación |
+| 11 | Score | /50 (ver sección 3) |
+| 12 | Etapa | NUEVO → ENRIQUECIDO → CALIFICADO → SEGUIMIENTO → AGENDADO → CERRADO |
+| 13 | Último Contacto | Fecha del último mensaje/llamada |
+| 14 | Próxima Acción | Qué toca hacer después, en una línea |
+| 15 | Próxima Fecha | Cuándo toca hacerlo |
+| 16 | Paquete Propuesto | Básico / Pro / Premium — cuál le ofreciste |
+
+Reseñas es información esencial pero no siempre existe: un negocio con Facebook o Wix
+gratuito casi nunca tiene calificación pública. "Sin reseñas encontradas" es un dato
+real y útil (es un hook: "ni siquiera tienes reseñas en Google, eso también te lo
+resuelvo"), no un campo vacío que rellenar con algo inventado.
 
 Por qué no hay columna de "Email": tu ICP no vive ahí. Contratistas y roofers en
 Querétaro responden WhatsApp, no correo. No construyas el sistema para el lead que
@@ -88,6 +94,8 @@ Dame exactamente esto, nada más:
 TIPO DE NEGOCIO: (contratista / roofer / remodelador / otro)
 TIENE WEB: (no / vieja-rota / sí-pero-débil) — con el link si existe
 REDES: link a Instagram/Facebook si tiene
+RESEÑAS: rating y cantidad si aparecen en Google/Facebook/Habitissimo, o
+  "sin reseñas encontradas" si no hay
 TAMAÑO APARENTE: (solo / equipo chico / equipo mediano)
 NOTAS: 2-3 líneas sobre qué hace y qué necesitaría de alguien como yo
 HOOK: una cosa específica de su negocio que pueda mencionar para probar
