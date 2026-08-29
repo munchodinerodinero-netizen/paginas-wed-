@@ -122,6 +122,11 @@ al final de la sesión.
 - **Próximo paso operativo:** Alberto crea la hoja `CRM LYON` con las 15 columnas hoy,
   mete sus leads activos, y corre el flujo completo (enriquecer → calificar → mensaje 1)
   sobre al menos un lead real antes de la próxima sesión.
+- **Agregado `Harvey/CRM_template.csv`:** el CSV importable directo a Google Sheets con
+  las 15 columnas ya armadas y dos filas de ejemplo (una en NUEVO, una en SEGUIMIENTO)
+  para que Alberto vea el formato real antes de meter sus propios leads. Se quitó la
+  única fricción que quedaba entre "leer el sistema" y "usarlo hoy" — ya no tiene que
+  armar la hoja a mano.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 

@@ -20,7 +20,12 @@ solo ruido.
 
 ## 1 / La hoja — tu única fuente de verdad
 
-Un Google Sheet. Nómbralo `CRM LYON`. Estas 15 columnas, en este orden:
+Un Google Sheet. Nómbralo `CRM LYON`. Estas 15 columnas, en este orden. No lo armes a
+mano: ya está listo en `Harvey/CRM_template.csv` con las 15 columnas y dos filas de
+ejemplo (una en NUEVO, una en SEGUIMIENTO) para que veas cómo se ve una fila real
+llena. Abre Google Sheets → **Archivo → Importar → Subir** → sube el CSV → "Reemplazar
+hoja actual" o "Insertar como nueva hoja". Borra las dos filas de ejemplo cuando metas
+tus leads reales — son referencia, no datos.
 
 | # | Columna | Qué va aquí |
 |---|---|---|
