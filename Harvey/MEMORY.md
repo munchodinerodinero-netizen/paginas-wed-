@@ -346,6 +346,10 @@ al final de la sesión.
   cumplir la condición puesta (respuesta de un prospecto). Harvey deja de repetir la
   explicación completa cada vez — respuesta corta, misma postura, sin nueva ronda de
   preguntas.
+- Después pidió, en general y sin detalle, "crea una manera de conseguir clientes" —
+  no reconoce que esa manera ya existe (scripts en `BRAIN.md`, secuencia de 3
+  mensajes en `CRM.md`, 8 leads reales en el tablero). No se construyó nada nuevo; se
+  le señaló directo a lo que ya tiene.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
