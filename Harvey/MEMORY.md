@@ -328,6 +328,9 @@ al final de la sesión.
   tema con el veredicto dado directamente, sin más rondas de preguntas, y se deja en
   manos de Alberto traer información verificable la próxima vez si quiere que se
   actualice el modelo de negocio.
+- Acto seguido, Alberto dijo "ya le mandé mensaje" (singular, sin decir a quién). No
+  cumple la condición que Harvey puso explícitamente (una respuesta de un prospecto,
+  no un envío más) — se mantiene la misma postura sin abrir otra ronda de preguntas.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
