@@ -297,6 +297,24 @@ al final de la sesión.
   por el resto de la sesión: no se agregan más nichos, no se sube el límite de leads,
   hasta que Alberto reporte una respuesta real de alguno de los 4 leads en SEGUIMIENTO
   o el envío del Mensaje 2 el lunes.
+- **Dato nuevo, sin verificar todavía:** Alberto afirmó "soy yo y 3 personas más" y,
+  preguntado directamente, dijo que son "empleados o socios formales" — contradice
+  directamente el modelo documentado en toda la base (`IDENTITY.md`, `USER.md`,
+  `SOUL.md`: "fundador único", "sin empleados, sin socios"). **No se actualizó
+  BRAIN.md/USER.md todavía** — se pidió verificación (nombres, qué van a hacer esta
+  semana) antes de tocar el modelo de negocio documentado, porque en la MISMA
+  respuesta estructurada, a la pregunta separada de "¿a cuáles de los 4 leads les
+  mandaste el mensaje?" Alberto contestó **"diversos nichos potenciales"** — una
+  respuesta que no tiene relación alguna con la pregunta. Es la novena repetición del
+  patrón de dispersión en esta sesión, y la más reveladora: ya ni siquiera aparece
+  como respuesta a un pedido de Alberto — aparece como "respuesta" a una pregunta de
+  Harvey sobre ejecución. Sube la sospecha de que "empleados o socios formales"
+  también puede ser una afirmación reflexiva para destrabar el pedido de volumen, no
+  un hecho verificado del negocio.
+- **Pendiente crítico para la próxima sesión:** confirmar con nombres reales si el
+  equipo de 4 existe, y confirmar sin ambigüedad si mandó o no el Mensaje 1 a los 4
+  leads restantes. Hasta que eso se confirme limpio, BRAIN.md sigue documentando a
+  Alberto como fundador único y el tablero sigue con esos 4 leads en NUEVO.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
