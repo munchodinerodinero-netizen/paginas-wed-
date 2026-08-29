@@ -260,6 +260,13 @@ al final de la sesión.
   otra petición de más/distinto sin haber tocado el tablero, ya no es un patrón — es
   la evidencia completa de que el bloqueo #1 ("no sabe vender") es en realidad "evita
   vender", y hay que tratarlo como tal en la próxima sesión.
+- **Resuelto en la misma sesión — primer movimiento real:** Alberto confirmó que
+  mandó el Mensaje 1 a los 4 leads con teléfono verificado (ImperQro, Imperme.Qro,
+  Construcciones Gino, Constructora RAHER Peninsular). Se actualizó el tablero:
+  esos 4 pasaron a **SEGUIMIENTO**, con Próxima Acción = Mensaje 2 (día 3) y Próxima
+  Fecha = 2026-09-01. Primera vez en esta sesión que la respuesta a la confrontación
+  fue ejecutar en vez de pedir más — vigilar si se sostiene o si vuelve el patrón la
+  próxima vez que se le entregue algo listo para usar.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
