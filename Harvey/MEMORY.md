@@ -100,6 +100,29 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-08-29 — Sistema de CRM y seguimiento construido
+
+- **Creado `Harvey/CRM.md`:** el sistema completo de seguimiento de LYON, adaptado del
+  framework genérico de CRM con IA que Alberto trajo. Incluye: las 15 columnas de la
+  hoja de leads (con WhatsApp como canal principal, no email — este ICP no vive en
+  correo), prompts de enriquecimiento y calificación ya afinados al negocio real
+  (Querétaro, MXN, Básico/Pro/Premium), la secuencia de 3 mensajes de seguimiento
+  (día 0/3/8) en español usando el portafolio real como cierre del mensaje 3, el flujo
+  de agendado sin fricción (tú propones dos horarios por WhatsApp, no mandas un link de
+  Calendly como primer paso — este ICP no va a entrar a un calendario), y los 6 números
+  semanales a trackear.
+- **Decisión de diseño:** no meter Calendly/Zapier desde el día uno. Es infraestructura
+  antes de tener el problema que la justifica. Se documentó como flujo opcional para
+  cuando el volumen manual sature.
+- **Gap que esto cierra:** hasta hoy, cada lead vivía disperso (WhatsApp, cabeza de
+  Alberto) sin una próxima acción/fecha forzada. Este era el hueco real detrás del
+  bloqueo #1 ("no sabe vender") — no solo no sabe vender, tampoco tenía un sistema que
+  le impidiera olvidar seguir. Ya no hay excusa: la hoja + los 3 mensajes ya están
+  escritos, solo falta ejecutarlos.
+- **Próximo paso operativo:** Alberto crea la hoja `CRM LYON` con las 15 columnas hoy,
+  mete sus leads activos, y corre el flujo completo (enriquecer → calificar → mensaje 1)
+  sobre al menos un lead real antes de la próxima sesión.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a

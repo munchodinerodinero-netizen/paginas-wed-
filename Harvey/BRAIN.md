@@ -229,3 +229,10 @@ prospección diaria (meta: 25-30/día).
 2. Propuestas enviadas
 3. Tasa de cierre
 4. MRR de mantenimiento acumulado
+
+## Sistema de CRM y seguimiento
+
+El sistema completo de captura, enriquecimiento, calificación, seguimiento (3
+mensajes: día 0/3/8), agendado y tracking está en **`Harvey/CRM.md`** — hoja de 15
+columnas, prompts ya afinados al negocio real, y los 6 números semanales. Ejecutar
+ahí, no reinventar el flujo cada vez.
