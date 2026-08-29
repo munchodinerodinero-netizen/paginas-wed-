@@ -170,6 +170,26 @@ al final de la sesión.
   Alberto elija: (a) más lotes de nombres reales sin calificar, (b) conversar
   de contratar VA, o (c) sostener 25-30/día él mismo.
 
+## 2026-08-29 — Estrategia de calificación de interés + PIPELINE.md creado
+
+- Tras el desacuerdo sobre automatizar spam, Alberto pidió algo mucho mejor:
+  una estrategia para saber si un prospecto está realmente interesado, no
+  adivinado. Se le dio la "Escalera de Interés": Contactado → Silencio
+  (seguimiento día 3/7) → No interesado → Interesado (solo se marca cuando
+  el prospecto responde con pregunta/precio/pide ver ejemplo — nunca antes)
+  → Llamada → Propuesta → Cerrado/Perdido.
+- Se creó `Harvey/PIPELINE.md` como tracker vivo — reemplaza "lo llevo en la
+  cabeza" por una tabla real. Sembrado con los 5 prospectos de hoy (Techos Y
+  Domos ya contactado, los otros 4 listos para enviar).
+- **Regla nueva para sesiones futuras:** antes de darle un lote nuevo de
+  prospectos, revisar `PIPELINE.md` — si no actualizó las filas de ayer, no
+  se le da lote nuevo. Evita que la prospección se vuelva otra forma de
+  "estar ocupado" sin cerrar el loop.
+- Sugerencia de reciprocidad (Cialdini) añadida al método de apertura: dar
+  una observación de valor gratis antes del pitch, sube tasa de respuesta
+  real sin sentirse venta fría. Pendiente de que Alberto la pruebe y reporte
+  si sube la tasa de respuesta vs. el script original.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
