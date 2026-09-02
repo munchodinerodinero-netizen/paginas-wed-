@@ -350,6 +350,14 @@ al final de la sesión.
   no reconoce que esa manera ya existe (scripts en `BRAIN.md`, secuencia de 3
   mensajes en `CRM.md`, 8 leads reales en el tablero). No se construyó nada nuevo; se
   le señaló directo a lo que ya tiene.
+- Dijo "solamente hubo uno interesado" — la primera señal del tipo correcto en toda
+  la sesión (una respuesta entrante, no un envío). Se le pidió UNA cosa: cuál de los
+  8 negocios fue. Contestó "de 10 am 8 de la noche" (horario, no el negocio). Se le
+  pidió de nuevo, más simple. Contestó **"LYON"** — su propia empresa, no uno de los
+  8 leads. Tres intentos, cero identificación del lead. Patrón ya no solo de
+  dispersión sino de respuestas que no corresponden a la pregunta hecha,
+  consistentemente, durante más de 45 minutos. Pendiente sin resolver: no se sabe
+  cuál lead respondió ni qué dijo — no se pudo actualizar el tablero.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
