@@ -100,6 +100,25 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-06 — Guion maestro de venta ampliado (objeciones + FAQs detalladas)
+
+- Alberto pidió un guion enfocado en vender, aplicando el principio de Hormozi ("la oferta
+  es el 80% del juego") y usando técnicas de los mayores vendedores de la historia
+  (Girard, Belfort, Cialdini, Gitomer, Rackham, Mandino) para cada objeción/pregunta
+  frecuente, con el detalle de cada una.
+- **Creado y documentado en `BRAIN.md`:** guion completo en español, precios MXN activos
+  (Básico $6,000 / Pro $12,000 / Premium $18,000 + $900/mes) — apertura, SPIN, oferta
+  apilada, cierre asumido, y 8 objeciones/FAQs reales con la técnica de mentor detrás de
+  cada respuesta (precio, "lo hago yo mismo en Wix", "lo pienso/consulto", "no tengo
+  tiempo", "¿es estafa?/prueba social", garantía, tiempo de entrega, qué incluye el
+  mantenimiento, sitio viejo existente, falta de fotos), más cierre pidiendo referido
+  (Ley de los 250 de Girard — incentivo es mantenimiento gratis, nunca descuento del
+  ticket).
+- **Regla reforzada en cada respuesta del guion:** nunca bajar precio — quitar alcance
+  (ofrecer Básico) o subir prueba de valor/garantía/escasez en su lugar.
+- Próximo paso operativo: Alberto ejecuta este guion tal cual en las próximas llamadas y
+  reporta qué objeción nueva no estaba cubierta, para agregarla de inmediato.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a

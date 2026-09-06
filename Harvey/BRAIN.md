@@ -206,6 +206,138 @@ tenerte una lista en 48 horas. ¿Quieres ver un ejemplo?"*
   about. I hand you a finished, professional site in 48 hours so you keep roofing, which
   is where you actually make money."
 
+## Guion maestro de venta — español, precios MXN (añadido 2026-09-06)
+
+Guion ampliado para cerrar en persona/llamada/WhatsApp, en pesos, con la oferta como
+protagonista (Hormozi: "la oferta es el 80% del juego" — si tienes que convencer con 10
+argumentos, la oferta está floja; este guion existe para remover fricción, no para crear
+deseo desde cero). Estructura: apertura → descubrimiento SPIN → oferta apilada → cierre
+asumido → objeciones y preguntas frecuentes con técnica de cada mentor nombrada → petición
+de referido. **Regla que corre en cada respuesta: nunca se baja el precio — se quita
+alcance (Básico) o se sube prueba de valor.**
+
+### 1. Apertura (Belfort — certeza absoluta en la voz, sin titubeo)
+
+> "Hola [Nombre], habla Alberto de LYON. Ayudo a contratistas y negocios de remodelación
+> en Querétaro a dejar de perder clientes frente a la competencia que sí aparece en línea.
+> ¿Tienes 2 minutos?"
+
+### 2. Descubrimiento — SPIN (Rackham)
+
+- **Situación:** "¿Tienes página web ahorita?"
+- **Problema:** "Cuando alguien busca '[tu oficio] en Querétaro' en Google, ¿apareces tú o
+  tu competencia?"
+- **Implicación:** "¿Cuántos trabajos al mes crees que estás perdiendo porque la gente no
+  te encuentra o no confía en lo que ve — o no ve nada?"
+- **Necesidad-beneficio:** "Si tuvieras una página que muestre tus proyectos y te llegue
+  la gente lista para cotizar, directo a tu WhatsApp — ¿eso te cambiaría el mes?"
+
+*Nunca vendas "una página web". Vendes los trabajos que ya está perdiendo hoy — Rackham:
+el prospecto convence a sí mismo cuando responde sus propias implicaciones.*
+
+### 3. Presentación de oferta apilada (Hormozi — apilar valor, no bajar precio)
+
+> "Mira, esto es lo que te armo: página profesional de 3 a 5 secciones, con galería de
+> tus proyectos antes/después, botón directo a WhatsApp para que te escriban al toque,
+> optimizada para que se vea perfecta desde el celular, y tu Google Business bien
+> configurado para que te encuentren primero. Todo listo en 48 horas. Otras agencias en
+> Querétaro te cobran $20,000-35,000 pesos y tardan semanas. Yo te lo entrego por $12,000,
+> con $900 al mes de mantenimiento para que siempre esté al día."
+
+**Nunca preguntes "¿cuánto quieres gastar?"** — lidera siempre con el Pro como default
+(Cialdini: anclaje). Si el prospecto pregunta por algo más chico, ahí revelas el Básico —
+nunca al revés.
+
+### 4. Cierre asumido (Belfort — recta hacia el cierre, nunca "¿te interesa?")
+
+> "Tengo dos espacios esta semana para arrancar. ¿Te armo con el Pro — es el que eligen la
+> mayoría de contratistas — o prefieres el Básico para empezar más sencillo?"
+
+Si dice que sí a cualquiera de los dos: pide el 50% de anticipo ahí mismo, no "te mando
+los datos luego" — Belfort: cada segundo de silencio después del cierre es una puerta para
+que se enfríe.
+
+### 5. Objeciones y preguntas frecuentes — detalladas
+
+**"Está caro" / "¿No lo puedes hacer más barato?"**
+*(Cialdini — escasez y reciprocidad, nunca precio)*
+> "Te entiendo. Pero piénsalo así: un solo trabajo que pierdes porque un cliente no te
+> encontró te cuesta más que esta página completa. Se paga sola con un solo lead. Lo que sí
+> puedo hacer es empezar contigo con el Básico a $6,000 si quieres probar con menos
+> alcance — pero el precio del Pro no se mueve, porque el valor que entrega tampoco."
+> Si insiste después de esto → ofreces Básico. Nunca descuento sobre Pro.
+
+**"Puedo hacerlo yo mismo en Wix / con mi sobrino / gratis"**
+*(Gitomer — la gente compra por sus razones: tiempo y foco, no por función técnica)*
+> "Puedes hacerlo tú mismo, pero son semanas aprendiendo algo que no es tu trabajo —
+> mientras tanto sigues perdiendo esos [X] trabajos al mes que tú mismo me dijiste que
+> pierdes. Yo te lo entrego listo, profesional, en 48 horas, para que tú sigas
+> construyendo/techando/remodelando, que es donde tú haces dinero de verdad."
+
+**"Déjame pensarlo" / "Lo consulto con mi socio/esposa"**
+*(Cialdini — compromiso y coherencia + escasez real, no inventada)*
+> "Claro, es tu decisión. Nada más te aviso: solo tengo dos espacios esta semana porque
+> hago cada sitio yo mismo para que quede bien — no quiero que pierdas el lugar y sigas
+> perdiendo clientes otro mes más esperando. ¿Qué necesitas ver para decidir hoy?"
+> Nunca aceptes el "lo pienso" como respuesta final — pregunta qué falta, no te vayas sin
+> un siguiente paso con fecha.
+
+**"No tengo tiempo ahorita para esto"**
+*(Rackham — regresa a la implicación, no al feature)*
+> "Justo por eso es para ti: tú no tocas nada. Yo lo construyo, tú solo me mandas 5-6 fotos
+> de tus mejores trabajos por WhatsApp y en 48 horas está listo. Menos de 10 minutos de tu
+> tiempo total."
+
+**"¿Cómo sé que no es una estafa? / No te conozco / ¿Tienes experiencia?"**
+*(Cialdini — prueba social y autoridad; Girard — el vendedor se vuelve la prueba)*
+> "Buena pregunta, así debe ser. Mira, aquí tienes un ejemplo real de lo que hago:
+> [radiant-confidence-hub.lovable.app]. Y no me pagas todo por adelantado — arrancamos con
+> el 50%, ves el resultado, y liquidas cuando esté publicado y te guste." *(Cuando ya haya
+> 1-2 clientes reales: reemplazar el demo por testimonio + antes/después real — la prueba
+> social sube de intensidad con cada cierre, Girard.)*
+
+**"¿Qué pasa si no me gusta el resultado?"**
+*(Hormozi — garantía que quita el riesgo sin tocar el precio)*
+> "No pagas el resto hasta que te guste lo que ves. Ajusto lo que haga falta antes de que
+> sueltes el segundo pago. El riesgo lo cargo yo, no tú."
+
+**"¿Cuánto se tarda de verdad?"**
+> "48 horas desde que me mandas tus fotos y datos del negocio — no semanas como otras
+> agencias. Porque construyo con IA, no con un equipo de desarrollo lento."
+
+**"¿Qué incluye exactamente el mantenimiento de $900 al mes?"**
+> "Que tu página nunca se caiga, nunca se vea vieja, y que si necesitas cambiar un precio,
+> una foto de un proyecto nuevo o un dato, yo lo hago — tú no tocas nada nunca. Es tu
+> seguro de que esto siga funcionando sin que pienses en ello."
+
+**"Ya tengo página web, nada más está vieja/no me trae nada"**
+*(Rackham — Implicación: cuantificar el costo de lo que ya tiene y no funciona)*
+> "Eso es peor que no tener nada, porque el cliente sí te busca, te encuentra, y se va con
+> tu competencia porque tu sitio no le da confianza. La rehago completa con galería,
+> WhatsApp directo y optimizada para celular — mismo proceso, 48 horas."
+
+**"No tengo fotos buenas de mis proyectos / no tengo redes"**
+> "No hay problema, con las que tengas en tu celular alcanza — hasta con 5 o 6. Y si de
+> plano no tienes, avísame, te digo qué tomar en tu próximo trabajo mientras arrancamos con
+> lo que sí hay."
+
+### 6. Cierre de la llamada — pedir el referido (Girard — Ley de los 250)
+
+Al liquidar o publicar el sitio, siempre:
+> "Oye, de verdad gracias por la confianza. Una cosa más — seguro conoces a otros
+> [contratistas/roofers/remodeladores] en Querétaro que están en la misma situación sin
+> presencia digital. Si me pasas el contacto de 2 o 3, les hago un precio de cortesía por
+> venir de tu parte, y a ti te regreso un mes de mantenimiento gratis por cada uno que
+> cierre." *(Nunca se baja el precio del proyecto en sí — el incentivo de referido es
+> mantenimiento gratis, no descuento del ticket.)*
+
+### 7. Disciplina detrás del guion (Mandino — hábito diario, no talento)
+
+El guion no sirve si no se ejecuta todos los días con el mismo volumen. "Formaré buenos
+hábitos y seré su esclavo" — Alberto necesita repetir este guion con cada prospecto, sin
+improvisar fuera de él, hasta que la certeza de tono (Belfort) sea automática y no un
+esfuerzo consciente.
+
 ## Fuentes de prospectos reales — Querétaro (2026-08-23)
 
 En vez de una lista fija (se vuelve vieja en días), estas son las fuentes vivas donde
