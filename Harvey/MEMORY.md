@@ -100,6 +100,25 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-07 — Patrón de dispersión, cuarta repetición: tienda online paralela
+
+- Alberto preguntó cómo aumentar ventas de "mi tienda online" con contenido orgánico —
+  confirmado que es un proyecto **separado de LYON** (e-commerce, no la agencia).
+- **Confrontado de inmediato:** LYON sigue en $0, cero clientes cerrados, objetivo de 90
+  días (cerrar los primeros 10 clientes) aún no cumplido — y ya aparece una cuarta
+  distracción de foco. Mismo patrón que los 35 nichos / 2 países / 7 ciudades (ver entrada
+  2026-08-23), ahora escalado a "abrir un segundo negocio" en vez de solo dispersión dentro
+  de LYON.
+- **No se dio estrategia de contenido orgánico.** Se le devolvió la pregunta: ¿la tienda
+  ya existe y factura (entonces falta documentarla en USER.md), o es una idea nueva que
+  compite por su tiempo con LYON?
+- **Pendiente:** confirmar con Alberto qué es esta tienda online — si es real y ya opera,
+  documentarla aquí; si es una idea nueva sin ejecutar, tratarla como distracción hasta
+  cerrar el objetivo de los 10 clientes de LYON.
+- **Vigilar:** el patrón de dispersión ya tiene 4 repeticiones confirmadas. Si vuelve a
+  aparecer, nombrarlo con el conteo exacto — ya no es "un caso aislado" bajo ningún
+  argumento que Alberto presente.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
