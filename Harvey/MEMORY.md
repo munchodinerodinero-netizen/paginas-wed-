@@ -118,6 +118,14 @@ al final de la sesión.
 - **Vigilar:** el patrón de dispersión ya tiene 4 repeticiones confirmadas. Si vuelve a
   aparecer, nombrarlo con el conteo exacto — ya no es "un caso aislado" bajo ningún
   argumento que Alberto presente.
+- **Datos confirmados de la tienda online (2026-09-07):** dropshipping/reventa, factura
+  menos de $5,000 MXN/mes, la opera Alberto solo. Comparado contra LYON (una sola venta
+  Pro = $12,000 MXN + $900/mes, margen 83%+ vs. margen típico de dropshipping 15-25%), la
+  tienda es de bajo valor y compite directo por el tiempo de prospección de LYON.
+- **Decisión de Harvey:** no se invierte tiempo nuevo en contenido orgánico para la tienda
+  por ahora. La tienda queda en modo mantenimiento (sin optimización activa) hasta que
+  Alberto cierre 3-5 clientes de LYON. No se cierra la tienda (ya factura, no se tira por
+  drama), pero no compite por prioridad mientras el objetivo de 90 días siga abierto.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
