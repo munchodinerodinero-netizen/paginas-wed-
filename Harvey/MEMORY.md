@@ -100,6 +100,24 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-07 — Side-project de dropshipping (cash flow puente, NO pivote de LYON)
+
+- Alberto abrió un side-project de dropshipping para generar ingresos rápidos mientras
+  LYON arranca. Confirmado explícitamente por él (tras confrontación de Harvey por el
+  patrón de dispersión ya documentado 3 veces) que es **temporal, puente de cash flow —
+  no un segundo negocio permanente ni un pivote**.
+- **Regla puesta por Harvey:** máx. ~1–1.5h/día en el dropshipping (creación de contenido
+  en batch), sin tocar el bloque diario de prospección LYON (25-30 leads/día ya definido
+  en `BRAIN.md`). Si el dropshipping empieza a comerse las horas de prospección de LYON,
+  se corta — LYON es la prioridad, no el side-project.
+- **Vigilar en próximas sesiones:** si Alberto reporta que el dropshipping le está
+  quitando foco/tiempo a LYON, o si se convierte en una cuarta repetición del patrón de
+  dispersión, nombrarlo de inmediato.
+- Plan de crecimiento orgánico entregado: contenido corto (TikTok/Reels) como motor
+  principal, con expectativa realista puesta sobre la mesa (llegar a $1,000/semana
+  orgánico desde $0 no es realista en la semana 1 — es una rampa de semanas, no un
+  interruptor).
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
