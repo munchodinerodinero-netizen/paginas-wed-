@@ -119,14 +119,68 @@ al final de la sesión.
 - Próximo paso operativo: Alberto ejecuta este guion tal cual en las próximas llamadas y
   reporta qué objeción nueva no estaba cubierta, para agregarla de inmediato.
 
+## 2026-09-09 — Colapso de 3 paquetes a precio único de $6,000 MXN
+
+- Alberto pidió quitar Pro ($12,000) y Premium ($18,000), dejando solo el de $6,000.
+- **Harvey confrontó antes de ejecutar** (decisión de peso, filtro de mentores aplicado):
+  sin Pro como ancla, el $6,000 pierde el efecto señuelo de Cialdini y se vuelve más duro
+  de defender, no menos; y el ticket promedio se parte a la mitad (antes ~$12,000 con Pro
+  de default), lo que exige el doble de cierres para la misma meta de facturación.
+  **Recomendación de Harvey:** colapsar a un solo precio, pero de $12,000 (mismo alcance
+  del Pro), no de $6,000 — capturar el beneficio de simplificar el guion (Alberto se cae
+  del guion cuando improvisa fuera de él, patrón ya confirmado) sin regalar la mitad del
+  ticket.
+- **Alberto escuchó el argumento y decidió $6,000 de todas formas.** Decisión respetada y
+  ejecutada — actualizado en `BRAIN.md`: oferta, guion maestro (oferta apilada, cierre
+  asumido, objeción de precio) y la página `Plano de Cierre` (artifact).
+- **Alcance recortado por Harvey al ejecutar:** se sostienen galería antes/después y botón
+  de WhatsApp (son el corazón de la promesa de venta — sin esto el pitch entero se cae);
+  se retiran "Google Business optimizado" y "3–5 páginas" del precio base — eran tiempo
+  real de Alberto que ya no cabe en la mitad del ticket. Quedan como venta adicional si el
+  cliente los pide, no incluidos por default.
+- **Objeción de precio reescrita:** ya no existe el fallback "ofrece el Básico" — ante
+  insistencia, el único margen de maniobra es ceder un mes de mantenimiento gratis, nunca
+  el ticket del proyecto.
+- **Pendiente abierto (nuevo):** recalcular el margen real en pesos para el ticket de
+  $6,000 (el cálculo de margen que existe en `BRAIN.md` sigue en USD sobre el Pro a $650 —
+  quedó desactualizado con este cambio).
+- **Vigilar en sesiones futuras:** con el ticket promedio partido a la mitad, la meta de
+  facturación exige el doble de cierres/semana que antes — si Alberto no sube el volumen
+  de prospección en consecuencia, la meta de 4 meses se atrasa. Nombrarlo si aparece.
+
+## 2026-09-09 — Guion reenfocado en el Top 10 de cierre fijo de Alberto
+
+- Alberto definió su propio Top 10 de vendedores/cerradores (Girard, Ziglar, Carnegie,
+  Mary Kay Ash, Brian Tracy, Ogilvy, Popeil, Steve Jobs, Grant Cardone, Belfort) y pidió
+  reconstruir el guion de venta alrededor de las preguntas y el estilo de cada uno, no de
+  la mezcla genérica de teoría de ventas usada antes (Hormozi/Cialdini/Rackham/
+  Gitomer/Mandino).
+- **Registrado en `MENTORS.md`:** tabla fija del Top 10 como lente por defecto para
+  guiones de venta (por encima de la biblioteca general), y se agregaron las 5 entradas
+  que faltaban (Ziglar, Ogilvy, Popeil, Jobs, Cardone) a la biblioteca completa.
+- **`BRAIN.md` reescrito (guion maestro v2):** apertura con visión (Jobs) en vez de datos,
+  descubrimiento con interés genuino (Carnegie) antes del SPIN, oferta con demo compartido
+  en vivo (Popeil) y números concretos (Ogilvy), cierre asumido de "cuándo" no "si"
+  (Cardone), objeción de precio con sentí-sintieron-descubrieron (Ziglar), objeción "lo
+  pienso" con seguimiento obligatorio agendado por Alberto mismo (Cardone), referido con
+  reconocimiento genuino (Mary Kay), disciplina diaria con Tracy + Cardone en vez de
+  Mandino.
+- Sigue siendo el mismo producto de fondo: precio único $6,000 MXN + $900/mes (ver entrada
+  anterior del mismo día).
+- Próximo paso operativo: Alberto practica este guion v2 en llamadas reales y reporta qué
+  técnica se sintió natural y cuál se le cayó, para ajustar antes de escalar volumen.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
-   un proceso con volumen medible por semana.
-2. Cerrar la primera venta con la oferta ya empaquetada (Básico/Pro/Premium) — validar que
-   el pitch funciona en la vida real.
-3. ~~Definir los 3 paquetes de precio~~ — CERRADO (2026-08-23).
-4. ~~Medir margen real por proyecto~~ — CERRADO (2026-08-23).
+   un proceso con volumen medible por semana. **Ahora con más urgencia:** ticket único de
+   $6,000 exige el doble de cierres/semana que con el Pro de $12,000 como default.
+2. Cerrar la primera venta con la oferta ya empaquetada (precio único $6,000) — validar
+   que el pitch funciona en la vida real.
+3. ~~Definir los 3 paquetes de precio~~ — CERRADO (2026-08-23), **retirado y colapsado a
+   precio único (2026-09-09)**.
+4. ~~Medir margen real por proyecto~~ — CERRADO (2026-08-23), **desactualizado**: recalcular
+   margen en pesos sobre el ticket de $6,000.
 5. Empezar a trackear los 4 números clave desde el cliente #1: leads contactados,
    propuestas enviadas, tasa de cierre, MRR.
 6. Construir el script/pitch de venta usando la comparación de velocidad+precio contra

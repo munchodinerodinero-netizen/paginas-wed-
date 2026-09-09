@@ -4,6 +4,26 @@ Ante cada decisión de peso (precio, oferta, canal, contratar, invertir, pivotar
 sintetizo brevemente cómo pensarían estos mentores ANTES de dar mi resolución final. No es
 un ensayo — dos o tres líneas de la lente más relevante, y luego mi veredicto.
 
+## Top 10 de cierre — lista fija de Alberto (2026-09-09)
+
+Alberto definió su propio top 10 de vendedores/cerradores de la historia. **Esta es la
+lente por defecto para construir y afinar cualquier guion de venta de LYON** — por encima
+de la biblioteca general de abajo cuando se trata específicamente de guiones de llamada,
+preguntas de descubrimiento y manejo de objeciones.
+
+| # | Vendedor | Especialidad | Lo que aplica a LYON |
+|---|---|---|---|
+| 1 | Joe Girard | Venta directa / autos | Seguimiento + confianza + referidos (Ley de los 250) |
+| 2 | Zig Ziglar | Cierre y persuasión | Psicología + preguntas + manejo de objeciones (técnica sentí-sintieron-descubrieron) |
+| 3 | Dale Carnegie | Influencia | Hacer que el cliente se sienta importante antes de venderle |
+| 4 | Mary Kay Ash | Venta por relaciones | Crear comunidad + reconocimiento genuino + recomendación |
+| 5 | Brian Tracy | Ventas y negociación | Proceso de ventas + disciplina de actividad diaria + cierre |
+| 6 | David Ogilvy | Publicidad / copywriting | Vender con argumentos concretos, números reales y beneficios — nunca vaguedad |
+| 7 | Ron Popeil | Infomerciales | Demostración en vivo + urgencia + apilar bonos ("y eso no es todo") |
+| 8 | Steve Jobs | Venta de visión | Storytelling + emoción + diferenciación, no lista de specs |
+| 9 | Grant Cardone | High-ticket | Persistencia + seguimiento sin descanso + volumen de actividad |
+| 10 | Jordan Belfort | Persuasión / ventas | Control de la conversación + certeza de tono + preguntas hacia el cierre |
+
 ## La biblioteca
 
 - **Harvey Specter** (mentalidad, no autor real) — cierra con confianza total, nunca
@@ -38,6 +58,23 @@ un ensayo — dos o tres líneas de la lente más relevante, y luego mi veredict
   encima de talento; "formaré buenos hábitos y seré su esclavo."
 - **Iosu Lazcoz / Cosimo Chiesa** (Método Sell-It) — metodología de ventas B2B/consultiva
   en español, estructura de proceso comercial.
+- **Zig Ziglar** — objeciones no son un "no", son falta de información. Técnica
+  sentí-sintieron-descubrieron: "entiendo cómo te sientes, otros clientes se sintieron
+  igual, esto es lo que descubrieron." Cierre por asunción y preguntas que hacen que el
+  prospecto se convenza solo.
+- **David Ogilvy** — "el consumidor no es tonto, es tu esposa/tu vecino." Vende con
+  hechos concretos y números reales, nunca con vaguedad ("página profesional" es débil;
+  "$20,000 pesos y semanas de espera vs. $6,000 y 48 horas" es Ogilvy). Respeta la
+  inteligencia del prospecto.
+- **Ron Popeil** — rey del infomercial (Ronco). Demostración en vivo antes que la
+  explicación ("mira, aquí está" > "yo hago"), urgencia real ("solo dos espacios esta
+  semana"), y apilar valor antes de cerrar ("y eso no es todo, también te llega...").
+- **Steve Jobs** — la gente no compra specs, compra visión y transformación. "No vendas
+  una página web" es Rackham y Jobs a la vez — pinta el antes/después: hoy el cliente no
+  te encuentra, mañana te encuentra primero.
+- **Grant Cardone** (10X Rule) — nunca aceptes el primer "no" ni el "lo pienso" como
+  definitivo. El volumen de seguimiento y de actividad diaria es lo que separa a quien
+  cierra de quien solo prospecta.
 
 ## Cómo los uso
 

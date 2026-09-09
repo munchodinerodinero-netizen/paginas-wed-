@@ -14,26 +14,31 @@ Monterrey/Mérida por mayor crecimiento económico real (nearshoring, corredor i
 y menos saturación de agencias grandes. Reserva para expansión futura: Mérida, León,
 Puebla — no antes de agotar Querétaro.
 
-## Oferta — FINAL en pesos mexicanos (recalculada 2026-08-23)
+## Oferta — FINAL en pesos mexicanos, precio único (colapsada 2026-09-09)
 
 Investigación de mercado real: un sitio profesional de agencia/freelancer en México
-cuesta entre $8,000 y $30,000 MXN en 2026 (landing $8K-18K, sitio corporativo $18K-35K).
-LYON se posiciona **por debajo del mercado, más rápido**, sin verse barato/poco serio:
+cuesta entre $8,000 y $30,000 MXN en 2026. LYON se posiciona **por debajo del mercado,
+más rápido**, sin verse barato/poco serio.
 
-| Paquete | Precio | Incluye |
-|---|---|---|
-| **Básico** | $6,000 MXN | Landing 1 página, formulario de contacto, 100% mobile, listo en 48h |
-| **Pro** ⭐ (el que se empuja siempre — es el ancla) | $12,000 MXN | 3–5 páginas, galería de proyectos/antes-después, Google Business optimizado, botón directo a WhatsApp |
-| **Premium** | $18,000 MXN | Todo lo de Pro + SEO local básico + formulario de cotización avanzado |
+**Un solo precio, sin menú de paquetes:** $6,000 MXN — landing profesional de 1 página,
+con galería de tus proyectos antes/después, botón directo a WhatsApp, 100% optimizada
+para celular, lista en 48 horas. **+ $900 MXN/mes de mantenimiento — no negociable, es el
+motor de MRR.**
 
-**Todos con $900 MXN/mes de mantenimiento — no negociable, es el motor de MRR.**
+**Fuera del alcance base** (se cobra aparte si el cliente lo pide): Google Business
+optimizado, sitio de 3–5 páginas, SEO local, formulario de cotización avanzado — eran las
+features de los paquetes Pro/Premium, retirados. Se recortaron del precio base porque son
+tiempo real de Alberto que ya no cabe en la mitad del ticket.
 
-*(Referencia histórica, mercado EEUU en USD — pausado, no borrado: Básico $350 / Pro $650
-/ Premium $950 + $100/mes.)*
+*(Referencia: los paquetes Pro $12,000 / Premium $18,000 MXN existieron hasta 2026-09-09 —
+retirados por decisión de Alberto, ver razonamiento y contrapropuesta de Harvey en
+`MEMORY.md`. Mercado EEUU en USD, pausado: Básico $350 / Pro $650 / Premium $950 +
+$100/mes.)*
 
-Regla de venta: nunca preguntar "¿cuánto quieres gastar?" — liderar con el Pro como
-recomendación por defecto (efecto señuelo/ancla, Cialdini). Si hay objeción de precio: se
-quita alcance (baja al Básico) o se sube prueba de valor — **nunca se baja el precio.**
+Regla de venta: sin ancla arriba con qué comparar, el precio se defiende solo con prueba
+de valor y escasez — la conversación de precio se pone más dura, no menos. Ante objeción:
+como máximo se cede un mes de mantenimiento gratis — **nunca se baja el precio del
+proyecto.**
 
 ## Margen real — confirmado
 
@@ -206,98 +211,114 @@ tenerte una lista en 48 horas. ¿Quieres ver un ejemplo?"*
   about. I hand you a finished, professional site in 48 hours so you keep roofing, which
   is where you actually make money."
 
-## Guion maestro de venta — español, precios MXN (añadido 2026-09-06)
+## Guion maestro de venta v2 — Top 10 de cierre, reenfocado (2026-09-09)
 
-Guion ampliado para cerrar en persona/llamada/WhatsApp, en pesos, con la oferta como
-protagonista (Hormozi: "la oferta es el 80% del juego" — si tienes que convencer con 10
-argumentos, la oferta está floja; este guion existe para remover fricción, no para crear
-deseo desde cero). Estructura: apertura → descubrimiento SPIN → oferta apilada → cierre
-asumido → objeciones y preguntas frecuentes con técnica de cada mentor nombrada → petición
-de referido. **Regla que corre en cada respuesta: nunca se baja el precio — se quita
-alcance (Básico) o se sube prueba de valor.**
+Alberto pidió reenfocar el guion completo en las preguntas y el estilo de venta de su
+**Top 10 fijo** (`MENTORS.md`): Girard, Ziglar, Carnegie, Mary Kay Ash, Brian Tracy,
+Ogilvy, Popeil, Steve Jobs, Grant Cardone, Belfort — no una mezcla genérica de teoría de
+ventas. Un solo producto a vender: el sitio LYON a **$6,000 MXN + $900/mes**. **Regla que
+corre en cada respuesta: nunca se baja el precio — se sube prueba de valor, se usa
+escasez, o como máximo se cede un mes de mantenimiento gratis.**
 
-### 1. Apertura (Belfort — certeza absoluta en la voz, sin titubeo)
+### 1. Apertura — Jobs (visión) + Belfort (tono)
 
-> "Hola [Nombre], habla Alberto de LYON. Ayudo a contratistas y negocios de remodelación
-> en Querétaro a dejar de perder clientes frente a la competencia que sí aparece en línea.
-> ¿Tienes 2 minutos?"
+No abres con datos, abres con la transformación — Jobs vendía el "antes/después", no la
+ficha técnica:
 
-### 2. Descubrimiento — SPIN (Rackham)
+> "Hola [Nombre], habla Alberto de LYON. Imagina que mañana alguien busca [tu oficio] en
+> Querétaro y te encuentra a ti primero, no a tu competencia. Eso es lo que hago. ¿Tienes 2
+> minutos?"
 
+Belfort: esa línea se dice sin titubear ni un segundo — ensáyala hasta que salga
+automática.
+
+### 2. Descubrimiento — Carnegie (hazlo sentir importante) + Ziglar (la pregunta cierra sola)
+
+Carnegie: antes de preguntar de negocio, pregunta por su trabajo real — algo específico
+que viste de él. La gente compra de quien la hace sentir importante, no de quien recita un
+guion de ventas encima.
+
+- **Interés genuino (Carnegie):** "Vi tu trabajo en [obra/publicación específica] — se ve
+  bien hecho. ¿Cuánto tienes en esto?"
 - **Situación:** "¿Tienes página web ahorita?"
 - **Problema:** "Cuando alguien busca '[tu oficio] en Querétaro' en Google, ¿apareces tú o
   tu competencia?"
-- **Implicación:** "¿Cuántos trabajos al mes crees que estás perdiendo porque la gente no
-  te encuentra o no confía en lo que ve — o no ve nada?"
+- **Implicación (Ziglar — la pregunta hace el trabajo de convencer, no tú):** "¿Cuántos
+  trabajos al mes crees que estás perdiendo porque la gente no te encuentra o no confía en
+  lo que ve — o no ve nada?"
 - **Necesidad-beneficio:** "Si tuvieras una página que muestre tus proyectos y te llegue
   la gente lista para cotizar, directo a tu WhatsApp — ¿eso te cambiaría el mes?"
 
-*Nunca vendas "una página web". Vendes los trabajos que ya está perdiendo hoy — Rackham:
-el prospecto convence a sí mismo cuando responde sus propias implicaciones.*
+Nunca vendas "una página web". Vendes los trabajos que ya está perdiendo hoy — el
+prospecto se convence solo cuando responde sus propias preguntas.
 
-### 3. Presentación de oferta apilada (Hormozi — apilar valor, no bajar precio)
+### 3. Oferta — Ogilvy (números concretos) + Popeil (demuestra, no describas)
 
-> "Mira, esto es lo que te armo: página profesional de 3 a 5 secciones, con galería de
-> tus proyectos antes/después, botón directo a WhatsApp para que te escriban al toque,
-> optimizada para que se vea perfecta desde el celular, y tu Google Business bien
-> configurado para que te encuentren primero. Todo listo en 48 horas. Otras agencias en
-> Querétaro te cobran $20,000-35,000 pesos y tardan semanas. Yo te lo entrego por $12,000,
-> con $900 al mes de mantenimiento para que siempre esté al día."
+Ogilvy: nunca vendas con vaguedad — "página profesional" solo no convence, compáralo con
+números reales. Popeil: muestra en vivo, no lo jures — comparte el link del demo mientras
+hablas, no después.
 
-**Nunca preguntes "¿cuánto quieres gastar?"** — lidera siempre con el Pro como default
-(Cialdini: anclaje). Si el prospecto pregunta por algo más chico, ahí revelas el Básico —
-nunca al revés.
+> "Mira, esto es lo que te armo — [comparte aquí el demo:
+> radiant-confidence-hub.lovable.app]: página profesional, con galería de tus proyectos
+> antes/después, botón directo a WhatsApp para que te escriban al toque, optimizada para
+> que se vea perfecta desde el celular. Todo listo en 48 horas. Otras agencias en
+> Querétaro te cobran $20,000–35,000 pesos y tardan semanas. Yo te lo entrego por $6,000 —
+> y eso no es todo: con $900 al mes de mantenimiento nunca tienes que tocarla ni pensar en
+> ella otra vez."
 
-### 4. Cierre asumido (Belfort — recta hacia el cierre, nunca "¿te interesa?")
+**Nunca preguntes "¿cuánto quieres gastar?"** — un solo precio, se defiende con el
+argumento de arriba. No inventes un paquete más barato si lo piden — no existe.
 
-> "Tengo dos espacios esta semana para arrancar. ¿Te armo con el Pro — es el que eligen la
-> mayoría de contratistas — o prefieres el Básico para empezar más sencillo?"
+### 4. Cierre asumido — Belfort (tono) + Cardone (asume, no sueltes)
 
-Si dice que sí a cualquiera de los dos: pide el 50% de anticipo ahí mismo, no "te mando
-los datos luego" — Belfort: cada segundo de silencio después del cierre es una puerta para
-que se enfríe.
+> "Tengo dos espacios esta semana para arrancar. ¿Empezamos hoy con el 50% de anticipo, o
+> prefieres que te aparte el espacio para mañana?"
 
-### 5. Objeciones y preguntas frecuentes — detalladas
+Cardone: esto no es una pregunta de "sí o no" — es una pregunta de "cuándo". Si dice que
+sí a cualquiera de las dos: pide el anticipo ahí mismo, no "te mando los datos luego".
+
+### 5. Objeciones y preguntas frecuentes — por técnica del Top 10
 
 **"Está caro" / "¿No lo puedes hacer más barato?"**
-*(Cialdini — escasez y reciprocidad, nunca precio)*
-> "Te entiendo. Pero piénsalo así: un solo trabajo que pierdes porque un cliente no te
-> encontró te cuesta más que esta página completa. Se paga sola con un solo lead. Lo que sí
-> puedo hacer es empezar contigo con el Básico a $6,000 si quieres probar con menos
-> alcance — pero el precio del Pro no se mueve, porque el valor que entrega tampoco."
-> Si insiste después de esto → ofreces Básico. Nunca descuento sobre Pro.
+*(Ziglar — sentí, sintieron, descubrieron)*
+> "Entiendo cómo te sientes — el precio siempre importa. Otros contratistas se sintieron
+> igual antes de empezar. Lo que descubrieron es que un solo trabajo que pierdes porque un
+> cliente no te encontró les costaba más que la página completa. Se paga sola con un solo
+> lead."
+> Si insiste → no bajes el precio. Como máximo, cede un mes de mantenimiento gratis. No hay
+> paquete más barato que ofrecer — sostenlo.
 
 **"Puedo hacerlo yo mismo en Wix / con mi sobrino / gratis"**
-*(Gitomer — la gente compra por sus razones: tiempo y foco, no por función técnica)*
-> "Puedes hacerlo tú mismo, pero son semanas aprendiendo algo que no es tu trabajo —
-> mientras tanto sigues perdiendo esos [X] trabajos al mes que tú mismo me dijiste que
-> pierdes. Yo te lo entrego listo, profesional, en 48 horas, para que tú sigas
-> construyendo/techando/remodelando, que es donde tú haces dinero de verdad."
+*(Carnegie — resalta lo que él sí sabe hacer, no lo que le falta)*
+> "Y lo puedes hacer bien, seguro — pero tú eres bueno construyendo/techando/remodelando,
+> no armando páginas web. Son semanas de tu tiempo en algo que no es tu trabajo, mientras
+> sigues perdiendo esos [X] trabajos al mes que tú mismo me dijiste que pierdes. Yo te lo
+> entrego listo, profesional, en 48 horas, para que tú sigas haciendo lo tuyo, que es donde
+> generas dinero real."
 
 **"Déjame pensarlo" / "Lo consulto con mi socio/esposa"**
-*(Cialdini — compromiso y coherencia + escasez real, no inventada)*
+*(Cardone — el "lo pienso" no es un no; Girard — quédate en su mente)*
 > "Claro, es tu decisión. Nada más te aviso: solo tengo dos espacios esta semana porque
-> hago cada sitio yo mismo para que quede bien — no quiero que pierdas el lugar y sigas
-> perdiendo clientes otro mes más esperando. ¿Qué necesitas ver para decidir hoy?"
-> Nunca aceptes el "lo pienso" como respuesta final — pregunta qué falta, no te vayas sin
-> un siguiente paso con fecha.
+> hago cada sitio yo mismo para que quede bien. ¿Qué necesitas ver para decidir hoy?"
+> *(Si de verdad no cierra hoy: agenda tú mismo el siguiente contacto, con fecha — nunca lo
+> dejes en "él te avisa". Cardone: el seguimiento es tu trabajo, no el suyo.)*
 
 **"No tengo tiempo ahorita para esto"**
-*(Rackham — regresa a la implicación, no al feature)*
+*(Ogilvy — argumento concreto, no vago)*
 > "Justo por eso es para ti: tú no tocas nada. Yo lo construyo, tú solo me mandas 5-6 fotos
 > de tus mejores trabajos por WhatsApp y en 48 horas está listo. Menos de 10 minutos de tu
-> tiempo total."
+> tiempo total, no una tarde entera."
 
 **"¿Cómo sé que no es una estafa? / No te conozco / ¿Tienes experiencia?"**
-*(Cialdini — prueba social y autoridad; Girard — el vendedor se vuelve la prueba)*
-> "Buena pregunta, así debe ser. Mira, aquí tienes un ejemplo real de lo que hago:
-> [radiant-confidence-hub.lovable.app]. Y no me pagas todo por adelantado — arrancamos con
-> el 50%, ves el resultado, y liquidas cuando esté publicado y te guste." *(Cuando ya haya
-> 1-2 clientes reales: reemplazar el demo por testimonio + antes/después real — la prueba
-> social sube de intensidad con cada cierre, Girard.)*
+*(Girard — el vendedor mismo es la prueba; Popeil — demuéstralo, no lo jures)*
+> "Buena pregunta, así debe ser. Mira, aquí tienes un ejemplo real de lo que hago: [comparte
+> el demo otra vez]. Y no me pagas todo por adelantado — arrancamos con el 50%, ves el
+> resultado, y liquidas cuando esté publicado y te guste." *(En cuanto haya 1-2 clientes
+> reales: reemplaza el demo por el testimonio + antes/después real — la prueba sube de
+> intensidad con cada cierre, Girard.)*
 
 **"¿Qué pasa si no me gusta el resultado?"**
-*(Hormozi — garantía que quita el riesgo sin tocar el precio)*
+*(Ziglar — quita el último obstáculo antes del cierre)*
 > "No pagas el resto hasta que te guste lo que ves. Ajusto lo que haga falta antes de que
 > sueltes el segundo pago. El riesgo lo cargo yo, no tú."
 
@@ -311,32 +332,35 @@ que se enfríe.
 > seguro de que esto siga funcionando sin que pienses en ello."
 
 **"Ya tengo página web, nada más está vieja/no me trae nada"**
-*(Rackham — Implicación: cuantificar el costo de lo que ya tiene y no funciona)*
+*(Jobs — véndele la transformación, no el objeto)*
 > "Eso es peor que no tener nada, porque el cliente sí te busca, te encuentra, y se va con
-> tu competencia porque tu sitio no le da confianza. La rehago completa con galería,
-> WhatsApp directo y optimizada para celular — mismo proceso, 48 horas."
+> tu competencia porque tu sitio no le da confianza. Imagina en vez de eso una página que
+> sí refleje el trabajo que realmente haces — la rehago completa, galería, WhatsApp
+> directo, optimizada para celular, mismo proceso, 48 horas."
 
 **"No tengo fotos buenas de mis proyectos / no tengo redes"**
 > "No hay problema, con las que tengas en tu celular alcanza — hasta con 5 o 6. Y si de
 > plano no tienes, avísame, te digo qué tomar en tu próximo trabajo mientras arrancamos con
 > lo que sí hay."
 
-### 6. Cierre de la llamada — pedir el referido (Girard — Ley de los 250)
+### 6. Cierre real — pedir el referido (Girard — Ley de los 250 + Mary Kay — reconocimiento)
 
-Al liquidar o publicar el sitio, siempre:
-> "Oye, de verdad gracias por la confianza. Una cosa más — seguro conoces a otros
-> [contratistas/roofers/remodeladores] en Querétaro que están en la misma situación sin
-> presencia digital. Si me pasas el contacto de 2 o 3, les hago un precio de cortesía por
-> venir de tu parte, y a ti te regreso un mes de mantenimiento gratis por cada uno que
-> cierre." *(Nunca se baja el precio del proyecto en sí — el incentivo de referido es
-> mantenimiento gratis, no descuento del ticket.)*
+Al liquidar o publicar el sitio, siempre — y dilo como reconocimiento genuino, no como
+trámite (Mary Kay: la gente recuerda cómo la hiciste sentir, no lo que le vendiste):
 
-### 7. Disciplina detrás del guion (Mandino — hábito diario, no talento)
+> "Oye, de verdad gracias por la confianza — se ve que te tomas en serio tu trabajo, y eso
+> se nota. Una cosa más: seguro conoces a otros contratistas en Querétaro que están en la
+> misma situación sin presencia digital. Si me pasas el contacto de 2 o 3, les hago un
+> precio de cortesía por venir de tu parte, y a ti te regreso un mes de mantenimiento
+> gratis por cada uno que cierre." *(Nunca se baja el precio del proyecto — el incentivo de
+> referido es mantenimiento gratis, no descuento del ticket.)*
 
-El guion no sirve si no se ejecuta todos los días con el mismo volumen. "Formaré buenos
-hábitos y seré su esclavo" — Alberto necesita repetir este guion con cada prospecto, sin
-improvisar fuera de él, hasta que la certeza de tono (Belfort) sea automática y no un
-esfuerzo consciente.
+### 7. Disciplina detrás del guion — Brian Tracy (volumen) + Grant Cardone (10X)
+
+El guion no sirve si no se ejecuta todos los días con el mismo volumen. Tracy: la
+actividad predice el resultado más que la suerte — mismo número de contactos cada semana,
+sin excusas. Cardone: un "no" o un "lo pienso" no es el final, es la señal de agendar el
+siguiente contacto, nunca de soltar el prospecto.
 
 ## Fuentes de prospectos reales — Querétaro (2026-08-23)
 
