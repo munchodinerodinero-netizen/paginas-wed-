@@ -118,6 +118,25 @@ al final de la sesión.
   orgánico desde $0 no es realista en la semana 1 — es una rampa de semanas, no un
   interruptor).
 
+## 2026-09-09 — Primer test de ads pagados en el side-project de dropshipping
+
+- Alberto pide estrategia de Meta Ads con $50 de presupuesto para 3-5 ventas/día en la
+  tienda de dropshipping (Shopify "LYON"/novashop, productos NOVA — monitores portátiles y
+  cargador). Es la primera vez que mete dinero real de ads en el side-project — hasta ahora
+  era 100% orgánico (TikTok/Reels/Pinterest/UGC/email, ver sesión 2026-09-07).
+- **Confrontado por Harvey:** 3-5 ventas/día de un producto de $199-500 con $50/día de ads
+  fríos, sin pixel histórico, sin reviews, y sin dominio propio todavía, es matemáticamente
+  muy improbable (requeriría un ROAS de 12-35x en frío). Recomendación dada: liderar la
+  campaña con el NOVA CHARGER ($30, compra de impulso) para lograr el volumen de 3-5
+  ventas/día de forma realista, generar señal de pixel + primeros compradores + reseñas,
+  y correr los monitores NOVA 1/2/3 como retargeting/upsell a esa audiencia ya tibia.
+- **Pendiente de confirmar con Alberto:** (1) si los $50 son presupuesto diario o total de
+  prueba, (2) si el Meta Pixel / Conversions API ya está instalado en la tienda Shopify —
+  bloqueante antes de gastar un dólar en ads.
+- **Recordatorio activo:** dominio propio y las 3 políticas legales (envíos/reembolsos/
+  términos) siguen pendientes de que Alberto las active — son prerequisito antes de correr
+  tráfico pagado, no solo orgánico (ver sesión 2026-09-07).
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
