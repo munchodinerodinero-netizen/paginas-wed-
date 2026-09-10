@@ -170,18 +170,49 @@ al final de la sesión.
 - Próximo paso operativo: Alberto practica este guion v2 en llamadas reales y reporta qué
   técnica se sintió natural y cuál se le cayó, para ajustar antes de escalar volumen.
 
+## 2026-09-10 — Se retira el mantenimiento de $900/mes; guion pasado a lenguaje simple
+
+- Alberto pidió (1) hacer el guion más entendible/plano y (2) quitar el mantenimiento de
+  $900 MXN/mes sin perder la esencia de las técnicas del Top 10.
+- **Harvey nombró el patrón antes de ejecutar:** es el segundo recorte de monetización en
+  dos mensajes seguidos (paquetes → uno solo el 2026-09-09; ahora recurrencia → cero). Sin
+  mensualidad, el 100% del ingreso depende de cerrar $6,000 nuevos cada semana, para
+  siempre — no se acumula ningún colchón de MRR. Decisión respetada y ejecutada.
+- **Red de seguridad agregada al ejecutar:** cambios después de la entrega (texto, fotos,
+  ajustes) se cotizan aparte cuando el cliente los pida — no incluidos gratis de por vida,
+  no es mensualidad. Así Alberto no queda dando soporte gratis indefinido a cambio de nada.
+- **Incentivo de referido cambiado:** ya no puede ser "un mes de mantenimiento gratis"
+  (no existe mantenimiento) — se cambió a **$500 MXN en efectivo por cada referido que
+  cierre**, pagado por Alberto de su margen, sin tocar el precio del cliente nuevo.
+- **`BRAIN.md` reescrito (guion maestro v3):** mismo Top 10, mismas técnicas, pero cada
+  nota ahora explica la técnica en una frase llana en vez de una etiqueta tipo
+  "(Mentor — término técnico)". Objetivo: que cualquiera lo entienda a la primera lectura.
+- **Números que Harvey vigila:** el punto 4 (antes "MRR acumulado") pasa a ser "ingreso
+  total cobrado en la semana" — ya no hay nada que se acumule solo.
+- **Vigilar en sesiones futuras:** si aparece un tercer recorte de monetización (bajar el
+  precio del proyecto, quitar el anticipo del 50%, etc.), nombrarlo como patrón de tres
+  repeticiones — mismo protocolo que se usó con el patrón de "quiero todas las opciones"
+  en nicho/país/ciudad.
+- **Pendiente sin resolver:** la matemática de la meta ($5K/semana en 4 meses) sigue sin
+  recalcularse bajo este modelo — antes asumía que el MRR maduro bajaba la presión de
+  cierres nuevos cada semana; ahora esa vía no existe. Recalcular con el volumen real que
+  Alberto sostenga.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
-   un proceso con volumen medible por semana. **Ahora con más urgencia:** ticket único de
-   $6,000 exige el doble de cierres/semana que con el Pro de $12,000 como default.
-2. Cerrar la primera venta con la oferta ya empaquetada (precio único $6,000) — validar
-   que el pitch funciona en la vida real.
+   un proceso con volumen medible por semana. **Ahora con más urgencia:** sin mensualidad
+   ni Pro de $12,000 como default, todo el ingreso depende de sostener ese volumen para
+   siempre, sin colchón que se acumule.
+2. Cerrar la primera venta con la oferta ya empaquetada (pago único $6,000, sin
+   mensualidad) — validar que el pitch funciona en la vida real.
 3. ~~Definir los 3 paquetes de precio~~ — CERRADO (2026-08-23), **retirado y colapsado a
    precio único (2026-09-09)**.
 4. ~~Medir margen real por proyecto~~ — CERRADO (2026-08-23), **desactualizado**: recalcular
-   margen en pesos sobre el ticket de $6,000.
+   margen en pesos sobre el ticket de $6,000, ahora sin ingreso recurrente que lo respalde.
 5. Empezar a trackear los 4 números clave desde el cliente #1: leads contactados,
-   propuestas enviadas, tasa de cierre, MRR.
+   propuestas enviadas, tasa de cierre, ingreso total cobrado (ya no hay MRR).
 6. Construir el script/pitch de venta usando la comparación de velocidad+precio contra
    Hook Agency / Blue Corona / RoofWebs / Roofing Webmasters.
+7. **Nuevo:** recalcular la matemática de la meta ($5K/semana en 4 meses) sin la vía de
+   MRR madurando — ver entrada 2026-09-10.
