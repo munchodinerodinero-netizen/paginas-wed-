@@ -136,6 +136,21 @@ al final de la sesión.
   caro" — no se ofrece de entrada, no se agrega a la lista base de "qué incluye" del plan
   $300 (ese sigue siendo el plan sin extras que Alberto pidió).
 
+## 2026-09-15 — Guion definitivo: los 18 mentores aplicados a la oferta MXN
+
+- Alberto intentó compartir un artifact de referencia que resultó estar roto/no
+  disponible — sin acceso a él, se le preguntó directamente a qué guion se refería.
+  Eligió: "basándote en todo lo aprendido y en los mejores vendedores".
+- Creado `Harvey/GUION_DEFINITIVO.md`: guion maestro para la oferta activa (Básico/Pro/
+  Premium, MXN, Querétaro) — cada uno de los 18 mentores de `MENTORS.md` aplicado al
+  momento exacto de la llamada donde más rinde (Taggart en apertura, Rackham+Carnegie en
+  descubrimiento, Patterson+Ziglar en reencuadre, Hormozi+Feidner en oferta, Girard en
+  prueba, Cialdini+Belfort en cierre, Girard de nuevo para referido, Gitomer+Popeil en
+  objeciones). Incluye sección aparte (09) con Mandino/Tracy/Barragán — mentalidad para
+  Alberto, no para el cliente.
+- No reemplaza `GUION_LLAMADA_MEXICO.md` (versión limpia para leer en vivo) ni
+  `CIERRE_MAESTRO_MEXICO.md` (el manual extendido) — es la síntesis de los tres.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
