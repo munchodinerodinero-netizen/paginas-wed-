@@ -118,6 +118,20 @@ al final de la sesión.
   prospección estable — nombrarlo de inmediato como el mismo patrón, no como "solo una
   idea nueva". Confirmar si esto quedó en pausa o si se está convirtiendo en un segundo
   frente activo.
+- **Seguimiento mismo día:** Alberto justificó avanzar con YouTube diciendo que ya tiene
+  "15 personas" prospectando para LYON, pagadas a comisión sobre cierre (esto sí resuelve
+  el problema de costo con $0 de caja). Cuando Harvey pidió el número real de contactos o
+  llamadas agendadas generadas por ese equipo esta semana, Alberto respondió "olvídalo,
+  avanza con la automatización" — **nunca dio la cifra**. Decisión final respetada (se
+  siguió adelante con la automatización), pero **el dato clave quedó sin verificar**: no
+  hay confirmación de que las 15 personas estén generando actividad real, solo la
+  afirmación de que existen y el acuerdo de comisión.
+- **Punto que no cambia pase lo que pase con el equipo de prospección:** el bloqueo #1 de
+  Alberto sigue siendo que no sabe cerrar. Delegar prospección (si es real) no resuelve
+  eso — solo aumenta la urgencia de que esté listo para cerrar cuando lleguen llamadas.
+- **Vigilar:** en la próxima sesión, volver a pedir la cifra de actividad del equipo de 15
+  personas y el estado real de LYON (contactos, propuestas, cierres) antes de aceptar más
+  tiempo invertido en el proyecto de YouTube como algo ya "resuelto".
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
