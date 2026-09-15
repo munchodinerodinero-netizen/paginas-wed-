@@ -1,0 +1,31 @@
+ID,Tema,Título provisional,Tipo,Keyword,Intención,Potencial viral,Potencial RPM,Competencia,Dificultad,Evergreen/Trending,Puntuación
+EN-S-B01,Dato: IA revisa contratos 200x más rápido que abogados,26 Seconds vs. 92 Minutes,SEARCH,AI vs lawyers,Search,Alto,Medio,Bajo,Bajo,Evergreen,80.0
+EN-S-B02,Dato: Goldman Sachs estima 300M empleos expuestos a IA,300 Million Jobs,TRENDING,AI job exposure,Search,Alto,Medio,Bajo,Bajo,Trending,79.0
+EN-S-B03,Giro narrativo: apalancamiento no es desempleo,It's Not Unemployment. It's Leverage.,VIRAL,AI jobs leverage,Viral,Alto,Medio,Bajo,Bajo,Evergreen,81.0
+EN-S-B04,Dato: Costco pierde dinero en cada hot dog a propósito,Costco Loses Money on Purpose,SEARCH,Costco hot dog price,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,75.0
+EN-S-B05,Dato: Blockbuster rechazó comprar Netflix por $50M,Blockbuster Said No to This $50M Deal,SEARCH,Blockbuster Netflix offer,Search,Alto,Medio,Bajo,Bajo,Evergreen,78.5
+EN-S-B06,Dato: Kodak inventó la cámara digital en 1975,Kodak Built the Future, Then Buried It,SEARCH,Kodak digital camera 1975,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,74.0
+EN-S-B07,Momento polémico: Nokia rechazó Android antes de que existiera,Nokia Said No to Android,SEARCH,Nokia Android rejection,Search,Medio,Medio,Bajo,Bajo,Evergreen,71.0
+EN-S-B08,Historia rápida: Sam Walton y la camioneta,The Richest Man Drove a Broken Truck,VIRAL,Sam Walton truck story,Viral,Alto,Bajo,Bajo,Bajo,Evergreen,76.0
+EN-S-B09,Historia rápida: Sara Blakely cortó sus medias,She Cut Her Tights and Built a Billion-Dollar Brand,VIRAL,Sara Blakely Spanx origin,Viral,Alto,Bajo,Bajo,Bajo,Evergreen,77.0
+EN-S-B10,Lista: 3 empleos que la IA ya cambió (no eliminó),3 Jobs AI Already Changed,SEARCH,jobs AI changed,Search,Medio-Alto,Medio,Bajo,Bajo,Trending,73.0
+EN-S-B11,Pregunta: ¿Tu trabajo tiene el patrón de riesgo de IA?,Does Your Job Have This Pattern?,HYBRID,AI job risk pattern,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,74.5
+EN-S-B12,Cliffhanger: la aseguradora que ya no usa humanos para esto,The Insurance Company That Stopped Using Humans For This,TRENDING,AI insurance automation,Search,Medio,Medio,Bajo,Bajo,Trending,70.0
+EN-S-B13,Dato: Ryanair gana más en comisiones que en billetes,Ryanair's Real Business Isn't Flights,SEARCH,Ryanair fees revenue,Search,Medio,Medio,Bajo,Bajo,Evergreen,71.5
+EN-S-B14,Dato: IKEA gana más alquilando espacio que vendiendo muebles,IKEA's Secret Business,SEARCH,IKEA business model secret,Search,Medio,Medio,Bajo,Bajo,Evergreen,71.0
+EN-S-B15,Momento polémico: Nvidia bloqueó a la competencia con software, no chips,Nvidia's Real Moat Isn't the Chip,TRENDING,Nvidia CUDA explained,Search,Medio-Alto,Medio-Alto,Bajo,Medio,Trending,74.5
+EN-S-B16,Historia rápida: el fundador que dijo no a Steve Jobs,He Said No to Steve Jobs,VIRAL,rejected Steve Jobs deal,Viral,Alto,Bajo,Bajo,Bajo,Evergreen,75.5
+EN-S-B17,Dato: WeWork perdió $47B de valoración en 8 meses,WeWork Lost $47 Billion in 8 Months,SEARCH,WeWork valuation collapse,Search,Alto,Medio,Bajo,Bajo,Evergreen,77.0
+EN-S-B18,Explicación rápida: por qué McDonald's es una inmobiliaria,McDonald's Isn't a Burger Company,SEARCH,McDonald's real estate,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,72.5
+EN-S-B19,Pregunta: ¿Cuánto vale tu empleo si la IA hace el 80%?,What's Your Job Worth If AI Does 80% of It?,HYBRID,AI job value,Search,Medio,Medio,Bajo,Bajo,Trending,70.5
+EN-S-B20,Dato: la traducción profesional es una industria de $50B en riesgo,The $50B Industry AI Is Quietly Eating,TRENDING,AI translation industry,Search,Medio,Medio,Bajo,Bajo,Trending,71.0
+EN-S-B21,Lista: 5 empresas que murieron por no adaptarse,5 Companies That Died From Not Adapting,SEARCH,companies that failed to adapt,Search,Medio-Alto,Medio,Medio,Bajo,Evergreen,70.0
+EN-S-B22,Cliffhanger: el trabajo que la IA no puede tocar todavía,The One Job AI Still Can't Touch,HYBRID,jobs AI can't replace,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,73.0
+EN-S-B23,Dato: Reed Hastings cerró su propio negocio de DVD por correo,He Shut Down His Own Company on Purpose,VIRAL,Netflix DVD business shutdown,Viral,Medio-Alto,Medio,Bajo,Bajo,Evergreen,73.5
+EN-S-B24,Momento polémico: la demanda que puede decidir quién es dueño de la IA,Who Actually Owns What AI Creates?,TRENDING,AI copyright lawsuit,Search,Medio,Medio,Bajo,Medio,Trending,69.5
+EN-S-B25,Dato: Toys R Us murió por deuda, no por Amazon,It Wasn't Amazon That Killed Toys R Us,SEARCH,why Toys R Us really failed,Search,Medio,Medio,Bajo,Bajo,Evergreen,70.5
+EN-S-B26,Pregunta: si tu jefe usa IA, ¿contrata menos gente o más?,Does AI Mean Your Boss Hires Less or More?,HYBRID,AI hiring impact,Search,Medio,Medio,Bajo,Bajo,Trending,69.0
+EN-S-B27,Explicación rápida: qué es realmente un "moat" de negocio,What's a Business "Moat," Really?,SEARCH,business moat explained,Search,Medio,Medio,Medio,Bajo,Evergreen,68.0
+EN-S-B28,Dato: Amazon Prime rompe cuentas cada año en envíos,Amazon Loses Money on Prime Shipping,SEARCH,Amazon Prime shipping losses,Search,Medio,Medio,Alto,Bajo,Evergreen,66.5
+EN-S-B29,Historia rápida: Phil Knight vendía zapatillas desde el maletero,He Sold Shoes From a Car Trunk. Now It's Nike.,VIRAL,Phil Knight Nike origin story,Viral,Alto,Bajo,Bajo,Bajo,Evergreen,75.0
+EN-S-B30,Lista: 3 señales de que tu industria es la próxima en disrupción,3 Signs Your Industry Is Next,HYBRID,industry disruption signs,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,73.0

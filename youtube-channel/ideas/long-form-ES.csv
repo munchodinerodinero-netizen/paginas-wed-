@@ -1,0 +1,13 @@
+ID,Tema,Título provisional,Tipo,Keyword,Intención,Potencial viral,Potencial RPM,Competencia,Dificultad,Evergreen/Trending,Puntuación
+ES-L01,"[Pilar 2] IA vs abogados corporativos (LawGeex, Goldman Sachs, Harvey AI)",La IA Acaba de Automatizar el Empleo de 100.000€ Que Nadie Vio Venir,HYBRID,automatización IA empleo,Search + comercial,Alto,Medio-Alto,Bajo,Medio,Trending+Evergreen,76.3
+ES-L02,"[Pilar 1] Colapso de Blockbuster y la oferta que rechazó a Netflix",La Oferta de 50 Millones Que Blockbuster Rechazó,SEARCH,por qué quebró Blockbuster,Search,Medio-Alto,Medio-Alto,Medio,Bajo,Evergreen,71.0
+ES-L03,"[Pilar 1] Kodak inventó la cámara digital y la enterró",Kodak Inventó el Futuro y lo Enterró,SEARCH,por qué quebró Kodak,Search,Medio,Medio-Alto,Medio,Bajo,Evergreen,68.5
+ES-L04,"[Pilar 2] Radiólogos e IA: qué pasó realmente",Los Radiólogos Pensaron Que la IA los Reemplazaría. Esto Pasó.,HYBRID,IA radiología,Search + comercial,Medio-Alto,Medio-Alto,Bajo,Medio,Trending+Evergreen,74.5
+ES-L05,"[Pilar 2] IA y trading algorítmico",Cómo la IA se Adueñó de Wall Street en Silencio,HYBRID,IA trading bolsa,Search + comercial,Alto,Alto,Medio,Medio,Trending+Evergreen,77.0
+ES-L06,"[Pilar 3] El modelo de negocio real del hot dog de Costco",El Hot Dog de Costco es una Trampa (Buena),SEARCH,modelo de negocio Costco,Comercial,Medio-Alto,Medio-Alto,Medio,Bajo,Evergreen,72.5
+ES-L07,"[Pilar 3] El monopolio de Nvidia con CUDA",Cómo Nvidia Construyó un Monopolio Que Nadie Puede Romper,HYBRID,monopolio Nvidia CUDA,Comercial + Search,Alto,Alto,Medio,Medio,Trending+Evergreen,78.0
+ES-L08,"[Pilar 4] Sara Blakely y Spanx",Convirtió 5.000€ en una Empresa de Mil Millones Con Medias,VIRAL,historia Sara Blakely Spanx,Viral,Alto,Medio,Bajo,Bajo,Evergreen,76.0
+ES-L09,"[Pilar 4] Reed Hastings mató su propio modelo de negocio dos veces",Mató su Propio Negocio Dos Veces (Y Ganó las Dos),HYBRID,historia Reed Hastings Netflix,Viral + Search,Alto,Medio-Alto,Bajo,Medio,Evergreen,75.5
+ES-L10,"[Pilar 2] El próximo empleo en finanzas (60.000€, ya medio automatizado)",El Empleo de 60.000€ en Finanzas Que Ya Va por la Mitad,HYBRID,automatización IA finanzas,Search + comercial,Medio-Alto,Alto,Bajo,Medio,Trending,74.0
+ES-L11,"[Pilar 1] WeWork: la valoración que se evaporó",WeWork Perdió 43.000 Millones de Euros en 8 Meses,SEARCH,por qué fracasó WeWork,Search,Alto,Medio-Alto,Medio,Bajo,Evergreen,74.5
+ES-L12,"[Pilar 3] Por qué Mercadona no es solo un supermercado",El Verdadero Negocio Detrás de Mercadona,SEARCH,modelo de negocio Mercadona,Comercial,Medio-Alto,Medio,Bajo,Bajo,Evergreen,70.0

@@ -1,0 +1,16 @@
+ID,Tema,Título provisional,Tipo,Keyword,Intención,Potencial viral,Potencial RPM,Competencia,Dificultad,Evergreen/Trending,Puntuación
+ES-S-B01,Dato: IA revisa contratos 200x más rápido que abogados,26 Segundos vs. 92 Minutos,SEARCH,IA vs abogados,Search,Alto,Medio,Bajo,Bajo,Evergreen,78.0
+ES-S-B02,Dato: Goldman Sachs estima 300M empleos expuestos a IA,300 Millones de Empleos,TRENDING,exposición laboral IA,Search,Alto,Medio,Bajo,Bajo,Trending,77.0
+ES-S-B03,Giro narrativo: apalancamiento no es desempleo,No Es Desempleo. Es Apalancamiento.,VIRAL,apalancamiento IA empleos,Viral,Alto,Medio,Bajo,Bajo,Evergreen,79.0
+ES-S-B04,Dato: Costco pierde dinero en cada hot dog a propósito,Costco Pierde Dinero a Propósito,SEARCH,precio hot dog Costco,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,73.0
+ES-S-B05,Dato: Blockbuster rechazó comprar Netflix por 50 millones,Blockbuster Dijo No a Este Trato de 50 Millones,SEARCH,Blockbuster rechazó Netflix,Search,Alto,Medio,Bajo,Bajo,Evergreen,76.5
+ES-S-B06,Historia rápida: Sara Blakely cortó sus medias,Cortó sus Medias y Construyó una Marca de Mil Millones,VIRAL,historia Sara Blakely,Viral,Alto,Bajo,Bajo,Bajo,Evergreen,75.0
+ES-S-B07,Momento polémico: Nvidia bloqueó a la competencia con software,El Verdadero Muro de Nvidia No Es el Chip,TRENDING,Nvidia CUDA explicado,Search,Medio-Alto,Medio-Alto,Bajo,Medio,Trending,72.5
+ES-S-B08,Dato: WeWork perdió 43.000M€ de valoración en 8 meses,WeWork Perdió 43.000 Millones en 8 Meses,SEARCH,colapso valoración WeWork,Search,Alto,Medio,Bajo,Bajo,Evergreen,75.5
+ES-S-B09,Pregunta: ¿tu trabajo tiene el patrón de riesgo de IA?,¿Tu Trabajo Tiene Este Patrón?,HYBRID,riesgo de empleo por IA,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,72.0
+ES-S-B10,Lista: 3 empleos que la IA ya cambió (no eliminó),3 Empleos Que la IA Ya Cambió,SEARCH,empleos que cambió la IA,Search,Medio-Alto,Medio,Bajo,Bajo,Trending,71.0
+ES-S-B11,Explicación rápida: por qué Mercadona no es solo un súper,Por Qué Mercadona No Es Solo un Supermercado,SEARCH,modelo de negocio Mercadona,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,71.5
+ES-S-B12,Historia rápida: mató su propio negocio de DVD a propósito,Cerró su Propia Empresa a Propósito,VIRAL,cierre negocio DVD Netflix,Viral,Medio-Alto,Medio,Bajo,Bajo,Evergreen,72.0
+ES-S-B13,Cliffhanger: el empleo que la IA no puede tocar todavía,El Único Empleo Que la IA Aún No Puede Tocar,HYBRID,empleos que la IA no puede reemplazar,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,71.5
+ES-S-B14,Dato: la traducción profesional es una industria en riesgo,La Industria de 45.000M€ Que la IA Está Devorando en Silencio,TRENDING,IA industria de la traducción,Search,Medio,Medio,Bajo,Bajo,Trending,69.5
+ES-S-B15,Lista: 3 señales de que tu sector es el próximo en disrupción,3 Señales de Que Tu Sector Es el Siguiente,HYBRID,señales de disrupción sectorial,Search,Medio-Alto,Medio,Bajo,Bajo,Evergreen,71.0

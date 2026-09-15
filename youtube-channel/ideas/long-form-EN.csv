@@ -1,0 +1,25 @@
+ID,Tema,Título provisional,Tipo,Keyword,Intención,Potencial viral,Potencial RPM,Competencia,Dificultad,Evergreen/Trending,Puntuación
+EN-L01,"[Pilar 2] IA vs abogados corporativos (LawGeex, Goldman Sachs, Harvey AI)",AI Just Automated the $150K Job Nobody Saw Coming,HYBRID,AI job automation,Search + comercial,Alto,Alto,Medio,Medio,Trending+Evergreen,82.7
+EN-L02,"[Pilar 1] Colapso de Blockbuster y la oferta que le hicieron a Netflix",The $50 Million Offer Blockbuster Laughed At,SEARCH,why did Blockbuster fail,Search,Medio-Alto,Alto,Alto,Bajo,Evergreen,74.5
+EN-L03,"[Pilar 1] Kodak inventó la cámara digital y la enterró",Kodak Invented the Future and Buried It,SEARCH,why did Kodak fail,Search,Medio,Alto,Alto,Bajo,Evergreen,71.0
+EN-L04,"[Pilar 1] Nokia perdió el 50% del mercado en 4 años",Nokia Had Everything. Then It Had Nothing.,SEARCH,why did Nokia fail,Search,Medio,Medio-Alto,Alto,Bajo,Evergreen,68.5
+EN-L05,"[Pilar 1] Toys R Us: la deuda que mató la cadena, no Amazon",The Real Reason Toys R Us Died (It Wasn't Amazon),SEARCH,why did Toys R Us close,Search,Medio,Medio,Medio,Bajo,Evergreen,69.0
+EN-L06,"[Pilar 2] Radiólogos e IA: qué pasó realmente",Radiologists Thought AI Would Replace Them. Here's What Happened.,HYBRID,AI radiology,Search + comercial,Medio-Alto,Alto,Bajo,Medio,Trending+Evergreen,78.0
+EN-L07,"[Pilar 2] IA en aseguradoras: procesamiento de siniestros",The AI That Processes Insurance Claims Faster Than Any Human,TRENDING,AI insurance claims,Search,Medio,Alto,Bajo,Medio,Trending,75.5
+EN-L08,"[Pilar 2] IA y trading algorítmico",How AI Quietly Took Over Wall Street Trading,HYBRID,AI stock trading,Search + comercial,Alto,Alto,Medio,Medio,Trending+Evergreen,80.0
+EN-L09,"[Pilar 2] IA y la industria de traducción ($50B en riesgo)",The $50 Billion Industry AI Is Quietly Destroying,TRENDING,AI translation industry,Search,Medio,Medio-Alto,Bajo,Medio,Trending,74.0
+EN-L10,"[Pilar 2] Call centers: el primer empleo que la IA ya reemplazó",Customer Service Was the Canary in the Coal Mine,HYBRID,AI customer service jobs,Search,Medio-Alto,Medio-Alto,Medio,Bajo,Evergreen,73.5
+EN-L11,"[Pilar 3] El modelo de negocio real del hot dog de $1.50 de Costco",Costco's $1.50 Hot Dog Is a Trap (In a Good Way),SEARCH,Costco business model,Comercial,Medio-Alto,Alto,Medio,Bajo,Evergreen,76.0
+EN-L12,"[Pilar 3] Amazon Prime no es sobre envíos",Amazon Prime Was Never About Shipping,SEARCH,Amazon Prime business model,Comercial,Medio,Alto,Alto,Bajo,Evergreen,72.0
+EN-L13,"[Pilar 3] El verdadero negocio de IKEA",IKEA's Real Business Isn't Furniture,SEARCH,IKEA business model,Comercial,Medio,Medio-Alto,Medio,Bajo,Evergreen,70.5
+EN-L14,"[Pilar 3] Ryanair gana más con comisiones que con billetes",Ryanair Makes More Money From Fees Than Flights,SEARCH,Ryanair business model,Comercial,Medio-Alto,Medio-Alto,Bajo,Bajo,Evergreen,74.0
+EN-L15,"[Pilar 3] El monopolio de Nvidia con CUDA",How Nvidia Built a Monopoly Nobody Can Break,HYBRID,Nvidia CUDA moat,Comercial + Search,Alto,Alto,Medio,Medio,Trending+Evergreen,81.5
+EN-L16,"[Pilar 4] Sam Walton y la camioneta vieja",The Richest Man in America Drove a Beat-Up Truck,VIRAL,Sam Walton story,Viral,Alto,Medio,Bajo,Bajo,Evergreen,77.5
+EN-L17,"[Pilar 4] Sara Blakely y Spanx",She Turned $5,000 Into a Billion-Dollar Company With Pantyhose,VIRAL,Sara Blakely Spanx story,Viral,Alto,Medio,Bajo,Bajo,Evergreen,78.5
+EN-L18,"[Pilar 4] Phil Knight vendía zapatillas desde su coche",He Sold Shoes From His Car Trunk. Now It's Nike.,VIRAL,Phil Knight Nike story,Viral,Medio-Alto,Medio,Bajo,Bajo,Evergreen,73.0
+EN-L19,"[Pilar 4] El fundador que rechazó a Steve Jobs",The Founder Who Said No to Steve Jobs (And Regretted It),VIRAL,rejected Steve Jobs offer,Viral,Medio-Alto,Medio,Bajo,Bajo,Evergreen,72.5
+EN-L20,"[Pilar 4] Reed Hastings mató su propio modelo de negocio dos veces",He Killed His Own Business Model Twice (And Won Both Times),HYBRID,Reed Hastings Netflix story,Viral + Search,Alto,Medio-Alto,Bajo,Medio,Evergreen,79.0
+EN-L21,"[Pilar 2] El próximo empleo en finanzas ($90K, ya medio automatizado)",The $90K Finance Job That's Already Half Gone,HYBRID,AI finance jobs automation,Search + comercial,Medio-Alto,Alto,Bajo,Medio,Trending,76.5
+EN-L22,"[Pilar 3] Por qué McDonald's es en realidad una inmobiliaria",Why McDonald's Is Actually a Real Estate Company,SEARCH,McDonald's real estate business model,Comercial,Medio-Alto,Medio-Alto,Medio,Bajo,Evergreen,73.5
+EN-L23,"[Pilar 2] La demanda que decidirá quién es dueño del contenido generado por IA",The Lawsuit That Could Decide Who Owns AI-Generated Content,TRENDING,AI copyright lawsuit,Search,Medio,Medio,Bajo,Medio,Trending,71.5
+EN-L24,"[Pilar 1] WeWork: la valoración de $47B que se evaporó",WeWork's $47 Billion Valuation Vanished in 8 Months,SEARCH,why did WeWork fail,Search,Alto,Medio-Alto,Medio,Bajo,Evergreen,76.5
