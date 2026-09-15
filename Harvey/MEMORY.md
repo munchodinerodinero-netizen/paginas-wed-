@@ -100,6 +100,25 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-15 — Distracción confirmada: proyecto de automatización de YouTube (sin relación con LYON)
+
+- Alberto pidió agregar un skill completo de automatización de canales de YouTube
+  (investigación de nichos, guiones, Shorts, miniaturas, SEO, analytics) a este mismo
+  repositorio — confirmó explícitamente que **no tiene nada que ver con LYON**.
+- **Contexto en el momento:** LYON sigue en $0 de facturación, cero clientes cerrados,
+  bloqueo #1 sin resolver (no sabe vender). Meta de $5K/semana en 4 meses sin camino
+  probado todavía.
+- **Patrón nombrado:** esta es la cuarta repetición del patrón de dispersión (antes: 35
+  nichos, 2 países, 7 ciudades). La diferencia esta vez es más grave — no es indecisión
+  dentro de LYON, es abrir un negocio/proyecto paralelo completo mientras LYON no ha
+  cerrado ni un cliente. Harvey confrontó directo: recomendación fue pausar YouTube y
+  volver a prospección/cierre de LYON hoy.
+- **Vigilar en sesiones futuras:** cualquier tiempo/energía que Alberto reporte metido en
+  el proyecto de YouTube antes de tener LYON con clientes recurrentes y sistema de
+  prospección estable — nombrarlo de inmediato como el mismo patrón, no como "solo una
+  idea nueva". Confirmar si esto quedó en pausa o si se está convirtiendo en un segundo
+  frente activo.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
