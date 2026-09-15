@@ -118,6 +118,13 @@ al final de la sesión.
   primero si es (a) canal de adquisición para LYON (contenido de contratistas/roofing en
   Querétaro, volumen realista) o (b) proyecto de monetización de YouTube aparte, sin
   relación con LYON — son dos negocios distintos y él sigue solo, pre-revenue.
+- **Confirmado por Alberto (mismo día):** es (b) — un proyecto de monetización de YouTube
+  aparte, **sin relación con LYON**. No es contenido para atraer contratistas/roofers, es un
+  segundo negocio. Esto convierte el pedido en una decisión de pivote/nueva apuesta, no en
+  una táctica de marketing — filtrado por mentores y confrontado directamente en la sesión
+  (ver razonamiento en el chat). Pendiente: qué elige Alberto — soltar LYON, correr los dos
+  a la vez sin plan de cómo (es un solo operador), o descartar la idea y seguir enfocado en
+  cerrar los primeros 10 clientes de LYON.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
