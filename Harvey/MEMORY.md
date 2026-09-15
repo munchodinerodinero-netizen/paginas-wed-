@@ -100,6 +100,25 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-15 — Cuarta repetición del patrón de dispersión: ahora es canal (YouTube)
+
+- Alberto pidió crear y subir automáticamente 10 shorts + 5 videos largos + miniaturas
+  **cada día** a YouTube, optimizados para RPM/viralización — sin conexión declarada con
+  LYON, sus contratistas/roofers de Querétaro, ni su objetivo #1 de 90 días (cerrar los
+  primeros 10 clientes).
+- **Patrón confirmado por cuarta vez** (mismo comportamiento que los 35 nichos, los 2
+  países, y las 7 ciudades): Alberto salta a un canal nuevo, de altísimo volumen operativo,
+  sin haber validado ni saturado el canal actual (prospección manual, todavía en $0).
+  Nombrado directamente en la sesión, no dejado pasar.
+- **Bloqueo técnico real:** esta sesión no tiene conector de publicación a YouTube (solo
+  hay generación de video/imagen vía `maqrketing` y publicación a TikTok) — "subir cada día
+  a YouTube" no es ejecutable desde aquí sin una herramienta de YouTube conectada, aparte
+  de si es la jugada correcta o no.
+- **Pendiente de resolver con Alberto:** si insiste en contenido, se necesita definir
+  primero si es (a) canal de adquisición para LYON (contenido de contratistas/roofing en
+  Querétaro, volumen realista) o (b) proyecto de monetización de YouTube aparte, sin
+  relación con LYON — son dos negocios distintos y él sigue solo, pre-revenue.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
