@@ -28,6 +28,10 @@ LYON se posiciona **por debajo del mercado, más rápido**, sin verse barato/poc
 
 **Todos con $900 MXN/mes de mantenimiento — no negociable, es el motor de MRR.**
 
+**Estructura de pago (confirmada 2026-09-15):** 50% de anticipo para arrancar el proyecto,
+50% contra entrega. Básico $3,000+$3,000 / Pro $6,000+$6,000 / Premium $9,000+$9,000.
+Mantenimiento mensual se cobra aparte, desde el mes de entrega.
+
 *(Referencia histórica, mercado EEUU en USD — pausado, no borrado: Básico $350 / Pro $650
 / Premium $950 + $100/mes.)*
 

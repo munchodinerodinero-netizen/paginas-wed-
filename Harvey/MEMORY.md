@@ -110,10 +110,12 @@ al final de la sesión.
   de entrega, cambios post-entrega, "lo hago yo mismo en Wix", "¿cómo sé que trae
   clientes?", qué pasa si deja de pagar mantenimiento, competencia con mejor web, etc.) —
   cada una resuelta subiendo valor percibido, nunca bajando precio.
-- **Pendiente abierto (nuevo):** estructura de pago (% de anticipo vs. contra entrega) no
-  está definida — Alberto se la va a topar en la próxima llamada real y no debe
-  improvisarla. Definir antes del próximo cierre.
-- **Pendiente abierto (nuevo):** en cuanto cierre los primeros 3-5 clientes en Querétaro,
+- ~~Pendiente: estructura de pago~~ — CERRADO (2026-09-15). Alberto propuso "150 y 150"
+  suelto, sin atarlo a los paquetes en pesos — confrontado por no cuadrar con ningún
+  paquete real. Se fijó como 50% anticipo / 50% contra entrega sobre cada paquete: Básico
+  $3,000+$3,000 / Pro $6,000+$6,000 / Premium $9,000+$9,000. Actualizado en `BRAIN.md` y
+  `CIERRE_MAESTRO_MEXICO.md`.
+- **Pendiente abierto:** en cuanto cierre los primeros 3-5 clientes en Querétaro,
   capturar 1-2 testimonios/casos con número real de leads generados — sustituye la
   respuesta genérica de prueba social en la duda "¿cómo sé que me va a traer clientes?".
 

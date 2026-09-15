@@ -182,12 +182,17 @@ respuesta genérica y la vuelve mucho más fuerte. Ver `MEMORY.md`.)*
 ### "¿Tengo que pagar todo por adelantado?"
 
 *Lente Cialdini: reciprocidad — da certeza antes de pedir el pago.*
-"Te pido [definir estructura: ej. 50% para arrancar, 50% contra
-entrega] — así ambos tenemos algo en juego y tú ves resultado antes de
-completar el pago." *(Pendiente: Alberto tiene que fijar y confirmar esta
-estructura de pago — hoy no está definida en `BRAIN.md`, y es una
-pregunta que le va a caer en la próxima llamada real. No se improvisa en
-vivo.)*
+"No — te pido 50% para arrancar y el otro 50% contra entrega, cuando ya
+ves tu sitio funcionando. Así ambos tenemos algo en juego."
+
+**Estructura de pago — FINAL (confirmada 2026-09-15):** 50% anticipo /
+50% contra entrega, sobre el precio de cada paquete:
+
+| Paquete | Anticipo | Contra entrega |
+|---|---|---|
+| Básico $6,000 | $3,000 | $3,000 |
+| Pro $12,000 | $6,000 | $6,000 |
+| Premium $18,000 | $9,000 | $9,000 |
 
 ### "No sé nada de tecnología, no voy a saber usarla"
 
