@@ -19,6 +19,8 @@ Lista consolidada de b-roll por escena (ver también `SHOT_LIST.md` para el deta
 - Toda música y SFX debe ser de librería con licencia (ver `strategy/04-production-stack.md` cuando esté disponible para la librería confirmada).
 - Registrar aquí cualquier asset de stock real que se use, con su fuente y licencia, antes de marcar el video como READY.
 
-## Pendiente antes de producción
-- [ ] Confirmar librería de stock/motion graphics a usar (depende de `04-production-stack.md`, aún no recibido)
-- [ ] Confirmar librería de música/SFX con licencia
+## Librería confirmada (ver `strategy/04-production-stack.md`)
+- **Generación IA de imagen:** AlexyaAI, modo fast (saldo limitado — priorizar solo lo que de verdad lo requiere, ej. miniaturas).
+- **Stock genérico sin costo:** Pexels/Pixabay/Unsplash (licencia libre) para b-roll que no necesita ser generado por IA.
+- **Música/SFX:** YouTube Audio Library (gratuita, uso comercial permitido) hasta definir una librería paga.
+- **Motion graphics simples** (barras, organigramas, líneas de tiempo): herramienta de edición estándar (Canva/CapCut/After Effects), no generación IA.

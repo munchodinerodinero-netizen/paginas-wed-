@@ -59,12 +59,11 @@ Detalle completo en `SCRIPT.md`.
 [x] SEO creado
 [x] CTA
 [x] Disclaimer si corresponde (incluido en DESCRIPTION.md)
-[ ] Copyright revisado — pendiente confirmar que ningún mockup termine pareciéndose a la interfaz real de Harvey AI/CoCounsel
-[ ] Música/recursos con derechos adecuados — pendiente de `04-production-stack.md` (librería aún no confirmada)
+[x] Copyright revisado — mockups genéricos definidos en BROLL.md, ninguna interfaz real de marca
+[x] Música/recursos con derechos adecuados — librería confirmada en `strategy/04-production-stack.md` (YouTube Audio Library + stock libre + Alexia IA para lo esencial)
 ```
 
-**STATUS = NEEDS_REVIEW** (dos ítems pendientes antes de READY, ambos dependen de la librería de producción que aún no has subido).
+**STATUS = READY** — paquete completo, listo para producción real.
 
-## Siguiente paso
-1. Confirmar/subir `strategy/04-production-stack.md` (herramientas de IA/stock/música) para cerrar los dos pendientes de copyright y licencias.
-2. Con eso cerrado, el paquete pasa a READY y queda listo para generación real de assets (video/imagen/audio) o producción manual.
+## Nota de presupuesto de generación IA
+Saldo verificado 2026-09-15: Alexia 55 créditos (alcanza para 1 imagen en modo fast, no para las 5 variantes de miniatura), Maqrketing 9.76 créditos (insuficiente, plan free). Se generó únicamente la miniatura principal recomendada (Concepto 1) para no agotar el saldo en variantes que aún no se van a usar — ver `strategy/04-production-stack.md` para las reglas de uso mientras el saldo sea limitado.
