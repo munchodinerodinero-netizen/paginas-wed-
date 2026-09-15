@@ -121,7 +121,12 @@ Roofing Webmasters.)*
 construido con Lovable, prueba tangible para usar en cada llamada y mensaje de
 seguimiento a partir de ahora — "mira, aquí tienes un ejemplo real de lo que hago").
 
-## Scripts de venta — FINAL (2026-08-23)
+## Scripts de venta — histórico, mercado USA (superado por el pivote a México)
+
+**No es el script activo.** Desde 2026-09-15 el cierre que se usa en cada llamada y
+mensaje es `Harvey/CIERRE_MAESTRO_MEXICO.md` — en español, pesos mexicanos, enfocado en
+Querétaro, con manejo de dudas expandido. Este bloque queda solo como referencia para la
+fase 2 en EEUU.
 
 Mercado dual: contratistas de habla inglesa y de habla hispana en USA. Usar el idioma que
 corresponda al prospecto.

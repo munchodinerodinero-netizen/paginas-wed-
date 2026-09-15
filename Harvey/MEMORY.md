@@ -100,6 +100,23 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-15 — Cierre maestro México + manejo de dudas creado
+
+- Creado `Harvey/CIERRE_MAESTRO_MEXICO.md`: script de cierre activo (reemplaza al de
+  `BRAIN.md`, que quedó en USD/inglés y pre-pivote) — SPIN (Rackham) para descubrimiento,
+  oferta apilada estilo Hormozi, tono de certeza Belfort, escasez Cialdini + Ley de los 250
+  de Girard para pedir referido en el mismo momento del cierre.
+- Incluye manejo extendido de dudas reales sobre la página web (Facebook vs. web, tiempos
+  de entrega, cambios post-entrega, "lo hago yo mismo en Wix", "¿cómo sé que trae
+  clientes?", qué pasa si deja de pagar mantenimiento, competencia con mejor web, etc.) —
+  cada una resuelta subiendo valor percibido, nunca bajando precio.
+- **Pendiente abierto (nuevo):** estructura de pago (% de anticipo vs. contra entrega) no
+  está definida — Alberto se la va a topar en la próxima llamada real y no debe
+  improvisarla. Definir antes del próximo cierre.
+- **Pendiente abierto (nuevo):** en cuanto cierre los primeros 3-5 clientes en Querétaro,
+  capturar 1-2 testimonios/casos con número real de leads generados — sustituye la
+  respuesta genérica de prueba social en la duda "¿cómo sé que me va a traer clientes?".
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
