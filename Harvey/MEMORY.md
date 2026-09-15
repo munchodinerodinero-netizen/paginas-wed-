@@ -119,6 +119,18 @@ al final de la sesión.
   capturar 1-2 testimonios/casos con número real de leads generados — sustituye la
   respuesta genérica de prueba social en la duda "¿cómo sé que me va a traer clientes?".
 
+## 2026-09-15 — 6 mentores nuevos agregados a la biblioteca
+
+- Alberto compartió un artículo sobre 9 vendedores influyentes. Se agregaron a
+  `MENTORS.md` los 6 que no estaban ya en la biblioteca: Sam Taggart (D2D, volumen +
+  guion dominado), Napoleón Barragán (perseverancia desde cero), Zig Ziglar (lenguaje
+  corporal/certeza de tono), Erica Feidner (si el cliente no entiende la diferencia entre
+  opciones, la presentación falló, no el precio), John H. Patterson (crear valor donde
+  nadie ve necesidad), Ron Popeil (apilar valor con bonos en vez de bajar precio). Girard,
+  Belfort y Mary Kay Ash ya estaban documentados.
+- Aplicado directo: se agregó una respuesta de objeción de precio estilo Popeil (apilar
+  bono en vez de descuento) al guion del plan de $300. Ver `Guion_Plan_300.pdf`.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a

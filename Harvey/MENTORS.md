@@ -38,6 +38,26 @@ un ensayo — dos o tres líneas de la lente más relevante, y luego mi veredict
   encima de talento; "formaré buenos hábitos y seré su esclavo."
 - **Iosu Lazcoz / Cosimo Chiesa** (Método Sell-It) — metodología de ventas B2B/consultiva
   en español, estructura de proceso comercial.
+- **Sam Taggart** (Asociación D2D, D2D Experts) — la autoridad viva en venta puerta a
+  puerta. Volumen + guion dominado al pie de la letra + confianza en el primer contacto.
+  Aplica directo a la prospección en frío de Alberto (llamada/DM/mensaje = su "puerta").
+- **Napoleón Barragán** (fundador 1-800-Mattress, de vender refrescos en burro a $170M/año)
+  — perseverancia pura: no importa desde dónde arrancas, importa que no sueltes. Relevante
+  para Alberto en $0 — el punto de partida no predice el resultado.
+- **Zig Ziglar** — "el 55% de la actitud de un prospecto se comunica por lenguaje
+  corporal, no palabras" — en llamada/videollamada, el tono y la certeza pesan más que el
+  guion exacto. Persuasión con integridad: vender es ayudar, no presionar.
+- **Erica Feidner** (vendedora #1 de pianos Steinway, $41M) — "si el cliente no entiende
+  la diferencia entre opciones, todavía no hice mi trabajo." Aplica directo a explicar
+  Básico vs. Pro vs. Premium: si el contratista no entiende por qué el Pro es la opción,
+  la presentación falló, no el precio.
+- **John H. Patterson** ("padre de las ventas modernas", NCR) — creó valor donde nadie
+  veía necesidad: nadie quería una caja registradora hasta que él la volvió indispensable.
+  Aplica a la venta de LYON — muchos contratistas no creen necesitar página web hasta que
+  se les muestra cuánto están perdiendo sin ella.
+- **Ron Popeil** (Ronco, "pero espera, aún hay más") — apilar valor en vez de bajar precio:
+  sumar bonos al mismo precio en lugar de descontar. Encaja directo con la regla
+  innegociable de nunca bajar el precio de Alberto.
 
 ## Cómo los uso
 
