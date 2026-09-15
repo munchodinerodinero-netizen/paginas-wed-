@@ -130,6 +130,11 @@ al final de la sesión.
   Belfort y Mary Kay Ash ya estaban documentados.
 - Aplicado directo: se agregó una respuesta de objeción de precio estilo Popeil (apilar
   bono en vez de descuento) al guion del plan de $300. Ver `Guion_Plan_300.pdf`.
+- **Bono definido y cerrado (2026-09-15):** código QR que lleva directo al WhatsApp de
+  Alberto — costo $0, 2 minutos generarlo, para pegar en camioneta/tarjeta/letrero de
+  obra. Se entrega solo si el prospecto insiste después de la primera respuesta a "está
+  caro" — no se ofrece de entrada, no se agrega a la lista base de "qué incluye" del plan
+  $300 (ese sigue siendo el plan sin extras que Alberto pidió).
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
