@@ -14,26 +14,33 @@ Monterrey/Mérida por mayor crecimiento económico real (nearshoring, corredor i
 y menos saturación de agencias grandes. Reserva para expansión futura: Mérida, León,
 Puebla — no antes de agotar Querétaro.
 
-## Oferta — FINAL en pesos mexicanos (recalculada 2026-08-23)
+## Oferta — ACTIVA (pivote 2026-09-16): precio único $300 USD
 
-Investigación de mercado real: un sitio profesional de agencia/freelancer en México
-cuesta entre $8,000 y $30,000 MXN en 2026 (landing $8K-18K, sitio corporativo $18K-35K).
-LYON se posiciona **por debajo del mercado, más rápido**, sin verse barato/poco serio:
+Alberto decidió reemplazar los 3 paquetes en pesos por **una sola oferta fija: $300 USD**,
+sin tiers. Decisión confrontada por Harvey (rompe el ancla interna Pro/Premium y vuelve a
+cobrar en USD en un mercado ya decidido en pesos) y confirmada explícitamente por Alberto
+con la información sobre la mesa — se ejecuta.
 
-| Paquete | Precio | Incluye |
-|---|---|---|
-| **Básico** | $6,000 MXN | Landing 1 página, formulario de contacto, 100% mobile, listo en 48h |
-| **Pro** ⭐ (el que se empuja siempre — es el ancla) | $12,000 MXN | 3–5 páginas, galería de proyectos/antes-después, Google Business optimizado, botón directo a WhatsApp |
-| **Premium** | $18,000 MXN | Todo lo de Pro + SEO local básico + formulario de cotización avanzado |
+**Página web profesional — $300 USD.** Incluye: diseño profesional, adaptación móvil,
+página principal, servicios/productos, información del negocio, galería, WhatsApp,
+botones de llamada, formulario, ubicación, preguntas frecuentes, SEO básico, publicación,
+más una etapa de revisión antes de publicar.
 
-**Todos con $900 MXN/mes de mantenimiento — no negociable, es el motor de MRR.**
+**Nuevo ancla (reemplaza al ancla interna de tiers):** comparar el $300 contra lo que
+cobran las agencias reales del nicho en México — Arteweb2/68-Design/PC Emprende/Fénix
+Byte/La Fábrica del SEO, $6,000–35,000 MXN. El guion de venta debe anclar "LYON vs.
+agencia tradicional", no "tier vs. tier".
 
-*(Referencia histórica, mercado EEUU en USD — pausado, no borrado: Básico $350 / Pro $650
-/ Premium $950 + $100/mes.)*
+Mantenimiento recurrente: **opcional, no incluido en el cierre por defecto** — pendiente
+de convertir en upsell sistemático post-venta (ver MEMORY.md 2026-09-16, motor de MRR en
+riesgo si se queda como opcional pasivo).
 
-Regla de venta: nunca preguntar "¿cuánto quieres gastar?" — liderar con el Pro como
-recomendación por defecto (efecto señuelo/ancla, Cialdini). Si hay objeción de precio: se
-quita alcance (baja al Básico) o se sube prueba de valor — **nunca se baja el precio.**
+**Inconsistencia sin resolver (marcada, no bloqueante):** cobrar en USD en un mercado
+100% mexicano/pesos. Pendiente de decisión de Alberto.
+
+*(Referencia histórica — estructura de 3 tiers en pesos, pausada, no borrada: Básico
+$6,000 / Pro $12,000 ancla / Premium $18,000 MXN + $900 MXN/mes. Referencia histórica aún
+más antigua, mercado EEUU: Básico $350 / Pro $650 / Premium $950 + $100/mes.)*
 
 ## Margen real — confirmado
 
