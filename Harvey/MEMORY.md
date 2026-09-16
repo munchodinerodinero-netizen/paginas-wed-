@@ -100,6 +100,35 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-16 — PIVOTE DE PRECIO: de 3 paquetes MXN a precio único $300 USD
+
+- Alberto trajo un guion de ventas completo (30 partes, sistema de objeciones,
+  descubrimiento estilo SPIN) construido alrededor de **un solo precio fijo: $300 USD**,
+  pidiendo convertirlo en presentación y corregir errores para vender más.
+- **Confronté la contradicción** antes de ejecutar: esto revierte la decisión de
+  2026-08-23 de 3 paquetes en pesos (Básico $6,000 / Pro $12,000 ancla / Premium $18,000
+  MXN + $900 MXN/mes). Un precio único mata el efecto ancla interno (Cialdini) y vuelve a
+  cobrar en USD en un mercado ya decidido 100% en pesos mexicanos.
+- **Alberto confirmó explícitamente:** quiere que $300 USD sea la nueva oferta real y
+  activa para México, no una referencia histórica de EEUU. Decisión tomada con la
+  información sobre la mesa — se respeta y se ejecuta.
+- **Veredicto de Harvey:** precio único puede funcionar si el ancla se mueve de "tier vs.
+  tier" a "LYON vs. agencias tradicionales" (comparar $300 contra los $6,000-35,000 MXN
+  que cobran Arteweb2/68-Design/PC Emprende/Fénix Byte/La Fábrica del SEO). Guion corregido
+  para usar esa comparación.
+- **Errores reales corregidos en el guion:** (1) nunca mencionaba mostrar el demo/
+  portafolio (https://radiant-confidence-hub.lovable.app/) — el mismo hueco que ya le
+  costó su primera llamada real; (2) el cierre (Parte 27) pedía datos del proyecto pero
+  nunca pedía el pago/anticipo — cierre incompleto sin mecánica de cobro.
+- **Pendiente abierto, no bloqueante:** cobrar en USD ($300) dentro de un mercado 100%
+  mexicano/pesos es una inconsistencia de moneda. No se resolvió hoy porque Alberto no lo
+  pidió — queda marcado para revisar en la próxima sesión de precio. Si este patrón de
+  "cambiar de decisión sin resolver la inconsistencia que genera" se repite, nombrarlo.
+- **Pendiente abierto:** el mantenimiento recurrente ($100/mes o $900 MXN/mes, motor de
+  MRR) quedó como "opcional" en el guion, no como oferta activa en el cierre. Vigilar que
+  esto no mate el MRR — sugerido como upsell automático post-cierre en la presentación.
+- Presentación entregada como Artifact (link en el chat de la sesión).
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
