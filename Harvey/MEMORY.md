@@ -100,6 +100,26 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-17 — Guion completo del proceso creado (`PLAYBOOK.md`)
+
+- Alberto pidió el guion detallado de todo el proceso de LYON, etapa por etapa, desde el
+  CRM hasta la venta. Se creó `Harvey/PLAYBOOK.md` con las 12 etapas completas
+  (prospección → CRM → contacto → llamada → objeciones → cierre/cobro → producción →
+  entrega → mantenimiento → referido → tracking).
+- **Dos huecos reales detectados al construirlo (no estaban resueltos en ningún doc
+  anterior):**
+  1. **No existe herramienta de CRM todavía** — la prospección vivía solo en la cabeza de
+     Alberto. Recomendado: Google Sheet o Notion gratis (sin gastar en herramienta de
+     empresa grande a $0 de ingresos). Pendiente que Alberto la arme.
+  2. **No hay esquema de cobro/anticipo definido.** Recomendado: 50% anticipo antes de
+     construir, 50% contra entrega — nunca 100% al final. Pendiente que Alberto confirme
+     método de cobro (transferencia/link de pago).
+- **Gap adicional detectado:** no existe paso de pedir referido al momento de la entrega
+  (Ley de los 250, Joe Girard) — se agregó como Etapa 11 del proceso, no existía antes en
+  ningún documento.
+- Estos 3 pendientes quedan abiertos y deben confirmarse con Alberto en la próxima sesión
+  antes de considerarlos cerrados.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
