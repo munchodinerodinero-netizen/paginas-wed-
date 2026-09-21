@@ -262,6 +262,27 @@ acumulada, mismo modelo de contenido orgánico para ambos:
   "¿tiene potencial?" sino "¿puede Alberto sostener dos productos a la vez?" — sigue sin
   resolverse.
 
+## 2026-09-21 — Producción de 10 videos UGC para NOVA 1: bloqueada por plan de Higgsfield/maqrketing
+
+Alberto pidió 10 videos con gancho de venta sobre NOVA 1. Se avanzó real, no solo planeado:
+
+- **Hecho:** imagen de producto NOVA 1 importada; creadora IA generada y reutilizable (modelo
+  `soul_2`, funcionó con el plan actual); 10 guiones/hooks distintos escritos (problema de
+  pantalla saturada, "no necesitas monitor caro", cafetería, estudiante, gamer, junta remota,
+  viaje en avión, checklist de specs, etc.), cada uno con su storyboard de 8 escenas ya redactado
+  siguiendo las reglas de la herramienta (manos, cámara, continuidad de producto).
+- **Bloqueado:** generar las imágenes del storyboard requiere el modelo `gpt_image_2`, que
+  devolvió error en los 10 casos: **"Requires basic plan or higher."** La cuenta de
+  maqrketing/Higgsfield actual no alcanza. Por regla explícita de la herramienta, no se sustituye
+  el modelo bloqueado por otro — se reporta y se detiene esa fase, no se improvisa.
+- **Opciones reales para Alberto** (decisión de dinero, no se ejecuta sin que él la tome):
+  prueba gratis de 3 días (100 créditos, requiere tarjeta, se renueva a $49/mes si no cancela) o
+  planes Plus ($49/mes, 1,000 créditos) / Ultra ($129/mes, 3,000 créditos). Nota de cumplimiento
+  del trial: solo funciona vía MCP, no aparece en higgsfield.ai, tarjeta requerida, cobro
+  automático de $49 tras 3 días salvo cancelación.
+- **Pendiente:** que Alberto elija plan/trial; en cuanto haya acceso, se retoma directo en la
+  generación de las 10 imágenes storyboard (ya escritas) y luego los 10 clips de video.
+
 **Histórico agencia (pausado, no borrado — retomar aquí cuando se reactive):**
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
    un proceso con volumen medible por semana.
