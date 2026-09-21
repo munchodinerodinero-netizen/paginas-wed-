@@ -151,17 +151,35 @@ al final de la sesión.
   corrieron en 2023-2025). Objetivamente es la apuesta más difícil de las dos. Harvey lo
   dijo directo, no lo suavizó. Alberto decidió de todas formas — decisión respetada, como
   con México y Querétaro.
-- **Sigue sin resolver:** qué pasa con LYON-agencia (¿pausada, muerta, o Alberto corre las
-  dos a la vez?). Sin esa respuesta el bloqueo de fondo sigue igual: un fundador solo no
-  puede sostener dos motores de venta distintos (venta consultiva 1:1 vs. ads+contenido
-  de e-commerce) al mismo tiempo. Pendiente de respuesta directa en la siguiente sesión.
+- **RESUELTO — estatus de LYON-agencia: PAUSADA.** Alberto decidió, opción forzada de 3:
+  **no se prospecta nada nuevo**, pero **cualquier lead ya contactado que responda, se
+  cierra**. No es "las dos a la vez" — evitó el patrón #5. La agencia no muere, se
+  congela; sigue siendo la referencia de "esto ya funciona" para cuando se retome.
 - **A partir de ahora, hasta nueva instrucción:** el foco operativo de Harvey es la tienda
   novashop/LYON (Shopify), no la agencia de páginas web. BRAIN.md y USER.md siguen
-  describiendo el modelo de agencia — quedan como referencia, pendientes de reescribir
-  una vez que Alberto confirme el estatus final de la agencia.
+  describiendo el modelo de agencia — quedan como referencia histórica, no se tocan
+  mientras la agencia esté pausada.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
+**Agencia LYON — PAUSADA (2026-09-21):** sin prospección nueva. Único trabajo activo: dar
+seguimiento y cerrar leads ya contactados si responden. No es prioridad de la semana.
+
+**Tienda novashop/LYON — FOCO ACTIVO (2026-09-21):**
+1. Archivar NOVA 2 (dual monitor, margen 18%, roto) — no repreciarlo: al margen que
+   necesitaría (~$800+) queda peor que NOVA 3 (triple pantalla) a precio similar. No vale
+   la pena arreglarlo, vale la pena matarlo.
+2. Conseguir muestra física de NOVA 1 y NOVA CHARGER esta semana (antes del 1 de
+   octubre) — sin producto en mano no hay contenido UGC real para la Semana 1.
+3. Cadencia de contenido: 1 video/día arrancando 1 oct, TikTok + Reels con el mismo
+   gancho. NOVA 1 como ancla, CHARGER como bump. NOVA 3 (tri-screen) entra cuando llegue
+   la muestra — ángulo más viral pero solo orgánico, no ads.
+4. Trackear semanalmente: videos publicados, vistas, clics al sitio, pedidos, ingreso —
+   mismo nivel de disciplina de números que se pedía en la agencia, aplicado a la tienda.
+5. Meta Ads solo entra en noviembre, solo sobre los 2-3 videos orgánicos que ya probaron
+   que convierten, solo en NOVA 1 y CHARGER.
+
+**Histórico agencia (pausado, no borrado — retomar aquí cuando se reactive):**
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
    un proceso con volumen medible por semana.
 2. Cerrar la primera venta con la oferta ya empaquetada (Básico/Pro/Premium) — validar que
