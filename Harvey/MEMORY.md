@@ -128,6 +128,37 @@ al final de la sesión.
 - **Pendiente:** confirmar moneda real de la meta de $70,000 (tienda opera en USD, pero el
   resto del negocio de Alberto está en MXN) — cambia toda la matemática de unidades
   necesarias para Q4.
+- **Meta de $70,000 confirmada en USD** por Alberto.
+- Se construyó y publicó una proyección de ingreso solo-orgánico para Q4 (artifact:
+  https://claude.ai/artifact/9SS1nQCcscmxFwsu41b9Es). Modelo: 1 video/día, vista→clic 1%,
+  clic→compra 2%, AOV $210 (NOVA 1 + bump de CHARGER). Resultado: **~$41,300 (~59% de la
+  meta)** — el orgánico solo no llega a $70K. Brecha ~$28,700 que requiere Meta Ads
+  encima de los videos orgánicos que ya probaron que convierten, solo en NOVA 1 y
+  CHARGER (los únicos con margen sano). NOVA 3 fuera del pronóstico (margen débil), NOVA
+  2 fuera (roto).
+
+## 2026-09-21 — DECISIÓN: pivote de foco a la tienda dropshipping "LYON" (novashop)
+
+- Alberto declaró explícitamente: **"este es el nuevo foco"**, respondiendo a la pregunta
+  directa que Harvey le hizo dos veces en la sesión sobre si la tienda reemplaza la
+  agencia.
+- **Verdict de Harvey dado en el momento (lente Hormozi + Girard + Cialdini):** la agencia
+  tenía oferta lista, margen 83%, nicho de baja competencia, portafolio vivo, script
+  probado en llamada real, y una fuente diaria de leads ya mapeada — todo construido y
+  sin usar. La tienda arranca con 0 ventas, 0 prueba social, la mitad del catálogo con
+  margen roto o débil, y en la categoría más saturada de dropshipping de gadgets
+  (monitores portátiles / cargadores — el "producto ganador" que miles de cuentas ya
+  corrieron en 2023-2025). Objetivamente es la apuesta más difícil de las dos. Harvey lo
+  dijo directo, no lo suavizó. Alberto decidió de todas formas — decisión respetada, como
+  con México y Querétaro.
+- **Sigue sin resolver:** qué pasa con LYON-agencia (¿pausada, muerta, o Alberto corre las
+  dos a la vez?). Sin esa respuesta el bloqueo de fondo sigue igual: un fundador solo no
+  puede sostener dos motores de venta distintos (venta consultiva 1:1 vs. ads+contenido
+  de e-commerce) al mismo tiempo. Pendiente de respuesta directa en la siguiente sesión.
+- **A partir de ahora, hasta nueva instrucción:** el foco operativo de Harvey es la tienda
+  novashop/LYON (Shopify), no la agencia de páginas web. BRAIN.md y USER.md siguen
+  describiendo el modelo de agencia — quedan como referencia, pendientes de reescribir
+  una vez que Alberto confirme el estatus final de la agencia.
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
