@@ -100,6 +100,35 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-21 — Segundo negocio descubierto: tienda dropshipping "LYON" en Shopify (fuera del modelo documentado)
+
+- Alberto pidió analizar "mi tienda en línea" para vender $70,000 en Q4 vía Meta Ads +
+  contenido viral. Esto **no es la agencia de páginas web** — es una tienda Shopify
+  distinta, también bautizada "LYON" (dominio `novashop-12673.myshopify.com`), vendiendo
+  gadgets de dropshipping: monitores portátiles (NOVA 1, NOVA 2, NOVA 3) y un cargador
+  inalámbrico (NOVA CHARGER).
+- **Estado real de la tienda:** 0 órdenes, 0 ventas, 0 prueba social. Plan "Basic App
+  Development" (tienda de desarrollo).
+- **Márgenes reales confirmados** (precio de venta vs. costo real de proveedor, visible
+  en los duplicados archivados que quedaron al precio de costo):
+  - NOVA CHARGER: costo ~$8.85–8.93 → venta $29.99–38 → margen 70–77%. Apto para Meta Ads.
+  - NOVA 1 (monitor 14"): costo $61.53 → venta $199 → margen 69%. Apto para Meta Ads.
+  - NOVA 3 (tri-screen): costo $204–380 → venta $350–500 → margen 24–42%. Débil para ads
+    pagados, solo orgánico/viral por ahora.
+  - NOVA 2 (dual monitor): costo $269.23 → venta $329.99 → margen 18%. **Roto** — pierde
+    dinero en cada venta traída por Meta Ads. Repricing urgente o pausar.
+- **Patrón de dispersión — 4ta repetición:** ya van 3 veces documentadas (35 nichos, 2
+  países, 7 ciudades) donde Alberto evita comprometerse a una sola cosa. Abrir una segunda
+  tienda de producto físico sin haber cerrado el cliente #1 de la agencia (sigue en $0,
+  meta de 90 días sin cumplir) es la misma señal en forma nueva: dispersión de negocio
+  completo, no solo de nicho/ciudad. Nombrado directamente en la sesión.
+- **Pendiente crítico:** Alberto debe aclarar si esta tienda reemplaza LYON agencia,
+  compite por su tiempo, o es un experimento acotado — Harvey no puede fijar prioridades
+  de la semana sin esa respuesta.
+- **Pendiente:** confirmar moneda real de la meta de $70,000 (tienda opera en USD, pero el
+  resto del negocio de Alberto está en MXN) — cambia toda la matemática de unidades
+  necesarias para Q4.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
