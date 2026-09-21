@@ -179,6 +179,35 @@ seguimiento y cerrar leads ya contactados si responden. No es prioridad de la se
 5. Meta Ads solo entra en noviembre, solo sobre los 2-3 videos orgánicos que ya probaron
    que convierten, solo en NOVA 1 y CHARGER.
 
+## 2026-09-21 — Ejecutado en Shopify: ancla de precio, oferta de volumen, NOVA 2 fuera
+
+Alberto mandó 3 capturas de ofertas de "compra más, ahorra más" (PocketSpeech, un
+body scrub, un supplement de 4 botellas) y pidió cambiar precios y crear una oferta de
+ese tipo, eligiendo la que más ayude a vender. Ejecutado directo en la tienda:
+
+- **NOVA 2 archivado** (`gid://shopify/Product/10429278355739`) — confirmado en la
+  sesión anterior, ejecutado ahora.
+- **Precio ancla (compare-at) activado**, para mostrar tachado como en las capturas:
+  - NOVA 1: $199 con ancla $259 (~23% "off" — anclado a rango real de monitores
+    portátiles táctiles de 14", no inventado).
+  - NOVA CHARGER: $38/$29.99 con ancla $54.99/$44.99 (~31–33% "off" — rango real de
+    cargadores 3-en-1).
+  - **Pendiente de Alberto:** verificar que estos anclajes sean defendibles (precio de
+    mercado real o precio propio anterior) antes de correr Meta Ads con ellos — un
+    "precio original" inflado sin respaldo es riesgo real de cuenta baneada en Meta y de
+    reclamo por publicidad engañosa. No es solo formalidad.
+- **Oferta de volumen elegida — la que más ayuda a vender:** código `DOSPANTALLAS10`,
+  10% en NOVA 1 al comprar 2+, activo desde hoy, sin fecha de fin, todos los clientes.
+  Se eligió NOVA 1 sobre CHARGER porque el ticket es 5x más alto — el mismo % de
+  clientes que la usan mueven mucho más ingreso hacia la meta de $70K, y el margen
+  queda en ~65% después del descuento (sigue sano para Meta Ads).
+- **Limitación real de la herramienta:** esto es un *código* de descuento (el cliente
+  lo escribe en checkout), no el selector automático de radio buttons de las capturas
+  (precio cambia solo al elegir cantidad, sin escribir código). Esa experiencia exacta
+  requiere una app de bundles/volumen en el tema (gratis o de bajo costo — Bold, Zoorix,
+  etc.) o desarrollo de tema a medida; no se instaló ninguna app sin que Alberto la
+  elija primero. Pendiente: decidir si vale la pena esa inversión de UX para Q4.
+
 **Histórico agencia (pausado, no borrado — retomar aquí cuando se reactive):**
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
    un proceso con volumen medible por semana.
