@@ -208,6 +208,29 @@ ese tipo, eligiendo la que más ayude a vender. Ejecutado directo en la tienda:
   etc.) o desarrollo de tema a medida; no se instaló ninguna app sin que Alberto la
   elija primero. Pendiente: decidir si vale la pena esa inversión de UX para Q4.
 
+## 2026-09-21 — Banner de oferta por volumen construido en el carrito (tema sin publicar)
+
+Alberto mandó capturas de banners de "compra más, ahorra más" (radio buttons, insignia
+"Most Popular", precio tachado) y pidió replicar el patrón en el segmento del carrito.
+
+- Se construyó una sección Liquid nueva (`sections/cart-volume-offer.liquid` +
+  `assets/cart-volume-offer.js`) y se insertó en `templates/cart.json`, justo debajo de
+  los items del carrito y antes de "You may also like".
+- **Solo 2 tiers, no 4:** 1× NOVA 1 (precio normal) y 2× NOVA 1 (10% off, insignia "Más
+  popular"), porque solo existe un código de descuento real (`DOSPANTALLAS10`) que
+  respalde esa oferta. No se fabricaron tiers de 3x/4x con % inventados — un tier sin
+  descuento real detrás rompe la confianza en el checkout.
+- El botón agrega la cantidad elegida vía Ajax Cart API y, si es 2+, redirige a
+  `/discount/DOSPANTALLAS10?redirect=/cart` para aplicar el código automáticamente.
+- **Limitación de la API confirmada:** Shopify solo permite escribir archivos de tema en
+  temas **sin publicar** (`themeFilesUpsert` está bloqueado en el tema MAIN, y también
+  está bloqueada la mutación de publicar tema). Se escribió sobre el tema ya existente
+  "Updated copy of Radiant" (`gid://shopify/OnlineStoreTheme/195029303579`, copia de
+  respaldo del tema en vivo, sin drift real). **Pendiente de Alberto:** revisar el
+  preview y publicarlo él mismo desde el admin de Shopify — Harvey no puede publicar
+  temas por política de la API.
+- Preview: `https://novashop-12673.myshopify.com/cart?preview_theme_id=195029303579`
+
 **Histórico agencia (pausado, no borrado — retomar aquí cuando se reactive):**
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
    un proceso con volumen medible por semana.
