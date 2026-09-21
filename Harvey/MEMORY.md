@@ -231,6 +231,27 @@ Alberto mandó capturas de banners de "compra más, ahorra más" (radio buttons,
   temas por política de la API.
 - Preview: `https://novashop-12673.myshopify.com/cart?preview_theme_id=195029303579`
 
+## 2026-09-21 — Comparativo NOVA 1 vs. maleta (categoría nueva, no confirmada)
+
+Alberto mandó fotos de una maleta de aluminio con bolsillo frontal y preguntó cuál
+producto tiene más potencial en Q4. Se actualizó el artifact de proyección
+(https://claude.ai/artifact/9SS1nQCcscmxFwsu41b9Es, v2) con un comparativo de utilidad
+acumulada, mismo modelo de contenido orgánico para ambos:
+
+- **NOVA 1 — utilidad Q4 proyectada: ~$28,500** (margen 69%, sin costo extra de envío).
+- **Maleta — utilidad Q4 proyectada: ~$11,300**, en el **mejor caso** (cadencia de
+  contenido 100% dedicada, sin compartir tiempo con NOVA 1). Supuestos: costo estimado
+  $58 + flete estimado $25 (maleta pesada/voluminosa, a diferencia de NOVA), precio
+  $179, conversión a la mitad de NOVA 1 (compra de mayor consideración, sin prueba
+  social). **Sin cotización real de proveedor — son estimados de mercado.**
+- NOVA 1 genera **~2.5× más utilidad** que la maleta con el mismo esfuerzo, y eso sin
+  contar que dividir la cadencia de contenido entre dos productos (inevitable siendo
+  Alberto solo) bajaría ambos números — probablemente por debajo de lo que da NOVA 1
+  sola hoy.
+- **Veredicto:** la maleta no es mala idea, pero no es el juego de este trimestre.
+  Guardarla para cuando NOVA esté vendiendo y haya ancho de banda para un segundo SKU.
+  Nombrado como posible categoría futura, no decisión de agregarla ahora.
+
 **Histórico agencia (pausado, no borrado — retomar aquí cuando se reactive):**
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
    un proceso con volumen medible por semana.
