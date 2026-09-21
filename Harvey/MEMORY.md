@@ -248,9 +248,19 @@ acumulada, mismo modelo de contenido orgánico para ambos:
   contar que dividir la cadencia de contenido entre dos productos (inevitable siendo
   Alberto solo) bajaría ambos números — probablemente por debajo de lo que da NOVA 1
   sola hoy.
-- **Veredicto:** la maleta no es mala idea, pero no es el juego de este trimestre.
-  Guardarla para cuando NOVA esté vendiendo y haya ancho de banda para un segundo SKU.
-  Nombrado como posible categoría futura, no decisión de agregarla ahora.
+- **ACTUALIZADO — Alberto confirmó precio real de la maleta: $299**, no $179. Esto sube
+  el margen a ~72% (mejor % que NOVA 1) y la utilidad Q4 estimada de la maleta a
+  **~$25,500 (mejor caso)** — casi empata con NOVA 1 (~$28,500), ratio ~1.1×, no 2.5×.
+  Con conversión más conservadora (0.7% en vez de 1%, razonable a este precio más alto)
+  la utilidad baja a ~$17,800 (~1.6× a favor de NOVA 1). El caso económico de la maleta
+  es mucho más fuerte de lo que parecía — el freno ya no es la economía, es la
+  saturación de marca en el nicho de maletas y que Alberto no puede correr dos
+  cadencias de contenido a la vez siendo un solo operador.
+- **Veredicto revisado:** con $299 confirmado, la maleta merece una evaluación real, no
+  un descarte. Pendiente: costo real de proveedor (sigue siendo estimado en $58+$25
+  flete) antes de decidir. Si el costo real confirma el margen, la decisión ya no es
+  "¿tiene potencial?" sino "¿puede Alberto sostener dos productos a la vez?" — sigue sin
+  resolverse.
 
 **Histórico agencia (pausado, no borrado — retomar aquí cuando se reactive):**
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
