@@ -283,6 +283,21 @@ Alberto pidió 10 videos con gancho de venta sobre NOVA 1. Se avanzó real, no s
 - **Pendiente:** que Alberto elija plan/trial; en cuanto haya acceso, se retoma directo en la
   generación de las 10 imágenes storyboard (ya escritas) y luego los 10 clips de video.
 
+## 2026-09-23 — Fotos profesionales de NOVA 1 generadas (2 de 3, créditos agotados de nuevo)
+
+- Se generaron 2 de 3 fotos de producto tipo estudio (fondo limpio, iluminación
+  dirigida, ángulo de perfil y flat-lay superior) para NOVA 1, usando la foto real
+  del producto como referencia — no inventadas desde cero.
+- La 3ra (toma frontal hero) falló: **"Out of credits on free plan"** — mismo límite
+  de cuenta de maqrketing/Higgsfield ya registrado antes. No se reintentó (regla del
+  workflow: nunca reintentar un error de crédito/plan).
+- **No se subieron a Shopify todavía.** Harvey no pudo inspeccionar visualmente las
+  imágenes en este entorno (mismo bloqueo de red de siempre) — quedan pendientes de
+  que Alberto las vea y confirme antes de reemplazar las fotos en vivo del producto.
+- Pendiente: decisión de plan de Higgsfield (ver bloqueo de los 10 videos) resuelve
+  esto también — con más créditos se completa la 3ra foto y se hace lo mismo para
+  NOVA CHARGER y NOVA 3.
+
 **Histórico agencia (pausado, no borrado — retomar aquí cuando se reactive):**
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
    un proceso con volumen medible por semana.
