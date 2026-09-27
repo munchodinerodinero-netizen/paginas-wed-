@@ -454,8 +454,6 @@
   },
   "app": {
     "loginRequired": "Log in to see this section.",
-    "completeProfileWeb": "Finish your guide profile on the web to start receiving bookings.",
-    "openWeb": "Open on the web",
     "openChat": "Open chat",
     "selectDate": "Pick a date",
     "noTimes": "The guide has no time slots that day.",
@@ -471,6 +469,7 @@
     "bookingCreated": "Booking created. Complete payment to send it to the guide.",
     "paid": "Payment done. The guide needs to confirm your booking.",
     "serverError": "We couldn't reach the server.",
-    "retry": "Retry"
+    "retry": "Retry",
+    "completeProfile": "Finish your guide profile to start receiving bookings."
   }
 }

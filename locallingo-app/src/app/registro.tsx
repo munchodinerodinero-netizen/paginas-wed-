@@ -31,7 +31,7 @@ export default function Register() {
             setError(null);
             try {
               await register({ name: name.trim(), email: email.trim(), password, role });
-              router.replace(role === "GUIDE" ? "/perfil" : "/");
+              router.replace(role === "GUIDE" ? "/ser-guia" : "/");
             } catch (e) {
               setError(errorCode(e));
               setBusy(false);

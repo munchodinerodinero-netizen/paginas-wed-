@@ -36,7 +36,7 @@ BASE_URL=http://localhost:3000 node tests/e2e-api.mjs   # flujo completo por API
 | Base de datos | Prisma + SQLite en dev → PostgreSQL en producción | Cambiar `provider` en `schema.prisma` y `DATABASE_URL` |
 | Auth | JWT (HS256) en cookie httpOnly (web) o `Authorization: Bearer` (móvil) | Sesiones revocables vía `sessionVersion` |
 | Pagos | Interfaz `PaymentProvider` + proveedor simulado | Enchufar Stripe Connect / Mercado Pago sin tocar el resto |
-| Fotos/documentos | Interfaz de almacenamiento (local en dev) | Pasar a S3/R2/Cloudinary; documentos en bucket **privado** |
+| Fotos/documentos | Interfaz de almacenamiento (local: `storage/public` servido por `/uploads/[file]`, `storage/private` nunca servido) | Pasar a S3/R2/Cloudinary; documentos en bucket **privado** |
 | Emails | `EmailDriver` (consola en dev) | Pasar a Resend/SES/Postmark |
 | Mapas | Embed de OpenStreetMap del área de la ciudad | Nunca la dirección del guía |
 | i18n | Diccionarios `src/i18n/messages/{es,en}.json` | Ningún texto de UI dentro de los componentes |

@@ -3,8 +3,7 @@ node_modules
 .env
 prisma/*.db
 prisma/*.db-journal
-public/uploads/*
-!public/uploads/.gitkeep
+storage/public
 storage/private
 next-env.d.ts
 *.tsbuildinfo

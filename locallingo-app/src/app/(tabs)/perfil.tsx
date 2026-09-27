@@ -7,22 +7,24 @@ import { money } from "@/lib/format";
 import { useI18n, type Locale } from "@/lib/i18n";
 import { colors } from "@/lib/theme";
 import { useApi } from "@/lib/useApi";
+import type { OwnGuideProfile as OwnProfile } from "@/lib/types";
 import { Avatar } from "@/components/Avatar";
 import { LoginPrompt } from "@/components/LoginPrompt";
 import { Badge, Button, Card, Chips, ErrorText, H2, P, Row, Screen } from "@/components/ui";
 
 type Earnings = { currency: string; gross: number; commission: number; net: number; available: number; upcoming: number; payouts: { id: string; amountMinor: number; currency: string; status: string; createdAt: string }[] };
-type OwnProfile = { status: string; slug: string; ratingSum: number; ratingCount: number; rejectionReason: string | null };
+
 
 export default function ProfileTab() {
   const { user, logout } = useAuth();
   const { t, locale, setLocale } = useI18n();
+  const own = useApi<OwnProfile>(user?.role === "GUIDE" ? "/guide/profile" : null, [user?.id]);
   if (!user) return <LoginPrompt />;
   return (
     <Screen>
       <Card>
         <Row style={{ flexWrap: "nowrap" }}>
-          <Avatar name={user.name} size={56} />
+          <Avatar name={user.name} url={own.data?.photoUrl} size={56} />
           <View style={{ flex: 1 }}>
             <Text style={{ fontSize: 18, fontWeight: "800", color: colors.ink }}>{user.name}</Text>
             <P small muted>{user.email}</P>
@@ -84,9 +86,8 @@ function GuideSection() {
           </Row>
           {p.ratingCount > 0 && <P>⭐ {(p.ratingSum / p.ratingCount).toFixed(1)} · {t("guide.reviews", { count: p.ratingCount })}</P>}
           {!!p.rejectionReason && <P small>{p.rejectionReason}</P>}
-          {p.status === "DRAFT" && <P small muted>{t("app.completeProfileWeb")}</P>}
-          {/* El registro de 6 pasos (con subida de documentos) vive en la web en esta versión. */}
-          <Button title={p.status === "DRAFT" ? t("onboarding.title") : t("dashboard.editProfile")} variant="outline" onPress={() => Linking.openURL(`${API_URL}/ser-guia/registro`)} />
+          {p.status === "DRAFT" && <P small muted>{t("app.completeProfile")}</P>}
+          <Button title={p.status === "DRAFT" ? t("onboarding.title") : t("dashboard.editProfile")} variant={p.status === "DRAFT" ? "primary" : "outline"} onPress={() => router.push("/ser-guia")} />
           {p.status === "APPROVED" && <Button title={t("guide.viewProfile")} variant="ghost" onPress={() => router.push(`/guia/${p.slug}`)} />}
         </Card>
       )}
@@ -96,7 +97,7 @@ function GuideSection() {
           {[["gross", e.gross], ["commission", -e.commission], ["net", e.net], ["available", e.available]].map(([k, v]) => (
             <Row key={k as string} style={{ justifyContent: "space-between" }}>
               <P muted={k !== "available"}>{t(`dashboard.${k}`)}</P>
-              <P style={{ fontWeight: k === "available" ? "800" : "500" }}>{(v as number) < 0 ? `−${fmt(-(v as number))}` : fmt(v as number)}</P>
+              <P style={{ fontWeight: k === "available" ? "800" : "500" }}>{(v as number) < 0 ? `−${fmt(-(v as number))}` : fmt(Math.abs(v as number))}</P>
             </Row>
           ))}
           <ErrorText code={error} />

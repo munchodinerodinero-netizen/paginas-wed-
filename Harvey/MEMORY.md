@@ -142,6 +142,20 @@ al final de la sesión.
   volver a tocar LocalLingo antes del cliente #1, nombrarlo de inmediato como evasión de
   vender.
 
+## 2026-09-27 — LocalLingo DESCONGELADO bajo delegación (reemplaza el congelamiento)
+
+- Alberto propuso: "tú haces la app, yo sigo contactando". Harvey aceptó: la objeción
+  nunca fue el código, era el tiempo de Alberto. Si Harvey construye y Alberto prospecta,
+  LocalLingo no compite con LYON.
+- **Condiciones del trato:**
+  1. Alberto NO dedica horas a construir ni a revisar código de LocalLingo. Solo decide
+     cuando algo requiere su cuenta o su dinero (Mercado Pago, tiendas, dominio).
+  2. Alberto reporta sus números de prospección de LYON cada día: contactados,
+     respuestas, llamadas agendadas.
+  3. Si los números bajan o dejan de llegar, LocalLingo se vuelve a congelar.
+- Primera entrega bajo este trato: registro de guía de 6 pasos dentro de la app móvil
+  (antes solo existía en la web).
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a

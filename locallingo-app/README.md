@@ -17,14 +17,13 @@ tres clientes (web, Android, iOS).
 | **Reservas** | Próximas / completadas / canceladas | Pendientes / aceptadas / completadas / canceladas |
 | **Mensajes** | Chat con filtro de datos sensibles, bloqueo y reporte | Igual |
 | **Perfil** | Idioma ES/EN, favoritos, legales, cerrar sesión | Estado de verificación, ganancias, solicitar retiro |
+| **Registro de guía** | — | 6 pasos: foto (cámara o galería), ciudad, idiomas y nivel, servicios, precios y política, horarios, identificación oficial (foto o PDF) → "Pendiente de verificación" |
 
 Sesión: token en el **llavero cifrado del teléfono** (`expo-secure-store`: Keychain en iOS,
 Keystore en Android). Si la cuenta se suspende o la sesión expira, la app sale sola.
 
-**Deliberadamente fuera de esta versión:** el registro de guía en 6 pasos (con subida de
-documentos de identidad) se abre en la web desde la pestaña Perfil. Es un proceso de una sola
-vez; los guías lo hacen con calma en computadora. Pasarlo a la app es el siguiente paso si los
-datos de la beta lo piden.
+Los documentos de identidad se suben a almacenamiento **privado**: nunca se pueden abrir por
+URL ni aparecen en el perfil público.
 
 ## Correr en tu teléfono
 
@@ -76,7 +75,9 @@ npm run typecheck
 La app se probó exportándola a web (`npm run export:web`) contra el backend real y recorriendo
 con un navegador en tamaño de teléfono el flujo completo: explorar → filtrar → perfil → reservar →
 pagar → chat (con ocultado de teléfono) → el guía ve la pendiente → acepta → ve sus ganancias →
-el turista ve la reserva confirmada. Sin errores de consola. Falta probarla en dispositivos
+el turista ve la reserva confirmada. También el registro de una guía nueva desde cero: foto,
+6 pasos, identificación en PDF, envío a verificación, aprobación del admin y aparición en la
+búsqueda. Sin errores de consola. Falta probarla en dispositivos
 físicos Android e iOS (Expo Go) antes de la beta.
 
 ## Estructura
@@ -88,6 +89,7 @@ src/app/            pantallas (Expo Router: cada archivo es una ruta)
   reservar/[slug]   formulario de reserva
   reserva/[id]      detalle y acciones de la reserva
   chat/[id]         conversación
+  ser-guia          registro de guía en 6 pasos
   login, registro
 src/components/     UI (sin librerías nativas extra)
 src/lib/            cliente de API, sesión, i18n, tema

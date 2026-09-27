@@ -47,7 +47,8 @@ export interface PublicGuide extends GuideCard {
 }
 
 export interface Catalog {
-  cities: { id: string; slug: string; name: string; country: string }[];
+  countries: { id: string; code: string; slug: string; name: string }[];
+  cities: { id: string; slug: string; name: string; country: string; countryId: string }[];
   languages: { id: string; code: string; flag: string; name: string }[];
   categories: { id: string; slug: string; icon: string; name: string }[];
 }
@@ -85,4 +86,31 @@ export interface Quote {
   totalMinor: number;
   commissionBps: number;
   durationMin: number;
+}
+
+export interface OwnGuideProfile {
+  displayName: string;
+  photoUrl: string | null;
+  headline: string;
+  cityId: string | null;
+  bio: string;
+  experience: string;
+  hourlyRateMinor: number | null;
+  currency: string;
+  cancellationPolicy: string;
+  onboardingStep: number;
+  status: string;
+  slug: string;
+  ratingSum: number;
+  ratingCount: number;
+  rejectionReason: string | null;
+  hasIdDocument: boolean;
+  hasLegalDocument: boolean;
+  city: { countryId: string } | null;
+  languages: { languageId: string; level: string }[];
+  services: {
+    id: string; categoryId: string; title: string; description: string; pricingType: "FIXED" | "HOURLY"; priceMinor: number;
+    durationMin: number; modality: "IN_PERSON" | "REMOTE"; meetingPoint: string | null; maxPeople: number; languages: { languageId: string }[];
+  }[];
+  availability: { weekday: number; startMinute: number; endMinute: number }[];
 }

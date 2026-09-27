@@ -21,6 +21,7 @@ function RootStack() {
       <Stack.Screen name="reservar/[slug]" options={{ title: t("booking.title") }} />
       <Stack.Screen name="reserva/[id]" options={{ title: t("app.tabBookings") }} />
       <Stack.Screen name="chat/[id]" options={{ title: t("messages.title") }} />
+      <Stack.Screen name="ser-guia" options={{ title: t("onboarding.title") }} />
       <Stack.Screen name="login" options={{ title: t("auth.loginTitle"), presentation: "modal" }} />
       <Stack.Screen name="registro" options={{ title: t("auth.registerTitle"), presentation: "modal" }} />
     </Stack>

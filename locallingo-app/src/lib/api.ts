@@ -47,3 +47,31 @@ export async function api<T = unknown>(path: string, opts: { method?: string; bo
 }
 
 export const errorCode = (e: unknown) => (e instanceof ApiError ? e.code : "INTERNAL_ERROR");
+
+export type UploadAsset = { uri: string; name?: string | null; mimeType?: string | null; file?: File };
+
+/**
+ * Sube una foto (pública) o un documento de verificación (privado) a POST /uploads.
+ * En teléfono se envía el archivo por su `uri`; en web se usa el File del navegador.
+ */
+export async function apiUpload(kind: "photo" | "document", asset: UploadAsset): Promise<{ url?: string; key: string }> {
+  const form = new FormData();
+  form.append("kind", kind);
+  const type = asset.mimeType ?? (asset.uri.endsWith(".pdf") ? "application/pdf" : "image/jpeg");
+  const name = asset.name ?? `upload.${type === "application/pdf" ? "pdf" : type.split("/")[1] ?? "jpg"}`;
+  if (asset.file) form.append("file", asset.file);
+  else form.append("file", { uri: asset.uri, name, type } as unknown as Blob);
+  let res: Response;
+  try {
+    res = await fetch(`${API_URL}/api/v1/uploads`, {
+      method: "POST",
+      headers: { "Accept-Language": locale, ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+      body: form,
+    });
+  } catch {
+    throw new ApiError("NETWORK_ERROR", 0);
+  }
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok) throw new ApiError(json?.error?.code ?? "INTERNAL_ERROR", res.status);
+  return json.data;
+}

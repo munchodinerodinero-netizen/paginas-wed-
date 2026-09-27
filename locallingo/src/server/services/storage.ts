@@ -13,6 +13,9 @@ const ALLOWED = {
 
 export type UploadKind = keyof typeof ALLOWED;
 
+export const PUBLIC_DIR = path.join(process.cwd(), "storage", "public");
+export const PUBLIC_FILE_RE = /^[0-9a-f-]{36}\.(jpg|png|webp)$/;
+
 const EXT: Record<string, string> = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "application/pdf": "pdf" };
 
 export async function saveUpload(kind: UploadKind, file: File): Promise<{ url?: string; key: string }> {
@@ -22,7 +25,8 @@ export async function saveUpload(kind: UploadKind, file: File): Promise<{ url?: 
   const name = `${randomUUID()}.${EXT[file.type]}`;
   const bytes = Buffer.from(await file.arrayBuffer());
   if (kind === "photo") {
-    const dir = path.join(process.cwd(), "public", "uploads");
+    // Se sirven por la ruta /uploads/[file] (Next no sirve archivos agregados a public/ tras el build).
+    const dir = PUBLIC_DIR;
     await mkdir(dir, { recursive: true });
     await writeFile(path.join(dir, name), bytes);
     return { url: `/uploads/${name}`, key: `photo/${name}` };

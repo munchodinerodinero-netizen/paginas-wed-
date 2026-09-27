@@ -454,8 +454,6 @@
   },
   "app": {
     "loginRequired": "Inicia sesión para ver esta sección.",
-    "completeProfileWeb": "Completa tu perfil de guía en la versión web para empezar a recibir reservas.",
-    "openWeb": "Abrir en la web",
     "openChat": "Abrir chat",
     "selectDate": "Elige una fecha",
     "noTimes": "El guía no tiene horarios ese día.",
@@ -471,6 +469,7 @@
     "bookingCreated": "Reserva creada. Completa el pago para enviarla al guía.",
     "paid": "Pago realizado. El guía tiene que confirmar tu reserva.",
     "serverError": "No pudimos conectar con el servidor.",
-    "retry": "Reintentar"
+    "retry": "Reintentar",
+    "completeProfile": "Completa tu perfil de guía para empezar a recibir reservas."
   }
 }
