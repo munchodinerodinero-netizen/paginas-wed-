@@ -9,6 +9,13 @@ import { notify } from "./notify";
 
 // ---------- Mensajes ----------
 
+/** Turista o guía abren la conversación ligada a una reserva en la que participan. */
+export async function startConversationForBooking(user: SessionUser, bookingId: string) {
+  const b = await db.booking.findUnique({ where: { id: bookingId }, include: { guide: true } });
+  if (!b || (b.touristId !== user.id && b.guide.userId !== user.id)) throw notFound();
+  return ensureConversation(b.touristId, b.guide.userId);
+}
+
 export async function ensureConversation(touristId: string, guideUserId: string) {
   if (touristId === guideUserId) throw badRequest();
   return db.conversation.upsert({

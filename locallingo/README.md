@@ -110,6 +110,12 @@ Páginas indexables con título, meta descripción, canonical, breadcrumbs y JSO
 Respuestas: `{ "data": … }` o `{ "error": { "code", "message" } }` con códigos estables
 (traducidos en `errors.*` del diccionario).
 
+## App móvil
+
+La app Android/iOS vive en `../locallingo-app` (Expo) y consume esta misma API con
+`Authorization: Bearer`. Para la versión web de la app (desarrollo) agrega su origen a
+`CORS_ORIGINS` en `.env` (ej. `http://localhost:8081`); las apps nativas no necesitan CORS.
+
 ## Qué falta antes de producción (no incluido en el MVP a propósito)
 
 1. **Pagos reales:** implementar `PaymentProvider` con Stripe Connect o Mercado Pago

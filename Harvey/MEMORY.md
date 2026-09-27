@@ -117,6 +117,19 @@ al final de la sesión.
   encima del Premium de $18K MXN — cotizar aparte) o un **proyecto propio** (entonces
   compite con el tiempo de prospección de LYON)? Pendiente de respuesta.
 
+## 2026-09-27 — LocalLingo: app móvil construida
+
+- Alberto pidió la app para teléfono. Construida en `locallingo-app/` (Expo SDK 57 +
+  React Native): Android e iOS desde un solo código, usando la MISMA API y base de datos que
+  la web. Flujo completo verificado de punta a punta (explorar → reservar → pagar → chat →
+  guía acepta → ganancias).
+- Decisión de alcance: el registro de guía con documentos se queda en la web por ahora (se
+  hace una sola vez); la app cubre el uso diario de turistas y guías.
+- **La pregunta sigue abierta (segunda vez sin respuesta):** ¿LocalLingo es un cliente que
+  paga o un proyecto propio? Ya son web + app sin un peso facturado. Si Alberto vuelve a
+  pedir más construcción sin responder esto, nombrarlo como evasión (mismo patrón de
+  dispersión, ahora en su quinta repetición).
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a

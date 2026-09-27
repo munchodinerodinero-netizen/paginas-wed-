@@ -260,7 +260,7 @@ export async function completeBooking(user: SessionUser, id: string) {
 
 const listInclude = {
   service: { select: { title: true } },
-  guide: { select: { displayName: true, slug: true, photoUrl: true, userId: true } },
+  guide: { select: { displayName: true, slug: true, photoUrl: true, userId: true, city: { select: { timezone: true } } } },
   tourist: { select: { name: true } },
   reviews: { select: { direction: true } },
 } as const;

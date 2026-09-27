@@ -58,7 +58,7 @@ async function BookingTable({ rows, perspective }: { rows: BookingRow[]; perspec
         <tbody>
           {rows.map((b) => (
             <tr key={b.id}>
-              <td>{formatDateTime(b.startAt, intlLocale(locale))}</td>
+              <td>{formatDateTime(b.startAt, intlLocale(locale), b.guide.city?.timezone)}</td>
               <td>{b.service.title}</td>
               <td>{perspective === "tourist" ? b.guide.displayName : b.tourist.name.split(" ")[0]}</td>
               <td>{money.fmt(perspective === "tourist" ? b.totalMinor : b.guideNetMinor, b.currency)}</td>

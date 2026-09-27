@@ -33,15 +33,19 @@ export function api<C = unknown>(handler: Handler<C>) {
   };
 }
 
+const trustedOrigins = (process.env.CORS_ORIGINS ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+
 // Las mutaciones con cookie deben venir del mismo origen. Los clientes móviles usan Bearer
-// (no son vulnerables a CSRF) y no envían Origin del navegador.
+// (no son vulnerables a CSRF) y las apps nativas no envían Origin. Los orígenes de confianza
+// de CORS_ORIGINS (la versión web de la app) también se permiten.
 async function checkOrigin(req: Request) {
   if (["GET", "HEAD", "OPTIONS"].includes(req.method)) return;
   const h = await headers();
   if (h.get("authorization")?.startsWith("Bearer ")) return;
   const origin = h.get("origin");
   const host = h.get("x-forwarded-host") ?? h.get("host");
-  if (origin && host && new URL(origin).host !== host) throw forbidden();
+  if (!origin || !host || trustedOrigins.includes(origin)) return;
+  if (new URL(origin).host !== host) throw forbidden();
 }
 
 export async function parseBody<S extends ZodTypeAny>(req: Request, schema: S): Promise<z.output<S>> {

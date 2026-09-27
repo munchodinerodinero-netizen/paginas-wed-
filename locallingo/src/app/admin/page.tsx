@@ -164,7 +164,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   }
 
   async function Bookings() {
-    const bookings = await db.booking.findMany({ include: { service: true, guide: true, tourist: true }, orderBy: { createdAt: "desc" }, take: 200 });
+    const bookings = await db.booking.findMany({ include: { service: true, guide: { include: { city: true } }, tourist: true }, orderBy: { createdAt: "desc" }, take: 200 });
     return (
       <div className="table-wrap">
         <table className="table">
@@ -173,7 +173,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
             {bookings.map((b) => (
               <tr key={b.id}>
                 <td><Link href={`/reservas/${b.id}`}>{b.code}</Link></td>
-                <td>{formatDateTime(b.startAt, loc)}</td>
+                <td>{formatDateTime(b.startAt, loc, b.guide.city?.timezone)}</td>
                 <td>{b.guide.displayName}</td>
                 <td>{b.tourist.name}</td>
                 <td>{money.fmt(b.totalMinor, b.currency)}</td>
