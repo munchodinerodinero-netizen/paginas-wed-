@@ -130,6 +130,18 @@ al final de la sesión.
   pedir más construcción sin responder esto, nombrarlo como evasión (mismo patrón de
   dispersión, ahora en su quinta repetición).
 
+## 2026-09-27 — LocalLingo es proyecto PROPIO → congelado
+
+- Alberto confirmó: LocalLingo es un proyecto propio, no un cliente. No genera ingresos.
+- **Decisión: LocalLingo queda CONGELADO.** Cero horas de construcción, cero "mejoras
+  rápidas". El código (web + app) está a salvo en el repo; no se echa a perder en 90 días.
+- **Condición para descongelar:** cliente #1 de LYON cerrado y cobrado. Aun entonces, solo
+  en horas que no compitan con la prospección diaria (25–30 contactos/día).
+- **Patrón de dispersión — quinta repetición confirmada:** 35 nichos → 2 países → 7
+  ciudades → marketplace completo → app móvil, todo con LYON en $0. Si Alberto propone
+  volver a tocar LocalLingo antes del cliente #1, nombrarlo de inmediato como evasión de
+  vender.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
