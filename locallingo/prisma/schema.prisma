@@ -1,0 +1,411 @@
+// LocalLingo — esquema de datos del MVP.
+//
+// Convenciones:
+// - Dinero SIEMPRE en enteros de unidades menores (centavos) + código ISO de moneda.
+//   Nunca Float para montos.
+// - Porcentajes en "basis points" (1500 = 15.00%).
+// - Textos de catálogo traducibles (ciudades, idiomas, categorías) en `names`, un JSON
+//   {"es": "...", "en": "..."} para poder agregar idiomas sin migraciones.
+// - Estados como String (validados en src/lib/constants.ts) para que el mismo esquema
+//   funcione en SQLite (dev) y PostgreSQL (producción) cambiando solo `provider`.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  passwordHash   String
+  name           String
+  role           String    @default("TOURIST") // TOURIST | GUIDE | ADMIN
+  status         String    @default("ACTIVE") // ACTIVE | SUSPENDED
+  locale         String    @default("es")
+  currency       String    @default("MXN")
+  phone          String? // privado: nunca se expone públicamente
+  sessionVersion Int       @default(0) // se incrementa para invalidar sesiones (suspensión, logout global)
+  createdAt      DateTime  @default(now())
+  lastLoginAt    DateTime?
+
+  guideProfile        GuideProfile?
+  touristBookings     Booking[]      @relation("TouristBookings")
+  reviewsWritten      Review[]       @relation("ReviewAuthor")
+  reviewsReceived     Review[]       @relation("ReviewTarget")
+  messages            Message[]
+  touristConversations Conversation[] @relation("ConversationTourist")
+  guideConversations  Conversation[] @relation("ConversationGuide")
+  favorites           Favorite[]
+  reportsFiled        Report[]       @relation("ReportReporter")
+  reportsAgainst      Report[]       @relation("ReportTarget")
+  notifications       Notification[]
+  adminActions        AdminAction[]
+  blocksMade          Block[]        @relation("Blocker")
+  blocksReceived      Block[]        @relation("Blocked")
+  searchEvents        SearchEvent[]
+}
+
+model Country {
+  id     String @id @default(cuid())
+  code   String @unique // ISO 3166-1 alpha-2
+  slug   String @unique
+  names  String // JSON i18n
+  cities City[]
+}
+
+model City {
+  id        String  @id @default(cuid())
+  slug      String  @unique
+  names     String // JSON i18n
+  countryId String
+  country   Country @relation(fields: [countryId], references: [id])
+  lat       Float?
+  lng       Float?
+  timezone  String  @default("America/Mazatlan")
+  active    Boolean @default(true)
+
+  guides      GuideProfile[]
+  guideCities GuideCity[]
+  services    Service[]
+}
+
+model Language {
+  id     String  @id @default(cuid())
+  code   String  @unique // ISO 639-1
+  slug   String  @unique // usado en URLs SEO en español: "ingles"
+  names  String // JSON i18n
+  flag   String  @default("")
+  active Boolean @default(true)
+
+  guideLanguages   GuideLanguage[]
+  serviceLanguages ServiceLanguage[]
+}
+
+model Category {
+  id            String  @id @default(cuid())
+  slug          String  @unique
+  names         String // JSON i18n
+  icon          String  @default("")
+  commissionBps Int? // override opcional de la comisión global por categoría
+  active        Boolean @default(true)
+  services      Service[]
+}
+
+model GuideProfile {
+  id                 String    @id @default(cuid())
+  userId             String    @unique
+  user               User      @relation(fields: [userId], references: [id])
+  slug               String    @unique
+  displayName        String
+  photoUrl           String?
+  headline           String    @default("")
+  bio                String    @default("")
+  experience         String    @default("")
+  cityId             String?
+  city               City?     @relation(fields: [cityId], references: [id])
+  status             String    @default("DRAFT") // DRAFT | PENDING | APPROVED | REJECTED
+  rejectionReason    String?
+  onboardingStep     Int       @default(1)
+  hourlyRateMinor    Int? // tarifa base por hora
+  currency           String    @default("MXN")
+  cancellationPolicy String    @default("MODERATE") // FLEXIBLE | MODERATE | STRICT
+  // Documentos de verificación: rutas a almacenamiento PRIVADO, nunca públicas.
+  idDocumentKey      String?
+  legalDocumentKey   String?
+  verifiedAt         DateTime?
+  featuredUntil      DateTime? // preparado para "servicios destacados"
+  ratingSum          Int       @default(0)
+  ratingCount        Int       @default(0)
+  completedBookings  Int       @default(0)
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  languages    GuideLanguage[]
+  cities       GuideCity[]
+  photos       GuidePhoto[]
+  services     Service[]
+  availability Availability[]
+  bookings     Booking[]
+  favorites    Favorite[]
+  payouts      Payout[]
+
+  @@index([status, cityId])
+}
+
+model GuideLanguage {
+  id         String       @id @default(cuid())
+  guideId    String
+  guide      GuideProfile @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  languageId String
+  language   Language     @relation(fields: [languageId], references: [id])
+  level      String // NATIVE | BASIC | INTERMEDIATE | ADVANCED | C1 | C2
+
+  @@unique([guideId, languageId])
+}
+
+model GuideCity {
+  id      String       @id @default(cuid())
+  guideId String
+  guide   GuideProfile @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  cityId  String
+  city    City         @relation(fields: [cityId], references: [id])
+
+  @@unique([guideId, cityId])
+}
+
+model GuidePhoto {
+  id        String       @id @default(cuid())
+  guideId   String
+  guide     GuideProfile @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  url       String
+  sort      Int          @default(0)
+  createdAt DateTime     @default(now())
+}
+
+model Service {
+  id           String       @id @default(cuid())
+  guideId      String
+  guide        GuideProfile @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  categoryId   String
+  category     Category     @relation(fields: [categoryId], references: [id])
+  title        String
+  description  String       @default("")
+  pricingType  String       @default("FIXED") // FIXED (por servicio) | HOURLY (por hora)
+  priceMinor   Int
+  currency     String       @default("MXN")
+  durationMin  Int          @default(60)
+  modality     String       @default("IN_PERSON") // IN_PERSON | REMOTE
+  cityId       String?
+  city         City?        @relation(fields: [cityId], references: [id])
+  meetingPoint String? // referencia pública (ej. "Malecón, Monumento a la Continuidad")
+  maxPeople    Int          @default(4)
+  active       Boolean      @default(true)
+  createdAt    DateTime     @default(now())
+
+  languages ServiceLanguage[]
+  bookings  Booking[]
+
+  @@index([guideId, active])
+}
+
+model ServiceLanguage {
+  id         String   @id @default(cuid())
+  serviceId  String
+  service    Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  languageId String
+  language   Language @relation(fields: [languageId], references: [id])
+
+  @@unique([serviceId, languageId])
+}
+
+// Disponibilidad semanal recurrente, en minutos desde medianoche (hora local de la ciudad).
+model Availability {
+  id          String       @id @default(cuid())
+  guideId     String
+  guide       GuideProfile @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  weekday     Int // 0 = domingo … 6 = sábado
+  startMinute Int
+  endMinute   Int
+}
+
+model Booking {
+  id            String       @id @default(cuid())
+  code          String       @unique // código corto legible, ej. LL-8F3K2Q
+  touristId     String
+  tourist       User         @relation("TouristBookings", fields: [touristId], references: [id])
+  guideId       String
+  guide         GuideProfile @relation(fields: [guideId], references: [id])
+  serviceId     String
+  service       Service      @relation(fields: [serviceId], references: [id])
+  startAt       DateTime
+  durationMin   Int
+  people        Int          @default(1)
+  meetingPoint  String?
+  notes         String?
+  // PENDING_PAYMENT → PENDING (esperando al guía) → ACCEPTED → COMPLETED
+  //                                               ↘ REJECTED   ↘ CANCELLED
+  status        String       @default("PENDING_PAYMENT")
+  currency      String
+  subtotalMinor Int // precio del servicio
+  discountMinor Int          @default(0) // preparado para cupones/promociones
+  touristFeeMinor Int        @default(0) // preparado por si se cobra cargo al turista
+  totalMinor    Int // lo que paga el turista
+  commissionBps Int // snapshot de la comisión vigente al reservar
+  commissionMinor Int // lo que gana la plataforma
+  guideNetMinor Int // lo que recibe el guía
+  couponCode    String?
+  cancelledBy   String? // TOURIST | GUIDE | ADMIN | SYSTEM
+  cancelReason  String?
+  refundMinor   Int          @default(0)
+  acceptedAt    DateTime?
+  cancelledAt   DateTime?
+  completedAt   DateTime?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  payments Payment[]
+  reviews  Review[]
+  reports  Report[]
+
+  @@index([guideId, status])
+  @@index([touristId, status])
+}
+
+model Payment {
+  id          String   @id @default(cuid())
+  bookingId   String
+  booking     Booking  @relation(fields: [bookingId], references: [id])
+  provider    String // "mock" | "stripe" | "mercadopago" …
+  providerRef String? // id del cobro en el proveedor. Nunca datos de tarjeta.
+  kind        String   @default("CHARGE") // CHARGE | REFUND
+  amountMinor Int
+  currency    String
+  status      String // PENDING | HELD | CAPTURED | REFUNDED | FAILED
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Payout {
+  id          String       @id @default(cuid())
+  guideId     String
+  guide       GuideProfile @relation(fields: [guideId], references: [id])
+  amountMinor Int
+  currency    String
+  status      String       @default("REQUESTED") // REQUESTED | PAID | REJECTED
+  providerRef String?
+  createdAt   DateTime     @default(now())
+  processedAt DateTime?
+}
+
+model Review {
+  id            String   @id @default(cuid())
+  bookingId     String
+  booking       Booking  @relation(fields: [bookingId], references: [id])
+  authorId      String
+  author        User     @relation("ReviewAuthor", fields: [authorId], references: [id])
+  targetUserId  String
+  targetUser    User     @relation("ReviewTarget", fields: [targetUserId], references: [id])
+  direction     String   @default("TOURIST_TO_GUIDE") // | GUIDE_TO_TOURIST (futuro)
+  rating        Int // 1–5 general
+  communication Int?
+  punctuality   Int?
+  knowledge     Int?
+  experience    Int?
+  comment       String   @default("")
+  hidden        Boolean  @default(false) // moderación
+  createdAt     DateTime @default(now())
+
+  @@unique([bookingId, direction])
+}
+
+model Conversation {
+  id            String    @id @default(cuid())
+  touristId     String
+  tourist       User      @relation("ConversationTourist", fields: [touristId], references: [id])
+  guideUserId   String
+  guideUser     User      @relation("ConversationGuide", fields: [guideUserId], references: [id])
+  lastMessageAt DateTime  @default(now())
+  createdAt     DateTime  @default(now())
+  messages      Message[]
+  reports       Report[]
+
+  @@unique([touristId, guideUserId])
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  senderId       String
+  sender         User         @relation(fields: [senderId], references: [id])
+  body           String
+  redacted       Boolean      @default(false) // se ocultó información sensible
+  readAt         DateTime?
+  createdAt      DateTime     @default(now())
+
+  @@index([conversationId, createdAt])
+}
+
+model Block {
+  id        String   @id @default(cuid())
+  blockerId String
+  blocker   User     @relation("Blocker", fields: [blockerId], references: [id])
+  blockedId String
+  blocked   User     @relation("Blocked", fields: [blockedId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([blockerId, blockedId])
+}
+
+model Favorite {
+  id        String       @id @default(cuid())
+  userId    String
+  user      User         @relation(fields: [userId], references: [id])
+  guideId   String
+  guide     GuideProfile @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  createdAt DateTime     @default(now())
+
+  @@unique([userId, guideId])
+}
+
+model Report {
+  id             String        @id @default(cuid())
+  reporterId     String
+  reporter       User          @relation("ReportReporter", fields: [reporterId], references: [id])
+  targetUserId   String?
+  targetUser     User?         @relation("ReportTarget", fields: [targetUserId], references: [id])
+  conversationId String?
+  conversation   Conversation? @relation(fields: [conversationId], references: [id])
+  bookingId      String?
+  booking        Booking?      @relation(fields: [bookingId], references: [id])
+  reason         String // SPAM | FRAUD | HARASSMENT | UNSAFE | NO_SHOW | OTHER
+  details        String        @default("")
+  status         String        @default("OPEN") // OPEN | RESOLVED | DISMISSED
+  createdAt      DateTime      @default(now())
+  resolvedAt     DateTime?
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+  type      String
+  payload   String    @default("{}") // JSON
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId, readAt])
+}
+
+model AdminAction {
+  id         String   @id @default(cuid())
+  adminId    String
+  admin      User     @relation(fields: [adminId], references: [id])
+  action     String
+  targetType String
+  targetId   String
+  details    String   @default("")
+  createdAt  DateTime @default(now())
+}
+
+// Configuración editable desde /admin (comisión, tasas de cambio, etc.).
+model Setting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+// Para la métrica "búsqueda → reserva".
+model SearchEvent {
+  id           String   @id @default(cuid())
+  userId       String?
+  user         User?    @relation(fields: [userId], references: [id])
+  visitorId    String?
+  filters      String   @default("{}")
+  resultsCount Int
+  createdAt    DateTime @default(now())
+}

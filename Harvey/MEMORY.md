@@ -100,6 +100,23 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-27 — Nuevo proyecto: LocalLingo (marketplace de guías/traductores)
+
+- Alberto trajo una especificación completa (30 secciones) para un marketplace
+  internacional que conecta turistas con guías/traductores locales. Nombre provisional
+  "LocalLingo", beta planeada en Mazatlán, comisión 15% por reserva.
+- **Se construyó el MVP** en `locallingo/` (Next.js + API REST `/api/v1` + Prisma):
+  registro/login, búsqueda con filtros, perfiles, onboarding de guía en 6 pasos,
+  reservas con cálculo de comisión en centavos, pago simulado (proveedor
+  intercambiable), mensajes, reseñas, favoritos, reportes, panel admin con métricas y
+  comisión editable, páginas SEO por ciudad/idioma, i18n ES/EN, MXN/USD.
+- **Alerta Harvey (cuarta repetición del patrón de dispersión):** LYON sigue en $0 y el
+  objetivo #1 de 90 días es cerrar 10 clientes. Un marketplace de dos lados es el
+  negocio más difícil de arrancar que existe (problema del huevo y la gallina). Pregunta
+  abierta a Alberto: ¿es un **cliente que paga** (entonces es custom software, muy por
+  encima del Premium de $18K MXN — cotizar aparte) o un **proyecto propio** (entonces
+  compite con el tiempo de prospección de LYON)? Pendiente de respuesta.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
