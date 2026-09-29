@@ -120,6 +120,12 @@ al final de la sesión.
   Upscale, Mis creaciones), 12 presets, 24 movimientos, 12 efectos, texto sobre video, editor
   con upscale 2x/4x sin IA. Fuera de lo gratis: video generativo, lipsync, avatares, face swap.
 - Tercera ronda de funciones sobre la misma herramienta en una sesión, con $0 facturados.
+- Cuarta ronda: "Avatar que habla" (foto + voz subida o grabada; la boca se abre con el
+  volumen, la cabeza se mueve; exporta MP4 con audio). No es lipsync con IA. Uso para LYON:
+  video-saludo de Alberto para prospectos ("Hola [Nombre], vi tu negocio…").
+- PATRÓN CONFIRMADO (4 rondas de funciones en una sesión, $0 facturados): construir la
+  herramienta se volvió la forma de no prospectar. Nombrarlo al inicio de la próxima sesión y
+  pedir números de prospección antes de tocar código.
 - **Vigilar:** construir herramientas no es vender. Si esto se convierte en otro proyecto
   paralelo, es el mismo patrón de dispersión (cuarta repetición). Nombrarlo de inmediato.
 
