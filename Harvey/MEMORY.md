@@ -130,6 +130,10 @@ al final de la sesión.
   legal/reputacional si se usa con caras de prospectos, y técnicamente no corre en la versión de
   Claude (el modelo de detección facial se bloquea). Queda pendiente de que Alberto dé un caso de
   uso concreto de negocio y sus números de prospección.
+- Alberto dijo "hazlo" sin dar el caso de uso ni los números. Face swap construido (su decisión):
+  alineación por 3 puntos, igualación de tono, borde suave, marca "Editado" por defecto y
+  exportación bloqueada hasta confirmar permiso de las personas. Regla: nunca con caras de
+  prospectos. Los números de prospección siguen pendientes; pedirlos primero en la próxima sesión.
 - **Vigilar:** construir herramientas no es vender. Si esto se convierte en otro proyecto
   paralelo, es el mismo patrón de dispersión (cuarta repetición). Nombrarlo de inmediato.
 

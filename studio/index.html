@@ -147,6 +147,11 @@
   .preset .pi { padding: 10px 12px 12px; display: grid; gap: 2px; }
   .preset .pi b { font-size: 14px; }
   .preset .pi span { font-size: 12px; color: var(--muted); }
+  .tabs { display: flex; gap: 4px; background: var(--panel-2); padding: 4px; border-radius: 12px; margin-bottom: 16px; }
+  .tabs button { flex: 1; background: none; border: 0; border-radius: 9px; padding: 8px 4px; cursor: pointer; color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+  .tabs button.on { background: var(--accent); color: var(--accent-ink); font-weight: 700; }
+  .check { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; cursor: pointer; }
+  .check input { margin-top: 3px; accent-color: var(--accent); width: 18px; height: 18px; flex: none; }
   .paid { margin-top: 26px; border: 1px dashed var(--line); border-radius: var(--radius); padding: 14px 16px; color: var(--muted); font-size: 13px; }
   .paid b { color: var(--text); }
 
@@ -165,9 +170,10 @@
   <button class="nav" data-view="image"><span class="ic">🖼</span>Imagen</button>
   <button class="nav" data-view="video"><span class="ic">🎬</span>Video</button>
   <button class="nav" data-view="clone"><span class="ic">🎥</span>Clonar</button>
-  <button class="nav" data-view="avatar"><span class="ic">🗣</span>Avatar que habla<span class="tag">NUEVO</span></button>
+  <button class="nav" data-view="avatar"><span class="ic">🗣</span>Avatar que habla</button>
   <div class="navgroup">Editar</div>
   <button class="nav" data-view="edit"><span class="ic">✂</span>Editar y Upscale</button>
+  <button class="nav" data-view="swap"><span class="ic">🎭</span>Face Swap<span class="tag">NUEVO</span></button>
   <div class="navgroup">Biblioteca</div>
   <button class="nav" data-view="library"><span class="ic">▦</span>Mis creaciones</button>
   <div class="side-foot"><b>∞ Gratis</b>Sin créditos, sin cuenta. Todo se procesa en tu dispositivo.</div>
@@ -192,11 +198,12 @@
         <button class="tool" data-go="video"><span class="ic">🎬</span><b>Imagen a video</b><span>24 movimientos de cámara y 12 efectos</span></button>
         <button class="tool" data-go="clone"><span class="ic">🎥</span><b>Clonar movimiento</b><span>Copia la cámara de un reel</span></button>
         <button class="tool" data-go="avatar"><span class="ic">🗣</span><b>Avatar que habla</b><span>Una foto que habla con tu voz</span></button>
+        <button class="tool" data-go="swap"><span class="ic">🎭</span><b>Face Swap</b><span>Cambia la cara de una foto, con permiso</span></button>
         <button class="tool" data-go="edit"><span class="ic">✂</span><b>Editar y Upscale</b><span>Ajustes, recorte, texto y 2x/4x</span></button>
       </div>
       <div class="sec" style="border-top:0;padding-top:0;margin-top:0">Presets de video</div>
       <div class="presets" id="presets"></div>
-      <div class="paid"><b>Fuera de la versión gratis:</b> video generativo (que la escena cobre vida), lipsync con IA que forma cada sílaba y cambio de rostro. Necesitan modelos de IA en servidores de pago. El avatar de aquí mueve la boca con el volumen de la voz.</div>
+      <div class="paid"><b>Fuera de la versión gratis:</b> video generativo (que la escena cobre vida), lipsync con IA que forma cada sílaba y face swap automático en video. Necesitan modelos de IA en servidores de pago. El avatar de aquí mueve la boca con el volumen de la voz.</div>
     </section>
 
     <!-- ====================== IMAGEN ====================== -->
@@ -412,6 +419,60 @@
       </div>
     </section>
 
+    <!-- ====================== FACE SWAP ====================== -->
+    <section id="v-swap" class="view">
+      <div class="split preview-first">
+        <div class="panel">
+          <div class="tabs" id="fsTabs">
+            <button data-tab="A" type="button">1 · Cara</button>
+            <button data-tab="B" type="button">2 · Destino</button>
+            <button data-tab="R" type="button" class="on">3 · Resultado</button>
+          </div>
+          <div class="field">
+            <span class="lbl">Fotos</span>
+            <div class="row">
+              <button class="btn ghost sm" id="fsUpA" type="button" style="flex:1">📷 Cara a usar</button>
+              <button class="btn ghost sm" id="fsUpB" type="button" style="flex:1">📷 Foto destino</button>
+            </div>
+            <input type="file" id="fsFileA" accept="image/*" hidden>
+            <input type="file" id="fsFileB" accept="image/*" hidden>
+            <div class="hint" id="fsHint">En los pasos 1 y 2, arrastra los 3 puntos al ojo izquierdo, al ojo derecho y al centro de la boca. Fotos de frente dan el mejor resultado.</div>
+          </div>
+          <div class="field">
+            <label class="lbl" for="fsSize">Tamaño de la máscara: <b id="fsSizeLbl">100%</b></label>
+            <input type="range" id="fsSize" min="70" max="140" value="100">
+          </div>
+          <div class="field">
+            <label class="lbl" for="fsFeather">Suavizado del borde: <b id="fsFeatherLbl">35%</b></label>
+            <input type="range" id="fsFeather" min="5" max="70" value="35">
+          </div>
+          <div class="field">
+            <label class="lbl" for="fsColor">Igualar tono de piel: <b id="fsColorLbl">80%</b></label>
+            <input type="range" id="fsColor" min="0" max="100" value="80">
+          </div>
+          <div class="field">
+            <label class="lbl" for="fsOpacity">Opacidad: <b id="fsOpacityLbl">100%</b></label>
+            <input type="range" id="fsOpacity" min="40" max="100" value="100">
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" id="fsMark" checked> Agregar la marca "Editado" en la esquina</label>
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" id="fsOk"> Tengo permiso de las personas que aparecen en estas fotos. No lo usaré para engañar, acosar ni hacerme pasar por alguien.</label>
+          </div>
+          <div class="row">
+            <button class="btn" id="fsSave" style="flex:1" disabled>⬇ Guardar JPG</button>
+          </div>
+          <div class="row" style="margin-top:8px">
+            <button class="btn ghost" id="fsToVideo" style="flex:1" disabled>🎬 Animar</button>
+            <button class="btn ghost" id="fsToAvatar" style="flex:1" disabled>🗣 Hacer que hable</button>
+          </div>
+          <p class="hint">Cambio de cara 2D: alinea la cara por ojos y boca, iguala el tono y la funde con bordes suaves. Funciona mejor con fotos de frente y luz parecida.</p>
+        </div>
+        <div class="stage"><canvas id="fsStage" width="900" height="1200" style="touch-action:none"></canvas></div>
+      </div>
+    </section>
+
     <!-- ====================== MIS CREACIONES ====================== -->
     <section id="v-library" class="view">
       <div class="sec" style="border-top:0;padding-top:0;margin-top:0">Videos de esta sesión</div>
@@ -478,6 +539,7 @@
     clone: ['Clonar movimiento', 'Copia la cámara de un video'],
     avatar: ['Avatar que habla', 'Una foto + tu voz'],
     edit: ['Editar y Upscale', 'Ajustes, recorte, texto y escalado'],
+    swap: ['Face Swap', 'Pon una cara en otra foto'],
     library: ['Mis creaciones', 'Imágenes y videos']
   };
   let current = 'explore';
@@ -1346,6 +1408,173 @@
     $('#avResults').prepend(card);
     toast('Video listo: toca Guardar');
   };
+
+  // ---------- FACE SWAP ----------
+  // Alineación por 3 puntos (ojos y boca) con transformación afín, igualación de color
+  // y máscara elíptica con borde suave. Sin modelos de IA: funciona en cualquier navegador.
+  function makeFace(o) {
+    const c = document.createElement('canvas'); c.width = 900; c.height = 1200;
+    const x = c.getContext('2d');
+    const bg = x.createLinearGradient(0, 0, 0, 1200); bg.addColorStop(0, o.bg[0]); bg.addColorStop(1, o.bg[1]);
+    x.fillStyle = bg; x.fillRect(0, 0, 900, 1200);
+    x.save(); x.translate(o.dx, o.dy); x.scale(o.s, o.s);
+    x.fillStyle = o.shirt; x.beginPath(); x.ellipse(450, 1250, 380, 300, 0, 0, 7); x.fill();
+    x.fillStyle = o.skin; x.fillRect(385, 800, 130, 180); x.beginPath(); x.ellipse(450, 560, 225, 290, 0, 0, 7); x.fill();
+    x.fillStyle = o.hair; x.beginPath(); x.ellipse(450, 380, 250, 170, 0, Math.PI, 0); x.fill(); x.fillRect(200, 370, 55, o.long ? 420 : 170); x.fillRect(645, 370, 55, o.long ? 420 : 170);
+    [[365, 520], [535, 520]].forEach(([ex, ey]) => {
+      x.fillStyle = '#fff'; x.beginPath(); x.ellipse(ex, ey, 42, 24, 0, 0, 7); x.fill();
+      x.fillStyle = o.iris; x.beginPath(); x.arc(ex, ey, 17, 0, 7); x.fill();
+      x.fillStyle = '#000'; x.beginPath(); x.arc(ex, ey, 8, 0, 7); x.fill();
+      x.strokeStyle = o.hair; x.lineWidth = 10; x.lineCap = 'round'; x.beginPath(); x.moveTo(ex - 45, ey - 52); x.quadraticCurveTo(ex, ey - 72, ex + 45, ey - 55); x.stroke();
+    });
+    x.strokeStyle = 'rgba(120,60,40,.6)'; x.lineWidth = 6; x.beginPath(); x.moveTo(450, 540); x.lineTo(430, 625); x.lineTo(462, 632); x.stroke();
+    x.fillStyle = o.lips; x.beginPath(); x.ellipse(450, 700, 80, 16, 0, 0, 7); x.fill();
+    if (o.beard) { x.fillStyle = 'rgba(40,25,20,.55)'; x.beginPath(); x.ellipse(450, 760, 170, 110, 0, 0, Math.PI); x.fill(); }
+    x.restore();
+    const P = (px, py) => [(o.dx + o.s * px) / 900, (o.dy + o.s * py) / 1200];
+    return { img: c, pts: [P(365, 520), P(535, 520), P(450, 700)] };
+  }
+  const fs = {
+    A: makeFace({ bg: ['#20303f', '#0f1720'], shirt: '#2f5d8a', skin: '#d9a47c', hair: '#2a1c16', iris: '#3b2a1e', lips: '#b5584e', beard: true, s: 1, dx: 0, dy: 0 }),
+    B: makeFace({ bg: ['#4a3a26', '#1c150e'], shirt: '#8a2f3d', skin: '#f1c7a1', hair: '#c9a14a', iris: '#3d6e8c', lips: '#c96a6a', long: true, s: .78, dx: 150, dy: 210 }),
+    tab: 'R', drag: -1
+  };
+  const fsCv = $('#fsStage'), fsCtx = fsCv.getContext('2d');
+  const FS_LABELS = ['Ojo izq.', 'Ojo der.', 'Boca'], FS_COLORS = ['#3ad4ff', '#ff5ad1', '#d4ff3a'];
+
+  function affine(P, Q) {
+    const [[x1, y1], [x2, y2], [x3, y3]] = P, det = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2);
+    if (Math.abs(det) < 1e-6) return [1, 0, 0, 1, 0, 0];
+    const solve = (v1, v2, v3) => [
+      (v1 * (y2 - y3) + v2 * (y3 - y1) + v3 * (y1 - y2)) / det,
+      (v1 * (x3 - x2) + v2 * (x1 - x3) + v3 * (x2 - x1)) / det,
+      (v1 * (x2 * y3 - x3 * y2) + v2 * (x3 * y1 - x1 * y3) + v3 * (x1 * y2 - x2 * y1)) / det];
+    const [a, c, e] = solve(Q[0][0], Q[1][0], Q[2][0]), [b, d, f] = solve(Q[0][1], Q[1][1], Q[2][1]);
+    return [a, b, c, d, e, f];
+  }
+
+  // arma el resultado sobre la foto destino; maxLong limita el tamaño
+  function composeSwap(maxLong) {
+    const A = fs.A.img, B = fs.B.img, sc = Math.min(1, maxLong / Math.max(B.width, B.height));
+    const W = Math.round(B.width * sc), H = Math.round(B.height * sc);
+    const out = document.createElement('canvas'); out.width = W; out.height = H;
+    const o = out.getContext('2d'); o.drawImage(B, 0, 0, W, H);
+    const pa = fs.A.pts.map(p => [p[0] * A.width, p[1] * A.height]), pb = fs.B.pts.map(p => [p[0] * W, p[1] * H]);
+    const tmp = document.createElement('canvas'); tmp.width = W; tmp.height = H;
+    const t = tmp.getContext('2d', { willReadFrequently: true });
+    t.imageSmoothingQuality = 'high'; t.setTransform(...affine(pa, pb)); t.drawImage(A, 0, 0); t.setTransform(1, 0, 0, 1, 0, 0);
+
+    // geometría de la máscara: elipse alineada con la línea de los ojos
+    const [le, re, mo] = pb, ex = (le[0] + re[0]) / 2, ey = (le[1] + re[1]) / 2;
+    const ed = Math.hypot(re[0] - le[0], re[1] - le[1]), md = Math.hypot(mo[0] - ex, mo[1] - ey), ang = Math.atan2(re[1] - le[1], re[0] - le[0]);
+    const size = +$('#fsSize').value / 100, cx = ex + (mo[0] - ex) * .4, cy = ey + (mo[1] - ey) * .4;
+    const rx = ed * 1.05 * size, ry = md * 1.5 * size;
+
+    // igualar tono: medias de color dentro de la elipse, cara nueva contra foto destino
+    const strength = +$('#fsColor').value / 100;
+    const bx = Math.max(0, Math.floor(cx - Math.max(rx, ry))), by = Math.max(0, Math.floor(cy - Math.max(rx, ry)));
+    const bw = Math.min(W - bx, Math.ceil(2 * Math.max(rx, ry))), bh = Math.min(H - by, Math.ceil(2 * Math.max(rx, ry)));
+    if (strength > 0 && bw > 2 && bh > 2) {
+      const src = t.getImageData(bx, by, bw, bh), dst = o.getImageData(bx, by, bw, bh);
+      const ma = [0, 0, 0], mb = [0, 0, 0]; let n = 0;
+      const co = Math.cos(-ang), si = Math.sin(-ang);
+      for (let y = 0; y < bh; y += 3) for (let x = 0; x < bw; x += 3) {
+        const dx = x + bx - cx, dy = y + by - cy, u = (dx * co - dy * si) / rx, v = (dx * si + dy * co) / ry;
+        if (u * u + v * v > .45) continue;
+        const i = (y * bw + x) * 4; if (src.data[i + 3] < 200) continue;
+        for (let ch = 0; ch < 3; ch++) { ma[ch] += src.data[i + ch]; mb[ch] += dst.data[i + ch]; } n++;
+      }
+      if (n > 20) {
+        const gain = ma.map((m, ch) => 1 + ((mb[ch] / n + 1) / (m / n + 1) - 1) * strength);
+        for (let i = 0; i < src.data.length; i += 4) for (let ch = 0; ch < 3; ch++) src.data[i + ch] = Math.min(255, src.data[i + ch] * gain[ch]);
+        t.putImageData(src, bx, by);
+      }
+    }
+    // máscara con borde suave
+    const mask = document.createElement('canvas'); mask.width = W; mask.height = H;
+    const m = mask.getContext('2d'), feather = +$('#fsFeather').value / 100;
+    m.translate(cx, cy); m.rotate(ang); m.scale(rx, ry);
+    const g = m.createRadialGradient(0, 0, 0, 0, 0, 1);
+    g.addColorStop(0, '#fff'); g.addColorStop(Math.max(0, 1 - feather), '#fff'); g.addColorStop(1, 'rgba(255,255,255,0)');
+    m.fillStyle = g; m.beginPath(); m.arc(0, 0, 1, 0, 7); m.fill();
+    t.globalCompositeOperation = 'destination-in'; t.drawImage(mask, 0, 0); t.globalCompositeOperation = 'source-over';
+    o.globalAlpha = +$('#fsOpacity').value / 100; o.drawImage(tmp, 0, 0); o.globalAlpha = 1;
+    if ($('#fsMark').checked) {
+      const fsz = Math.max(12, Math.round(Math.min(W, H) / 32));
+      o.font = `600 ${fsz}px system-ui, sans-serif`; o.textAlign = 'right';
+      o.fillStyle = 'rgba(0,0,0,.45)'; o.fillText('Editado', W - fsz * .6 + 1, H - fsz * .6 + 1);
+      o.fillStyle = 'rgba(255,255,255,.85)'; o.fillText('Editado', W - fsz * .6, H - fsz * .6);
+    }
+    return out;
+  }
+
+  // vista del paso activo; en los pasos 1 y 2 se dibujan los puntos arrastrables
+  let fsView = null;
+  function fsDraw() {
+    const img = fs.tab === 'R' ? composeSwap(1000) : fs[fs.tab].img;
+    const sc = Math.min(1, 1000 / Math.max(img.width, img.height));
+    fsCv.width = Math.round(img.width * sc); fsCv.height = Math.round(img.height * sc);
+    fsCtx.drawImage(img, 0, 0, fsCv.width, fsCv.height);
+    fsView = fs.tab === 'R' ? null : fs[fs.tab];
+    if (!fsView) return;
+    const r = Math.max(10, fsCv.width / 45);
+    fsView.pts.forEach((p, i) => {
+      const x = p[0] * fsCv.width, y = p[1] * fsCv.height;
+      fsCtx.lineWidth = r / 4; fsCtx.strokeStyle = '#000'; fsCtx.fillStyle = FS_COLORS[i];
+      fsCtx.beginPath(); fsCtx.arc(x, y, r, 0, 7); fsCtx.fill(); fsCtx.stroke();
+      fsCtx.font = `700 ${Math.round(r * 1.3)}px system-ui, sans-serif`; fsCtx.textAlign = 'center';
+      fsCtx.strokeText(FS_LABELS[i], x, y - r * 1.6); fsCtx.fillText(FS_LABELS[i], x, y - r * 1.6);
+    });
+  }
+  function fsTab(tab) {
+    fs.tab = tab; $$('#fsTabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === tab)); fsDraw();
+  }
+  $$('#fsTabs button').forEach(b => b.onclick = () => fsTab(b.dataset.tab));
+  const fsPos = e => { const r = fsCv.getBoundingClientRect(); return [(e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height]; };
+  fsCv.onpointerdown = e => {
+    if (!fsView) return;
+    const [x, y] = fsPos(e), asp = fsCv.width / fsCv.height;
+    let best = -1, bd = .06;
+    fsView.pts.forEach((p, i) => { const d = Math.hypot((p[0] - x) * asp, p[1] - y); if (d < bd) { bd = d; best = i; } });
+    if (best < 0) return;
+    fs.drag = best; fsCv.setPointerCapture(e.pointerId);
+  };
+  fsCv.onpointermove = e => {
+    if (fs.drag < 0 || !fsView) return;
+    const [x, y] = fsPos(e); fsView.pts[fs.drag] = [Math.max(0, Math.min(1, x)), Math.max(0, Math.min(1, y))]; fsDraw();
+  };
+  fsCv.onpointerup = fsCv.onpointercancel = () => { fs.drag = -1; };
+
+  const fsDefaults = () => [[.4, .42], [.6, .42], [.5, .62]];
+  function fsUpload(which, btn, input) {
+    btn.onclick = () => input.click();
+    input.onchange = async e => {
+      const f = e.target.files[0]; e.target.value = ''; if (!f) return;
+      try {
+        fs[which] = { img: await loadImage(URL.createObjectURL(f)), pts: fsDefaults() };
+        fsTab(which); toast('Arrastra los 3 puntos a los ojos y la boca');
+      } catch { toast('No se pudo cargar la foto', true); }
+    };
+  }
+  fsUpload('A', $('#fsUpA'), $('#fsFileA'));
+  fsUpload('B', $('#fsUpB'), $('#fsFileB'));
+  [['fsSize', '%'], ['fsFeather', '%'], ['fsColor', '%'], ['fsOpacity', '%']].forEach(([id, u]) => {
+    $('#' + id).oninput = e => { $('#' + id + 'Lbl').textContent = e.target.value + u; if (fs.tab !== 'R') fsTab('R'); else fsDraw(); };
+  });
+  $('#fsMark').onchange = () => fsDraw();
+  $('#fsOk').onchange = e => ['#fsSave', '#fsToVideo', '#fsToAvatar'].forEach(s => $(s).disabled = !e.target.checked);
+  $('#fsSave').onclick = () => composeSwap(4096).toBlob(b => b ? saveBlob(`lyon-faceswap-${Date.now()}.jpg`, b) : toast('La imagen es demasiado grande', true), 'image/jpeg', .92);
+  $('#fsToVideo').onclick = () => { srcImg = composeSwap(2048); t0 = performance.now(); $('#srcHint').textContent = 'Usando el resultado del Face Swap.'; showView('video'); };
+  $('#fsToAvatar').onclick = () => {
+    const img = composeSwap(1600), [le, re, mo] = fs.B.pts;
+    av.img = img; sizeAvatar();
+    av.mouth.x = mo[0]; av.mouth.y = mo[1];
+    av.mouth.w = Math.max(.06, Math.min(.4, Math.hypot(re[0] - le[0], (re[1] - le[1]) * img.height / img.width) * .95));
+    $('#avMouthW').value = Math.round(av.mouth.w * 100); $('#avMouthLbl').textContent = Math.round(av.mouth.w * 100) + '%';
+    av.markerUntil = performance.now() + 3000;
+    showView('avatar');
+  };
+  fsDraw();
 
   // ---------- MIS CREACIONES ----------
   function renderLibrary() {
