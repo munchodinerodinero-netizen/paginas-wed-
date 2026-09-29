@@ -118,6 +118,19 @@ al final de la sesión.
   clientes y de medir el costo real en créditos de MuAPI por video. Ahí se le pone
   precio. Nunca antes.
 
+## 2026-09-29 — Alberto quiere un NEGOCIO APARTE de videos/UGC con IA
+
+- Aclaró que el video con IA (videos de todo tipo + personas realistas tipo UGC) no es
+  un add-on de LYON sino **un segundo negocio**.
+- **Veredicto de Harvey: NO ahora.** Quinta repetición del patrón de dispersión (35
+  nichos → 2 países → 7 ciudades → servicio extra → negocio nuevo). LYON sigue en $0
+  clientes; dos negocios en $0 no suman, dividen el tiempo de un operador solo. Filtro
+  Hormozi: una oferta, un avatar, un canal hasta que funcione.
+- **Condición para abrirlo:** LYON con **5 clientes pagados** y el MRR corriendo. Mientras
+  tanto la herramienta se usa solo para vender LYON (y ahí se aprende el oficio y el costo
+  real por video, que es la base para ponerle precio al negocio 2).
+- Pendiente: registrar si Alberto acepta la condición o decide abrirlo igual.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
