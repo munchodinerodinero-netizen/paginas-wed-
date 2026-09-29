@@ -19,8 +19,9 @@
   días sin presencia digital decente).
 - **Equipo:** En LYON, Alberto solo (sin empleados, socios ni freelancers). **Actualizado
   2026-09-29:** Alberto dice que tiene *otras personas* trabajando en el negocio de
-  videos/UGC con IA. Pendiente confirmar: quiénes, cuántos, qué hacen, cómo se les paga
-  y cuántas horas le quita a Alberto.
+  videos/UGC con IA. Confirmado: **10 personas** que producen y venden videos. (Pendiente aclarar si son 10
+  en total haciendo ambas cosas o 10 + 10.) Aún pendiente: cómo se les paga, si ya
+  tienen clientes, y horas de Alberto.
 
 ## Dinero
 

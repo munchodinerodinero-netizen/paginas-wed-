@@ -136,6 +136,13 @@ al final de la sesión.
   videos, solo dirige; (2) tope de horas semanales de Alberto en el negocio 2; (3) una
   métrica semanal por negocio; (4) LYON sigue siendo prioridad #1 hasta 5 clientes.
   Pendiente: detalles del equipo (ver USER.md).
+- **Equipo confirmado: 10 personas que producen y venden** (negocio de video).
+- **Movimiento clave identificado por Harvey:** el bloqueo #1 de Alberto es vender y ya
+  tiene una fuerza de ventas. Propuesta: que el equipo venda también las páginas de LYON
+  por comisión (cross-sell: el cliente que compra video también necesita página, y
+  viceversa). Esto puede ser el mayor apalancamiento que ha tenido LYON hasta ahora.
+  Pendiente: respuesta de Alberto y definir comisión (sobre precio completo, nunca
+  descontando al cliente).
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 
