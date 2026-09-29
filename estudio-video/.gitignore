@@ -1,0 +1,4 @@
+videos/
+config.json
+.venv/
+__pycache__/
