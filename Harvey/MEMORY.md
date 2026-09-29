@@ -134,6 +134,10 @@ al final de la sesión.
   alineación por 3 puntos, igualación de tono, borde suave, marca "Editado" por defecto y
   exportación bloqueada hasta confirmar permiso de las personas. Regla: nunca con caras de
   prospectos. Los números de prospección siguen pendientes; pedirlos primero en la próxima sesión.
+- Sexta petición: video generativo con IA. No se puede gratis. Créditos conectados (2026-09-29):
+  maqrketing 1.14 (plan free), AlexyaAI 9 (un video cuesta ~140). No alcanza ni para uno.
+  Decisión de Harvey: no gastar en créditos de video con $0 facturados; se integra cuando un
+  cliente pagado lo justifique.
 - **Vigilar:** construir herramientas no es vender. Si esto se convierte en otro proyecto
   paralelo, es el mismo patrón de dispersión (cuarta repetición). Nombrarlo de inmediato.
 
