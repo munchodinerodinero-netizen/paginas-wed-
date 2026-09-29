@@ -129,7 +129,13 @@ al final de la sesión.
 - **Condición para abrirlo:** LYON con **5 clientes pagados** y el MRR corriendo. Mientras
   tanto la herramienta se usa solo para vender LYON (y ahí se aprende el oficio y el costo
   real por video, que es la base para ponerle precio al negocio 2).
-- Pendiente: registrar si Alberto acepta la condición o decide abrirlo igual.
+- **Respuesta de Alberto:** tiene otras personas ejecutando el negocio de video, así
+  que dice que puede enfocarse en varias cosas. Dato nuevo que cambia el análisis: la
+  objeción deja de ser "no tienes tiempo" y pasa a ser "¿cuánto de TU tiempo y de TU
+  atención le quita?". Harvey acepta el negocio 2 con reglas: (1) Alberto no produce
+  videos, solo dirige; (2) tope de horas semanales de Alberto en el negocio 2; (3) una
+  métrica semanal por negocio; (4) LYON sigue siendo prioridad #1 hasta 5 clientes.
+  Pendiente: detalles del equipo (ver USER.md).
 
 ## Prioridades vigentes (actualizar conforme avancemos)
 

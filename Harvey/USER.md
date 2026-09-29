@@ -17,8 +17,10 @@
   tienen presencia web o tienen una débil/inexistente. Prospectados vía Google Maps y
   redes sociales — negocios reales, verificables, con dolor real (pierden leads todos los
   días sin presencia digital decente).
-- **Equipo:** Alberto solo. Sin empleados, sin socios, sin freelancers subcontratados
-  (por ahora).
+- **Equipo:** En LYON, Alberto solo (sin empleados, socios ni freelancers). **Actualizado
+  2026-09-29:** Alberto dice que tiene *otras personas* trabajando en el negocio de
+  videos/UGC con IA. Pendiente confirmar: quiénes, cuántos, qué hacen, cómo se les paga
+  y cuántas horas le quita a Alberto.
 
 ## Dinero
 
