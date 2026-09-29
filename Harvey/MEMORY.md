@@ -100,6 +100,20 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-29 — LYON Studio (clon gratis tipo Higgsfield)
+
+- Alberto pidió "una página como Higgsfield gratis con las mismas funciones". Construida
+  en `studio/index.html` (un solo archivo, sin backend): texto→imagen gratis vía
+  Pollinations.ai, 12 movimientos de cámara (dolly, crash zoom, orbit, pan, tilt, etc.) +
+  8 efectos, exportación de video en el navegador, galería local.
+- **Límite honesto:** no es Higgsfield. No hay video generativo real (lo de video son
+  movimientos de cámara sobre una imagen fija). Depende de que Pollinations siga siendo
+  gratis y sin API key.
+- **Uso correcto dentro de LYON:** herramienta interna para crear imágenes de techos,
+  remodelaciones y reels para los demos y la prospección. No es un producto nuevo.
+- **Vigilar:** construir herramientas no es vender. Si esto se convierte en otro proyecto
+  paralelo, es el mismo patrón de dispersión (cuarta repetición). Nombrarlo de inmediato.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a

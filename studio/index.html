@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LYON Studio</title>
+<meta name="description" content="Estudio gratis de imagen y video con IA: texto a imagen, movimientos de cámara cinematográficos, efectos y exportación de video.">
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --panel: #151517;
+    --panel-2: #1d1d20;
+    --line: #2a2a2e;
+    --text: #f2f2f3;
+    --muted: #9a9aa2;
+    --accent: #d4ff3a;
+    --accent-ink: #0b0b0c;
+    --danger: #ff5a5a;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  a { color: var(--accent); }
+
+  header { display: flex; align-items: center; gap: 16px; padding: 14px 20px;
+    border-bottom: 1px solid var(--line); position: sticky; top: 0; background: rgba(11,11,12,.92);
+    backdrop-filter: blur(8px); z-index: 10; flex-wrap: wrap; }
+  .logo { font-weight: 800; letter-spacing: .08em; }
+  .logo span { color: var(--accent); }
+  .free { font-size: 12px; padding: 2px 8px; border: 1px solid var(--accent); color: var(--accent);
+    border-radius: 99px; }
+  nav { display: flex; gap: 4px; margin-left: auto; background: var(--panel); padding: 4px; border-radius: 99px; }
+  nav button { background: none; border: 0; padding: 7px 14px; border-radius: 99px; cursor: pointer; color: var(--muted); }
+  nav button.on { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+
+  main { max-width: 1280px; margin: 0 auto; padding: 20px 16px 60px; }
+  .view { display: none; }
+  .view.on { display: grid; grid-template-columns: 360px 1fr; gap: 20px; align-items: start; }
+  #v-gallery.on { display: block; }
+  @media (max-width: 860px) { .view.on { grid-template-columns: 1fr; } }
+
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+  .panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 10px; }
+  .field { margin-bottom: 16px; }
+  label.lbl { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  textarea, input[type=text], input[type=number], select {
+    width: 100%; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; outline: none; }
+  textarea { min-height: 110px; resize: vertical; }
+  textarea:focus, input:focus, select:focus { border-color: var(--accent); }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { background: var(--panel-2); border: 1px solid var(--line); border-radius: 99px; padding: 5px 11px;
+    cursor: pointer; font-size: 13px; }
+  .chip.on { border-color: var(--accent); color: var(--accent); }
+  .grid-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .opt { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 9px 6px;
+    cursor: pointer; text-align: center; font-size: 12.5px; }
+  .opt b { display: block; font-size: 18px; line-height: 1.2; margin-bottom: 2px; }
+  .opt.on { border-color: var(--accent); background: rgba(212,255,58,.08); color: var(--accent); }
+
+  .row { display: flex; gap: 8px; align-items: center; }
+  .btn { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 12px; padding: 12px 16px;
+    font-weight: 700; cursor: pointer; width: 100%; }
+  .btn:disabled { opacity: .5; cursor: progress; }
+  .btn.ghost { background: var(--panel-2); color: var(--text); border: 1px solid var(--line); font-weight: 500; }
+  .btn.sm { padding: 7px 10px; font-size: 13px; width: auto; border-radius: 9px; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  .results { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; position: relative; }
+  .card img, .card video { width: 100%; display: block; background: #000; }
+  .card .ph { aspect-ratio: 1; display: grid; place-items: center; color: var(--muted); font-size: 13px;
+    background: linear-gradient(110deg, #151517 30%, #222226 50%, #151517 70%); background-size: 200% 100%;
+    animation: shimmer 1.4s infinite linear; }
+  @keyframes shimmer { to { background-position: -200% 0; } }
+  .card .bar { display: flex; gap: 6px; padding: 8px; flex-wrap: wrap; }
+  .card .cap { padding: 0 10px 10px; font-size: 12px; color: var(--muted); display: -webkit-box;
+    -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .empty { border: 1px dashed var(--line); border-radius: var(--radius); padding: 40px 20px; text-align: center; color: var(--muted); }
+
+  .stage { background: #000; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+    display: grid; place-items: center; min-height: 320px; }
+  .stage canvas { max-width: 100%; max-height: 70vh; display: block; }
+  .drop { border: 1px dashed var(--line); border-radius: 12px; padding: 16px; text-align: center; cursor: pointer; color: var(--muted); }
+  .drop.over { border-color: var(--accent); color: var(--accent); }
+  .thumb-strip { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-top: 8px; }
+  .thumb-strip img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; flex: none; }
+  .thumb-strip img.on { border-color: var(--accent); }
+  .progress { height: 4px; background: var(--panel-2); border-radius: 4px; overflow: hidden; margin-top: 10px; }
+  .progress i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .1s linear; }
+
+  #toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%) translateY(120px); background: var(--panel-2);
+    border: 1px solid var(--line); padding: 10px 16px; border-radius: 12px; transition: transform .25s; z-index: 50; max-width: calc(100% - 32px); }
+  #toast.show { transform: translateX(-50%) translateY(0); }
+  #toast.err { border-color: var(--danger); }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">LYON <span>STUDIO</span></div>
+  <span class="free">100% gratis · sin cuenta</span>
+  <nav>
+    <button data-view="image" class="on">Imagen</button>
+    <button data-view="video">Video</button>
+    <button data-view="gallery">Galería</button>
+  </nav>
+</header>
+
+<main>
+  <!-- ====================== IMAGEN ====================== -->
+  <section id="v-image" class="view on">
+    <div class="panel">
+      <div class="field">
+        <label class="lbl" for="prompt">Prompt</label>
+        <textarea id="prompt" placeholder="Ej: techo de teja roja recién instalado en una casa moderna de Querétaro, atardecer dorado"></textarea>
+        <div class="row" style="margin-top:8px">
+          <button class="btn ghost sm" id="enhance">✨ Mejorar prompt</button>
+          <button class="btn ghost sm" id="random">🎲 Aleatorio</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="lbl">Plantillas rápidas (contratistas)</label>
+        <div class="chips" id="templates"></div>
+      </div>
+
+      <div class="field">
+        <label class="lbl">Estilo</label>
+        <div class="chips" id="styles"></div>
+      </div>
+
+      <div class="field">
+        <label class="lbl">Formato</label>
+        <div class="grid-opts" id="ratios"></div>
+      </div>
+
+      <div class="field">
+        <label class="lbl">Modelo</label>
+        <select id="model">
+          <option value="flux">Flux (calidad)</option>
+          <option value="turbo">Turbo (rápido)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="lbl">Variaciones: <b id="countLbl">4</b></label>
+        <input type="range" id="count" min="1" max="8" value="4">
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="seed">Semilla (vacío = aleatoria)</label>
+        <input type="number" id="seed" placeholder="Ej: 42">
+      </div>
+
+      <button class="btn" id="generate">Generar imágenes</button>
+      <p class="hint">Motor gratuito: Pollinations.ai (sin API key). Cada imagen tarda 5–30 s.</p>
+    </div>
+
+    <div>
+      <div class="results" id="imgResults"></div>
+      <div class="empty" id="imgEmpty">Escribe un prompt y genera. Tus imágenes aparecen aquí y se guardan en la Galería.</div>
+    </div>
+  </section>
+
+  <!-- ====================== VIDEO ====================== -->
+  <section id="v-video" class="view">
+    <div class="panel">
+      <div class="field">
+        <label class="lbl">Imagen de origen</label>
+        <div class="drop" id="drop">Arrastra una imagen o haz clic para subir</div>
+        <input type="file" id="file" accept="image/*" hidden>
+        <div class="hint">…o elige una de tu galería:</div>
+        <div class="thumb-strip" id="srcStrip"></div>
+      </div>
+
+      <div class="field">
+        <label class="lbl">Movimiento de cámara</label>
+        <div class="grid-opts" id="motions"></div>
+      </div>
+
+      <div class="field">
+        <label class="lbl">Efectos</label>
+        <div class="chips" id="fx"></div>
+      </div>
+
+      <div class="field">
+        <label class="lbl">Intensidad: <b id="intLbl">100%</b></label>
+        <input type="range" id="intensity" min="30" max="200" value="100">
+      </div>
+
+      <div class="field">
+        <label class="lbl">Duración: <b id="durLbl">5 s</b></label>
+        <input type="range" id="duration" min="2" max="12" value="5">
+      </div>
+
+      <div class="field">
+        <label class="lbl">Formato del video</label>
+        <div class="grid-opts" id="vRatios"></div>
+      </div>
+
+      <button class="btn" id="render">Renderizar y descargar video</button>
+      <div class="progress"><i id="prog"></i></div>
+      <p class="hint">El video se renderiza en tu navegador (WebM/MP4 según tu navegador). Nada se sube a ningún servidor.</p>
+    </div>
+
+    <div>
+      <div class="stage"><canvas id="stage" width="720" height="1280"></canvas></div>
+      <div class="results" id="vidResults" style="margin-top:12px"></div>
+    </div>
+  </section>
+
+  <!-- ====================== GALERÍA ====================== -->
+  <section id="v-gallery" class="view">
+    <div class="row" style="justify-content:space-between;margin-bottom:12px;flex-wrap:wrap">
+      <h2 style="margin:0">Galería</h2>
+      <button class="btn ghost sm" id="clearGallery">Vaciar galería</button>
+    </div>
+    <div class="results" id="galGrid"></div>
+    <div class="empty" id="galEmpty">Todavía no hay nada. Genera imágenes y aparecerán aquí.</div>
+  </section>
+</main>
+
+<div id="toast"></div>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  // ---------- almacenamiento seguro ----------
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+  };
+
+  let toastT;
+  function toast(msg, err) {
+    const t = $('#toast');
+    t.textContent = msg; t.classList.toggle('err', !!err); t.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // ---------- navegación ----------
+  $$('nav button').forEach(b => b.onclick = () => showView(b.dataset.view));
+  function showView(v) {
+    $$('nav button').forEach(b => b.classList.toggle('on', b.dataset.view === v));
+    $$('.view').forEach(s => s.classList.toggle('on', s.id === 'v-' + v));
+    if (v === 'gallery') renderGallery();
+    if (v === 'video') renderSrcStrip();
+  }
+
+  // ---------- datos ----------
+  const STYLES = {
+    'Ninguno': '',
+    'Cinemático': 'cinematic film still, anamorphic lens, dramatic lighting, shallow depth of field, color graded',
+    'Fotorealista': 'ultra realistic photograph, 35mm, natural light, high detail, sharp focus',
+    'Arquitectura': 'architectural photography, wide angle, clean lines, golden hour, magazine quality',
+    'Producto': 'studio product photography, softbox lighting, seamless background, commercial',
+    'Anime': 'anime style, vibrant colors, detailed cel shading, studio quality',
+    '3D Render': '3d render, octane, global illumination, highly detailed, soft shadows',
+    'Acuarela': 'watercolor painting, soft washes, paper texture',
+    'Neón': 'cyberpunk neon lights, night, reflections, moody',
+    'Vintage': 'vintage 1970s film photo, grain, faded colors, kodak portra'
+  };
+  const TEMPLATES = {
+    'Techo terminado': 'freshly installed clay tile roof on a modern mexican house, blue sky, professional roofing work',
+    'Antes/después cocina': 'modern remodeled kitchen with quartz countertops and warm wood cabinets, bright interior',
+    'Cuadrilla trabajando': 'professional construction crew in safety gear working on a roof, sunny day, candid',
+    'Fachada remodelada': 'renovated modern house facade with stone and wood accents, landscaped front yard, dusk lights',
+    'Baño de lujo': 'luxury remodeled bathroom, walk-in shower, marble tiles, soft natural light',
+    'Impermeabilización': 'flat concrete roof with fresh white waterproofing coating, city skyline in background'
+  };
+  const RATIOS = [
+    { k: '1:1', w: 1024, h: 1024, icon: '◼' },
+    { k: '16:9', w: 1344, h: 768, icon: '▬' },
+    { k: '9:16', w: 768, h: 1344, icon: '▮' },
+    { k: '4:5', w: 896, h: 1120, icon: '▯' },
+    { k: '3:2', w: 1216, h: 832, icon: '▭' },
+    { k: '2:3', w: 832, h: 1216, icon: '▯' }
+  ];
+  const RANDOM = [
+    'a lone astronaut walking through a field of giant sunflowers',
+    'a vintage red pickup truck parked in front of a colonial church in Querétaro',
+    'a hyperdetailed macro shot of a dew drop on a leaf reflecting a city',
+    'a cozy cabin in snowy mountains at night with warm windows',
+    'a fashion model in a flowing silk dress on a windy desert dune',
+    'an aerial drone shot of a new residential neighborhood with solar panels'
+  ];
+
+  // ---------- IMAGEN ----------
+  let style = 'Cinemático', ratio = RATIOS[0];
+  const stylesEl = $('#styles'), ratiosEl = $('#ratios'), tplEl = $('#templates');
+
+  Object.keys(STYLES).forEach(s => {
+    const c = document.createElement('button'); c.className = 'chip' + (s === style ? ' on' : ''); c.textContent = s;
+    c.onclick = () => { style = s; $$('.chip', stylesEl).forEach(x => x.classList.toggle('on', x === c)); };
+    stylesEl.append(c);
+  });
+  Object.entries(TEMPLATES).forEach(([k, v]) => {
+    const c = document.createElement('button'); c.className = 'chip'; c.textContent = k;
+    c.onclick = () => { $('#prompt').value = v; };
+    tplEl.append(c);
+  });
+  function ratioButtons(el, current, onPick) {
+    RATIOS.forEach(r => {
+      const o = document.createElement('button'); o.className = 'opt' + (r === current ? ' on' : '');
+      o.innerHTML = `<b>${r.icon}</b>${r.k}`;
+      o.onclick = () => { $$('.opt', el).forEach(x => x.classList.toggle('on', x === o)); onPick(r); };
+      el.append(o);
+    });
+  }
+  ratioButtons(ratiosEl, ratio, r => ratio = r);
+
+  $('#count').oninput = e => $('#countLbl').textContent = e.target.value;
+  $('#random').onclick = () => $('#prompt').value = RANDOM[Math.floor(Math.random() * RANDOM.length)];
+
+  $('#enhance').onclick = async () => {
+    const p = $('#prompt').value.trim();
+    if (!p) return toast('Escribe algo primero', true);
+    const btn = $('#enhance'); btn.disabled = true; btn.textContent = '✨ Mejorando…';
+    const instr = 'Rewrite this as a single rich, vivid English image-generation prompt (max 60 words). ' +
+      'Include subject, setting, lighting, camera and mood. Reply with the prompt only, no quotes: ' + p;
+    try {
+      const r = await fetch('https://text.pollinations.ai/' + encodeURIComponent(instr));
+      if (!r.ok) throw new Error(r.status);
+      const txt = (await r.text()).trim().replace(/^"|"$/g, '');
+      if (!txt) throw new Error('vacío');
+      $('#prompt').value = txt;
+      toast('Prompt mejorado');
+    } catch {
+      $('#prompt').value = p + ', highly detailed, professional composition, dramatic natural lighting, sharp focus, 8k';
+      toast('Servicio de texto no disponible: se aplicó mejora local');
+    } finally { btn.disabled = false; btn.textContent = '✨ Mejorar prompt'; }
+  };
+
+  function buildUrl(prompt, w, h, seed, model) {
+    const q = new URLSearchParams({ width: w, height: h, seed, model, nologo: 'true', enhance: 'false' });
+    return 'https://image.pollinations.ai/prompt/' + encodeURIComponent(prompt) + '?' + q;
+  }
+
+  $('#generate').onclick = () => {
+    const base = $('#prompt').value.trim();
+    if (!base) return toast('Escribe un prompt', true);
+    const full = [base, STYLES[style]].filter(Boolean).join(', ');
+    const n = +$('#count').value;
+    const seedIn = $('#seed').value.trim();
+    const model = $('#model').value;
+    $('#imgEmpty').style.display = 'none';
+    const btn = $('#generate'); btn.disabled = true;
+    let pending = n;
+
+    for (let i = 0; i < n; i++) {
+      const seed = seedIn ? (+seedIn + i) : Math.floor(Math.random() * 1e9);
+      const url = buildUrl(full, ratio.w, ratio.h, seed, model);
+      const item = { id: Date.now() + '-' + i, url, prompt: base, style, ratio: ratio.k, w: ratio.w, h: ratio.h, seed, model, at: Date.now() };
+      const card = document.createElement('div'); card.className = 'card';
+      card.innerHTML = `<div class="ph" style="aspect-ratio:${ratio.w}/${ratio.h}">Generando…</div>`;
+      $('#imgResults').prepend(card);
+
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => {
+        card.innerHTML = '';
+        card.append(img);
+        card.append(cardBar(item));
+        addToGallery(item);
+        if (--pending === 0) btn.disabled = false;
+      };
+      img.onerror = () => {
+        card.innerHTML = `<div class="ph" style="aspect-ratio:${ratio.w}/${ratio.h};animation:none">Falló (límite del servicio gratis). Reintenta en unos segundos.</div>`;
+        if (--pending === 0) btn.disabled = false;
+      };
+      img.alt = base;
+      // escalonar peticiones para no chocar con el límite de uso gratuito
+      setTimeout(() => { img.src = url; }, i * 1200);
+    }
+  };
+
+  function cardBar(item) {
+    const bar = document.createElement('div'); bar.className = 'bar';
+    const mk = (label, fn) => { const b = document.createElement('button'); b.className = 'btn ghost sm'; b.textContent = label; b.onclick = fn; bar.append(b); };
+    mk('⬇ Descargar', () => downloadUrl(item.url, `lyon-${item.seed}.jpg`));
+    mk('🎬 Animar', () => { setSource(item.url); showView('video'); });
+    mk('♻ Variar', () => {
+      $('#prompt').value = item.prompt; $('#seed').value = '';
+      showView('image'); $('#generate').click();
+    });
+    mk('📋 Prompt', () => { navigator.clipboard?.writeText(item.prompt); toast('Prompt copiado'); });
+    const cap = document.createElement('div'); cap.className = 'cap'; cap.textContent = `${item.prompt} · ${item.style} · ${item.ratio} · seed ${item.seed}`;
+    const frag = document.createDocumentFragment(); frag.append(bar, cap); return frag;
+  }
+
+  async function downloadUrl(url, name) {
+    try {
+      const r = await fetch(url); const b = await r.blob();
+      const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    } catch { window.open(url, '_blank'); }
+  }
+
+  // ---------- GALERÍA ----------
+  function addToGallery(item) {
+    const g = store.get('lyon-gallery', []);
+    g.unshift(item); store.set('lyon-gallery', g.slice(0, 200));
+  }
+  function renderGallery() {
+    const g = store.get('lyon-gallery', []);
+    const grid = $('#galGrid'); grid.innerHTML = '';
+    $('#galEmpty').style.display = g.length ? 'none' : 'block';
+    g.forEach(item => {
+      const card = document.createElement('div'); card.className = 'card';
+      const img = new Image(); img.src = item.url; img.loading = 'lazy'; img.alt = item.prompt; img.crossOrigin = 'anonymous';
+      card.append(img, cardBar(item));
+      const del = document.createElement('button'); del.className = 'btn ghost sm'; del.textContent = '🗑';
+      del.onclick = () => { store.set('lyon-gallery', store.get('lyon-gallery', []).filter(x => x.id !== item.id)); renderGallery(); };
+      $('.bar', card).append(del);
+      grid.append(card);
+    });
+  }
+  $('#clearGallery').onclick = () => { if (confirm('¿Vaciar toda la galería?')) { store.set('lyon-gallery', []); renderGallery(); } };
+
+  // ---------- VIDEO: movimientos de cámara ----------
+  const ease = {
+    io: t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
+    in: t => t * t * t,
+    out: t => 1 - Math.pow(1 - t, 3),
+    expo: t => t === 0 ? 0 : Math.pow(2, 10 * t - 10)
+  };
+  // cada movimiento devuelve {s: escala, x, y: desplazamiento en fracción del lienzo, r: rotación en rad}
+  const MOTIONS = {
+    'Dolly In':     { icon: '⤢', f: (t, k) => ({ s: 1 + .35 * k * ease.io(t) }) },
+    'Dolly Out':    { icon: '⤡', f: (t, k) => ({ s: 1 + .35 * k * (1 - ease.io(t)) }) },
+    'Crash Zoom':   { icon: '💥', f: (t, k) => ({ s: 1 + 1.4 * k * ease.expo(t) }) },
+    'Pan Izq.':     { icon: '←', f: (t, k) => ({ s: 1.25 + .1 * k, x: .1 * k * (1 - 2 * ease.io(t)) }) },
+    'Pan Der.':     { icon: '→', f: (t, k) => ({ s: 1.25 + .1 * k, x: -.1 * k * (1 - 2 * ease.io(t)) }) },
+    'Tilt Arriba':  { icon: '↑', f: (t, k) => ({ s: 1.25 + .1 * k, y: -.1 * k * (1 - 2 * ease.io(t)) }) },
+    'Tilt Abajo':   { icon: '↓', f: (t, k) => ({ s: 1.25 + .1 * k, y: .1 * k * (1 - 2 * ease.io(t)) }) },
+    'Orbit':        { icon: '⟳', f: (t, k) => { const a = ease.io(t) * Math.PI; return { s: 1.3, x: .07 * k * Math.cos(a), r: .05 * k * (ease.io(t) - .5), y: .02 * k * Math.sin(a) }; } },
+    'Dutch Roll':   { icon: '◿', f: (t, k) => ({ s: 1.2 + .1 * ease.io(t), r: .14 * k * ease.io(t) }) },
+    'Cámara Mano':  { icon: '✋', f: (t, k) => ({ s: 1.12 + .05 * t, x: .012 * k * noise(t * 9), y: .012 * k * noise(t * 7 + 50), r: .006 * k * noise(t * 5 + 99) }) },
+    'Vertigo':      { icon: '🌀', f: (t, k) => ({ s: 1 + .45 * k * Math.sin(ease.io(t) * Math.PI), r: .02 * k * Math.sin(t * Math.PI * 2) }) },
+    'Levitar':      { icon: '☁', f: (t, k) => ({ s: 1.12 + .06 * k * ease.io(t), y: .03 * k * Math.sin(t * Math.PI * 2) }) }
+  };
+  // ruido suave determinista para cámara en mano
+  function noise(x) { const i = Math.floor(x), f = x - i, h = n => (Math.sin(n * 127.1) * 43758.5453) % 1; const u = f * f * (3 - 2 * f); return (h(i) * (1 - u) + h(i + 1) * u) * 2; }
+
+  const FX = ['Grano', 'Viñeta', 'Light Leak', 'Glitch RGB', 'Flash', 'B/N', 'Letterbox', 'Cálido'];
+  let motion = 'Dolly In', fxOn = new Set(['Viñeta']), vRatio = RATIOS[2], srcImg = null;
+
+  Object.entries(MOTIONS).forEach(([k, m]) => {
+    const o = document.createElement('button'); o.className = 'opt' + (k === motion ? ' on' : '');
+    o.innerHTML = `<b>${m.icon}</b>${k}`;
+    o.onclick = () => { motion = k; $$('.opt', $('#motions')).forEach(x => x.classList.toggle('on', x === o)); t0 = performance.now(); };
+    $('#motions').append(o);
+  });
+  FX.forEach(k => {
+    const c = document.createElement('button'); c.className = 'chip' + (fxOn.has(k) ? ' on' : ''); c.textContent = k;
+    c.onclick = () => { fxOn.has(k) ? fxOn.delete(k) : fxOn.add(k); c.classList.toggle('on'); };
+    $('#fx').append(c);
+  });
+  ratioButtons($('#vRatios'), vRatio, r => { vRatio = r; sizeStage(); });
+  $('#intensity').oninput = e => $('#intLbl').textContent = e.target.value + '%';
+  $('#duration').oninput = e => $('#durLbl').textContent = e.target.value + ' s';
+
+  const cv = $('#stage'), ctx = cv.getContext('2d');
+  function sizeStage() {
+    // salida máx. 1080 en el lado largo, 720 en el corto
+    const long = 1280, sc = long / Math.max(vRatio.w, vRatio.h);
+    cv.width = Math.round(vRatio.w * sc / 2) * 2; cv.height = Math.round(vRatio.h * sc / 2) * 2;
+  }
+  sizeStage();
+
+  // fuente de imagen
+  const drop = $('#drop');
+  drop.onclick = () => $('#file').click();
+  $('#file').onchange = e => e.target.files[0] && loadFile(e.target.files[0]);
+  drop.ondragover = e => { e.preventDefault(); drop.classList.add('over'); };
+  drop.ondragleave = () => drop.classList.remove('over');
+  drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over'); e.dataTransfer.files[0] && loadFile(e.dataTransfer.files[0]); };
+  function loadFile(f) { setSource(URL.createObjectURL(f)); drop.textContent = f.name; }
+
+  async function setSource(url) {
+    // se convierte a blob local para no "contaminar" el canvas (necesario para grabar)
+    let local = url;
+    if (!url.startsWith('blob:')) {
+      try { const r = await fetch(url); local = URL.createObjectURL(await r.blob()); } catch {}
+    }
+    const img = new Image(); img.crossOrigin = 'anonymous';
+    img.onload = () => { srcImg = img; t0 = performance.now(); };
+    img.onerror = () => toast('No se pudo cargar la imagen', true);
+    img.src = local;
+    $$('#srcStrip img').forEach(x => x.classList.toggle('on', x.dataset.url === url));
+  }
+  function renderSrcStrip() {
+    const s = $('#srcStrip'); s.innerHTML = '';
+    store.get('lyon-gallery', []).slice(0, 30).forEach(it => {
+      const i = new Image(); i.src = it.url; i.dataset.url = it.url; i.loading = 'lazy'; i.alt = it.prompt;
+      i.onclick = () => setSource(it.url);
+      s.append(i);
+    });
+  }
+
+  // dibujado de un frame en t ∈ [0,1]
+  const grainCv = document.createElement('canvas'); grainCv.width = grainCv.height = 256;
+  const gctx = grainCv.getContext('2d');
+  function drawFrame(t) {
+    const W = cv.width, H = cv.height, k = +$('#intensity').value / 100;
+    ctx.save();
+    ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+    if (!srcImg) {
+      ctx.fillStyle = '#555'; ctx.font = `${Math.round(W / 22)}px system-ui`; ctx.textAlign = 'center';
+      ctx.fillText('Sube o elige una imagen', W / 2, H / 2); ctx.restore(); return;
+    }
+    const m = { s: 1, x: 0, y: 0, r: 0, ...MOTIONS[motion].f(t, k) };
+    const cover = Math.max(W / srcImg.width, H / srcImg.height);
+    const filters = [];
+    if (fxOn.has('B/N')) filters.push('grayscale(1) contrast(1.1)');
+    if (fxOn.has('Cálido')) filters.push('sepia(.25) saturate(1.2)');
+    ctx.filter = filters.join(' ') || 'none';
+
+    const drawImg = (dx = 0) => {
+      ctx.save();
+      ctx.translate(W / 2 + m.x * W + dx, H / 2 + m.y * H);
+      ctx.rotate(m.r); ctx.scale(m.s * cover, m.s * cover);
+      ctx.drawImage(srcImg, -srcImg.width / 2, -srcImg.height / 2);
+      ctx.restore();
+    };
+    drawImg();
+    ctx.filter = 'none';
+
+    if (fxOn.has('Glitch RGB')) {
+      const off = Math.sin(t * 40) > .7 ? W * .012 * k : W * .003 * k;
+      ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = .35;
+      ctx.save(); ctx.fillStyle = 'rgba(255,0,0,1)'; drawImg(off); ctx.restore();
+      ctx.save(); drawImg(-off); ctx.restore();
+      ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+      if (Math.sin(t * 40) > .85) { const y = Math.random() * H; ctx.drawImage(cv, 0, y, W, H * .04, W * .02, y, W, H * .04); }
+    }
+    if (fxOn.has('Light Leak')) {
+      const gx = W * (.2 + .6 * t), g = ctx.createRadialGradient(gx, H * .2, 0, gx, H * .2, W * .9);
+      g.addColorStop(0, 'rgba(255,140,40,.45)'); g.addColorStop(.5, 'rgba(255,60,90,.15)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'source-over';
+    }
+    if (fxOn.has('Viñeta')) {
+      const g = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * .35, W / 2, H / 2, Math.max(W, H) * .75);
+      g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.65)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    }
+    if (fxOn.has('Grano')) {
+      const id = gctx.createImageData(256, 256);
+      for (let i = 0; i < id.data.length; i += 4) { const v = Math.random() * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 22; }
+      gctx.putImageData(id, 0, 0);
+      ctx.fillStyle = ctx.createPattern(grainCv, 'repeat'); ctx.fillRect(0, 0, W, H);
+    }
+    if (fxOn.has('Flash')) {
+      const a = Math.max(0, 1 - t * 8) * .9;
+      if (a > 0) { ctx.fillStyle = `rgba(255,255,255,${a})`; ctx.fillRect(0, 0, W, H); }
+    }
+    if (fxOn.has('Letterbox')) {
+      const bh = H * .1; ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, bh); ctx.fillRect(0, H - bh, W, bh);
+    }
+    ctx.restore();
+  }
+
+  // bucle de vista previa
+  let t0 = performance.now(), recording = false;
+  (function loop(now) {
+    if (!recording) {
+      const dur = +$('#duration').value * 1000;
+      drawFrame(((now - t0) % dur) / dur);
+    }
+    requestAnimationFrame(loop);
+  })(performance.now());
+
+  // renderizado + grabación
+  $('#render').onclick = async () => {
+    if (!srcImg) return toast('Primero elige una imagen', true);
+    if (!window.MediaRecorder || !cv.captureStream) return toast('Tu navegador no soporta grabar video. Usa Chrome, Edge o Firefox.', true);
+    const types = ['video/mp4;codecs=avc1', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
+    const mime = types.find(t => MediaRecorder.isTypeSupported(t)) || '';
+    let stream, rec;
+    try {
+      stream = cv.captureStream(30);
+      rec = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 8e6 });
+    } catch (e) { return toast('No se pudo iniciar la grabación: ' + e.message, true); }
+
+    const chunks = [];
+    rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+    const btn = $('#render'); btn.disabled = true; btn.textContent = 'Renderizando…';
+    recording = true;
+    const dur = +$('#duration').value * 1000;
+    const done = new Promise(r => rec.onstop = r);
+    rec.start(100);
+    const start = performance.now();
+    await new Promise(resolve => {
+      (function step(now) {
+        const t = Math.min(1, (now - start) / dur);
+        drawFrame(t); $('#prog').style.width = (t * 100) + '%';
+        t < 1 ? requestAnimationFrame(step) : resolve();
+      })(start);
+    });
+    rec.stop(); await done;
+    recording = false; t0 = performance.now();
+    btn.disabled = false; btn.textContent = 'Renderizar y descargar video';
+    setTimeout(() => $('#prog').style.width = '0', 600);
+
+    const ext = (rec.mimeType || mime).includes('mp4') ? 'mp4' : 'webm';
+    const blob = new Blob(chunks, { type: rec.mimeType || 'video/webm' });
+    const url = URL.createObjectURL(blob);
+    const name = `lyon-${motion.toLowerCase().replace(/[^a-z]+/g, '-')}-${Date.now()}.${ext}`;
+
+    const card = document.createElement('div'); card.className = 'card';
+    const v = document.createElement('video'); v.src = url; v.controls = true; v.loop = true; v.muted = true; v.playsInline = true; v.autoplay = true;
+    const bar = document.createElement('div'); bar.className = 'bar';
+    const a = document.createElement('a'); a.href = url; a.download = name; a.className = 'btn sm'; a.textContent = '⬇ Descargar ' + ext.toUpperCase(); a.style.textDecoration = 'none';
+    bar.append(a);
+    const cap = document.createElement('div'); cap.className = 'cap'; cap.textContent = `${motion} · ${[...fxOn].join(', ') || 'sin efectos'} · ${vRatio.k} · ${dur / 1000}s`;
+    card.append(v, bar, cap);
+    $('#vidResults').prepend(card);
+    a.click();
+    toast('Video listo');
+  };
+})();
+</script>
+</body>
+</html>
