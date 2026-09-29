@@ -106,7 +106,9 @@ Divide el guion en {escenas} escenas. Cada escena: 2 a 4 frases de narración.
 La primera escena debe ser un gancho fuerte. La última, un cierre con llamada a la acción.
 
 Responde SOLO con JSON válido, sin texto extra, con esta forma exacta:
-{{"titulo": "título atractivo del video",
+{{"titulo": "título atractivo del video (máximo 90 caracteres)",
+  "descripcion": "descripción para YouTube de 3-5 líneas, con llamada a la acción",
+  "etiquetas": ["8 a 12 etiquetas de búsqueda"],
   "escenas": [
     {{"narracion": "texto que dirá la voz",
       "busqueda": "2-4 palabras EN INGLÉS para buscar video de stock",
@@ -165,7 +167,8 @@ def guion_desde_texto(texto, titulo=""):
         palabras = [w for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑ]{5,}", p)][:4]
         escenas.append({"narracion": p, "busqueda": " ".join(palabras) or "city",
                         "prompt_imagen": p[:300]})
-    return {"titulo": titulo or parrafos[0][:60], "escenas": escenas}
+    titulo = titulo or parrafos[0][:60]
+    return {"titulo": titulo, "descripcion": parrafos[0][:300], "etiquetas": [], "escenas": escenas}
 
 
 # --------------------------------------------------------------------- voz

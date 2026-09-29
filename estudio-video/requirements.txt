@@ -3,3 +3,5 @@ edge-tts>=7
 requests
 pillow
 imageio-ffmpeg
+google-api-python-client
+google-auth-oauthlib

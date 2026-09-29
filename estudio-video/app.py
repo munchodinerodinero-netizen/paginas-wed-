@@ -9,6 +9,7 @@ import sys
 import gradio as gr
 
 import pipeline as pl
+import youtube as yt
 
 CONFIG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
 
@@ -39,7 +40,7 @@ def paso_guion(tema, guion_propio, minutos, estilo, idioma, proveedor, modelo_ol
 
 
 def paso_video(guion_json, voz, velocidad, formato, pexels_key, musica, volumen, subtitulos,
-               progress=gr.Progress()):
+               auto_subir, privacidad, programar, progress=gr.Progress()):
     try:
         guion = json.loads(guion_json)
     except ValueError:
@@ -59,7 +60,38 @@ def paso_video(guion_json, voz, velocidad, formato, pexels_key, musica, volumen,
         carpeta_salida=os.path.join(os.path.dirname(os.path.abspath(__file__)), "videos"),
         online="--offline" not in sys.argv, progress=avance,
     )
-    return video, mini, f"Guardado en: {os.path.dirname(video)}"
+    estado = f"Guardado en: {os.path.dirname(video)}"
+    if auto_subir:
+        progress(0.99, desc="Subiendo a YouTube...")
+        estado += "\n\n" + subir_a_youtube(video, mini, formato, guion, privacidad, programar)
+    return video, mini, estado, {"video": video, "mini": mini, "formato": formato, "guion": guion}
+
+
+def subir_a_youtube(video, mini, formato, guion, privacidad, programar):
+    try:
+        url, aviso = yt.subir(
+            video, guion.get("titulo", "Video"), guion.get("descripcion", ""), guion.get("etiquetas", []),
+            privacidad=yt.PRIVACIDAD[privacidad], miniatura=mini, publicar_en=programar or None,
+            es_short=formato.startswith("Vertical"),
+        )
+        extra = f" Programado para {programar}." if programar else ""
+        return f"Subido a YouTube: {url}{extra}{aviso}"
+    except Exception as e:
+        return f"No se pudo subir a YouTube: {e}"
+
+
+def paso_subir_ultimo(ultimo, privacidad, programar):
+    if not ultimo:
+        raise gr.Error("Primero crea un video.")
+    return subir_a_youtube(ultimo["video"], ultimo["mini"], ultimo["formato"], ultimo["guion"],
+                           privacidad, programar)
+
+
+def paso_conectar():
+    try:
+        return f"Canal conectado: **{yt.conectar()}**"
+    except Exception as e:
+        raise gr.Error(str(e))
 
 
 def construir():
@@ -97,10 +129,25 @@ def construir():
                 video = gr.Video(label="Resultado")
                 mini = gr.Image(label="Miniatura", type="filepath")
                 estado = gr.Markdown()
+                gr.Markdown("### 3. YouTube")
+                canal = yt.canal_conectado()
+                estado_canal = gr.Markdown(f"Canal conectado: **{canal}**" if canal else
+                                           "Sin canal conectado. Usa el botón (la primera vez se abre Google).")
+                btn_conectar = gr.Button("Conectar mi canal de YouTube")
+                auto_subir = gr.Checkbox(value=cfg.get("auto_subir", False),
+                                         label="Subir automáticamente al terminar cada video")
+                privacidad = gr.Radio(list(yt.PRIVACIDAD), value="Privado", label="Visibilidad")
+                programar = gr.Textbox(label="Programar publicación (opcional, AAAA-MM-DD HH:MM, hora local)",
+                                       placeholder="2026-10-01 18:00")
+                btn_subir = gr.Button("Subir el último video a YouTube")
+                ultimo = gr.State(None)
 
         btn_guion.click(paso_guion, [tema, guion_propio, minutos, estilo, idioma, proveedor, modelo_ollama], guion)
-        btn_video.click(paso_video, [guion, voz, velocidad, formato, pexels, musica, volumen, subtitulos],
-                        [video, mini, estado])
+        btn_video.click(paso_video, [guion, voz, velocidad, formato, pexels, musica, volumen, subtitulos,
+                                     auto_subir, privacidad, programar], [video, mini, estado, ultimo])
+        btn_conectar.click(paso_conectar, None, estado_canal)
+        btn_subir.click(paso_subir_ultimo, [ultimo, privacidad, programar], estado)
+        auto_subir.change(lambda v: guardar_config(auto_subir=v), auto_subir, None)
     return app
 
 

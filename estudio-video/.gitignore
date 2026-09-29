@@ -2,3 +2,5 @@ videos/
 config.json
 .venv/
 __pycache__/
+client_secret.json
+token_youtube.json
