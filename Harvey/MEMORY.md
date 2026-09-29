@@ -100,6 +100,20 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-29 — Segundo negocio: plataforma de influencers IA ("Musa AI")
+
+- Alberto instaló Open-AI-UGC (estudio de anuncios UGC con IA, open source, motor MuAPI)
+  y pidió una página parecida a Eromify (generador de influencers IA) "con todas las
+  funciones gratis". Confirmó que es **negocio aparte**, no parte de LYON.
+- **Construido:** `musa-ai/` en el repo — landing + estudio. Imágenes gratis vía
+  Pollinations (sin API key); video vía MuAPI (key del usuario o `MUAPI_KEY` en Vercel).
+- **Límites fijados por Harvey:** nada de face swap con caras reales ni contenido
+  sexual — solo personajes 100% ficticios, adultos, SFW. "Gratis" solo es sostenible en
+  imagen (Pollinations absorbe el costo); el video cuesta por render y debe cobrarse.
+- **Riesgo nombrado:** cuarta repetición del patrón de dispersión (35 nichos, 2 países,
+  7 ciudades, ahora 2 negocios) con LYON aún en $0. Vigilar que Musa AI no se coma las
+  horas de prospección de LYON.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
