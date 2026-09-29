@@ -100,6 +100,24 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-29 — Video con IA: herramienta de venta sí, línea de negocio nueva no
+
+- Alberto instaló Open-Generative-AI (interfaz open source sobre MuAPI, que cobra
+  créditos por generación con API key propia; no es gratis) para (1) crear videos de
+  las páginas y (2) ofrecer "videos" como servicio adicional.
+- **Veredicto de Harvey:** (1) SÍ, de inmediato, como arma de venta: video corto
+  personalizado del sitio demo con el nombre del prospecto, enviado por WhatsApp. (2) NO
+  como servicio separado todavía: sigue en $0 clientes y es la **cuarta repetición** del
+  patrón "agregar opciones en vez de cerrar" (35 nichos → 2 países → 7 ciudades → nueva
+  línea de servicio). Nombrado directamente.
+- **Cómo entra el video a la oferta (sin bajar precio):** como bonus de valor dentro del
+  **Pro** ("video promocional de tu nuevo sitio para WhatsApp/Facebook, incluido"), lo
+  que refuerza el ancla y empuja del Básico al Pro (apilamiento de valor, Hormozi). El
+  Básico no lo incluye.
+- **Condición para venderlo como servicio aparte:** después de cerrar los primeros 5
+  clientes y de medir el costo real en créditos de MuAPI por video. Ahí se le pone
+  precio. Nunca antes.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
