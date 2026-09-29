@@ -2,261 +2,443 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LYON Studio</title>
-<meta name="description" content="Estudio gratis de imagen y video con IA: texto a imagen, movimientos de cámara cinematográficos, efectos y exportación de video.">
+<meta name="description" content="Estudio gratis de imagen y video con IA: texto a imagen, movimientos de cámara, clonar movimiento, editor y upscale.">
 <style>
+  /* Panel tipo estudio: barra lateral de herramientas + área de trabajo; en celular la barra baja al pie */
   :root {
-    --bg: #0b0b0c;
-    --panel: #151517;
-    --panel-2: #1d1d20;
-    --line: #2a2a2e;
-    --text: #f2f2f3;
-    --muted: #9a9aa2;
+    color-scheme: dark;
+    --bg: #0a0a0b;
+    --side: #101012;
+    --panel: #151518;
+    --panel-2: #1d1d21;
+    --line: #2a2a30;
+    --text: #f2f2f4;
+    --muted: #9b9ba5;
     --accent: #d4ff3a;
-    --accent-ink: #0b0b0c;
+    --accent-ink: #0a0a0b;
     --danger: #ff5a5a;
     --radius: 14px;
+    --side-w: 232px;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: var(--bg); color: var(--text);
     font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
   button, input, select, textarea { font: inherit; color: inherit; }
+  button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   a { color: var(--accent); }
+  [hidden] { display: none !important; }
 
-  header { display: flex; align-items: center; gap: 16px; padding: 14px 20px;
-    border-bottom: 1px solid var(--line); position: sticky; top: 0; background: rgba(11,11,12,.92);
-    backdrop-filter: blur(8px); z-index: 10; flex-wrap: wrap; }
-  .logo { font-weight: 800; letter-spacing: .08em; }
+  /* ---------- barra lateral ---------- */
+  aside { position: fixed; left: 0; top: 0; bottom: 0; width: var(--side-w); background: var(--side);
+    border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 18px 12px; gap: 4px; z-index: 20;
+    padding-top: calc(18px + env(safe-area-inset-top, 0px)); }
+  .logo { font-weight: 800; letter-spacing: .08em; padding: 0 10px 14px; font-size: 17px; }
   .logo span { color: var(--accent); }
-  .free { font-size: 12px; padding: 2px 8px; border: 1px solid var(--accent); color: var(--accent);
-    border-radius: 99px; }
-  nav { display: flex; gap: 4px; margin-left: auto; background: var(--panel); padding: 4px; border-radius: 99px; }
-  nav button { background: none; border: 0; padding: 7px 14px; border-radius: 99px; cursor: pointer; color: var(--muted); }
-  nav button.on { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+  .navgroup { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding: 14px 10px 4px; }
+  .nav { display: flex; align-items: center; gap: 10px; width: 100%; background: none; border: 0; border-radius: 10px;
+    padding: 9px 10px; cursor: pointer; color: var(--muted); text-align: left; }
+  .nav:hover { background: var(--panel); color: var(--text); }
+  .nav.on { background: var(--panel-2); color: var(--text); }
+  .nav.on .ic { color: var(--accent); }
+  .nav .ic { width: 20px; text-align: center; font-size: 16px; }
+  .nav .tag { margin-left: auto; font-size: 10px; padding: 1px 6px; border-radius: 99px; background: var(--accent); color: var(--accent-ink); font-weight: 700; }
+  .side-foot { margin-top: auto; padding: 12px 10px 0; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+  .side-foot b { color: var(--accent); font-size: 14px; display: block; }
 
-  main { max-width: 1280px; margin: 0 auto; padding: 20px 16px 60px; }
+  .shell { margin-left: var(--side-w); min-height: 100vh; }
+  .topbar { display: flex; align-items: center; gap: 12px; padding: 14px 24px; border-bottom: 1px solid var(--line);
+    position: sticky; top: env(safe-area-inset-top, 0px); background: rgba(10,10,11,.92); backdrop-filter: blur(8px); z-index: 10; }
+  .topbar h1 { font-size: 17px; margin: 0; }
+  .topbar .sub { color: var(--muted); font-size: 13px; }
+  .credits { margin-left: auto; font-size: 12px; padding: 4px 10px; border: 1px solid var(--accent); color: var(--accent); border-radius: 99px; white-space: nowrap; }
+  main { max-width: 1320px; margin: 0 auto; padding: 20px 24px 60px; }
+
+  @media (max-width: 860px) {
+    aside { top: auto; bottom: 0; right: 0; width: auto; height: auto; flex-direction: row; padding: 6px 8px;
+      padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px)); border-right: 0; border-top: 1px solid var(--line); overflow-x: auto; gap: 2px; }
+    .logo, .navgroup, .side-foot, .nav .tag { display: none; }
+    .nav { width: auto; flex-direction: column; gap: 2px; font-size: 11px; padding: 6px 8px; min-width: 64px; text-align: center; flex: 1 0 auto; }
+    .nav .ic { width: auto; font-size: 18px; }
+    .shell { margin-left: 0; padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+    .topbar { padding: 12px 16px; }
+    .topbar .sub { display: none; }
+    main { padding: 16px 16px 40px; }
+  }
+
+  /* ---------- vistas ---------- */
   .view { display: none; }
-  .view.on { display: grid; grid-template-columns: 360px 1fr; gap: 20px; align-items: start; }
-  #v-gallery.on { display: block; }
-  @media (max-width: 860px) { .view.on { grid-template-columns: 1fr; } }
+  .view.on { display: block; }
+  .split { display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 20px; align-items: start; }
+  @media (max-width: 960px) {
+    .split { grid-template-columns: minmax(0, 1fr); }
+    /* en celular la vista previa va arriba de los controles */
+    .split.preview-first > .panel { order: 2; }
+    .split.preview-first > div:not(.panel):not(.stage) { display: contents; }
+    .split.preview-first .results { order: 3; }
+    .split.preview-first .stage { position: sticky; top: calc(56px + env(safe-area-inset-top, 0px)); z-index: 5; }
+    .split.preview-first .stage canvas { max-height: 38vh; }
+  }
 
-  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
-  .panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 10px; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; min-width: 0; }
   .field { margin-bottom: 16px; }
-  label.lbl { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .field:last-child { margin-bottom: 0; }
+  .lbl { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .lbl b { color: var(--text); font-weight: 600; }
   textarea, input[type=text], input[type=number], select {
     width: 100%; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; outline: none; }
-  textarea { min-height: 110px; resize: vertical; }
+  textarea { min-height: 104px; resize: vertical; }
   textarea:focus, input:focus, select:focus { border-color: var(--accent); }
   input[type=range] { width: 100%; accent-color: var(--accent); }
+  input[type=color] { width: 44px; height: 38px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-2); padding: 2px; }
+  .sec { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 20px 0 10px; padding-top: 16px; border-top: 1px solid var(--line); }
 
   .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .chip { background: var(--panel-2); border: 1px solid var(--line); border-radius: 99px; padding: 5px 11px;
-    cursor: pointer; font-size: 13px; }
+  .chip { background: var(--panel-2); border: 1px solid var(--line); border-radius: 99px; padding: 5px 11px; cursor: pointer; font-size: 13px; }
   .chip.on { border-color: var(--accent); color: var(--accent); }
-  .grid-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-  .opt { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 9px 6px;
-    cursor: pointer; text-align: center; font-size: 12.5px; }
-  .opt b { display: block; font-size: 18px; line-height: 1.2; margin-bottom: 2px; }
+  .grid-opts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .opt { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 8px 4px; cursor: pointer; text-align: center; font-size: 12px; line-height: 1.25; }
+  .opt b { display: block; font-size: 17px; line-height: 1.3; margin-bottom: 2px; font-weight: 400; }
   .opt.on { border-color: var(--accent); background: rgba(212,255,58,.08); color: var(--accent); }
+  .scrollbox { max-height: 300px; overflow-y: auto; padding-right: 2px; }
 
-  .row { display: flex; gap: 8px; align-items: center; }
-  .btn { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 12px; padding: 12px 16px;
-    font-weight: 700; cursor: pointer; width: 100%; }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .btn { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 12px; padding: 12px 16px; font-weight: 700; cursor: pointer; width: 100%; text-decoration: none; display: inline-block; text-align: center; }
   .btn:disabled { opacity: .5; cursor: progress; }
   .btn.ghost { background: var(--panel-2); color: var(--text); border: 1px solid var(--line); font-weight: 500; }
   .btn.sm { padding: 7px 10px; font-size: 13px; width: auto; border-radius: 9px; }
   .hint { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .drop { border: 1px dashed var(--line); border-radius: 12px; padding: 14px; text-align: center; cursor: pointer; color: var(--muted); background: none; width: 100%; }
+  .drop.over, .drop:hover { border-color: var(--accent); color: var(--accent); }
+  .flash { animation: flashIt 1.2s ease 2; }
+  @keyframes flashIt { 50% { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(212,255,58,.25); } }
 
-  .results { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; position: relative; }
+  .results { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; min-width: 0; }
   .card img, .card video { width: 100%; display: block; background: #000; }
-  .card .ph { aspect-ratio: 1; display: grid; place-items: center; color: var(--muted); font-size: 13px;
-    background: linear-gradient(110deg, #151517 30%, #222226 50%, #151517 70%); background-size: 200% 100%;
-    animation: shimmer 1.4s infinite linear; }
+  .card .ph { display: grid; place-items: center; color: var(--muted); font-size: 13px; text-align: center; padding: 12px;
+    background: linear-gradient(110deg, #151518 30%, #222227 50%, #151518 70%); background-size: 200% 100%; animation: shimmer 1.4s infinite linear; }
+  .card .ph.still { animation: none; }
   @keyframes shimmer { to { background-position: -200% 0; } }
   .card .bar { display: flex; gap: 6px; padding: 8px; flex-wrap: wrap; }
-  .card .cap { padding: 0 10px 10px; font-size: 12px; color: var(--muted); display: -webkit-box;
-    -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .empty { border: 1px dashed var(--line); border-radius: var(--radius); padding: 40px 20px; text-align: center; color: var(--muted); }
+  .card .cap { padding: 0 10px 10px; font-size: 12px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .empty { border: 1px dashed var(--line); border-radius: var(--radius); padding: 36px 20px; text-align: center; color: var(--muted); }
 
-  .stage { background: #000; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
-    display: grid; place-items: center; min-height: 320px; }
-  .stage canvas { max-width: 100%; max-height: 70vh; display: block; }
-  .drop { border: 1px dashed var(--line); border-radius: 12px; padding: 16px; text-align: center; cursor: pointer; color: var(--muted); }
-  .drop.over { border-color: var(--accent); color: var(--accent); }
-  .thumb-strip { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-top: 8px; }
-  .thumb-strip img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; flex: none; }
-  .thumb-strip img.on { border-color: var(--accent); }
+  .stage { background: #000; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: grid; place-items: center; min-height: 300px; }
+  .stage canvas { max-width: 100%; max-height: 68vh; display: block; }
   .progress { height: 4px; background: var(--panel-2); border-radius: 4px; overflow: hidden; margin-top: 10px; }
   .progress i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .1s linear; }
 
-  #toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%) translateY(120px); background: var(--panel-2);
+  /* explorar */
+  .hero { display: grid; gap: 6px; margin-bottom: 18px; }
+  .hero h2 { margin: 0; font-size: clamp(22px, 4vw, 32px); text-wrap: balance; }
+  .hero p { margin: 0; color: var(--muted); max-width: 62ch; }
+  .tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 26px; }
+  .tool { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; cursor: pointer; text-align: left; display: grid; gap: 4px; }
+  .tool:hover { border-color: var(--accent); }
+  .tool .ic { font-size: 22px; }
+  .tool b { font-size: 15px; }
+  .tool span { color: var(--muted); font-size: 13px; }
+  .presets { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+  .preset { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; cursor: pointer; text-align: left; padding: 0; }
+  .preset:hover { border-color: var(--accent); }
+  .preset canvas { width: 100%; aspect-ratio: 4 / 5; display: block; background: #000; }
+  .preset .pi { padding: 10px 12px 12px; display: grid; gap: 2px; }
+  .preset .pi b { font-size: 14px; }
+  .preset .pi span { font-size: 12px; color: var(--muted); }
+  .paid { margin-top: 26px; border: 1px dashed var(--line); border-radius: var(--radius); padding: 14px 16px; color: var(--muted); font-size: 13px; }
+  .paid b { color: var(--text); }
+
+  #toast { position: fixed; left: 50%; bottom: calc(90px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%) translateY(200px); background: var(--panel-2);
     border: 1px solid var(--line); padding: 10px 16px; border-radius: 12px; transition: transform .25s; z-index: 50; max-width: calc(100% - 32px); }
   #toast.show { transform: translateX(-50%) translateY(0); }
   #toast.err { border-color: var(--danger); }
+  @media (prefers-reduced-motion: reduce) { .card .ph, .flash { animation: none; } #toast { transition: none; } }
 </style>
 </head>
 <body>
-<header>
+<aside>
   <div class="logo">LYON <span>STUDIO</span></div>
-  <span class="free">100% gratis · sin cuenta</span>
-  <nav>
-    <button data-view="image" class="on">Imagen</button>
-    <button data-view="video">Video</button>
-    <button data-view="gallery">Galería</button>
-  </nav>
-</header>
+  <button class="nav on" data-view="explore"><span class="ic">✦</span>Explorar</button>
+  <div class="navgroup">Crear</div>
+  <button class="nav" data-view="image"><span class="ic">🖼</span>Imagen</button>
+  <button class="nav" data-view="video"><span class="ic">🎬</span>Video</button>
+  <button class="nav" data-view="clone"><span class="ic">🎥</span>Clonar<span class="tag">NUEVO</span></button>
+  <div class="navgroup">Editar</div>
+  <button class="nav" data-view="edit"><span class="ic">✂</span>Editar y Upscale</button>
+  <div class="navgroup">Biblioteca</div>
+  <button class="nav" data-view="library"><span class="ic">▦</span>Mis creaciones</button>
+  <div class="side-foot"><b>∞ Gratis</b>Sin créditos, sin cuenta. Todo se procesa en tu dispositivo.</div>
+</aside>
 
-<main>
-  <!-- ====================== IMAGEN ====================== -->
-  <section id="v-image" class="view on">
-    <div class="panel">
-      <div class="field">
-        <label class="lbl" for="prompt">Prompt</label>
-        <textarea id="prompt" placeholder="Ej: techo de teja roja recién instalado en una casa moderna de Querétaro, atardecer dorado"></textarea>
-        <div class="row" style="margin-top:8px">
-          <button class="btn ghost sm" id="enhance">✨ Mejorar prompt</button>
-          <button class="btn ghost sm" id="random">🎲 Aleatorio</button>
+<div class="shell">
+  <div class="topbar">
+    <h1 id="viewTitle">Explorar</h1>
+    <span class="sub" id="viewSub"></span>
+    <span class="credits">∞ créditos</span>
+  </div>
+
+  <main>
+    <!-- ====================== EXPLORAR ====================== -->
+    <section id="v-explore" class="view on">
+      <div class="hero">
+        <h2>Convierte una foto en un reel de cine</h2>
+        <p>Elige un preset y úsalo con tu foto, genera imágenes con IA o copia el movimiento de cámara de cualquier video.</p>
+      </div>
+      <div class="tools">
+        <button class="tool" data-go="image"><span class="ic">🖼</span><b>Crear imagen</b><span>Texto a imagen con 10 estilos</span></button>
+        <button class="tool" data-go="video"><span class="ic">🎬</span><b>Imagen a video</b><span>24 movimientos de cámara y 12 efectos</span></button>
+        <button class="tool" data-go="clone"><span class="ic">🎥</span><b>Clonar movimiento</b><span>Copia la cámara de un reel</span></button>
+        <button class="tool" data-go="edit"><span class="ic">✂</span><b>Editar y Upscale</b><span>Ajustes, recorte, texto y 2x/4x</span></button>
+      </div>
+      <div class="sec" style="border-top:0;padding-top:0;margin-top:0">Presets de video</div>
+      <div class="presets" id="presets"></div>
+      <div class="paid"><b>Fuera de la versión gratis:</b> video generativo (que la escena cobre vida), lipsync, avatares que hablan y cambio de rostro. Necesitan modelos de IA en servidores de pago.</div>
+    </section>
+
+    <!-- ====================== IMAGEN ====================== -->
+    <section id="v-image" class="view">
+      <div class="split">
+        <div class="panel">
+          <div class="field">
+            <label class="lbl" for="prompt">Prompt</label>
+            <textarea id="prompt" placeholder="Ej: techo de teja roja recién instalado en una casa moderna de Querétaro, atardecer dorado"></textarea>
+            <div class="row" style="margin-top:8px">
+              <button class="btn ghost sm" id="enhance">✨ Mejorar prompt</button>
+              <button class="btn ghost sm" id="random">🎲 Aleatorio</button>
+            </div>
+          </div>
+          <div class="field">
+            <span class="lbl">Plantillas para contratistas</span>
+            <div class="chips" id="templates"></div>
+          </div>
+          <div class="field">
+            <span class="lbl">Estilo</span>
+            <div class="chips" id="styles"></div>
+          </div>
+          <div class="field">
+            <span class="lbl">Formato</span>
+            <div class="grid-opts" id="ratios"></div>
+          </div>
+          <div class="field">
+            <label class="lbl" for="model">Modelo</label>
+            <select id="model">
+              <option value="flux">Flux (calidad)</option>
+              <option value="turbo">Turbo (rápido)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="lbl" for="count">Variaciones: <b id="countLbl">4</b></label>
+            <input type="range" id="count" min="1" max="8" value="4">
+          </div>
+          <div class="field">
+            <label class="lbl" for="seed">Semilla (vacío = aleatoria)</label>
+            <input type="number" id="seed" placeholder="Ej: 42">
+          </div>
+          <button class="btn" id="generate">Generar imágenes</button>
+          <p class="hint">Motor gratuito: Pollinations.ai. Cada imagen tarda 5–30 s.</p>
+        </div>
+        <div>
+          <div class="results" id="imgResults"></div>
+          <div class="empty" id="imgEmpty">Escribe un prompt o toca una plantilla y genera. Tus imágenes quedan guardadas en Mis creaciones.</div>
         </div>
       </div>
+    </section>
 
-      <div class="field">
-        <label class="lbl">Plantillas rápidas (contratistas)</label>
-        <div class="chips" id="templates"></div>
+    <!-- ====================== VIDEO (y CLONAR) ====================== -->
+    <section id="v-video" class="view">
+      <div class="split preview-first">
+        <div class="panel">
+          <div class="field">
+            <span class="lbl">Imagen de origen</span>
+            <button class="drop" id="drop" type="button">📷 Toca para subir una foto</button>
+            <input type="file" id="file" accept="image/*" hidden>
+            <div class="hint" id="srcHint">Mientras tanto se usa una imagen de ejemplo.</div>
+          </div>
+
+          <div class="field" id="cloneField">
+            <span class="lbl">Clonar movimiento de un video</span>
+            <button class="btn ghost" id="refBtn" type="button">🎥 Subir video de referencia</button>
+            <input type="file" id="refFile" accept="video/*" hidden>
+            <div class="hint" id="refStatus">Sube un reel que te guste (drone, zoom, paneo): copiamos su movimiento de cámara y lo aplicamos a tu foto. Copia la cámara, no el movimiento de las personas.</div>
+          </div>
+
+          <div class="field">
+            <span class="lbl">Movimiento de cámara · <b id="motionLbl">Dolly In</b></span>
+            <div class="scrollbox"><div class="grid-opts" id="motions"></div></div>
+          </div>
+
+          <div class="field">
+            <span class="lbl">Efectos</span>
+            <div class="chips" id="fx"></div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="intensity">Intensidad: <b id="intLbl">100%</b></label>
+            <input type="range" id="intensity" min="30" max="200" value="100">
+          </div>
+          <div class="field">
+            <label class="lbl" for="duration">Duración: <b id="durLbl">5 s</b></label>
+            <input type="range" id="duration" min="2" max="12" value="5">
+          </div>
+          <div class="field">
+            <span class="lbl">Formato del video</span>
+            <div class="grid-opts" id="vRatios"></div>
+          </div>
+
+          <div class="sec">Texto en el video (opcional)</div>
+          <div class="field">
+            <label class="lbl" for="vTitle">Título</label>
+            <input type="text" id="vTitle" placeholder="Ej: Techos Hernández">
+          </div>
+          <div class="field">
+            <label class="lbl" for="vSub">Subtítulo</label>
+            <input type="text" id="vSub" placeholder="Ej: Cotiza gratis · WhatsApp 442 000 0000">
+          </div>
+          <div class="field row">
+            <input type="color" id="vColor" value="#ffffff" aria-label="Color del texto">
+            <select id="vPos" style="flex:1" aria-label="Posición del texto">
+              <option value="bottom">Abajo</option>
+              <option value="center">Centro</option>
+              <option value="top">Arriba</option>
+            </select>
+          </div>
+
+          <button class="btn" id="render">Crear video</button>
+          <div class="progress"><i id="prog"></i></div>
+          <p class="hint">El video se renderiza en tu dispositivo (MP4 o WebM según el navegador). Nada se sube a ningún servidor.</p>
+        </div>
+        <div>
+          <div class="stage"><canvas id="stage" width="720" height="1280"></canvas></div>
+          <div class="results" id="vidResults" style="margin-top:12px"></div>
+        </div>
       </div>
+    </section>
 
-      <div class="field">
-        <label class="lbl">Estilo</label>
-        <div class="chips" id="styles"></div>
+    <!-- ====================== EDITAR ====================== -->
+    <section id="v-edit" class="view">
+      <div class="split preview-first">
+        <div class="panel">
+          <div class="field">
+            <span class="lbl">Imagen</span>
+            <button class="drop" id="edDrop" type="button">📷 Toca para subir una foto</button>
+            <input type="file" id="edFile" accept="image/*" hidden>
+          </div>
+          <div class="field">
+            <span class="lbl">Recorte</span>
+            <div class="grid-opts" id="edCrop"></div>
+          </div>
+          <div class="field">
+            <span class="lbl">Upscale</span>
+            <div class="grid-opts" id="edScale"></div>
+            <div class="hint">Escalado con interpolación de alta calidad y nitidez, sin IA. Máximo 4096 px por lado.</div>
+          </div>
+          <div class="sec">Ajustes</div>
+          <div id="edSliders"></div>
+          <div class="row" style="margin-bottom:16px"><button class="btn ghost sm" id="edReset">Restablecer ajustes</button></div>
+          <div class="sec">Texto</div>
+          <div class="field">
+            <label class="lbl" for="edText">Texto sobre la imagen</label>
+            <input type="text" id="edText" placeholder="Ej: Antes / Después">
+          </div>
+          <div class="field row">
+            <input type="color" id="edColor" value="#ffffff" aria-label="Color del texto">
+            <select id="edPos" style="flex:1" aria-label="Posición del texto">
+              <option value="bottom">Abajo</option>
+              <option value="center">Centro</option>
+              <option value="top">Arriba</option>
+            </select>
+          </div>
+          <div class="row">
+            <button class="btn" id="edExport" style="flex:1">⬇ Guardar JPG</button>
+            <button class="btn ghost" id="edToVideo" style="flex:1">🎬 Animar</button>
+          </div>
+          <p class="hint" id="edInfo"></p>
+        </div>
+        <div class="stage"><canvas id="edCanvas" width="800" height="1000"></canvas></div>
       </div>
+    </section>
 
-      <div class="field">
-        <label class="lbl">Formato</label>
-        <div class="grid-opts" id="ratios"></div>
+    <!-- ====================== MIS CREACIONES ====================== -->
+    <section id="v-library" class="view">
+      <div class="sec" style="border-top:0;padding-top:0;margin-top:0">Videos de esta sesión</div>
+      <div class="results" id="libVideos"></div>
+      <div class="empty" id="libVideosEmpty">Los videos que crees aparecen aquí hasta que cierres la página. Guárdalos en tu dispositivo.</div>
+      <div class="row" style="justify-content:space-between;margin-top:26px">
+        <div class="sec" style="border-top:0;padding-top:0;margin:0">Imágenes generadas</div>
+        <button class="btn ghost sm" id="clearGallery">Vaciar imágenes</button>
       </div>
+      <div class="results" id="galGrid" style="margin-top:10px"></div>
+      <div class="empty" id="galEmpty" style="margin-top:10px">Todavía no hay imágenes. Genera algunas en Imagen.</div>
+    </section>
+  </main>
+</div>
 
-      <div class="field">
-        <label class="lbl">Modelo</label>
-        <select id="model">
-          <option value="flux">Flux (calidad)</option>
-          <option value="turbo">Turbo (rápido)</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label class="lbl">Variaciones: <b id="countLbl">4</b></label>
-        <input type="range" id="count" min="1" max="8" value="4">
-      </div>
-
-      <div class="field">
-        <label class="lbl" for="seed">Semilla (vacío = aleatoria)</label>
-        <input type="number" id="seed" placeholder="Ej: 42">
-      </div>
-
-      <button class="btn" id="generate">Generar imágenes</button>
-      <p class="hint">Motor gratuito: Pollinations.ai (sin API key). Cada imagen tarda 5–30 s.</p>
-    </div>
-
-    <div>
-      <div class="results" id="imgResults"></div>
-      <div class="empty" id="imgEmpty">Escribe un prompt y genera. Tus imágenes aparecen aquí y se guardan en la Galería.</div>
-    </div>
-  </section>
-
-  <!-- ====================== VIDEO ====================== -->
-  <section id="v-video" class="view">
-    <div class="panel">
-      <div class="field">
-        <label class="lbl">Imagen de origen</label>
-        <div class="drop" id="drop">Arrastra una imagen o haz clic para subir</div>
-        <input type="file" id="file" accept="image/*" hidden>
-        <div class="hint">…o elige una de tu galería:</div>
-        <div class="thumb-strip" id="srcStrip"></div>
-      </div>
-
-      <div class="field">
-        <label class="lbl">Clonar movimiento de un video</label>
-        <button class="btn ghost" id="refBtn" type="button">🎥 Subir video de referencia</button>
-        <input type="file" id="refFile" accept="video/*" hidden>
-        <div class="hint" id="refStatus">Sube un reel que te guste (drone, zoom, paneo): copiamos su movimiento de cámara y lo aplicamos a tu foto. Copia la cámara, no el movimiento de las personas.</div>
-      </div>
-
-      <div class="field">
-        <label class="lbl">Movimiento de cámara</label>
-        <div class="grid-opts" id="motions"></div>
-      </div>
-
-      <div class="field">
-        <label class="lbl">Efectos</label>
-        <div class="chips" id="fx"></div>
-      </div>
-
-      <div class="field">
-        <label class="lbl">Intensidad: <b id="intLbl">100%</b></label>
-        <input type="range" id="intensity" min="30" max="200" value="100">
-      </div>
-
-      <div class="field">
-        <label class="lbl">Duración: <b id="durLbl">5 s</b></label>
-        <input type="range" id="duration" min="2" max="12" value="5">
-      </div>
-
-      <div class="field">
-        <label class="lbl">Formato del video</label>
-        <div class="grid-opts" id="vRatios"></div>
-      </div>
-
-      <button class="btn" id="render">Renderizar y descargar video</button>
-      <div class="progress"><i id="prog"></i></div>
-      <p class="hint">El video se renderiza en tu navegador (WebM/MP4 según tu navegador). Nada se sube a ningún servidor.</p>
-    </div>
-
-    <div>
-      <div class="stage"><canvas id="stage" width="720" height="1280"></canvas></div>
-      <div class="results" id="vidResults" style="margin-top:12px"></div>
-    </div>
-  </section>
-
-  <!-- ====================== GALERÍA ====================== -->
-  <section id="v-gallery" class="view">
-    <div class="row" style="justify-content:space-between;margin-bottom:12px;flex-wrap:wrap">
-      <h2 style="margin:0">Galería</h2>
-      <button class="btn ghost sm" id="clearGallery">Vaciar galería</button>
-    </div>
-    <div class="results" id="galGrid"></div>
-    <div class="empty" id="galEmpty">Todavía no hay nada. Genera imágenes y aparecerán aquí.</div>
-  </section>
-</main>
-
-<div id="toast"></div>
+<div id="toast" role="status"></div>
 
 <script>
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-  // ---------- almacenamiento seguro ----------
+  // ---------- utilidades ----------
   const store = {
     get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
   };
-
   let toastT;
   function toast(msg, err) {
     const t = $('#toast');
     t.textContent = msg; t.classList.toggle('err', !!err); t.classList.add('show');
-    clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 3500);
+    clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 3800);
+  }
+  async function copy(text, msg) {
+    try { await navigator.clipboard.writeText(text); toast(msg); }
+    catch { toast('No se pudo copiar automáticamente', true); }
+  }
+  // guardar un archivo: dentro de Claude usa su diálogo de descarga; en un sitio normal, descarga directa
+  async function saveBlob(filename, blob) {
+    const dl = window.claude?.use ? await window.claude.use('downloads') : null;
+    if (dl) {
+      try { await dl.save({ filename, data: blob }); toast('Guardado'); }
+      catch (e) { if (e?.code !== 'declined') toast('No se pudo guardar: ' + (e?.message || e?.code), true); }
+      return;
+    }
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename;
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 10000);
+  }
+  function loadImage(src) {
+    return new Promise((ok, bad) => { const i = new Image(); i.onload = () => ok(i); i.onerror = bad; i.src = src; });
+  }
+  // trae una imagen remota como blob local para poder editarla o animarla
+  async function remoteToLocal(url) {
+    const r = await fetch(url); if (!r.ok) throw new Error(r.status);
+    return URL.createObjectURL(await r.blob());
   }
 
   // ---------- navegación ----------
-  $$('nav button').forEach(b => b.onclick = () => showView(b.dataset.view));
+  const VIEWS = {
+    explore: ['Explorar', 'Presets y herramientas'],
+    image: ['Crear imagen', 'Texto a imagen'],
+    video: ['Imagen a video', 'Movimientos de cámara y efectos'],
+    clone: ['Clonar movimiento', 'Copia la cámara de un video'],
+    edit: ['Editar y Upscale', 'Ajustes, recorte, texto y escalado'],
+    library: ['Mis creaciones', 'Imágenes y videos']
+  };
+  let current = 'explore';
+  $$('.nav').forEach(b => b.onclick = () => showView(b.dataset.view));
+  $$('[data-go]').forEach(b => b.onclick = () => showView(b.dataset.go));
   function showView(v) {
-    $$('nav button').forEach(b => b.classList.toggle('on', b.dataset.view === v));
-    $$('.view').forEach(s => s.classList.toggle('on', s.id === 'v-' + v));
-    if (v === 'gallery') renderGallery();
-    if (v === 'video') renderSrcStrip();
+    $$('.nav').forEach(b => b.classList.toggle('on', b.dataset.view === v));
+    const panel = v === 'clone' ? 'video' : v;
+    $$('.view').forEach(s => s.classList.toggle('on', s.id === 'v-' + panel));
+    $('#viewTitle').textContent = VIEWS[v][0]; $('#viewSub').textContent = VIEWS[v][1];
+    current = panel;
+    window.scrollTo({ top: 0 });
+    if (v === 'library') renderLibrary();
+    if (v === 'clone') { const f = $('#cloneField'); f.scrollIntoView({ block: 'center' }); f.classList.remove('flash'); void f.offsetWidth; f.classList.add('flash'); }
   }
 
   // ---------- datos ----------
@@ -274,7 +456,7 @@
   };
   const TEMPLATES = {
     'Techo terminado': 'freshly installed clay tile roof on a modern mexican house, blue sky, professional roofing work',
-    'Antes/después cocina': 'modern remodeled kitchen with quartz countertops and warm wood cabinets, bright interior',
+    'Cocina remodelada': 'modern remodeled kitchen with quartz countertops and warm wood cabinets, bright interior',
     'Cuadrilla trabajando': 'professional construction crew in safety gear working on a roof, sunny day, candid',
     'Fachada remodelada': 'renovated modern house facade with stone and wood accents, landscaped front yard, dusk lights',
     'Baño de lujo': 'luxury remodeled bathroom, walk-in shower, marble tiles, soft natural light',
@@ -289,38 +471,34 @@
     { k: '2:3', w: 832, h: 1216, icon: '▯' }
   ];
   const RANDOM = [
-    'a lone astronaut walking through a field of giant sunflowers',
     'a vintage red pickup truck parked in front of a colonial church in Querétaro',
-    'a hyperdetailed macro shot of a dew drop on a leaf reflecting a city',
+    'an aerial drone shot of a new residential neighborhood with solar panels',
     'a cozy cabin in snowy mountains at night with warm windows',
-    'a fashion model in a flowing silk dress on a windy desert dune',
-    'an aerial drone shot of a new residential neighborhood with solar panels'
+    'a hyperdetailed macro shot of a dew drop on a leaf reflecting a city',
+    'a modern glass house on a cliff above the ocean at sunset'
   ];
-
-  // ---------- IMAGEN ----------
-  let style = 'Cinemático', ratio = RATIOS[0];
-  const stylesEl = $('#styles'), ratiosEl = $('#ratios'), tplEl = $('#templates');
-
-  Object.keys(STYLES).forEach(s => {
-    const c = document.createElement('button'); c.className = 'chip' + (s === style ? ' on' : ''); c.textContent = s;
-    c.onclick = () => { style = s; $$('.chip', stylesEl).forEach(x => x.classList.toggle('on', x === c)); };
-    stylesEl.append(c);
-  });
-  Object.entries(TEMPLATES).forEach(([k, v]) => {
-    const c = document.createElement('button'); c.className = 'chip'; c.textContent = k;
-    c.onclick = () => { $('#prompt').value = v; };
-    tplEl.append(c);
-  });
-  function ratioButtons(el, current, onPick) {
-    RATIOS.forEach(r => {
-      const o = document.createElement('button'); o.className = 'opt' + (r === current ? ' on' : '');
+  function ratioButtons(el, list, sel, onPick) {
+    list.forEach(r => {
+      const o = document.createElement('button'); o.className = 'opt' + (r === sel ? ' on' : '');
       o.innerHTML = `<b>${r.icon}</b>${r.k}`;
       o.onclick = () => { $$('.opt', el).forEach(x => x.classList.toggle('on', x === o)); onPick(r); };
       el.append(o);
     });
   }
-  ratioButtons(ratiosEl, ratio, r => ratio = r);
 
+  // ---------- IMAGEN ----------
+  let style = 'Cinemático', ratio = RATIOS[0];
+  Object.keys(STYLES).forEach(s => {
+    const c = document.createElement('button'); c.className = 'chip' + (s === style ? ' on' : ''); c.textContent = s;
+    c.onclick = () => { style = s; $$('.chip', $('#styles')).forEach(x => x.classList.toggle('on', x === c)); };
+    $('#styles').append(c);
+  });
+  Object.entries(TEMPLATES).forEach(([k, v]) => {
+    const c = document.createElement('button'); c.className = 'chip'; c.textContent = k;
+    c.onclick = () => { $('#prompt').value = v; };
+    $('#templates').append(c);
+  });
+  ratioButtons($('#ratios'), RATIOS, ratio, r => ratio = r);
   $('#count').oninput = e => $('#countLbl').textContent = e.target.value;
   $('#random').onclick = () => $('#prompt').value = RANDOM[Math.floor(Math.random() * RANDOM.length)];
 
@@ -335,11 +513,10 @@
       if (!r.ok) throw new Error(r.status);
       const txt = (await r.text()).trim().replace(/^"|"$/g, '');
       if (!txt) throw new Error('vacío');
-      $('#prompt').value = txt;
-      toast('Prompt mejorado');
+      $('#prompt').value = txt; toast('Prompt mejorado');
     } catch {
       $('#prompt').value = p + ', highly detailed, professional composition, dramatic natural lighting, sharp focus, 8k';
-      toast('Servicio de texto no disponible: se aplicó mejora local');
+      toast('Se aplicó una mejora local del prompt');
     } finally { btn.disabled = false; btn.textContent = '✨ Mejorar prompt'; }
   };
 
@@ -350,164 +527,290 @@
 
   $('#generate').onclick = () => {
     const base = $('#prompt').value.trim();
-    if (!base) return toast('Escribe un prompt', true);
+    if (!base) return toast('Escribe un prompt o toca una plantilla', true);
     const full = [base, STYLES[style]].filter(Boolean).join(', ');
-    const n = +$('#count').value;
-    const seedIn = $('#seed').value.trim();
-    const model = $('#model').value;
-    $('#imgEmpty').style.display = 'none';
-    const btn = $('#generate'); btn.disabled = true;
-    let pending = n;
-
+    const n = +$('#count').value, seedIn = $('#seed').value.trim(), model = $('#model').value;
+    $('#imgEmpty').hidden = true;
     for (let i = 0; i < n; i++) {
       const seed = seedIn ? (+seedIn + i) : Math.floor(Math.random() * 1e9);
-      const url = buildUrl(full, ratio.w, ratio.h, seed, model);
-      const item = { id: Date.now() + '-' + i, url, prompt: base, style, ratio: ratio.k, w: ratio.w, h: ratio.h, seed, model, at: Date.now() };
-      const card = document.createElement('div'); card.className = 'card';
-      card.innerHTML = `<div class="ph" style="aspect-ratio:${ratio.w}/${ratio.h}">Generando…</div>`;
-      $('#imgResults').prepend(card);
-
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      img.onload = () => {
-        card.innerHTML = '';
-        card.append(img);
-        card.append(cardBar(item));
-        addToGallery(item);
-        if (--pending === 0) btn.disabled = false;
-      };
-      img.onerror = () => {
-        card.innerHTML = `<div class="ph" style="aspect-ratio:${ratio.w}/${ratio.h};animation:none">Falló (límite del servicio gratis). Reintenta en unos segundos.</div>`;
-        if (--pending === 0) btn.disabled = false;
-      };
-      img.alt = base;
-      // escalonar peticiones para no chocar con el límite de uso gratuito
-      setTimeout(() => { img.src = url; }, i * 1200);
+      const item = { id: Date.now() + '-' + i, url: buildUrl(full, ratio.w, ratio.h, seed, model), prompt: base, style, ratio: ratio.k, w: ratio.w, h: ratio.h, seed, at: Date.now() };
+      addToGallery(item);
+      // escalonar peticiones para respetar el límite del servicio gratuito
+      $('#imgResults').prepend(imageCard(item, i * 1200));
     }
   };
 
-  function cardBar(item) {
+  // tarjeta de imagen: muestra la imagen; si este entorno no la puede mostrar, ofrece abrirla aparte
+  function imageCard(item, delay = 0) {
+    const card = document.createElement('div'); card.className = 'card';
+    const ph = document.createElement('div'); ph.className = 'ph'; ph.style.aspectRatio = `${item.w}/${item.h}`; ph.textContent = 'Generando…';
+    card.append(ph);
+    const img = new Image(); img.alt = item.prompt;
+    img.onload = () => ph.replaceWith(img);
+    img.onerror = () => {
+      ph.classList.add('still'); ph.textContent = '';
+      const a = document.createElement('a'); a.className = 'btn sm'; a.href = item.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Abrir imagen ↗';
+      const s = document.createElement('span'); s.textContent = 'Guárdala y súbela en Video o Editar.';
+      const box = document.createElement('div'); box.style.cssText = 'display:grid;gap:8px;justify-items:center'; box.append(a, s);
+      ph.append(box);
+    };
+    setTimeout(() => { img.src = item.url; }, delay);
+
     const bar = document.createElement('div'); bar.className = 'bar';
-    const mk = (label, fn) => { const b = document.createElement('button'); b.className = 'btn ghost sm'; b.textContent = label; b.onclick = fn; bar.append(b); };
-    mk('⬇ Descargar', () => downloadUrl(item.url, `lyon-${item.seed}.jpg`));
-    mk('🎬 Animar', () => { setSource(item.url); showView('video'); });
-    mk('♻ Variar', () => {
-      $('#prompt').value = item.prompt; $('#seed').value = '';
-      showView('image'); $('#generate').click();
-    });
-    mk('📋 Prompt', () => { navigator.clipboard?.writeText(item.prompt); toast('Prompt copiado'); });
+    const mk = (label, title, fn) => { const b = document.createElement('button'); b.className = 'btn ghost sm'; b.textContent = label; b.title = title; b.onclick = fn; bar.append(b); };
+    mk('⬇', 'Guardar', async () => { try { const r = await fetch(item.url); await saveBlob(`lyon-${item.seed}.jpg`, await r.blob()); } catch { toast('Abre la imagen y guárdala desde ahí', true); } });
+    mk('🎬 Animar', 'Convertir en video', () => useRemote(item.url, 'video'));
+    mk('✂ Editar', 'Editar y escalar', () => useRemote(item.url, 'edit'));
+    mk('♻', 'Variar', () => { $('#prompt').value = item.prompt; $('#seed').value = ''; showView('image'); $('#generate').click(); });
+    mk('📋', 'Copiar prompt', () => copy(item.prompt, 'Prompt copiado'));
     const cap = document.createElement('div'); cap.className = 'cap'; cap.textContent = `${item.prompt} · ${item.style} · ${item.ratio} · seed ${item.seed}`;
-    const frag = document.createDocumentFragment(); frag.append(bar, cap); return frag;
+    card.append(bar, cap);
+    return card;
   }
-
-  async function downloadUrl(url, name) {
+  async function useRemote(url, target) {
     try {
-      const r = await fetch(url); const b = await r.blob();
-      const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name; a.click();
-      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
-    } catch { window.open(url, '_blank'); }
+      const local = await remoteToLocal(url);
+      if (target === 'video') { await setVideoSource(local); showView('video'); }
+      else { await setEditSource(local); showView('edit'); }
+    } catch { showView(target); toast('Abre la imagen, guárdala en tu dispositivo y súbela aquí', true); }
   }
-
-  // ---------- GALERÍA ----------
   function addToGallery(item) {
     const g = store.get('lyon-gallery', []);
     g.unshift(item); store.set('lyon-gallery', g.slice(0, 200));
   }
-  function renderGallery() {
-    const g = store.get('lyon-gallery', []);
-    const grid = $('#galGrid'); grid.innerHTML = '';
-    $('#galEmpty').style.display = g.length ? 'none' : 'block';
-    g.forEach(item => {
-      const card = document.createElement('div'); card.className = 'card';
-      const img = new Image(); img.src = item.url; img.loading = 'lazy'; img.alt = item.prompt; img.crossOrigin = 'anonymous';
-      card.append(img, cardBar(item));
-      const del = document.createElement('button'); del.className = 'btn ghost sm'; del.textContent = '🗑';
-      del.onclick = () => { store.set('lyon-gallery', store.get('lyon-gallery', []).filter(x => x.id !== item.id)); renderGallery(); };
-      $('.bar', card).append(del);
-      grid.append(card);
-    });
-  }
-  $('#clearGallery').onclick = () => { if (confirm('¿Vaciar toda la galería?')) { store.set('lyon-gallery', []); renderGallery(); } };
 
-  // ---------- VIDEO: movimientos de cámara ----------
+  // ---------- MOTOR DE VIDEO ----------
   const ease = {
     io: t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
     in: t => t * t * t,
     out: t => 1 - Math.pow(1 - t, 3),
-    expo: t => t === 0 ? 0 : Math.pow(2, 10 * t - 10)
+    expo: t => t === 0 ? 0 : Math.pow(2, 10 * t - 10),
+    sig: (t, k = 14) => 1 / (1 + Math.exp(-k * (t - .5)))
   };
-  // cada movimiento devuelve {s: escala, x, y: desplazamiento en fracción del lienzo, r: rotación en rad}
+  function noise(x) { const i = Math.floor(x), f = x - i, h = n => { const v = Math.sin(n * 127.1) * 43758.5453; return v - Math.floor(v) - .5; }; const u = f * f * (3 - 2 * f); return (h(i) * (1 - u) + h(i + 1) * u) * 2; }
+
+  // cada movimiento devuelve {s: escala, x, y: desplazamiento en fracción del cuadro, r: giro en radianes}
   const MOTIONS = {
     'Dolly In':     { icon: '⤢', f: (t, k) => ({ s: 1 + .35 * k * ease.io(t) }) },
     'Dolly Out':    { icon: '⤡', f: (t, k) => ({ s: 1 + .35 * k * (1 - ease.io(t)) }) },
-    'Crash Zoom':   { icon: '💥', f: (t, k) => ({ s: 1 + 1.4 * k * ease.expo(t) }) },
+    'Push In Lento':{ icon: '⊙', f: (t, k) => ({ s: 1.02 + .14 * k * t }) },
+    'Crash Zoom':   { icon: '💥', blur: true, f: (t, k) => ({ s: 1 + 1.4 * k * ease.expo(t) }) },
+    'Snap Zoom':    { icon: '⏩', blur: true, f: (t, k) => { const x = t * 3 - .5, st = Math.floor(x) + ease.sig(x - Math.floor(x), 30); return { s: 1 + .22 * k * Math.max(0, Math.min(2, st)) }; } },
+    'FPV Dive':     { icon: '🛩', blur: true, f: (t, k) => ({ s: 1.05 + 1.1 * k * ease.in(t), r: .12 * k * ease.in(t), y: .05 * k * ease.in(t) }) },
     'Pan Izq.':     { icon: '←', f: (t, k) => ({ s: 1.25 + .1 * k, x: .1 * k * (1 - 2 * ease.io(t)) }) },
     'Pan Der.':     { icon: '→', f: (t, k) => ({ s: 1.25 + .1 * k, x: -.1 * k * (1 - 2 * ease.io(t)) }) },
+    'Whip Pan':     { icon: '⇉', blur: true, f: (t, k) => ({ s: 1.6, x: .28 * k * (.5 - ease.sig(t, 18)) }) },
     'Tilt Arriba':  { icon: '↑', f: (t, k) => ({ s: 1.25 + .1 * k, y: -.1 * k * (1 - 2 * ease.io(t)) }) },
     'Tilt Abajo':   { icon: '↓', f: (t, k) => ({ s: 1.25 + .1 * k, y: .1 * k * (1 - 2 * ease.io(t)) }) },
+    'Boom Arriba':  { icon: '⤒', f: (t, k) => ({ s: 1.25 + .08 * k * ease.io(t), y: .09 * k * (1 - 2 * ease.io(t)) }) },
+    'Boom Abajo':   { icon: '⤓', f: (t, k) => ({ s: 1.25 + .08 * k * ease.io(t), y: -.09 * k * (1 - 2 * ease.io(t)) }) },
+    'Drone Reveal': { icon: '🚁', f: (t, k) => ({ s: 1.05 + .6 * k * (1 - ease.out(t)), y: -.08 * k * (1 - ease.out(t)) }) },
     'Orbit':        { icon: '⟳', f: (t, k) => { const a = ease.io(t) * Math.PI; return { s: 1.3, x: .07 * k * Math.cos(a), r: .05 * k * (ease.io(t) - .5), y: .02 * k * Math.sin(a) }; } },
+    'Arc Izq.':     { icon: '◜', f: (t, k) => ({ s: 1.32, x: .08 * k * (1 - 2 * ease.io(t)), r: -.04 * k * (1 - 2 * ease.io(t)) }) },
+    'Arc Der.':     { icon: '◝', f: (t, k) => ({ s: 1.32, x: -.08 * k * (1 - 2 * ease.io(t)), r: .04 * k * (1 - 2 * ease.io(t)) }) },
+    'Bullet Time':  { icon: '🌀', f: (t, k) => ({ s: 1.35 + .15 * ease.io(t), r: .3 * k * ease.io(t) - .15 * k }) },
     'Dutch Roll':   { icon: '◿', f: (t, k) => ({ s: 1.2 + .1 * ease.io(t), r: .14 * k * ease.io(t) }) },
+    'Vertigo':      { icon: '◎', f: (t, k) => ({ s: 1 + .45 * k * Math.sin(ease.io(t) * Math.PI), r: .02 * k * Math.sin(t * Math.PI * 2) }) },
     'Cámara Mano':  { icon: '✋', f: (t, k) => ({ s: 1.12 + .05 * t, x: .012 * k * noise(t * 9), y: .012 * k * noise(t * 7 + 50), r: .006 * k * noise(t * 5 + 99) }) },
-    'Vertigo':      { icon: '🌀', f: (t, k) => ({ s: 1 + .45 * k * Math.sin(ease.io(t) * Math.PI), r: .02 * k * Math.sin(t * Math.PI * 2) }) },
+    'Terremoto':    { icon: '📳', f: (t, k) => ({ s: 1.22, x: .035 * k * noise(t * 60), y: .035 * k * noise(t * 55 + 40), r: .02 * k * noise(t * 45 + 9) }) },
+    'Latido':       { icon: '💓', f: (t, k) => ({ s: 1.1 + .08 * k * Math.exp(-((t * 4) % 1) * 7) }) },
     'Levitar':      { icon: '☁', f: (t, k) => ({ s: 1.12 + .06 * k * ease.io(t), y: .03 * k * Math.sin(t * Math.PI * 2) }) }
   };
-  // ruido suave determinista para cámara en mano
-  function noise(x) { const i = Math.floor(x), f = x - i, h = n => (Math.sin(n * 127.1) * 43758.5453) % 1; const u = f * f * (3 - 2 * f); return (h(i) * (1 - u) + h(i + 1) * u) * 2; }
+  const FX = ['Grano', 'Viñeta', 'Light Leak', 'Destello', 'Partículas', 'Glitch RGB', 'VHS', 'Flash', 'Letterbox', 'B/N', 'Cálido', 'Teal & Orange'];
 
-  const FX = ['Grano', 'Viñeta', 'Light Leak', 'Glitch RGB', 'Flash', 'B/N', 'Letterbox', 'Cálido'];
-  let motion = 'Dolly In', fxOn = new Set(['Viñeta']), vRatio = RATIOS[2], srcImg = null;
+  // imagen de ejemplo generada en el propio navegador (casa con techo al atardecer)
+  const demo = document.createElement('canvas'); demo.width = 900; demo.height = 1200;
+  (() => {
+    const x = demo.getContext('2d'), W = 900, H = 1200;
+    const sky = x.createLinearGradient(0, 0, 0, H * .7); sky.addColorStop(0, '#2b1d4a'); sky.addColorStop(.55, '#e0664a'); sky.addColorStop(1, '#f7c56b');
+    x.fillStyle = sky; x.fillRect(0, 0, W, H);
+    x.fillStyle = '#ffe3a1'; x.beginPath(); x.arc(W * .7, H * .5, 70, 0, 7); x.fill();
+    x.fillStyle = '#3a2a3f'; x.beginPath(); x.moveTo(0, H * .62); for (let i = 0; i <= 10; i++) x.lineTo(i * W / 10, H * (.56 + .04 * Math.sin(i * 1.7))); x.lineTo(W, H); x.lineTo(0, H); x.fill();
+    x.fillStyle = '#1d1a22'; x.fillRect(0, H * .8, W, H * .2);
+    x.fillStyle = '#e9dfcf'; x.fillRect(W * .22, H * .6, W * .56, H * .24);
+    x.fillStyle = '#b3402c'; x.beginPath(); x.moveTo(W * .16, H * .61); x.lineTo(W * .5, H * .43); x.lineTo(W * .84, H * .61); x.fill();
+    x.strokeStyle = 'rgba(0,0,0,.25)'; x.lineWidth = 3;
+    for (let i = 1; i < 9; i++) { x.beginPath(); x.moveTo(W * .16 + i * W * .0378, H * .61 - i * H * .02); x.lineTo(W * .84 - i * W * .0378, H * .61 - i * H * .02); x.stroke(); }
+    x.fillStyle = '#ffcf6e'; [[.3, .66], [.58, .66]].forEach(([a, b]) => x.fillRect(W * a, H * b, W * .12, H * .07));
+    x.fillStyle = '#5b3a2a'; x.fillRect(W * .45, H * .72, W * .1, H * .12);
+  })();
 
-  Object.entries(MOTIONS).forEach(([k, m]) => {
-    const o = document.createElement('button'); o.className = 'opt' + (k === motion ? ' on' : '');
-    o.innerHTML = `<b>${m.icon}</b>${k}`;
-    o.onclick = () => { motion = k; $$('.opt', $('#motions')).forEach(x => x.classList.toggle('on', x === o)); t0 = performance.now(); };
-    $('#motions').append(o);
-  });
+  // capa de grano compartida (se renueva una vez por cuadro)
+  const grainCv = document.createElement('canvas'); grainCv.width = grainCv.height = 200;
+  const gctx = grainCv.getContext('2d'); let grainStamp = -1;
+  function refreshGrain(now) {
+    if (now - grainStamp < 30) return; grainStamp = now;
+    const id = gctx.createImageData(200, 200);
+    for (let i = 0; i < id.data.length; i += 4) { const v = Math.random() * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 24; }
+    gctx.putImageData(id, 0, 0);
+  }
+  const particles = Array.from({ length: 60 }, (_, i) => ({ x: (i * 0.618) % 1, y: (i * 0.377) % 1, r: .5 + (i % 5) * .4, v: .3 + (i % 7) * .1 }));
+
+  // dibuja un cuadro en t ∈ [0,1]; lo usan el escenario, los presets y la grabación
+  function renderFrame(ctx, W, H, t, o) {
+    const img = o.img, k = o.k ?? 1;
+    ctx.save();
+    ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+    const mv = MOTIONS[o.motion] || MOTIONS['Dolly In'];
+    const at = tt => ({ s: 1, x: 0, y: 0, r: 0, ...mv.f(Math.max(0, Math.min(1, tt)), k) });
+    const cover = Math.max(W / img.width, H / img.height);
+    const filters = [];
+    if (o.fx.has('B/N')) filters.push('grayscale(1) contrast(1.1)');
+    if (o.fx.has('Cálido')) filters.push('sepia(.25) saturate(1.2)');
+    if (o.fx.has('Teal & Orange')) filters.push('contrast(1.15) saturate(1.25) hue-rotate(-8deg)');
+    if (o.fx.has('VHS')) filters.push('saturate(1.4) contrast(.95) blur(.6px)');
+    ctx.filter = filters.join(' ') || 'none';
+    const drawAt = (m, dx = 0) => {
+      ctx.save();
+      ctx.translate(W / 2 + m.x * W + dx, H / 2 + m.y * H);
+      ctx.rotate(m.r); ctx.scale(m.s * cover, m.s * cover);
+      ctx.drawImage(img, -img.width / 2, -img.height / 2);
+      ctx.restore();
+    };
+    const m = at(t);
+    if (mv.blur && !o.small) {
+      // desenfoque de movimiento: promedio de posiciones recientes
+      const N = 5;
+      for (let i = 0; i < N; i++) { ctx.globalAlpha = 1 / (i + 1); drawAt(at(t - (N - 1 - i) * .006)); }
+      ctx.globalAlpha = 1;
+    } else drawAt(m);
+    ctx.filter = 'none';
+
+    if (o.fx.has('Teal & Orange')) {
+      ctx.globalCompositeOperation = 'soft-light';
+      const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, 'rgba(0,140,160,.35)'); g.addColorStop(1, 'rgba(255,140,40,.35)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'source-over';
+    }
+    if (o.fx.has('Glitch RGB')) {
+      const hit = Math.sin(t * 40) > .7, off = W * (hit ? .012 : .003) * k;
+      ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = .35;
+      drawAt(m, off); drawAt(m, -off);
+      ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+      if (Math.sin(t * 40) > .85) { const y = Math.random() * H * .9; ctx.drawImage(ctx.canvas, 0, y, W, H * .04, W * .02, y, W, H * .04); }
+    }
+    if (o.fx.has('Light Leak')) {
+      const gx = W * (.2 + .6 * t), g = ctx.createRadialGradient(gx, H * .2, 0, gx, H * .2, W * .9);
+      g.addColorStop(0, 'rgba(255,140,40,.45)'); g.addColorStop(.5, 'rgba(255,60,90,.15)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'source-over';
+    }
+    if (o.fx.has('Destello')) {
+      const cx = W * (.85 - .3 * t), cy = H * .22, R = Math.max(W, H);
+      ctx.globalCompositeOperation = 'screen';
+      const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * .35); g.addColorStop(0, 'rgba(255,245,220,.8)'); g.addColorStop(.15, 'rgba(255,200,120,.25)'); g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      for (let i = 1; i <= 3; i++) { const px = cx + (W / 2 - cx) * i * .6, py = cy + (H / 2 - cy) * i * .6; ctx.fillStyle = `rgba(160,220,255,${.12 / i})`; ctx.beginPath(); ctx.arc(px, py, R * .03 * i, 0, 7); ctx.fill(); }
+      ctx.globalCompositeOperation = 'source-over';
+    }
+    if (o.fx.has('Partículas')) {
+      ctx.fillStyle = 'rgba(255,240,200,.75)';
+      particles.forEach(p => { const y = ((p.y - t * p.v * .5) % 1 + 1) % 1, x = p.x + .02 * Math.sin(t * 6 + p.y * 9); ctx.globalAlpha = .3 + .5 * Math.sin(p.x * 30 + t * 8) ** 2; ctx.beginPath(); ctx.arc(x * W, y * H, p.r * W / 360, 0, 7); ctx.fill(); });
+      ctx.globalAlpha = 1;
+    }
+    if (o.fx.has('VHS')) {
+      ctx.fillStyle = 'rgba(0,0,0,.18)'; const step = Math.max(2, Math.round(H / 240));
+      for (let y = 0; y < H; y += step * 2) ctx.fillRect(0, y, W, step);
+      const band = ((t * 1.7) % 1) * H; ctx.fillStyle = 'rgba(255,255,255,.06)'; ctx.fillRect(0, band, W, H * .05);
+      if (!o.small) { ctx.fillStyle = 'rgba(255,255,255,.85)'; ctx.font = `${Math.round(W / 24)}px monospace`; ctx.fillText('▶ PLAY', W * .06, H * .08); }
+    }
+    if (o.fx.has('Viñeta')) {
+      const g = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * .35, W / 2, H / 2, Math.max(W, H) * .75);
+      g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.65)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    }
+    if (o.fx.has('Grano')) { ctx.fillStyle = ctx.createPattern(grainCv, 'repeat'); ctx.fillRect(0, 0, W, H); }
+    if (o.fx.has('Flash')) { const a = Math.max(0, 1 - t * 8) * .9; if (a > 0) { ctx.fillStyle = `rgba(255,255,255,${a})`; ctx.fillRect(0, 0, W, H); } }
+    if (o.fx.has('Letterbox')) { const bh = H * .1; ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, bh); ctx.fillRect(0, H - bh, W, bh); }
+    if (o.title || o.sub) drawText(ctx, W, H, o.title, o.sub, o.color || '#fff', o.pos || 'bottom', Math.min(1, Math.max(0, (t - .08) / .15)));
+    ctx.restore();
+  }
+  function drawText(ctx, W, H, title, sub, color, pos, alpha = 1) {
+    const base = Math.min(W, H), ts = Math.round(base / 11), ss = Math.round(base / 24);
+    const y0 = pos === 'top' ? H * .14 : pos === 'center' ? H * .5 - ts * .3 : H * .8;
+    const lift = (1 - alpha) * base * .03;
+    ctx.save(); ctx.globalAlpha = alpha; ctx.textAlign = 'center'; ctx.fillStyle = color;
+    ctx.shadowColor = 'rgba(0,0,0,.65)'; ctx.shadowBlur = base / 40; ctx.shadowOffsetY = base / 200;
+    if (title) { ctx.font = `800 ${ts}px system-ui, -apple-system, sans-serif`; ctx.fillText(title, W / 2, y0 + lift, W * .9); }
+    if (sub) { ctx.font = `500 ${ss}px system-ui, -apple-system, sans-serif`; ctx.fillText(sub, W / 2, y0 + (title ? ts * .9 : 0) + lift, W * .9); }
+    ctx.restore();
+  }
+
+  // ---------- VIDEO: estado y controles ----------
+  let motion = 'Dolly In', fxOn = new Set(['Viñeta']), vRatio = RATIOS[2], srcImg = demo, t0 = performance.now(), recording = false;
+  function addMotionButton(name, first) {
+    const o = document.createElement('button'); o.className = 'opt' + (name === motion ? ' on' : ''); o.dataset.m = name;
+    o.innerHTML = `<b>${MOTIONS[name].icon}</b>${name}`;
+    o.onclick = () => selectMotion(name);
+    first ? $('#motions').prepend(o) : $('#motions').append(o);
+  }
+  function selectMotion(name) {
+    motion = name; $('#motionLbl').textContent = name; t0 = performance.now();
+    $$('.opt', $('#motions')).forEach(x => x.classList.toggle('on', x.dataset.m === name));
+  }
+  Object.keys(MOTIONS).forEach(n => addMotionButton(n));
   FX.forEach(k => {
     const c = document.createElement('button'); c.className = 'chip' + (fxOn.has(k) ? ' on' : ''); c.textContent = k;
     c.onclick = () => { fxOn.has(k) ? fxOn.delete(k) : fxOn.add(k); c.classList.toggle('on'); };
     $('#fx').append(c);
   });
-  ratioButtons($('#vRatios'), vRatio, r => { vRatio = r; sizeStage(); });
+  ratioButtons($('#vRatios'), RATIOS, vRatio, r => { vRatio = r; sizeStage(); });
   $('#intensity').oninput = e => $('#intLbl').textContent = e.target.value + '%';
   $('#duration').oninput = e => $('#durLbl').textContent = e.target.value + ' s';
 
   const cv = $('#stage'), ctx = cv.getContext('2d');
   function sizeStage() {
-    // salida máx. 1080 en el lado largo, 720 en el corto
-    const long = 1280, sc = long / Math.max(vRatio.w, vRatio.h);
+    const sc = 1280 / Math.max(vRatio.w, vRatio.h);
     cv.width = Math.round(vRatio.w * sc / 2) * 2; cv.height = Math.round(vRatio.h * sc / 2) * 2;
   }
   sizeStage();
+  const videoOpts = () => ({ img: srcImg, motion, fx: fxOn, k: +$('#intensity').value / 100,
+    title: $('#vTitle').value.trim(), sub: $('#vSub').value.trim(), color: $('#vColor').value, pos: $('#vPos').value });
 
-  // fuente de imagen
-  const drop = $('#drop');
-  drop.onclick = () => $('#file').click();
-  $('#file').onchange = e => e.target.files[0] && loadFile(e.target.files[0]);
-  drop.ondragover = e => { e.preventDefault(); drop.classList.add('over'); };
-  drop.ondragleave = () => drop.classList.remove('over');
-  drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over'); e.dataTransfer.files[0] && loadFile(e.dataTransfer.files[0]); };
-  function loadFile(f) { setSource(URL.createObjectURL(f)); drop.textContent = f.name; }
-
-  async function setSource(url) {
-    // se convierte a blob local para no "contaminar" el canvas (necesario para grabar)
-    let local = url;
-    if (!url.startsWith('blob:')) {
-      try { const r = await fetch(url); local = URL.createObjectURL(await r.blob()); } catch {}
-    }
-    const img = new Image(); img.crossOrigin = 'anonymous';
-    img.onload = () => { srcImg = img; t0 = performance.now(); };
-    img.onerror = () => toast('No se pudo cargar la imagen', true);
-    img.src = local;
-    $$('#srcStrip img').forEach(x => x.classList.toggle('on', x.dataset.url === url));
+  function bindDrop(btn, input, onFile) {
+    btn.onclick = () => input.click();
+    input.onchange = e => { e.target.files[0] && onFile(e.target.files[0]); e.target.value = ''; };
+    btn.ondragover = e => { e.preventDefault(); btn.classList.add('over'); };
+    btn.ondragleave = () => btn.classList.remove('over');
+    btn.ondrop = e => { e.preventDefault(); btn.classList.remove('over'); e.dataTransfer.files[0] && onFile(e.dataTransfer.files[0]); };
   }
-  function renderSrcStrip() {
-    const s = $('#srcStrip'); s.innerHTML = '';
-    store.get('lyon-gallery', []).slice(0, 30).forEach(it => {
-      const i = new Image(); i.src = it.url; i.dataset.url = it.url; i.loading = 'lazy'; i.alt = it.prompt;
-      i.onclick = () => setSource(it.url);
-      s.append(i);
-    });
+  bindDrop($('#drop'), $('#file'), f => { setVideoSource(URL.createObjectURL(f)); $('#drop').textContent = '📷 ' + f.name; });
+  async function setVideoSource(url) {
+    try { srcImg = await loadImage(url); t0 = performance.now(); $('#srcHint').textContent = 'Foto cargada.'; }
+    catch { toast('No se pudo cargar la imagen', true); }
+  }
+
+  // ---------- PRESETS (Explorar) ----------
+  const PRESETS = [
+    { name: 'Reveal de techo', desc: 'Drone que baja sobre la obra', motion: 'Drone Reveal', fx: ['Cálido', 'Light Leak'] },
+    { name: 'Crash zoom viral', desc: 'Golpe de zoom con flash', motion: 'Crash Zoom', fx: ['Flash', 'Glitch RGB'] },
+    { name: 'Cine de lujo', desc: 'Empuje lento con barras', motion: 'Push In Lento', fx: ['Letterbox', 'Grano', 'Teal & Orange'] },
+    { name: 'FPV dive', desc: 'Caída en picada de dron', motion: 'FPV Dive', fx: ['Viñeta'] },
+    { name: 'Whip pan', desc: 'Barrido rápido', motion: 'Whip Pan', fx: ['Viñeta'] },
+    { name: 'Bullet time', desc: 'Giro en cámara lenta', motion: 'Bullet Time', fx: ['Viñeta', 'Teal & Orange'] },
+    { name: 'Orbit arquitectura', desc: 'Órbita suave y cálida', motion: 'Orbit', fx: ['Letterbox', 'Cálido'] },
+    { name: 'VHS retro', desc: 'Cinta casera de los 90', motion: 'Cámara Mano', fx: ['VHS', 'Grano'] },
+    { name: 'Terremoto', desc: 'Sacudida con glitch', motion: 'Terremoto', fx: ['Glitch RGB'] },
+    { name: 'Sueño', desc: 'Flotar entre partículas', motion: 'Levitar', fx: ['Partículas', 'Destello'] },
+    { name: 'Latido', desc: 'Pulso al ritmo', motion: 'Latido', fx: ['Teal & Orange', 'Viñeta'] },
+    { name: 'Thriller', desc: 'Plano holandés en B/N', motion: 'Dutch Roll', fx: ['B/N', 'Grano'] }
+  ];
+  const presetCanvases = [];
+  PRESETS.forEach(p => {
+    const b = document.createElement('button'); b.className = 'preset';
+    const c = document.createElement('canvas'); c.width = 240; c.height = 300;
+    const pi = document.createElement('div'); pi.className = 'pi';
+    const nb = document.createElement('b'); nb.textContent = p.name;
+    const ds = document.createElement('span'); ds.textContent = `${p.desc} · ${p.motion}`;
+    pi.append(nb, ds); b.append(c, pi);
+    b.onclick = () => applyPreset(p);
+    $('#presets').append(b);
+    presetCanvases.push({ c, ctx: c.getContext('2d'), p, fx: new Set(p.fx) });
+  });
+  function applyPreset(p) {
+    selectMotion(p.motion);
+    fxOn = new Set(p.fx);
+    $$('.chip', $('#fx')).forEach(c => c.classList.toggle('on', fxOn.has(c.textContent)));
+    showView('video');
+    toast(`Preset "${p.name}" listo. Sube tu foto y toca Crear video.`);
   }
 
   // ---------- CLONAR MOVIMIENTO DE CÁMARA DE UN VIDEO ----------
@@ -563,7 +866,15 @@
       $$('.opt', $('#vRatios')).forEach(x => x.classList.remove('on'));
       sizeStage();
       $('#duration').value = Math.max(2, Math.round(dur)); $('#duration').dispatchEvent(new Event('input'));
-      selectCloneMotion();
+      if (!MOTIONS['Clonado']) {
+        MOTIONS['Clonado'] = { icon: '🎥', f: (t, k) => {
+          const p = samplePath(t), s = cloneStats;
+          const base = Math.min(3, (1 + 2.2 * s.t * k + 1.6 * s.r * k) / Math.min(1, 1 + (s.s - 1) * k));
+          return { s: base * (1 + (p.s - 1) * k), x: p.x * k, y: p.y * k, r: p.r * k };
+        } };
+        addMotionButton('Clonado', true);
+      }
+      selectMotion('Clonado');
       const last = clonePath[clonePath.length - 1];
       st.textContent = `Movimiento clonado (${dur.toFixed(1)} s · zoom ${Math.round((last.s - 1) * 100)}% · paneo ${Math.round(last.x * 100)}% ${last.x >= 0 ? '→' : '←'} ${Math.round(Math.abs(last.y) * 100)}% ${last.y >= 0 ? '↓' : '↑'} · giro ${Math.round(last.r * 180 / Math.PI)}°). Ya se aplica a tu foto.`;
     } catch (e) {
@@ -572,28 +883,12 @@
       URL.revokeObjectURL(v.src); btn.disabled = false;
     }
   }
-
-  function selectCloneMotion() {
-    if (!MOTIONS['Clonado']) {
-      MOTIONS['Clonado'] = { icon: '🎥', f: (t, k) => {
-        const p = samplePath(t), st = cloneStats;
-        const base = Math.min(3, (1 + 2.2 * st.t * k + 1.6 * st.r * k) / Math.min(1, 1 + (st.s - 1) * k));
-        return { s: base * (1 + (p.s - 1) * k), x: p.x * k, y: p.y * k, r: p.r * k };
-      } };
-      const o = document.createElement('button'); o.className = 'opt'; o.innerHTML = '<b>🎥</b>Clonado';
-      o.onclick = () => { motion = 'Clonado'; $$('.opt', $('#motions')).forEach(x => x.classList.toggle('on', x === o)); t0 = performance.now(); };
-      $('#motions').prepend(o);
-    }
-    $('#motions .opt').click();
-  }
-
   function samplePath(t) {
     t = Math.max(0, Math.min(1, t));
     const f = t * (clonePath.length - 1), i = Math.min(clonePath.length - 2, Math.floor(f)), u = f - i;
     const a = clonePath[i], b = clonePath[i + 1];
     return { s: a.s + (b.s - a.s) * u, r: a.r + (b.r - a.r) * u, x: a.x + (b.x - a.x) * u, y: a.y + (b.y - a.y) * u };
   }
-
   function smoothPath(p, w) {
     return p.map((_, i) => {
       const o = { s: 0, r: 0, x: 0, y: 0 }; let c = 0;
@@ -601,7 +896,6 @@
       for (const k in o) o[k] /= c; return o;
     });
   }
-
   // movimiento de similitud entre dos cuadros en escala de grises
   function estimateMotion(a, b, W, H) {
     const B = 12, RAD = 8, GX = 6, GY = 8, pts = [];
@@ -652,126 +946,197 @@
     return { s: clamp(Math.hypot(t.A, t.B), .9, 1.1), r: clamp(Math.atan2(t.B, t.A), -.1, .1), tx: t.tx, ty: t.ty };
   }
 
-  // dibujado de un frame en t ∈ [0,1]
-  const grainCv = document.createElement('canvas'); grainCv.width = grainCv.height = 256;
-  const gctx = grainCv.getContext('2d');
-  function drawFrame(t) {
-    const W = cv.width, H = cv.height, k = +$('#intensity').value / 100;
-    ctx.save();
-    ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
-    if (!srcImg) {
-      ctx.fillStyle = '#555'; ctx.font = `${Math.round(W / 22)}px system-ui`; ctx.textAlign = 'center';
-      ctx.fillText('Sube o elige una imagen', W / 2, H / 2); ctx.restore(); return;
-    }
-    const m = { s: 1, x: 0, y: 0, r: 0, ...MOTIONS[motion].f(t, k) };
-    const cover = Math.max(W / srcImg.width, H / srcImg.height);
-    const filters = [];
-    if (fxOn.has('B/N')) filters.push('grayscale(1) contrast(1.1)');
-    if (fxOn.has('Cálido')) filters.push('sepia(.25) saturate(1.2)');
-    ctx.filter = filters.join(' ') || 'none';
-
-    const drawImg = (dx = 0) => {
-      ctx.save();
-      ctx.translate(W / 2 + m.x * W + dx, H / 2 + m.y * H);
-      ctx.rotate(m.r); ctx.scale(m.s * cover, m.s * cover);
-      ctx.drawImage(srcImg, -srcImg.width / 2, -srcImg.height / 2);
-      ctx.restore();
-    };
-    drawImg();
-    ctx.filter = 'none';
-
-    if (fxOn.has('Glitch RGB')) {
-      const off = Math.sin(t * 40) > .7 ? W * .012 * k : W * .003 * k;
-      ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = .35;
-      ctx.save(); ctx.fillStyle = 'rgba(255,0,0,1)'; drawImg(off); ctx.restore();
-      ctx.save(); drawImg(-off); ctx.restore();
-      ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
-      if (Math.sin(t * 40) > .85) { const y = Math.random() * H; ctx.drawImage(cv, 0, y, W, H * .04, W * .02, y, W, H * .04); }
-    }
-    if (fxOn.has('Light Leak')) {
-      const gx = W * (.2 + .6 * t), g = ctx.createRadialGradient(gx, H * .2, 0, gx, H * .2, W * .9);
-      g.addColorStop(0, 'rgba(255,140,40,.45)'); g.addColorStop(.5, 'rgba(255,60,90,.15)'); g.addColorStop(1, 'rgba(0,0,0,0)');
-      ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'source-over';
-    }
-    if (fxOn.has('Viñeta')) {
-      const g = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * .35, W / 2, H / 2, Math.max(W, H) * .75);
-      g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.65)');
-      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    }
-    if (fxOn.has('Grano')) {
-      const id = gctx.createImageData(256, 256);
-      for (let i = 0; i < id.data.length; i += 4) { const v = Math.random() * 255; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 22; }
-      gctx.putImageData(id, 0, 0);
-      ctx.fillStyle = ctx.createPattern(grainCv, 'repeat'); ctx.fillRect(0, 0, W, H);
-    }
-    if (fxOn.has('Flash')) {
-      const a = Math.max(0, 1 - t * 8) * .9;
-      if (a > 0) { ctx.fillStyle = `rgba(255,255,255,${a})`; ctx.fillRect(0, 0, W, H); }
-    }
-    if (fxOn.has('Letterbox')) {
-      const bh = H * .1; ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, bh); ctx.fillRect(0, H - bh, W, bh);
-    }
-    ctx.restore();
-  }
-
-  // bucle de vista previa
-  let t0 = performance.now(), recording = false;
+  // ---------- bucle de vista previa (escenario + presets) ----------
   (function loop(now) {
-    if (!recording) {
+    refreshGrain(now);
+    if (current === 'video' && !recording) {
       const dur = +$('#duration').value * 1000;
-      drawFrame(((now - t0) % dur) / dur);
+      renderFrame(ctx, cv.width, cv.height, (((now - t0) % dur) + dur) % dur / dur, videoOpts());
+    }
+    if (current === 'explore') {
+      presetCanvases.forEach((pc, i) => renderFrame(pc.ctx, pc.c.width, pc.c.height, ((now / 3000) + i * .13) % 1, { img: srcImg, motion: pc.p.motion, fx: pc.fx, k: 1, small: true }));
     }
     requestAnimationFrame(loop);
   })(performance.now());
 
-  // renderizado + grabación
+  // ---------- grabación ----------
+  const sessionVideos = [];
   $('#render').onclick = async () => {
-    if (!srcImg) return toast('Primero elige una imagen', true);
-    if (!window.MediaRecorder || !cv.captureStream) return toast('Tu navegador no soporta grabar video. Usa Chrome, Edge o Firefox.', true);
-    const types = ['video/mp4;codecs=avc1', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
+    if (!window.MediaRecorder || !cv.captureStream) return toast('Tu navegador no puede grabar video. Usa Chrome, Edge, Firefox o Safari reciente.', true);
+    const types = ['video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
     const mime = types.find(t => MediaRecorder.isTypeSupported(t)) || '';
-    let stream, rec;
-    try {
-      stream = cv.captureStream(30);
-      rec = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 8e6 });
-    } catch (e) { return toast('No se pudo iniciar la grabación: ' + e.message, true); }
+    let rec;
+    try { rec = new MediaRecorder(cv.captureStream(30), mime ? { mimeType: mime, videoBitsPerSecond: 8e6 } : undefined); }
+    catch (e) { return toast('No se pudo iniciar la grabación: ' + e.message, true); }
 
     const chunks = [];
     rec.ondataavailable = e => e.data.size && chunks.push(e.data);
     const btn = $('#render'); btn.disabled = true; btn.textContent = 'Renderizando…';
     recording = true;
-    const dur = +$('#duration').value * 1000;
+    const dur = +$('#duration').value * 1000, opts = videoOpts();
     const done = new Promise(r => rec.onstop = r);
     rec.start(100);
     const start = performance.now();
     await new Promise(resolve => {
       (function step(now) {
         const t = Math.min(1, (now - start) / dur);
-        drawFrame(t); $('#prog').style.width = (t * 100) + '%';
+        refreshGrain(now); renderFrame(ctx, cv.width, cv.height, t, opts); $('#prog').style.width = (t * 100) + '%';
         t < 1 ? requestAnimationFrame(step) : resolve();
       })(start);
     });
     rec.stop(); await done;
     recording = false; t0 = performance.now();
-    btn.disabled = false; btn.textContent = 'Renderizar y descargar video';
+    btn.disabled = false; btn.textContent = 'Crear video';
     setTimeout(() => $('#prog').style.width = '0', 600);
 
-    const ext = (rec.mimeType || mime).includes('mp4') ? 'mp4' : 'webm';
-    const blob = new Blob(chunks, { type: rec.mimeType || 'video/webm' });
-    const url = URL.createObjectURL(blob);
-    const name = `lyon-${motion.toLowerCase().replace(/[^a-z]+/g, '-')}-${Date.now()}.${ext}`;
-
-    const card = document.createElement('div'); card.className = 'card';
-    const v = document.createElement('video'); v.src = url; v.controls = true; v.loop = true; v.muted = true; v.playsInline = true; v.autoplay = true;
-    const bar = document.createElement('div'); bar.className = 'bar';
-    const a = document.createElement('a'); a.href = url; a.download = name; a.className = 'btn sm'; a.textContent = '⬇ Descargar ' + ext.toUpperCase(); a.style.textDecoration = 'none';
-    bar.append(a);
-    const cap = document.createElement('div'); cap.className = 'cap'; cap.textContent = `${motion} · ${[...fxOn].join(', ') || 'sin efectos'} · ${vRatio.k} · ${dur / 1000}s`;
-    card.append(v, bar, cap);
-    $('#vidResults').prepend(card);
-    a.click();
-    toast('Video listo');
+    const type = rec.mimeType || mime || 'video/webm', ext = type.includes('mp4') ? 'mp4' : 'webm';
+    const blob = new Blob(chunks, { type });
+    const slug = motion.toLowerCase().normalize('NFD').replace(/[^a-z]+/g, '-');
+    const v = { blob, url: URL.createObjectURL(blob), name: `lyon-${slug}-${Date.now()}.${ext}`, ext,
+      cap: `${motion} · ${[...fxOn].join(', ') || 'sin efectos'} · ${vRatio.k} · ${dur / 1000}s` };
+    sessionVideos.unshift(v);
+    $('#vidResults').prepend(videoCard(v));
+    toast('Video listo: toca Guardar');
   };
+  function videoCard(v) {
+    const card = document.createElement('div'); card.className = 'card';
+    const el = document.createElement('video'); el.src = v.url; el.controls = true; el.loop = true; el.muted = true; el.playsInline = true; el.autoplay = true;
+    const bar = document.createElement('div'); bar.className = 'bar';
+    const b = document.createElement('button'); b.className = 'btn sm'; b.textContent = '⬇ Guardar ' + v.ext.toUpperCase(); b.onclick = () => saveBlob(v.name, v.blob);
+    bar.append(b);
+    const cap = document.createElement('div'); cap.className = 'cap'; cap.textContent = v.cap;
+    card.append(el, bar, cap);
+    return card;
+  }
+
+  // ---------- EDITAR Y UPSCALE ----------
+  const CROPS = [{ k: 'Original', icon: '⬚' }, ...RATIOS.slice(0, 5)];
+  const SCALES = [{ k: '1x', v: 1, icon: '·' }, { k: '2x', v: 2, icon: '⇱' }, { k: '4x', v: 4, icon: '⇲' }];
+  const SLIDERS = [
+    { id: 'bright', label: 'Brillo', min: 50, max: 150, def: 100, unit: '%' },
+    { id: 'contrast', label: 'Contraste', min: 50, max: 150, def: 100, unit: '%' },
+    { id: 'sat', label: 'Saturación', min: 0, max: 200, def: 100, unit: '%' },
+    { id: 'temp', label: 'Temperatura', min: -50, max: 50, def: 0, unit: '' },
+    { id: 'sharp', label: 'Nitidez', min: 0, max: 100, def: 0, unit: '' },
+    { id: 'vig', label: 'Viñeta', min: 0, max: 100, def: 0, unit: '' }
+  ];
+  const ed = { img: demo, crop: CROPS[0], scale: SCALES[0] };
+  SLIDERS.forEach(s => {
+    ed[s.id] = s.def;
+    const f = document.createElement('div'); f.className = 'field';
+    f.innerHTML = `<label class="lbl" for="ed-${s.id}">${s.label}: <b></b></label><input type="range" id="ed-${s.id}" min="${s.min}" max="${s.max}" value="${s.def}">`;
+    const out = $('b', f), inp = $('input', f);
+    inp.oninput = () => { ed[s.id] = +inp.value; out.textContent = inp.value + s.unit; drawEditor(); };
+    out.textContent = s.def + s.unit;
+    $('#edSliders').append(f);
+  });
+  ratioButtons($('#edCrop'), CROPS, ed.crop, r => { ed.crop = r; drawEditor(); });
+  ratioButtons($('#edScale'), SCALES, ed.scale, r => { ed.scale = r; drawEditor(); });
+  ['#edText', '#edColor', '#edPos'].forEach(s => { $(s).oninput = () => drawEditor(); $(s).onchange = () => drawEditor(); });
+  $('#edReset').onclick = () => SLIDERS.forEach(s => { const i = $('#ed-' + s.id); i.value = s.def; i.dispatchEvent(new Event('input')); });
+  bindDrop($('#edDrop'), $('#edFile'), f => { setEditSource(URL.createObjectURL(f)); $('#edDrop').textContent = '📷 ' + f.name; });
+  async function setEditSource(url) {
+    try { ed.img = await loadImage(url); drawEditor(); } catch { toast('No se pudo cargar la imagen', true); }
+  }
+
+  function cropRect() {
+    const iw = ed.img.width, ih = ed.img.height;
+    if (!ed.crop.w) return { sx: 0, sy: 0, sw: iw, sh: ih };
+    const target = ed.crop.w / ed.crop.h;
+    let sw = iw, sh = iw / target; if (sh > ih) { sh = ih; sw = ih * target; }
+    return { sx: (iw - sw) / 2, sy: (ih - sh) / 2, sw, sh };
+  }
+  function outputSize() {
+    const r = cropRect(), W = r.sw * ed.scale.v, H = r.sh * ed.scale.v, lim = Math.min(1, 4096 / Math.max(W, H));
+    return { W: Math.round(W * lim), H: Math.round(H * lim) };
+  }
+  // pinta la imagen editada; maxLong limita el tamaño (vista previa o exportación)
+  function paintEdited(canvas, maxLong) {
+    const r = cropRect(), out = outputSize();
+    const lim = Math.min(1, maxLong / Math.max(out.W, out.H));
+    canvas.width = Math.max(1, Math.round(out.W * lim)); canvas.height = Math.max(1, Math.round(out.H * lim));
+    const c = canvas.getContext('2d');
+    c.imageSmoothingEnabled = true; c.imageSmoothingQuality = 'high';
+    c.filter = `brightness(${ed.bright}%) contrast(${ed.contrast}%) saturate(${ed.sat}%)`;
+    c.drawImage(ed.img, r.sx, r.sy, r.sw, r.sh, 0, 0, canvas.width, canvas.height);
+    c.filter = 'none';
+    if (ed.temp) {
+      c.globalCompositeOperation = 'soft-light';
+      c.fillStyle = ed.temp > 0 ? `rgba(255,140,30,${ed.temp / 80})` : `rgba(40,130,255,${-ed.temp / 80})`;
+      c.fillRect(0, 0, canvas.width, canvas.height); c.globalCompositeOperation = 'source-over';
+    }
+    if (ed.sharp) sharpen(c, canvas.width, canvas.height, ed.sharp / 100 * (ed.scale.v > 1 ? 1.3 : 1));
+    if (ed.vig) {
+      const Wc = canvas.width, Hc = canvas.height;
+      const g = c.createRadialGradient(Wc / 2, Hc / 2, Math.min(Wc, Hc) * .3, Wc / 2, Hc / 2, Math.max(Wc, Hc) * .75);
+      g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, `rgba(0,0,0,${ed.vig / 110})`);
+      c.fillStyle = g; c.fillRect(0, 0, Wc, Hc);
+    }
+    const txt = $('#edText').value.trim();
+    if (txt) drawText(c, canvas.width, canvas.height, txt, '', $('#edColor').value, $('#edPos').value);
+    return canvas;
+  }
+  // máscara de enfoque (unsharp) con núcleo en cruz
+  function sharpen(c, W, H, amt) {
+    const src = c.getImageData(0, 0, W, H), s = src.data, out = c.createImageData(W, H), d = out.data, a = amt * 1.2, row = W * 4;
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+      const i = (y * W + x) * 4;
+      if (x === 0 || y === 0 || x === W - 1 || y === H - 1) { d[i] = s[i]; d[i + 1] = s[i + 1]; d[i + 2] = s[i + 2]; d[i + 3] = s[i + 3]; continue; }
+      for (let ch = 0; ch < 3; ch++) { const j = i + ch; d[j] = s[j] + a * (s[j] - (s[j - 4] + s[j + 4] + s[j - row] + s[j + row]) / 4); }
+      d[i + 3] = s[i + 3];
+    }
+    c.putImageData(out, 0, 0);
+  }
+  let edQueued = false;
+  function drawEditor() {
+    if (edQueued) return; edQueued = true;
+    requestAnimationFrame(() => {
+      edQueued = false;
+      paintEdited($('#edCanvas'), 1000);
+      const o = outputSize();
+      $('#edInfo').textContent = `Salida: ${o.W} × ${o.H} px` + (ed.img === demo ? ' · imagen de ejemplo' : '');
+    });
+  }
+  drawEditor();
+  $('#edExport').onclick = async () => {
+    const btn = $('#edExport'); btn.disabled = true; btn.textContent = 'Procesando…';
+    await new Promise(r => setTimeout(r, 30));
+    const out = paintEdited(document.createElement('canvas'), 4096);
+    out.toBlob(async b => {
+      btn.disabled = false; btn.textContent = '⬇ Guardar JPG';
+      if (!b) return toast('La imagen es demasiado grande para este dispositivo. Prueba 2x.', true);
+      await saveBlob(`lyon-editada-${Date.now()}.jpg`, b);
+    }, 'image/jpeg', .92);
+  };
+  $('#edToVideo').onclick = () => {
+    srcImg = paintEdited(document.createElement('canvas'), 2048); t0 = performance.now();
+    $('#srcHint').textContent = 'Usando la imagen editada.';
+    showView('video');
+  };
+
+  // ---------- MIS CREACIONES ----------
+  function renderLibrary() {
+    const lv = $('#libVideos'); lv.innerHTML = '';
+    sessionVideos.forEach(v => lv.append(videoCard(v)));
+    $('#libVideosEmpty').hidden = sessionVideos.length > 0;
+    const g = store.get('lyon-gallery', []), grid = $('#galGrid'); grid.innerHTML = '';
+    $('#galEmpty').hidden = g.length > 0;
+    g.forEach(item => {
+      const card = imageCard(item);
+      const del = document.createElement('button'); del.className = 'btn ghost sm'; del.textContent = '🗑'; del.title = 'Borrar';
+      del.onclick = () => { store.set('lyon-gallery', store.get('lyon-gallery', []).filter(x => x.id !== item.id)); renderLibrary(); };
+      $('.bar', card).append(del);
+      grid.append(card);
+    });
+  }
+  let clearArmed = false;
+  $('#clearGallery').onclick = e => {
+    const b = e.currentTarget;
+    if (!clearArmed) { clearArmed = true; b.textContent = 'Toca otra vez para confirmar'; setTimeout(() => { clearArmed = false; b.textContent = 'Vaciar imágenes'; }, 3000); return; }
+    clearArmed = false; b.textContent = 'Vaciar imágenes'; store.set('lyon-gallery', []); renderLibrary();
+  };
+
+  showView('explore');
 })();
 </script>
 </body>

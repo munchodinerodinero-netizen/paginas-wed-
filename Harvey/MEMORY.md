@@ -116,6 +116,10 @@ al final de la sesión.
   requiere IA generativa de pago (conector Higgsfield/maqrketing con créditos).
 - Publicado como artifact de Claude para el celular: https://claude.ai/artifact/Xw7rpNG2s886foRkSTJJbo
   (Vercel rechazó crear proyecto; Netlify bloqueado por red → Alberto lo sube con Netlify Drop).
+- Rediseño con panel tipo Higgsfield: barra lateral (Explorar, Imagen, Video, Clonar, Editar y
+  Upscale, Mis creaciones), 12 presets, 24 movimientos, 12 efectos, texto sobre video, editor
+  con upscale 2x/4x sin IA. Fuera de lo gratis: video generativo, lipsync, avatares, face swap.
+- Tercera ronda de funciones sobre la misma herramienta en una sesión, con $0 facturados.
 - **Vigilar:** construir herramientas no es vender. Si esto se convierte en otro proyecto
   paralelo, es el mismo patrón de dispersión (cuarta repetición). Nombrarlo de inmediato.
 
