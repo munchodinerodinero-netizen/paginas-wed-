@@ -111,6 +111,11 @@ al final de la sesión.
   gratis y sin API key.
 - **Uso correcto dentro de LYON:** herramienta interna para crear imágenes de techos,
   remodelaciones y reels para los demos y la prospección. No es un producto nuevo.
+- Agregado "Clonar movimiento de un video": copia el movimiento de CÁMARA de un reel (zoom,
+  paneo, giro) y lo aplica a una foto. No clona el movimiento corporal de personas: eso
+  requiere IA generativa de pago (conector Higgsfield/maqrketing con créditos).
+- Publicado como artifact de Claude para el celular: https://claude.ai/artifact/Xw7rpNG2s886foRkSTJJbo
+  (Vercel rechazó crear proyecto; Netlify bloqueado por red → Alberto lo sube con Netlify Drop).
 - **Vigilar:** construir herramientas no es vender. Si esto se convierte en otro proyecto
   paralelo, es el mismo patrón de dispersión (cuarta repetición). Nombrarlo de inmediato.
 

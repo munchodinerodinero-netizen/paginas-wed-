@@ -177,6 +177,13 @@
       </div>
 
       <div class="field">
+        <label class="lbl">Clonar movimiento de un video</label>
+        <button class="btn ghost" id="refBtn" type="button">🎥 Subir video de referencia</button>
+        <input type="file" id="refFile" accept="video/*" hidden>
+        <div class="hint" id="refStatus">Sube un reel que te guste (drone, zoom, paneo): copiamos su movimiento de cámara y lo aplicamos a tu foto. Copia la cámara, no el movimiento de las personas.</div>
+      </div>
+
+      <div class="field">
         <label class="lbl">Movimiento de cámara</label>
         <div class="grid-opts" id="motions"></div>
       </div>
@@ -501,6 +508,148 @@
       i.onclick = () => setSource(it.url);
       s.append(i);
     });
+  }
+
+  // ---------- CLONAR MOVIMIENTO DE CÁMARA DE UN VIDEO ----------
+  // Se estima el movimiento global (desplazamiento, zoom, giro) entre cuadros del video
+  // de referencia con block matching, y esa trayectoria se aplica a la foto.
+  let clonePath = null, cloneStats = null;
+  $('#refBtn').onclick = () => $('#refFile').click();
+  $('#refFile').onchange = e => { e.target.files[0] && analyzeVideo(e.target.files[0]); e.target.value = ''; };
+
+  async function analyzeVideo(file) {
+    const st = $('#refStatus'), btn = $('#refBtn');
+    btn.disabled = true; st.textContent = 'Cargando video…';
+    const v = document.createElement('video');
+    v.muted = true; v.playsInline = true; v.preload = 'auto'; v.src = URL.createObjectURL(file);
+    try {
+      await new Promise((ok, bad) => { v.onloadeddata = ok; v.onerror = () => bad(new Error('formato no soportado')); });
+      if (!isFinite(v.duration)) { v.currentTime = 1e9; await new Promise(r => v.ondurationchange = r); }
+      const dur = Math.min(v.duration || 0, 12);
+      if (!(dur > 0.3)) throw new Error('el video es demasiado corto');
+
+      const SW = 160, SH = Math.max(40, Math.round(SW * v.videoHeight / v.videoWidth));
+      const c = document.createElement('canvas'); c.width = SW; c.height = SH;
+      const cx = c.getContext('2d', { willReadFrequently: true });
+      const grab = async t => {
+        v.currentTime = t;
+        await Promise.race([new Promise(r => v.onseeked = r), new Promise(r => setTimeout(r, 2000))]);
+        cx.drawImage(v, 0, 0, SW, SH);
+        const d = cx.getImageData(0, 0, SW, SH).data, g = new Float32Array(SW * SH);
+        for (let i = 0; i < g.length; i++) g[i] = d[i * 4] * .3 + d[i * 4 + 1] * .59 + d[i * 4 + 2] * .11;
+        return g;
+      };
+
+      const FPS = 12, n = Math.max(3, Math.floor(dur * FPS));
+      let prev = await grab(0), S = 1, R = 0, TX = 0, TY = 0;
+      const path = [{ s: 1, r: 0, x: 0, y: 0 }];
+      for (let i = 1; i < n; i++) {
+        const cur = await grab(Math.min(i * dur / (n - 1), v.duration - 0.05));
+        const f = estimateMotion(prev, cur, SW, SH);
+        const co = Math.cos(f.r), si = Math.sin(f.r);
+        const nx = f.s * (co * TX - si * TY) + f.tx, ny = f.s * (si * TX + co * TY) + f.ty;
+        TX = nx; TY = ny; S *= f.s; R += f.r;
+        path.push({ s: S, r: R, x: TX / SW, y: TY / SH });
+        prev = cur;
+        st.textContent = `Analizando movimiento… ${Math.round(i / (n - 1) * 100)}%`;
+      }
+      clonePath = smoothPath(path, 2);
+      cloneStats = clonePath.reduce((a, p) => ({
+        t: Math.max(a.t, Math.abs(p.x), Math.abs(p.y)), r: Math.max(a.r, Math.abs(p.r)), s: Math.min(a.s, p.s)
+      }), { t: 0, r: 0, s: 1 });
+
+      // el video final toma la proporción y duración del video de referencia
+      vRatio = { k: 'video', w: v.videoWidth, h: v.videoHeight };
+      $$('.opt', $('#vRatios')).forEach(x => x.classList.remove('on'));
+      sizeStage();
+      $('#duration').value = Math.max(2, Math.round(dur)); $('#duration').dispatchEvent(new Event('input'));
+      selectCloneMotion();
+      const last = clonePath[clonePath.length - 1];
+      st.textContent = `Movimiento clonado (${dur.toFixed(1)} s · zoom ${Math.round((last.s - 1) * 100)}% · paneo ${Math.round(last.x * 100)}% ${last.x >= 0 ? '→' : '←'} ${Math.round(Math.abs(last.y) * 100)}% ${last.y >= 0 ? '↓' : '↑'} · giro ${Math.round(last.r * 180 / Math.PI)}°). Ya se aplica a tu foto.`;
+    } catch (e) {
+      st.textContent = 'No se pudo analizar el video: ' + e.message + '. Prueba con un MP4 corto.';
+    } finally {
+      URL.revokeObjectURL(v.src); btn.disabled = false;
+    }
+  }
+
+  function selectCloneMotion() {
+    if (!MOTIONS['Clonado']) {
+      MOTIONS['Clonado'] = { icon: '🎥', f: (t, k) => {
+        const p = samplePath(t), st = cloneStats;
+        const base = Math.min(3, (1 + 2.2 * st.t * k + 1.6 * st.r * k) / Math.min(1, 1 + (st.s - 1) * k));
+        return { s: base * (1 + (p.s - 1) * k), x: p.x * k, y: p.y * k, r: p.r * k };
+      } };
+      const o = document.createElement('button'); o.className = 'opt'; o.innerHTML = '<b>🎥</b>Clonado';
+      o.onclick = () => { motion = 'Clonado'; $$('.opt', $('#motions')).forEach(x => x.classList.toggle('on', x === o)); t0 = performance.now(); };
+      $('#motions').prepend(o);
+    }
+    $('#motions .opt').click();
+  }
+
+  function samplePath(t) {
+    t = Math.max(0, Math.min(1, t));
+    const f = t * (clonePath.length - 1), i = Math.min(clonePath.length - 2, Math.floor(f)), u = f - i;
+    const a = clonePath[i], b = clonePath[i + 1];
+    return { s: a.s + (b.s - a.s) * u, r: a.r + (b.r - a.r) * u, x: a.x + (b.x - a.x) * u, y: a.y + (b.y - a.y) * u };
+  }
+
+  function smoothPath(p, w) {
+    return p.map((_, i) => {
+      const o = { s: 0, r: 0, x: 0, y: 0 }; let c = 0;
+      for (let j = Math.max(0, i - w); j <= Math.min(p.length - 1, i + w); j++) { for (const k in o) o[k] += p[j][k]; c++; }
+      for (const k in o) o[k] /= c; return o;
+    });
+  }
+
+  // movimiento de similitud entre dos cuadros en escala de grises
+  function estimateMotion(a, b, W, H) {
+    const B = 12, RAD = 8, GX = 6, GY = 8, pts = [];
+    const sad = (x0, y0, dx, dy) => {
+      let s = 0;
+      for (let y = 0; y < B; y += 2) {
+        const ra = (y0 + y) * W + x0, rb = (y0 + y + dy) * W + x0 + dx;
+        for (let x = 0; x < B; x += 2) s += Math.abs(a[ra + x] - b[rb + x]);
+      }
+      return s;
+    };
+    for (let gy = 0; gy < GY; gy++) for (let gx = 0; gx < GX; gx++) {
+      const x0 = Math.round(RAD + 1 + gx * (W - 2 * RAD - 2 - B) / (GX - 1));
+      const y0 = Math.round(RAD + 1 + gy * (H - 2 * RAD - 2 - B) / (GY - 1));
+      // los bloques sin textura (cielo, pared lisa) no dan información fiable
+      let m = 0, m2 = 0;
+      for (let y = 0; y < B; y += 2) for (let x = 0; x < B; x += 2) { const q = a[(y0 + y) * W + x0 + x]; m += q; m2 += q * q; }
+      m /= 36; if (m2 / 36 - m * m < 40) continue;
+      let best = Infinity, bx = 0, by = 0;
+      for (let dy = -RAD; dy <= RAD; dy++) for (let dx = -RAD; dx <= RAD; dx++) {
+        const s = sad(x0, y0, dx, dy); if (s < best) { best = s; bx = dx; by = dy; }
+      }
+      // refinamiento subpíxel con parábola
+      const sub = (l, c, r) => { const d = l - 2 * c + r; return d > 0 ? (l - r) / (2 * d) : 0; };
+      const fx = Math.abs(bx) < RAD ? sub(sad(x0, y0, bx - 1, by), best, sad(x0, y0, bx + 1, by)) : 0;
+      const fy = Math.abs(by) < RAD ? sub(sad(x0, y0, bx, by - 1), best, sad(x0, y0, bx, by + 1)) : 0;
+      pts.push({ x: x0 + B / 2 - W / 2, y: y0 + B / 2 - H / 2, u: bx + fx, v: by + fy });
+    }
+    const fit = P => {
+      if (P.length < 3) return null;
+      let mx = 0, my = 0, mu = 0, mv = 0;
+      for (const p of P) { mx += p.x; my += p.y; mu += p.x + p.u; mv += p.y + p.v; }
+      mx /= P.length; my /= P.length; mu /= P.length; mv /= P.length;
+      let num1 = 0, num2 = 0, den = 0;
+      for (const p of P) {
+        const px = p.x - mx, py = p.y - my, qx = p.x + p.u - mu, qy = p.y + p.v - mv;
+        num1 += px * qx + py * qy; num2 += px * qy - py * qx; den += px * px + py * py;
+      }
+      const A = den ? num1 / den : 1, Bv = den ? num2 / den : 0;
+      return { A, B: Bv, tx: mu - (A * mx - Bv * my), ty: mv - (Bv * mx + A * my) };
+    };
+    let t = fit(pts);
+    if (!t) return { s: 1, r: 0, tx: 0, ty: 0 };
+    const res = p => Math.hypot(t.A * p.x - t.B * p.y + t.tx - p.x - p.u, t.B * p.x + t.A * p.y + t.ty - p.y - p.v);
+    const med = pts.map(res).sort((x, y) => x - y)[pts.length >> 1];
+    t = fit(pts.filter(p => res(p) <= 2 * med + 0.5)) || t;
+    const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
+    return { s: clamp(Math.hypot(t.A, t.B), .9, 1.1), r: clamp(Math.atan2(t.B, t.A), -.1, .1), tx: t.tx, ty: t.ty };
   }
 
   // dibujado de un frame en t ∈ [0,1]
