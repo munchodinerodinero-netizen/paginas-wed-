@@ -195,7 +195,7 @@
       </div>
       <div class="tools">
         <button class="tool" data-go="image"><span class="ic">🖼</span><b>Crear imagen</b><span>Texto a imagen con 10 estilos</span></button>
-        <button class="tool" data-go="video"><span class="ic">🎬</span><b>Imagen a video</b><span>24 movimientos de cámara y 12 efectos</span></button>
+        <button class="tool" data-go="video"><span class="ic">🎬</span><b>Imagen a video</b><span>Foto o video: 24 movimientos, 12 efectos, música y sonidos</span></button>
         <button class="tool" data-go="clone"><span class="ic">🎥</span><b>Clonar movimiento</b><span>Copia la cámara de un reel</span></button>
         <button class="tool" data-go="avatar"><span class="ic">🗣</span><b>Avatar que habla</b><span>Una foto que habla con tu voz</span></button>
         <button class="tool" data-go="swap"><span class="ic">🎭</span><b>Face Swap</b><span>Cambia la cara de una foto, con permiso</span></button>
@@ -261,8 +261,8 @@
         <div class="panel">
           <div class="field">
             <span class="lbl">Imagen de origen</span>
-            <button class="drop" id="drop" type="button">📷 Toca para subir una foto</button>
-            <input type="file" id="file" accept="image/*" hidden>
+            <button class="drop" id="drop" type="button">📷 Toca para subir una foto o un video</button>
+            <input type="file" id="file" accept="image/*,video/*" hidden>
             <div class="hint" id="srcHint">Mientras tanto se usa una imagen de ejemplo.</div>
           </div>
 
@@ -314,6 +314,31 @@
             </select>
           </div>
 
+          <div class="sec">Sonido</div>
+          <div class="field">
+            <label class="lbl" for="music">Música</label>
+            <select id="music">
+              <option>Ninguna</option>
+              <option>Beat urbano</option>
+              <option>Cinemático</option>
+              <option>Tu canción</option>
+            </select>
+            <input type="file" id="songFile" accept="audio/*,video/*" hidden>
+            <div class="hint" id="songInfo" hidden></div>
+          </div>
+          <div class="field">
+            <label class="lbl" for="musVol">Volumen de la música: <b id="musVolLbl">70%</b></label>
+            <input type="range" id="musVol" min="0" max="100" value="70">
+          </div>
+          <div class="field">
+            <span class="lbl">Efectos de sonido</span>
+            <div class="chips" id="sfx"></div>
+            <div class="hint">Caen solos en el momento clave del movimiento: el impacto en el golpe del Crash Zoom, el whoosh en el barrido del Whip Pan.</div>
+          </div>
+          <div class="field" id="clipAudioRow" hidden>
+            <label class="check"><input type="checkbox" id="clipAudio" checked> Incluir el sonido original del video</label>
+          </div>
+          <button class="btn ghost" id="soundPreview" type="button" style="margin-bottom:12px">🔊 Escuchar con el video</button>
           <button class="btn" id="render">Crear video</button>
           <div class="progress"><i id="prog"></i></div>
           <p class="hint">El video se renderiza en tu dispositivo (MP4 o WebM según el navegador). Nada se sube a ningún servidor.</p>
@@ -552,6 +577,7 @@
     $$('.view').forEach(s => s.classList.toggle('on', s.id === 'v-' + panel));
     $('#viewTitle').textContent = VIEWS[v][0]; $('#viewSub').textContent = VIEWS[v][1];
     if (panel !== 'avatar' && typeof stopAvatarPlay === 'function') stopAvatarPlay();
+    if (panel !== 'video' && typeof stopSoundPreview === 'function') stopSoundPreview();
     current = panel;
     window.scrollTo({ top: 0 });
     if (v === 'library') renderLibrary();
@@ -733,6 +759,8 @@
     'Latido':       { icon: '💓', f: (t, k) => ({ s: 1.1 + .08 * k * Math.exp(-((t * 4) % 1) * 7) }) },
     'Levitar':      { icon: '☁', f: (t, k) => ({ s: 1.12 + .06 * k * ease.io(t), y: .03 * k * Math.sin(t * Math.PI * 2) }) }
   };
+  Object.entries({ 'Crash Zoom': .93, 'Snap Zoom': .2, 'FPV Dive': .9, 'Whip Pan': .5, 'Drone Reveal': .1, 'Bullet Time': .5, 'Latido': 0, 'Dolly Out': .1, 'Push In Lento': .1 })
+    .forEach(([k, v]) => MOTIONS[k].hit = v);
   const FX = ['Grano', 'Viñeta', 'Light Leak', 'Destello', 'Partículas', 'Glitch RGB', 'VHS', 'Flash', 'Letterbox', 'B/N', 'Cálido', 'Teal & Orange'];
 
   // imagen de ejemplo generada en el propio navegador (casa con techo al atardecer)
@@ -770,7 +798,8 @@
     ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
     const mv = MOTIONS[o.motion] || MOTIONS['Dolly In'];
     const at = tt => ({ s: 1, x: 0, y: 0, r: 0, ...mv.f(Math.max(0, Math.min(1, tt)), k) });
-    const cover = Math.max(W / img.width, H / img.height);
+    const iw = img.videoWidth || img.width, ih = img.videoHeight || img.height;
+    const cover = Math.max(W / iw, H / ih);
     const filters = [];
     if (o.fx.has('B/N')) filters.push('grayscale(1) contrast(1.1)');
     if (o.fx.has('Cálido')) filters.push('sepia(.25) saturate(1.2)');
@@ -781,7 +810,7 @@
       ctx.save();
       ctx.translate(W / 2 + m.x * W + dx, H / 2 + m.y * H);
       ctx.rotate(m.r); ctx.scale(m.s * cover, m.s * cover);
-      ctx.drawImage(img, -img.width / 2, -img.height / 2);
+      ctx.drawImage(img, -iw / 2, -ih / 2, iw, ih);
       ctx.restore();
     };
     const m = at(t);
@@ -889,25 +918,44 @@
     btn.ondragleave = () => btn.classList.remove('over');
     btn.ondrop = e => { e.preventDefault(); btn.classList.remove('over'); e.dataTransfer.files[0] && onFile(e.dataTransfer.files[0]); };
   }
-  bindDrop($('#drop'), $('#file'), f => { setVideoSource(URL.createObjectURL(f)); $('#drop').textContent = '📷 ' + f.name; });
+  bindDrop($('#drop'), $('#file'), f => {
+    f.type.startsWith('video/') ? setVideoClip(f) : setVideoSource(URL.createObjectURL(f));
+    $('#drop').textContent = (f.type.startsWith('video/') ? '🎞 ' : '📷 ') + f.name;
+  });
   async function setVideoSource(url) {
-    try { srcImg = await loadImage(url); t0 = performance.now(); $('#srcHint').textContent = 'Foto cargada.'; }
+    try { srcImg = await loadImage(url); clipGain = null; t0 = performance.now(); $('#srcHint').textContent = 'Foto cargada.'; $('#clipAudioRow').hidden = true; }
     catch { toast('No se pudo cargar la imagen', true); }
+  }
+  // un video como fuente: se reproduce en bucle y se le aplican movimiento, efectos, texto y sonido encima
+  let clipGain = null;
+  async function setVideoClip(f) {
+    const v = document.createElement('video');
+    v.src = URL.createObjectURL(f); v.loop = true; v.playsInline = true; v.muted = true;
+    try {
+      await new Promise((ok, bad) => { v.onloadeddata = ok; v.onerror = bad; });
+      await v.play().catch(() => {});
+    } catch { return toast('No se pudo abrir el video. Prueba con un MP4.', true); }
+    srcImg = v; clipGain = null; t0 = performance.now();
+    $('#duration').value = Math.max(2, Math.min(12, Math.round(v.duration || 5))); $('#duration').dispatchEvent(new Event('input'));
+    vRatio = { k: 'video', w: v.videoWidth, h: v.videoHeight };
+    $$('.opt', $('#vRatios')).forEach(x => x.classList.remove('on')); sizeStage();
+    $('#srcHint').textContent = 'Video cargado. Los movimientos, efectos y sonidos se aplican encima (máximo 12 s).';
+    $('#clipAudioRow').hidden = false;
   }
 
   // ---------- PRESETS (Explorar) ----------
   const PRESETS = [
-    { name: 'Reveal de techo', desc: 'Drone que baja sobre la obra', motion: 'Drone Reveal', fx: ['Cálido', 'Light Leak'] },
-    { name: 'Crash zoom viral', desc: 'Golpe de zoom con flash', motion: 'Crash Zoom', fx: ['Flash', 'Glitch RGB'] },
+    { name: 'Reveal de techo', desc: 'Drone que baja sobre la obra', motion: 'Drone Reveal', fx: ['Cálido', 'Light Leak'], music: 'Cinemático', sfx: ['Whoosh'] },
+    { name: 'Crash zoom viral', desc: 'Golpe de zoom con flash', motion: 'Crash Zoom', fx: ['Flash', 'Glitch RGB'], music: 'Beat urbano', sfx: ['Riser', 'Impacto'] },
     { name: 'Cine de lujo', desc: 'Empuje lento con barras', motion: 'Push In Lento', fx: ['Letterbox', 'Grano', 'Teal & Orange'] },
-    { name: 'FPV dive', desc: 'Caída en picada de dron', motion: 'FPV Dive', fx: ['Viñeta'] },
-    { name: 'Whip pan', desc: 'Barrido rápido', motion: 'Whip Pan', fx: ['Viñeta'] },
+    { name: 'FPV dive', desc: 'Caída en picada de dron', motion: 'FPV Dive', fx: ['Viñeta'], sfx: ['Riser', 'Bajo profundo'] },
+    { name: 'Whip pan', desc: 'Barrido rápido', motion: 'Whip Pan', fx: ['Viñeta'], sfx: ['Whoosh'] },
     { name: 'Bullet time', desc: 'Giro en cámara lenta', motion: 'Bullet Time', fx: ['Viñeta', 'Teal & Orange'] },
     { name: 'Orbit arquitectura', desc: 'Órbita suave y cálida', motion: 'Orbit', fx: ['Letterbox', 'Cálido'] },
     { name: 'VHS retro', desc: 'Cinta casera de los 90', motion: 'Cámara Mano', fx: ['VHS', 'Grano'] },
-    { name: 'Terremoto', desc: 'Sacudida con glitch', motion: 'Terremoto', fx: ['Glitch RGB'] },
+    { name: 'Terremoto', desc: 'Sacudida con glitch', motion: 'Terremoto', fx: ['Glitch RGB'], sfx: ['Bajo profundo', 'Glitch'] },
     { name: 'Sueño', desc: 'Flotar entre partículas', motion: 'Levitar', fx: ['Partículas', 'Destello'] },
-    { name: 'Latido', desc: 'Pulso al ritmo', motion: 'Latido', fx: ['Teal & Orange', 'Viñeta'] },
+    { name: 'Latido', desc: 'Pulso al ritmo', motion: 'Latido', fx: ['Teal & Orange', 'Viñeta'], music: 'Beat urbano' },
     { name: 'Thriller', desc: 'Plano holandés en B/N', motion: 'Dutch Roll', fx: ['B/N', 'Grano'] }
   ];
   const presetCanvases = [];
@@ -926,6 +974,9 @@
     selectMotion(p.motion);
     fxOn = new Set(p.fx);
     $$('.chip', $('#fx')).forEach(c => c.classList.toggle('on', fxOn.has(c.textContent)));
+    sfxOn = new Set(p.sfx || []);
+    $$('.chip', $('#sfx')).forEach(c => c.classList.toggle('on', sfxOn.has(c.textContent)));
+    $('#music').value = p.music || 'Ninguna';
     showView('video');
     toast(`Preset "${p.name}" listo. Sube tu foto y toca Crear video.`);
   }
@@ -1063,6 +1114,130 @@
     return { s: clamp(Math.hypot(t.A, t.B), .9, 1.1), r: clamp(Math.atan2(t.B, t.A), -.1, .1), tx: t.tx, ty: t.ty };
   }
 
+  // ---------- SONIDO: música y efectos sintetizados en el navegador ----------
+  let noiseBuf = null, userSong = null, sfxOn = new Set(), previewBus = null;
+  const getNoiseBuf = c => {
+    if (noiseBuf && noiseBuf.sampleRate === c.sampleRate) return noiseBuf;
+    const b = c.createBuffer(1, c.sampleRate * 2, c.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    return noiseBuf = b;
+  };
+  // envolvente: sube en `a` segundos hasta `peak` y cae en `d`
+  const envGain = (c, out, t, a, peak, d) => {
+    const g = c.createGain(); g.gain.setValueAtTime(.0001, t);
+    g.gain.exponentialRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(.0001, t + a + d);
+    g.connect(out); return g;
+  };
+  const noiseSrc = (c, t, dur) => { const n = c.createBufferSource(); n.buffer = getNoiseBuf(c); n.loop = true; n.start(t); n.stop(t + dur); return n; };
+  const filt = (c, type, f, q = 1) => { const b = c.createBiquadFilter(); b.type = type; b.frequency.value = f; b.Q.value = q; return b; };
+  const osc = (c, type, t, f0, f1, len, out) => {
+    const o = c.createOscillator(); o.type = type; o.frequency.setValueAtTime(f0, t);
+    if (f1 !== f0) o.frequency.exponentialRampToValueAtTime(f1, t + len);
+    o.connect(out); o.start(t); o.stop(t + len + .05); return o;
+  };
+  const SFX = {
+    'Whoosh': { at: 'center', play(c, out, t) {
+      const f = filt(c, 'bandpass', 300, 1.2); f.frequency.setValueAtTime(300, t);
+      f.frequency.exponentialRampToValueAtTime(4000, t + .35); f.frequency.exponentialRampToValueAtTime(600, t + .75);
+      noiseSrc(c, t, .8).connect(f); f.connect(envGain(c, out, t, .32, .9, .45));
+    } },
+    'Impacto': { at: 'hit', play(c, out, t) {
+      osc(c, 'sine', t, 140, 35, .9, envGain(c, out, t, .005, 1, .9));
+      const f = filt(c, 'lowpass', 1800); noiseSrc(c, t, .3).connect(f); f.connect(envGain(c, out, t, .002, .6, .25));
+    } },
+    'Riser': { at: 'before', play(c, out, t, from) {
+      const st = Math.max(from, t - 2), g = c.createGain(), g2 = c.createGain(), f = filt(c, 'bandpass', 400, 3);
+      f.frequency.setValueAtTime(400, st); f.frequency.exponentialRampToValueAtTime(6000, t);
+      [[g, .6], [g2, .12]].forEach(([n, v]) => { n.gain.setValueAtTime(.0001, st); n.gain.exponentialRampToValueAtTime(v, t); n.gain.setValueAtTime(.0001, t + .02); n.connect(out); });
+      noiseSrc(c, st, t - st + .05).connect(f); f.connect(g);
+      osc(c, 'sawtooth', st, 110, 880, t - st, g2);
+    } },
+    'Obturador': { at: 'start', play(c, out, t) {
+      [0, .07].forEach(d => { const f = filt(c, 'highpass', 2500); noiseSrc(c, t + d, .06).connect(f); f.connect(envGain(c, out, t + d, .001, .9, .04)); });
+    } },
+    'Glitch': { at: 'hit', play(c, out, t) {
+      for (let i = 0; i < 8; i++) { const tt = t + i * .045, fq = 200 + Math.random() * 1800; osc(c, 'square', tt, fq, fq, .04, envGain(c, out, tt, .002, .22, .035)); }
+    } },
+    'Bajo profundo': { at: 'hit', play(c, out, t) { osc(c, 'sine', t, 70, 28, 1.7, envGain(c, out, t, .02, 1, 1.6)); } }
+  };
+  const MUSIC = {
+    'Beat urbano': (c, out, t, dur) => {
+      const step = 60 / 100 / 2, bass = [55, 55, 65.41, 49];
+      for (let i = 0; i * step < dur - .05; i++) {
+        const tt = t + i * step;
+        if (i % 4 === 0) osc(c, 'sine', tt, 150, 45, .3, envGain(c, out, tt, .002, 1, .3));
+        if (i % 4 === 2) { const f = filt(c, 'bandpass', 1800, .8); noiseSrc(c, tt, .2).connect(f); f.connect(envGain(c, out, tt, .002, .45, .15)); }
+        const h = filt(c, 'highpass', 7000); noiseSrc(c, tt, .06).connect(h); h.connect(envGain(c, out, tt, .001, i % 2 ? .12 : .2, .05));
+        if (i % 2 === 0) { const fq = bass[Math.floor(i / 8) % 4]; osc(c, 'triangle', tt, fq, fq, step * 1.8, envGain(c, out, tt, .01, .35, step * 1.7)); }
+      }
+    },
+    'Cinemático': (c, out, t, dur) => {
+      const chords = [[110, 130.81, 164.81], [87.31, 110, 130.81], [98, 123.47, 146.83], [82.41, 103.83, 123.47]];
+      const lp = filt(c, 'lowpass', 900); lp.connect(out);
+      for (let i = 0; i * 2 < dur; i++) {
+        const tt = t + i * 2, len = Math.min(2.4, dur - i * 2 + .2);
+        chords[i % 4].forEach(fq => [-6, 6].forEach(det => {
+          const g = c.createGain(); g.gain.setValueAtTime(.0001, tt); g.gain.exponentialRampToValueAtTime(.06, tt + .8); g.gain.exponentialRampToValueAtTime(.0001, tt + len); g.connect(lp);
+          const o = osc(c, 'sawtooth', tt, fq, fq, len, g); o.detune.value = det;
+        }));
+      }
+      osc(c, 'sine', t, 55, 55, dur, envGain(c, out, t, 1, .25, Math.max(.2, dur - 1)));
+    }
+  };
+  ['Whoosh', 'Impacto', 'Riser', 'Obturador', 'Glitch', 'Bajo profundo'].forEach(k => {
+    const ch = document.createElement('button'); ch.className = 'chip'; ch.textContent = k;
+    ch.onclick = () => { sfxOn.has(k) ? sfxOn.delete(k) : sfxOn.add(k); ch.classList.toggle('on'); };
+    $('#sfx').append(ch);
+  });
+  $('#musVol').oninput = e => $('#musVolLbl').textContent = e.target.value + '%';
+  $('#music').onchange = e => { if (e.target.value === 'Tu canción' && !userSong) $('#songFile').click(); };
+  $('#songFile').onchange = async e => {
+    const f = e.target.files[0]; e.target.value = ''; if (!f) return;
+    try {
+      userSong = await audioCtx().decodeAudioData(await f.arrayBuffer());
+      $('#songInfo').hidden = false; $('#songInfo').textContent = '🎵 ' + f.name; $('#music').value = 'Tu canción';
+    } catch { toast('No se pudo leer la canción. Prueba MP3, M4A o WAV.', true); $('#music').value = 'Ninguna'; }
+  };
+  const clipHasAudio = () => srcImg instanceof HTMLVideoElement && $('#clipAudio').checked;
+  const hasSound = () => $('#music').value !== 'Ninguna' || sfxOn.size > 0 || clipHasAudio();
+
+  // programa música y efectos a partir del segundo `t` del reloj de audio, durante `dur` segundos
+  function scheduleSound(c, out, t, dur) {
+    const mg = c.createGain(); mg.gain.value = +$('#musVol').value / 100; mg.connect(out);
+    const mus = $('#music').value;
+    if (mus === 'Tu canción' && userSong) {
+      const sn = c.createBufferSource(); sn.buffer = userSong; sn.connect(mg); sn.start(t, 0, dur);
+      mg.gain.setValueAtTime(mg.gain.value, t + Math.max(0, dur - .7)); mg.gain.linearRampToValueAtTime(.0001, t + dur);
+    } else if (MUSIC[mus]) MUSIC[mus](c, mg, t, dur);
+    const sg = c.createGain(); sg.gain.value = .9; sg.connect(out);
+    const hit = (MOTIONS[motion].hit ?? .5) * dur;
+    sfxOn.forEach(name => {
+      const fx = SFX[name], at = fx.at === 'start' ? 0 : fx.at === 'center' ? Math.max(0, hit - .35) : hit;
+      fx.play(c, sg, t + Math.min(at, Math.max(0, dur - .2)), t);
+    });
+    if (clipHasAudio()) {
+      if (!clipGain) { const ms = c.createMediaElementSource(srcImg); clipGain = c.createGain(); ms.connect(clipGain); }
+      srcImg.muted = false; clipGain.disconnect(); clipGain.connect(out);
+    }
+  }
+  function stopSoundPreview() {
+    if (!previewBus) return;
+    previewBus.disconnect(); previewBus = null;
+    if (clipGain) clipGain.disconnect();
+    $('#soundPreview').textContent = '🔊 Escuchar con el video';
+  }
+  $('#soundPreview').onclick = async () => {
+    if (previewBus) return stopSoundPreview();
+    if (!hasSound()) return toast('Elige música o algún efecto de sonido primero', true);
+    const c = audioCtx(); await c.resume();
+    const dur = +$('#duration').value;
+    previewBus = c.createGain(); previewBus.connect(c.destination);
+    if (srcImg instanceof HTMLVideoElement) srcImg.currentTime = 0;
+    t0 = performance.now(); scheduleSound(c, previewBus, c.currentTime + .03, dur);
+    $('#soundPreview').textContent = '⏹ Detener sonido';
+    const bus = previewBus; setTimeout(() => { if (previewBus === bus) stopSoundPreview(); }, dur * 1000 + 300);
+  };
+
   // ---------- bucle de vista previa (escenario + presets) ----------
   (function loop(now) {
     refreshGrain(now);
@@ -1080,10 +1255,22 @@
   // ---------- grabación ----------
   $('#render').onclick = async () => {
     if (!window.MediaRecorder || !cv.captureStream) return toast('Tu navegador no puede grabar video. Usa Chrome, Edge, Firefox o Safari reciente.', true);
-    const types = ['video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
+    stopSoundPreview();
+    const withSound = hasSound(), durS = +$('#duration').value;
+    const stream = new MediaStream(cv.captureStream(30).getVideoTracks());
+    if (withSound) {
+      const c = audioCtx(); await c.resume();
+      const dest = c.createMediaStreamDestination();
+      dest.stream.getAudioTracks().forEach(tr => stream.addTrack(tr));
+      if (srcImg instanceof HTMLVideoElement) srcImg.currentTime = 0;
+      scheduleSound(c, dest, c.currentTime + .03, durS);
+    } else if (srcImg instanceof HTMLVideoElement) srcImg.currentTime = 0;
+    const types = withSound
+      ? ['video/mp4;codecs=avc1,mp4a.40.2', 'video/mp4', 'video/webm;codecs=vp9,opus', 'video/webm;codecs=vp8,opus', 'video/webm']
+      : ['video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
     const mime = types.find(t => MediaRecorder.isTypeSupported(t)) || '';
     let rec;
-    try { rec = new MediaRecorder(cv.captureStream(30), mime ? { mimeType: mime, videoBitsPerSecond: 8e6 } : undefined); }
+    try { rec = new MediaRecorder(stream, mime ? { mimeType: mime, videoBitsPerSecond: 8e6 } : undefined); }
     catch (e) { return toast('No se pudo iniciar la grabación: ' + e.message, true); }
 
     const chunks = [];
@@ -1102,6 +1289,7 @@
       })(start);
     });
     rec.stop(); await done;
+    if (clipGain) clipGain.disconnect();
     recording = false; t0 = performance.now();
     btn.disabled = false; btn.textContent = 'Crear video';
     setTimeout(() => $('#prog').style.width = '0', 600);
@@ -1110,7 +1298,7 @@
     const blob = new Blob(chunks, { type });
     const slug = motion.toLowerCase().normalize('NFD').replace(/[^a-z]+/g, '-');
     const v = { blob, url: URL.createObjectURL(blob), name: `lyon-${slug}-${Date.now()}.${ext}`, ext,
-      cap: `${motion} · ${[...fxOn].join(', ') || 'sin efectos'} · ${vRatio.k} · ${dur / 1000}s` };
+      cap: `${motion} · ${[...fxOn].join(', ') || 'sin efectos'} · ${vRatio.k} · ${dur / 1000}s` + (withSound ? ' · con sonido' : '') };
     sessionVideos.unshift(v);
     $('#vidResults').prepend(videoCard(v));
     toast('Video listo: toca Guardar');

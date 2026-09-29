@@ -138,6 +138,9 @@ al final de la sesión.
   maqrketing 1.14 (plan free), AlexyaAI 9 (un video cuesta ~140). No alcanza ni para uno.
   Decisión de Harvey: no gastar en créditos de video con $0 facturados; se integra cuando un
   cliente pagado lo justifique.
+- Séptima ronda: música (beat, cinemático o canción propia), 6 efectos de sonido sincronizados
+  con el movimiento, y videos como fuente. Esta sí sirve a la prospección (reels con sonido).
+  La herramienta queda completa para prospectar; lo siguiente son números, no funciones.
 - **Vigilar:** construir herramientas no es vender. Si esto se convierte en otro proyecto
   paralelo, es el mismo patrón de dispersión (cuarta repetición). Nombrarlo de inmediato.
 
