@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio — Musa AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container" style="width:100%;padding:0 20px;max-width:none">
+      <a href="index.html" class="logo"><span class="logo-mark">✦</span>Musa AI</a>
+      <span class="muted" id="activeLabel">Sin influencer seleccionado</span>
+    </div>
+  </nav>
+
+  <div class="studio">
+    <aside class="sidebar">
+      <button class="tab-btn active" data-tab="create">🧬 Crear influencer</button>
+      <button class="tab-btn" data-tab="shoot">📸 Sesión de fotos</button>
+      <button class="tab-btn" data-tab="video">🎬 Imagen a video</button>
+      <button class="tab-btn" data-tab="caption">✍️ Copies con IA</button>
+      <button class="tab-btn" data-tab="gallery">🖼️ Galería</button>
+      <div class="sep"></div>
+      <p class="hint">Todo se guarda en tu navegador. Descarga lo que quieras conservar.</p>
+    </aside>
+
+    <main class="main">
+      <!-- CREATE -->
+      <section class="panel active" id="panel-create">
+        <h2>Crear influencer</h2>
+        <p class="sub">Define su apariencia, genera 4 propuestas y fija la que más te guste como identidad.</p>
+
+        <div class="influencer-list" id="influencerList"></div>
+
+        <div class="form-grid">
+          <div class="field"><label>Nombre</label><input id="c-name" placeholder="Ej. Valeria" maxlength="30"></div>
+          <div class="field"><label>Género</label>
+            <select id="c-gender"><option value="woman">Mujer</option><option value="man">Hombre</option><option value="non-binary person">No binario</option></select></div>
+          <div class="field"><label>Edad: <span id="c-age-val">25</span> años</label><input type="range" id="c-age" min="21" max="55" value="25"></div>
+          <div class="field"><label>Origen / rasgos</label>
+            <select id="c-ethnicity">
+              <option value="latina">Latino/a</option><option value="mexican">Mexicano/a</option><option value="caucasian">Caucásico/a</option>
+              <option value="black">Afrodescendiente</option><option value="east asian">Asiático/a del este</option><option value="south asian">Sudasiático/a</option>
+              <option value="middle eastern">Medio Oriente</option><option value="mixed ethnicity">Mestizo/a</option>
+            </select></div>
+          <div class="field"><label>Cabello</label>
+            <select id="c-hair">
+              <option value="long wavy brunette hair">Castaño largo ondulado</option><option value="long straight black hair">Negro largo lacio</option>
+              <option value="blonde hair in a messy bun">Rubio en chongo</option><option value="short auburn bob">Bob pelirrojo</option>
+              <option value="curly dark hair">Rizado oscuro</option><option value="short fade haircut">Corte fade corto</option>
+              <option value="platinum blonde pixie cut">Pixie platinado</option><option value="braided hair">Trenzas</option>
+            </select></div>
+          <div class="field"><label>Ojos</label>
+            <select id="c-eyes"><option value="brown eyes">Cafés</option><option value="hazel eyes">Miel</option><option value="green eyes">Verdes</option><option value="blue eyes">Azules</option><option value="dark eyes">Oscuros</option></select></div>
+          <div class="field"><label>Complexión</label>
+            <select id="c-body"><option value="slim build">Delgada</option><option value="athletic build">Atlética</option><option value="average build">Promedio</option><option value="curvy build">Curvy</option><option value="muscular build">Musculosa</option></select></div>
+          <div class="field"><label>Nicho</label>
+            <select id="c-niche">
+              <option value="fitness">Fitness</option><option value="fashion">Moda</option><option value="travel">Viajes</option><option value="lifestyle">Lifestyle</option>
+              <option value="beauty and skincare">Belleza</option><option value="food">Comida</option><option value="tech and gaming">Tech / gaming</option><option value="business and entrepreneurship">Negocios</option>
+            </select></div>
+          <div class="field full"><label>Detalles extra (opcional)</label><input id="c-extra" placeholder="Ej. pecas, lentes de armazón delgado, tatuaje pequeño en el brazo" maxlength="160"></div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" id="c-generate">Generar 4 propuestas</button>
+          <span class="muted">Cada generación tarda de 5 a 20 segundos.</span>
+        </div>
+        <div class="results" id="c-results"></div>
+      </section>
+
+      <!-- SHOOT -->
+      <section class="panel" id="panel-shoot">
+        <h2>Sesión de fotos</h2>
+        <p class="sub">Tu influencer en cualquier escenario, con su identidad fija.</p>
+        <div id="shoot-need" class="empty" hidden>Primero crea y fija un influencer en <b>Crear influencer</b>.</div>
+        <div id="shoot-form">
+          <div class="field full" style="margin-bottom:16px"><label>Escenario</label><div class="chips" id="s-scenes"></div></div>
+          <div class="form-grid">
+            <div class="field"><label>Outfit</label>
+              <select id="s-outfit">
+                <option value="">Según el escenario</option><option value="casual streetwear">Streetwear</option><option value="elegant evening outfit">Elegante de noche</option>
+                <option value="sportswear">Deportivo</option><option value="summer dress">Vestido de verano</option><option value="business suit">Traje formal</option>
+                <option value="cozy knit sweater">Suéter tejido</option><option value="denim jacket and jeans">Mezclilla</option>
+              </select></div>
+            <div class="field"><label>Pose / toma</label>
+              <select id="s-pose">
+                <option value="candid shot, looking at camera, natural smile">Casual mirando a cámara</option><option value="mirror selfie holding a phone">Selfie en espejo</option>
+                <option value="walking toward camera, full body shot">Caminando, cuerpo completo</option><option value="close-up portrait">Retrato de cerca</option>
+                <option value="sitting, relaxed pose, looking away">Sentado/a mirando a otro lado</option><option value="over the shoulder shot, laughing">Riendo, sobre el hombro</option>
+              </select></div>
+            <div class="field"><label>Formato</label>
+              <select id="s-format"><option value="768x1024">4:5 · Feed</option><option value="720x1280">9:16 · Reels / Stories</option><option value="1024x1024">1:1 · Cuadrado</option><option value="1280x720">16:9 · YouTube</option></select></div>
+            <div class="field"><label>Cantidad</label>
+              <select id="s-count"><option>1</option><option>2</option><option selected>4</option><option>6</option></select></div>
+            <div class="field full"><label>Indicaciones extra (opcional)</label><input id="s-extra" placeholder="Ej. sosteniendo un café, con lentes de sol" maxlength="160"></div>
+          </div>
+          <div class="actions"><button class="btn btn-primary" id="s-generate">Generar fotos</button></div>
+        </div>
+        <div class="results" id="s-results"></div>
+      </section>
+
+      <!-- VIDEO -->
+      <section class="panel" id="panel-video">
+        <h2>Imagen a video</h2>
+        <p class="sub">Elige una foto de tu galería y descríbele el movimiento.</p>
+        <div class="notice">El video corre en GPUs dedicadas de MuAPI y tiene costo por render. Pega tu API key de <a href="https://muapi.ai" target="_blank" rel="noopener" style="text-decoration:underline">muapi.ai</a> o configura <code>MUAPI_KEY</code> en el servidor. Tu key se guarda solo en este navegador.</div>
+        <div class="form-grid">
+          <div class="field"><label>MuAPI key</label><input id="v-key" type="password" placeholder="Opcional si el servidor ya tiene una"></div>
+          <div class="field"><label>Modelo</label>
+            <select id="v-model">
+              <option value="seedance-2">Seedance 2 · realista</option><option value="grok-video">Grok Video · rápido y económico</option>
+              <option value="happy-horse">Happy Horse 1 · 720p</option><option value="veo-3-1">Veo 3.1 · premium</option>
+            </select></div>
+          <div class="field"><label>Duración</label><select id="v-duration"><option value="5">5 s</option><option value="6" selected>6 s</option><option value="8">8 s</option><option value="10">10 s</option></select></div>
+          <div class="field"><label>Formato</label><select id="v-ar"><option value="9:16">9:16</option><option value="16:9">16:9</option><option value="1:1">1:1</option></select></div>
+          <div class="field full"><label>Movimiento</label><textarea id="v-prompt" maxlength="400" placeholder="Ej. sonríe a la cámara, se acomoda el cabello y da un paso hacia adelante, cámara en mano estilo TikTok"></textarea></div>
+        </div>
+        <p class="muted" style="margin:18px 0 10px">Foto de origen (clic para seleccionar):</p>
+        <div class="results" id="v-sources" style="margin-top:0"></div>
+        <div class="actions"><button class="btn btn-primary" id="v-generate">Generar video</button><span class="muted" id="v-status"></span></div>
+        <div class="results" id="v-results"></div>
+      </section>
+
+      <!-- CAPTION -->
+      <section class="panel" id="panel-caption">
+        <h2>Copies con IA</h2>
+        <p class="sub">Captions, hashtags y ganchos con la voz de tu influencer. Gratis.</p>
+        <div class="form-grid">
+          <div class="field"><label>Red social</label><select id="k-network"><option>Instagram</option><option>TikTok</option><option>X / Twitter</option><option>Threads</option></select></div>
+          <div class="field"><label>Tono</label><select id="k-tone"><option>cercano y divertido</option><option>inspirador</option><option>elegante</option><option>provocador (sin groserías)</option><option>educativo</option></select></div>
+          <div class="field"><label>Idioma</label><select id="k-lang"><option>español</option><option>inglés</option><option>spanglish</option></select></div>
+          <div class="field full"><label>¿De qué trata la publicación?</label><textarea id="k-topic" maxlength="400" placeholder="Ej. primer día de entrenamiento en el gym nuevo, rutina de pierna"></textarea></div>
+        </div>
+        <div class="actions"><button class="btn btn-primary" id="k-generate">Escribir copy</button><button class="btn" id="k-copy">Copiar</button></div>
+        <div class="output-box" id="k-output">El copy aparecerá aquí.</div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="panel" id="panel-gallery">
+        <h2>Galería</h2>
+        <p class="sub">Todo lo que has generado. Se guarda en este navegador.</p>
+        <div class="chips" id="g-filter" style="margin-bottom:6px">
+          <button class="chip active" data-f="all">Todo</button><button class="chip" data-f="image">Imágenes</button>
+          <button class="chip" data-f="video">Videos</button><button class="chip" data-f="fav">Favoritos</button>
+        </div>
+        <div class="results" id="g-results"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="assets/studio.js"></script>
+</body>
+</html>
