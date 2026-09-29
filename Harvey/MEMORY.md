@@ -100,6 +100,25 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-29 — Pedido: "clon gratis de Higgsfield con toda su calidad"
+
+- Alberto pidió construir una versión gratuita de Higgsfield (plataforma de generación de
+  video/imagen con IA) con la misma calidad y todas sus herramientas. **No se construyó.**
+- **Razón técnica:** la calidad de Higgsfield viene de modelos (propios + Kling, Veo,
+  Seedance, etc.) que corren en GPUs caras por cada generación. Una interfaz se puede
+  copiar; la calidad gratis no existe. La única vía "gratis" real es open-source
+  (ComfyUI + Wan / LTX-Video / Flux) en GPU propia de 24GB+ VRAM — calidad menor y días
+  de configuración.
+- **Razón de negocio:** LYON sigue en $0 y la oferta es páginas web en Querétaro. Construir
+  un SaaS de video IA es un proyecto de meses, fuera del nicho, sin cliente. **Cuarta
+  repetición del patrón de dispersión** (35 nichos → 2 países → 7 ciudades → ahora un
+  producto nuevo). Nombrado directo.
+- **Dato útil:** esta sesión ya tiene acceso a herramientas de Higgsfield vía conector
+  (generación de imagen/video), con créditos de Alberto. Si necesita video/imagen para
+  demos o para el sitio de un cliente, se usa eso — no se clona nada.
+- **Pendiente:** Alberto aún no ha reportado números de prospección (contactados,
+  respuestas, llamadas, cierres) desde el 2026-08-23. Preguntar cada sesión.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
