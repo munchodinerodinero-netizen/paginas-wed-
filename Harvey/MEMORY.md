@@ -126,6 +126,10 @@ al final de la sesión.
 - PATRÓN CONFIRMADO (4 rondas de funciones en una sesión, $0 facturados): construir la
   herramienta se volvió la forma de no prospectar. Nombrarlo al inicio de la próxima sesión y
   pedir números de prospección antes de tocar código.
+- Quinta petición: face swap. Harvey lo frenó: cero uso para vender webs a contratistas, riesgo
+  legal/reputacional si se usa con caras de prospectos, y técnicamente no corre en la versión de
+  Claude (el modelo de detección facial se bloquea). Queda pendiente de que Alberto dé un caso de
+  uso concreto de negocio y sus números de prospección.
 - **Vigilar:** construir herramientas no es vender. Si esto se convierte en otro proyecto
   paralelo, es el mismo patrón de dispersión (cuarta repetición). Nombrarlo de inmediato.
 
