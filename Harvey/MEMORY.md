@@ -100,6 +100,18 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-09-29 — Proyecto lateral: generador de videos animados (MonoStudio)
+
+- Alberto pidió un generador gratis de videos animados para YouTube estilo Ecomonos
+  (monos explicando economía). Construido en `generador-videos/` (HTML único en el
+  navegador + `narrar.py` con voces gratis edge-tts). Graba MP4/WebM 1080p, miniatura,
+  subtítulos, música, cierre "Suscríbete".
+- **Alerta Harvey:** esto NO acerca a LYON al cliente #1. Es el patrón conocido de
+  dispersión (35 nichos → 2 países → 7 ciudades → ahora un canal de YouTube). Uso válido
+  solo si sirve a LYON: videos cortos para contratistas de Querétaro ("¿cuántos trabajos
+  pierdes sin página web?") como contenido de prospección. Si se vuelve un segundo negocio
+  antes de cerrar 10 clientes, confrontarlo.
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
