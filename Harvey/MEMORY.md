@@ -100,6 +100,14 @@ al final de la sesión.
   aparecer (ej. al elegir entre paquetes, canales, o al momento de contratar), nombrarlo
   de inmediato — ya es un patrón de tres repeticiones confirmadas, no ruido.
 
+## 2026-10-09 — Alberto reporta 10 clientes cerrados (pendiente confirmar)
+
+- Alberto dice que ya **cerró 10 clientes**, que era el objetivo de 90 días. Todavía
+  faltan los datos: qué paquete compró cada uno, cuánto se cobró, cuántos pagan los $900
+  MXN/mes de mantenimiento y de dónde salió cada lead. Hasta tenerlos, el dato cuenta
+  como **reportado, no confirmado**.
+- Llevaba ~7 semanas sin registrar números (desde el 2026-08-23).
+
 ## Prioridades vigentes (actualizar conforme avancemos)
 
 1. Sistematizar prospección (Google Maps + redes) — pasar de "buscar clientes" caótico a
